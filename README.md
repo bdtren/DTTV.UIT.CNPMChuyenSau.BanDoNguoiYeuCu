@@ -68,6 +68,7 @@
     •	Monetary, hardware funding is available.
     •	Project is supported by solidarity group and Teacher support to guide and monitor the project activities. 
     •	Everyone in the group can work in the roles of the project manager, developer, and testing.
+    •	Language: HTML/CSS/Javascript, PHP and MySQL.
     •	Use advanced technologies to speed up web browsing, data processing likes: _**PWA(Progressive Web Apps)**_
 
 
