@@ -328,4 +328,7 @@ alter table TINDANG add constraint FK_NV_KIEMDUYET_TD foreign key (MANV)
 
 alter table TINDANG add constraint FK_TD_THUOC_DM foreign key (MADM)
       references DANHMUC (MADM) on delete restrict on update restrict;
+      
+      alter table DANHMUC add DDAnh longtext, 
+      add KTDM varchar(20);
 
