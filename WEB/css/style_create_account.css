@@ -1,0 +1,117 @@
+/* CSS Document */
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lobster', cursive;
+	letter-spacing: 1px;
+}
+
+section{
+	width: 100%;
+	height: 100vh;
+	background: url(../Images/Login/do-you-love-me_personalityhacker.jpg);
+	background-size: cover;
+}
+
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 700px;
+	height: 430px;
+	background: rgba(26,255,0,0.78);
+}
+
+
+.container .form_contain1,
+.container .form_contain2{
+	position: relative;
+	width: 50%;
+	height: 380px;
+	float: left;
+	box-sizing: border-box;
+}
+
+.container .form_contain2 h1{
+	font-size: 30px;
+	color: yellow;
+}
+
+.container .form_contain2{
+	background: #FF1589;
+	height: 510px;
+	top: -30px;
+	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
+	padding: 30px;
+}
+
+.container .form_contain2 label{
+	color: white;
+}
+
+.textinput{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	margin-bottom: 10px;	
+	border-radius: 25px;
+	font-size: 15px;
+	box-shadow: 0 10px 10px rgba(0,0,0,.2);
+}
+
+.textinput:hover,
+.textinput:valid{
+	border: 1px solid #F8FF00;
+}
+
+.textTalk{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	margin-bottom: 20px;	
+	border-radius: 25px;
+	font-size: 15px;
+	box-shadow: 0 10px 10px rgba(0,0,0,.2);
+	resize: none;
+}
+
+.textTalk:hover{
+	border: 1px solid #F8FF00;
+}
+
+.rd{
+	font-size: 30px;
+}
+
+.container .form_contain1 input[type="submit"]
+{
+	background: #16C8FF;
+	color: white;
+	text-align: center;
+	border:none;
+	font-family: 'Lobster', cursive;
+	margin-top: 14px;
+	width: 80%;
+	margin-left: 30px;	
+	padding: 10px;
+	border-radius: 25px;
+	font-size: 15px;
+}
+
+.container .form_contain1 input[type="submit"]:hover{
+	background: #63DAFF;
+	
+}
+
+
+.container .form_contain1{
+	padding: 40px 30px;
+	color: white;	
+}
+
+
+
+
