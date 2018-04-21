@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<title>Create Account</title>
-	<link rel="stylesheet" href="../css/style_create_account.css">
+	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<link rel="icon" href="../Images/Home/favicon.png">
 	
 	<!-- font Vietnamese -->
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
@@ -16,8 +17,35 @@
 <body>	
 	<script language="javascript" src="../js/javascript.fullPage.js"></script>
 	
-	<section>
-		<div class="container">
+	<section style="background: url(../Images/Logon/do-you-love-me_personalityhacker.jpg); background-size: cover;">
+		<header id="menu">
+				<div class="container">
+					<a href="../index.html">
+						<div id="branding">
+							<h1>
+								<span class="logo"> </span>
+							</h1>
+						</div>
+					</a>
+					<nav>
+						<ul>
+							<li>
+								<a href="index.html">Tìm sản phẩm</a>
+							</li>
+							<li>
+								<a href="#">Thông báo</a>
+							</li>
+							<li class="current">
+								<a href="./html/create_account.html">Tài khoản</a>
+							</li>
+							<li>
+								<a href="#">Giới thiệu</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+		<div class="container1">
 			<div class="form_contain1">
 				<h1 id="dktk">Đăng ký tài khoản</h1>
 				<label >Tên đăng nhập:</label>
@@ -58,11 +86,11 @@
 	</section>
 	
 	<script>
-		$(window).load(function {
+		$(window).load(function() {
 		$('#dktk').animate({
         'marginLeft' : "-=30px"
-		);  
-		};
+		})
+		})
 	</script>
 	
 	
