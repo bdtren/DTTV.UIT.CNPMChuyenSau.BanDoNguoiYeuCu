@@ -6,6 +6,7 @@
 	<title>Love Market | Welcome </title>
 	<meta name="author" content="DTTV" />
 	<meta name="description" content="Website bán đồ người yêu cũ." />
+	<link rel="icon" href="./Images/Home/favicon.png">
 
 	<!--Include  Javascript library-->
 	<link rel="stylesheet" href="css/reset.css">
@@ -41,14 +42,14 @@
 					</a>
 					<nav>
 						<ul>
-							<li class="current">
+							<li ><!--class="current"-->
 								<a href="index.html">Tìm sản phẩm</a>
 							</li>
 							<li>
 								<a href="#">Thông báo</a>
 							</li>
 							<li>
-								<a href="#">Tài khoản</a>
+								<a href="./html/create_account.html">Tài khoản</a>
 							</li>
 							<li>
 								<a href="#">Giới thiệu</a>
@@ -63,24 +64,26 @@
 				<p>Nơi trao đổi, mua bán những món đồ
 					<br> của người yêu cũ</p>
 				<div class="login-box  animated slideInDown">
-					<div class="login-image">
+					<!--<div class="login-image">
 						<div class="cloud cloud1 animated fadeInLeft"></div>
 						<div class="cloud thunder animated bounceIn"></div>
 						<div class="cloud rain animated bounceIn"></div>
 						<div class="cloud cloud2 animated fadeInRight"></div>
-					</div>
+					</div>-->
 					<form action="" class="login-form">
+						<h2>Đăng nhập</h2>
 						<input type="text" id="username" class="login-input username-box" name="username" placeholder="username">
 						<br>
 						<br>
 						<input type="password" id="password" class="login-input password-box" name="password" placeholder="password">
 						<br>
+						<div class="forgot-password">Quên mật khẩu?
+								<a href="">Nhấn vào đây</a>
+							</div>
 						<br>
 						<input type="submit" class="button login-button" value="Đăng nhập">
-						<br>
-						<div class="forgot-password">Quên mật khẩu?
-							<a href="">Nhấn ở đây</a>
-						</div>
+						<br><br>
+						<h6  class="create-account" ><a href="./html/create_account.html">Tạo tài khoản</a></h6>
 					</form>
 				</div>
 			</div>
@@ -227,7 +230,7 @@
 		<!-- Begin section 3 -->
 		<div class="section" id="section2">
 			<div class="content">
-
+				
 			</div>
 			<footer class="flex-rw">
 				<ul class="footer-list-top">
