@@ -1,5 +1,4 @@
 /* CSS Document */
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 		/* Reset CSS
 		 * --------------------------------------- */
 		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -128,7 +127,7 @@ header #branding h3
 	margin-left: 20px;
 	color: white;
 	font-size: 20px;
-	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-family: "Consolas", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 	font-style: italic;
 }
 
@@ -172,26 +171,41 @@ header a:hover{
 			font-size: 2em;
 		}
 
-		.login-box{
-			margin: auto;			
-			min-width: min-content;
-			width: fit-content;
+		.login-box{			
+			width: 100% ;
 			height: fit-content;
 			position: absolute;
-			top: 100%;
-			left: 43%;
-			/*background:#FFFFFF;		*/
-			border: rgb(113, 15, 46) 2px solid;
+			top:102%;
+			left: 36%;
 			animation-delay: 0.1s;
+			opacity: 1;
 		}
+
+		.login-form{
+			background: rgba(253, 0, 160, 0.544);
+			width: 400px;
+			height: fit-content;
+			padding: 40px;
+		}
+		
+		.login-form h2{
+				font-size: 20px;
+				text-align: center;
+				padding: 10px;
+				font-weight: bolder;
+				color: #FAFBFB;
+				margin-bottom: 20px;
+		}
+
 		.login-image{
-			width: 30vh;
+			width: 50vh;
 			height: 20vh;
-			position: relative;
+			position: absolute;
 			overflow: hidden;
+			z-index: 3;
 		}
 		.cloud{
-			width: 30vh;
+			width: 50vh;
 			height: 15vh;
 		}
 		.cloud1{
@@ -227,18 +241,22 @@ header a:hover{
 			border: #0693cd 1px solid;
 			box-shadow: #5197FF 2px;
 			font-family:'Roboto', sans-serif;
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 25px;
 		}
 
 		.login-button{
-			background-color: #0693cd;
+			background-color: #19EF08;
 			background-size: contain;
-			border: #0693cd 2px outset;
-			border-radius: 5px;
+			width: 100%;
+			border-radius: 25px;
+			padding: 10px;
 			cursor: pointer;
 			color: #fff;
 			font-size:15px;
 			font-weight: bold;
-			line-height: 1.4;
 		}
 		.login-button:hover{
 			text-shadow: 0 0 2em rgba(255,255,255,1);
@@ -251,8 +269,10 @@ header a:hover{
 			color:rgb(25, 208, 228);
 		}
 		.forgot-password{
-			color: rgb(25, 208, 228) ;
-			ont-family: 'Gravitas One', cursive;
+			color: #FFFCFC;	
+			font-family: 'Roboto', cursive;
+			font-style: italic;
+			font-weight: bold;
 		}
 		.forgot-password a{
 			color:blue;
@@ -264,6 +284,22 @@ header a:hover{
 		.forgot-password a:visited{
 			color:rebeccapurple;
 		}
+
+		.create-account{
+			background: #FF0004;
+			width: 100%;
+			border-radius: 25px;
+			padding: 10px;
+		}
+		.create-account a{
+			color: white;
+			font-weight: bolder;
+	
+	
+			
+		}
+
+
 		/* Section 2
 		 * --------------------------------------- */
 		/*slide 1*/
