@@ -667,21 +667,18 @@ body{
 	padding: 0px;
 	font-family: 'Lobster', cursive;
 	letter-spacing: 1px;
+	background: url(../Images/logon/do-you-love-me_personalityhacker.jpg);
+	background-size: cover;
 }
 
-
-section{
-	width: 100%;
-	height: 100vh;
-}
 
 .container1{
 	position: absolute;
-	top: 50%;
+	top: 57%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 700px;
-	height: 430px;
+	height: 400px;
 	background: rgba(25,245,0,0.90);
 }
 
@@ -701,8 +698,8 @@ section{
 
 .container1 .form_contain2{
 	background: #FF1589;
-	height: 510px;
-	top: -30px;
+	height: 530px;
+	top: -50px;
 	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
 	padding: 30px;
 }
@@ -755,16 +752,17 @@ section{
 #dktk{
 	font-size: 1.6em;
 	color: white;
+	margin-bottom: 20px;
 }
 
-.container1 .form_contain1 input[type="submit"]
+.container1 .form_contain2 input[type="submit"]
 {
 	background: #31A7FD;
 	color: white;
 	text-align: center;
 	border:none;
 	font-family: 'Lobster', cursive;
-	margin-top: 14px;
+	margin-top: 0;
 	width: 80%;
 	margin-left: 30px;	
 	padding: 10px;
@@ -772,10 +770,101 @@ section{
 	font-size: 15px;
 }
 
-.container1 .form_contain1 input[type="submit"]:hover{
+.container1 .form_contain2 input[type="submit"]:hover{
 	background: #63DAFF;
 	
 }
+
+
+/*** RESPONDSIVE ***/
+
+/*
+	Device width 680px or lower
+*/
+
+@media screen and (max-width: 680px)
+{
+	
+	section .container1{
+		height: 430px;
+		width: 80%;
+	}
+	
+	.container1{
+		width: 80%;
+	}
+	
+	.container1 .form_contain1{
+		width: 100%;
+	}
+	
+	.container1 .form_contain2{
+		width: 100%;
+		margin-top: 10px;
+	}
+	
+	
+}
+
+
+/*
+	Device width 500px or lower
+*/
+@media screen and (max-width: 500px)
+{
+	
+	
+	.container1 input{
+		font-size: 12px;
+	}
+
+	.container1{
+		width: 80%;
+		
+	}
+	
+	.container1{
+		top: 60%;
+	}
+}
+
+
+
+/*
+	Device width 390px or lower
+*/
+@media screen and (max-width: 390px)
+{
+	body{		
+		font-size: 12px;
+	}
+		
+	.container1{
+		width: 80%;
+		top: 60%;
+	}
+	
+	.container1 input{
+		font-size: 12px;
+	}
+	.container1 .form_contain2 input[type="submit"]
+	{
+		font-size: 12px;
+		margin-left: 20px;
+	}
+	
+	.container1 .form_contain2{
+		margin-top: 10px;
+		height: 500px;
+	}
+
+}
+
+
+
+
+
+
 
 /******************
 Kết thúc phần dành cho create_account.html
