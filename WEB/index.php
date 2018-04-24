@@ -6,7 +6,7 @@
            echo 'Click vào đây để <a href="logout.php">Logout</a>';
        }
        else{
-           echo 'Bạn chưa đăng nhập';
+           //echo 'Bạn chưa đăng nhập';
        }
 ?>
 
@@ -20,9 +20,9 @@
 		// thông báo kết nối thành công
 		if($conn)
 		{
-			echo "<script>";
+			/*echo "<script>";
 			echo "alert('dang load danh muc');";    
-			echo "</script>";
+			echo "</script>";*/
 		}
 		 else
 		 {
@@ -60,23 +60,39 @@
 	<meta name="author" content="DTTV" />
 	<meta name="description" content="Website bán đồ người yêu cũ." />
 	<link rel="icon" href="./Images/Home/favicon.png">
+	<meta name="viewport" content="width=device-width initial-scale=1.0">
+	<meta name="mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="msapplication-starturl" content="/">
+  	<meta name="theme-color" content="#f48c5b">
 
-	<!--Include  Javascript library-->
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/javascript.fullPage.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/animate.css">
+
+	<!--**********************
+		Include  CSS library
+		**********************-->
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/javascript.fullPage.css" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/animate.css">
+
+	<!--**********************
+	Include  Javascript library
+	**********************-->
+	<script src="./sw-register.js"></script>
 
 	<!-- Include Snow Effect -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
-	<script src="js/jquery.snow.min.1.0.js"></script>
+	<script src="./js/jquery.snow.min.1.0.js"></script>
 
 
-	<!--Include Font -->
+	<!--**********************
+	Include Font 
+	**********************-->
 	<link href="https://fonts.googleapis.com/css?family=Gravitas+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	<!-- Vietnamese font -->
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link rel="manifest" href="./manifest.json">
 </head>
 
 <body>
@@ -102,7 +118,7 @@
 								<a href="#">Thông báo</a>
 							</li>
 							<li>
-								<a href="./html/create_account.php">Tài khoản</a>
+								<a href="./html/create_account.php	">Tài khoản</a>
 							</li>
 							<li>
 								<a href="#">Giới thiệu</a>
@@ -114,7 +130,7 @@
 			<!--End header -->
 			<div class="content">
 				<!--<h1>Love Market</h1>-->
-				<p>Nơi trao đổi, mua bán những món đồ
+				<p id ="vt323">Nơi trao đổi, mua bán những món đồ
 					<br> của người yêu cũ</p>
 				<div class="login-box  animated slideInDown">
 					<!--<div class="login-image">
@@ -153,80 +169,80 @@
 							<div class="category-list" id="boxListCate">
 								<ul>
 									<li class="size50">
-										<a href="#" class=""><!--./Images/danh-muc/bds2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[0]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/bds2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Bất động sản</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/noithat.jpg-->
-											<div class="category-item" style="background: url(<?=$a[1]?>) no-repeat; background-size: contain;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/noithat.jpg) no-repeat; background-size: contain;"></div>
 											<div class="category-text">
 												<span>Nội ngoại thất, Đồ gia dụng</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/dientu2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[2]?>) no-repeat; background-size: contain;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/dientu2.jpg) no-repeat; background-size: contain;"></div>
 											<div class="category-text">
 												<span>Đồ điện tử</span>
 											</div>
 										</a>
 									</li>
 									<li class="size50">
-										<a href="#" class=""><!--./Images/danh-muc/xeco2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[3]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/xeco2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Xe cộ</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/thoitrang.jpg-->
-											<div class="category-item" style="background: url(<?=$a[4]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/thoitrang.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Thời trang, đồ dùng cá nhân</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/mebe2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[5]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/mebe2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Mẹ và bé</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/thucung2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[6]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/thucung2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Thú cưng</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/giaitri2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[7]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/giaitri2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Giải trí, Thể thao, Sở thích</span>
 											</div>
-										</a>
+										</a>	
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/vanphong2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[8]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/vanphong2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Đồ văn phòng, Công nông nghiệp</span>
 											</div>
 										</a>
 									</li>
 									<li>
-										<a href="#" class=""><!--./Images/danh-muc/dichvu2.jpg-->
-											<div class="category-item" style="background: url(<?=$a[9]?>) no-repeat; background-size: cover;"></div>
+										<a href="#" class="">
+											<div class="category-item" style="background: url(./Images/danh-muc/dichvu2.jpg) no-repeat; background-size: cover;"></div>
 											<div class="category-text">
 												<span>Việc làm dịch vụ</span>
 											</div>
@@ -364,8 +380,6 @@
 		});
 	</script>
 	<!-- End Snow Effect Script -->
-
-
 </body>
 
 </html>
