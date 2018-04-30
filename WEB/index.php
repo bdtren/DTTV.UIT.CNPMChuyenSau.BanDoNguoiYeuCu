@@ -147,7 +147,7 @@
 						<input type="password" id="password" class="login-input password-box" name="password" placeholder="password">
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
-								<a href="">Nhấn vào đây</a>
+								<a href="./html/forget_password.html">Nhấn vào đây</a>
 							</div>
 						<br>
 						<input type="submit" name="login" class="button login-button" value="Đăng nhập">

@@ -71,7 +71,7 @@
 		}
 
 /* Style header */
-header
+/*header
 {
 	color: white;
 	padding-top: 10px;
@@ -147,7 +147,7 @@ header a:hover{
 	color: #cccccc;
 	font-weight: bold;
 }
-
+*/
 /*End style Header */
 
 
@@ -187,7 +187,7 @@ header a:hover{
 			height: fit-content;
 			padding: 40px;
 		}
-		
+
 		.login-form h2{
 				font-size: 20px;
 				text-align: center;
@@ -268,22 +268,12 @@ header a:hover{
 			text-shadow: 0 0 2em rgb(25, 208, 228);
 			color:rgb(25, 208, 228);
 		}
-		.forgot-password{
-			color: #FFFCFC;	
-			font-family: 'Roboto', cursive;
-			font-style: italic;
-			font-weight: bold;
-		}
-		.forgot-password a{
-			color:blue;
-			font-family: 'Pacifico', cursive;
-		}
-		.forgot-password a:active{
-			color:red;
-		}
-		.forgot-password a:visited{
-			color:rebeccapurple;
-		}
+
+.login-form a{
+	text-decoration: none;
+	margin-bottom: 1em;
+	color: white;
+}
 
 		.create-account{
 			background: #FF0004;
@@ -377,7 +367,11 @@ header a:hover{
 			-webkit-margin-start: 0px;
 			-webkit-margin-end: 0px;
 			-webkit-padding-start: 40px;
+			background: #3D03FF;
 		}
+		
+
+	
 		.category-list ul li {
 			float: left;
 			box-sizing: border-box;
@@ -869,5 +863,9 @@ body{
 /******************
 Kết thúc phần dành cho create_account.html
 ******************/
+
+
+
+
 
 
