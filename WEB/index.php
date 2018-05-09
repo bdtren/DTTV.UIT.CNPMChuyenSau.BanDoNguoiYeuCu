@@ -75,6 +75,8 @@
 	<link rel="stylesheet" href="./css/style.css" />
 	<link rel="stylesheet" href="./css/animate.css">
 
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 	<!--**********************
 	Include  Javascript library
 	**********************-->
@@ -92,7 +94,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 	<!-- Vietnamese font -->
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Arima+Madurai" rel="stylesheet"> 
 	<link rel="manifest" href="./manifest.json">
+
 </head>
 
 <body>
@@ -100,38 +104,37 @@
 		<!-- section 1 -->
 		<div class="section " id="section0">
 			<!--Begin header -->
-			<header id="menu">
-				<div class="container">
-					<a href="./index.html">
-						<div id="branding">
-							<h1>
-								<span class="logo"> </span>
-							</h1>
-						</div>
-					</a>
-					<nav>
-						<ul>
-							<li ><!--class="current"-->
-								<a href="index.php">Tìm sản phẩm</a>
-							</li>
-							<li>
-								<a href="#">Thông báo</a>
-							</li>
-							<li>
-								<a href="./html/create_account.php	">Tài khoản</a>
-							</li>
-							<li>
-								<a href="#">Giới thiệu</a>
-							</li>
-						</ul>
-					</nav>
+			<!-- Fixed navbar -->
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+				<a class="navbar-brand" href="#"><img src="Images/logo-1.png" style="width:210px;"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+					<a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">Thông báo</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">Tài khoản</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">Giới thiệu</a>
+					</li>
+
+				</ul>
+				<form class="form-inline mt-2 mt-md-0">
+					<input class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+				</form>
 				</div>
-			</header>
+    		  </nav>
 			<!--End header -->
 			<div class="content">
 				<!--<h1>Love Market</h1>-->
-				<p id ="vt323">Nơi trao đổi, mua bán những món đồ
-					<br> của người yêu cũ</p>
 				<div class="login-box  animated slideInDown">
 					<!--<div class="login-image">
 						<div class="cloud cloud1 animated fadeInLeft"></div>
@@ -141,18 +144,20 @@
 					</div>-->
 					<form action="login.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
-						<input type="text" id="username" class="login-input username-box" name="username" placeholder="username">
+						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
 						<br>
 						<br>
-						<input type="password" id="password" class="login-input password-box" name="password" placeholder="password">
+						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
-								<a href="./html/forget_password.html">Nhấn vào đây</a>
+								<a href="user/forget-password.php">Nhấn vào đây</a>
 							</div>
 						<br>
 						<input type="submit" name="login" class="button login-button" value="Đăng nhập">
 						<br><br>
-						<h6  class="create-account" ><a href="./html/create_account.php">Tạo tài khoản</a></h6>
+						<h6  class="create-account" >
+							<a href="user/create-account.php" style="text-decoration:none; color:white;">
+							Tạo tài khoản</a></h6>
 					</form>
 				</div>
 			</div>
@@ -372,14 +377,14 @@
 		});	
 	</script>
 
+		
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
-	<!-- Begin Snow Effect Script -->
-	<script>
-		$(document).ready(function () {
-			$.fn.snow({ minSize: 5, maxSize: 40, newOn: 500, flakeColor: '#ffffff' });
-		});
-	</script>
-	<!-- End Snow Effect Script -->
+
 </body>
 
 </html>
