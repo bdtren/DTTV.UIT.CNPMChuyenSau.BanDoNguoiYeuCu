@@ -103,36 +103,38 @@
 	<div id="fullpage">
 		<!-- section 1 -->
 		<div class="section " id="section0">
-			<!--Begin header -->
-			<!-- Fixed navbar -->
+		<!--Begin header -->
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#"><img src="Images/logo-1.png" style="width:210px;"></a>
+				<a class="navbar-brand" href="#"><img src="Images/logo-1.png" alt="logo" style="width:210px;"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-					<a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+					<li class="nav-item  active">
+					<a class="nav-link" href="index.php">Trang chủ</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="#">Thông báo</a>
+					<a class="nav-link" href="danh-muc/index.php">Danh mục sản phẩm</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="#">Tài khoản</a>
+					<a class="nav-link" href="#">Thông báo</a>
 					</li>
 					<li class="nav-item">
-					<a class="nav-link" href="#">Giới thiệu</a>
+					<a class="nav-link" href="#">Tài khoản</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="#">Giới thiệu</a>
 					</li>
 
 				</ul>
 				<form class="form-inline mt-2 mt-md-0">
-					<input class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+					<input class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
 				</form>
 				</div>
     		  </nav>
-			<!--End header -->
+	<!--End header -->
 			<div class="content">
 				<!--<h1>Love Market</h1>-->
 				<div class="login-box  animated slideInDown">
@@ -144,10 +146,10 @@
 					</div>-->
 					<form action="login.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
-						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
+						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
 						<br>
 						<br>
-						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
+						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
 								<a href="user/forget-password.php">Nhấn vào đây</a>
@@ -168,7 +170,7 @@
 			<!-- slide 1-->
 			<div class="slide" id="slide1">
 				<div class="content">
-					<p>Danh mục theo Ngành hàng</p>
+					<p><a href="#" style="color: white; text-decoration: none; font-weight: bold;">Danh mục theo Ngành hàng</a></p>
 					<div class="slide-wrap">
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">

@@ -1,0 +1,71 @@
+body{
+	background: rgba(223,219,219,1.00);
+}
+
+.main-contain{
+	margin-top: 5em;
+}
+
+/* sidebar */
+.card  .card-header{
+	background: #FF8E00;
+	color: white;
+	padding: 20px;
+}
+
+.accordion .card .card-header{
+	background: #FC9C24;
+	padding: 5px;
+}
+
+.accordion .card .card-header button{
+	color: white;
+	text-decoration: none;
+	
+}
+
+.accordion .card .collapse .list-group-item a{
+	text-decoration: none;
+	color: white;
+}
+
+.accordion .card .collapse .list-group-item{
+	background: #FBAD06;
+}
+
+.accordion .card .collapse .list-group-item:hover{
+	background:  #FCC34A;
+	color: white;
+}
+
+/* Main section */
+
+.card .card-main-header{
+	background: #FF2892;
+}
+
+
+.card .card-product{
+	overflow-x: auto;
+}
+
+.card .card-text{
+	height: 40px;
+	overflow-y: auto;
+	color: #FC38A6;
+}
+
+.card-title{
+	color: #F800B1;
+	font-weight: bolder;
+}
+
+.user-name{
+	color: #9E00AD;
+}
+.type-info{
+	color: #5100E7;
+}
+
+
+
