@@ -11,10 +11,14 @@
 								while($i<6) { ?>
 							<li>
 							<div class="card card-product" style="width: 15rem; border: 1px solid #CDCBCB; float: left; margin-right: 60px; margin-top: 20px;">
-							  <img class="card-img-top" src="../Images/san-pham/demo.jpg" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
+							  <img class="card-img-top" src="Images/san-pham/demo.jpg" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
 							  <div class="card-body">
 								<h5 class="card-title"><i class="fa fa-diamond"></i> Nhẫn đôi</h5>
-								<p class="card-text">Nội dung tin đăng</p>
+								<ul  class="list-group list-group-flush">
+									<li class="list-group-item price"><i class="fa fa-money"></i> 10000đ <span style="float: right; font-weight: bold;"></li>
+									<li class="list-group-item type-info"><p class="card-text">Nội dung tin đăng</p></li>
+							  	</ul>
+									 
 							  </div>
 								
 								<!--Xem thêm thông tin -->			

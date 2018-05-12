@@ -1,3 +1,5 @@
+<?php $PageName="trangchu"; ?>
+
 <?php session_start(); // khai báo một (sesion)phiên làm việc?>
 
  <?php 
@@ -50,7 +52,12 @@
 			die("Could not connect to the database $datebasename :" . $pe->getMessage());
 		}
 
+		
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -103,38 +110,9 @@
 	<div id="fullpage">
 		<!-- section 1 -->
 		<div class="section " id="section0">
-		<!--Begin header -->
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#"><img src="Images/logo-1.png" alt="logo" style="width:210px;"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item  active">
-					<a class="nav-link" href="index.php">Trang chủ</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="danh-muc/index.php">Danh mục sản phẩm</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Thông báo</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Tài khoản</a>
-					</li>
-					<li class="nav-item">
-					<a class="nav-link" href="#">Giới thiệu</a>
-					</li>
-
-				</ul>
-				<form class="form-inline mt-2 mt-md-0">
-					<input class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-				</form>
-				</div>
-    		  </nav>
-	<!--End header -->
+	
+			<?php include('header.php') ?>
+			
 			<div class="content">
 				<!--<h1>Love Market</h1>-->
 				<div class="login-box  animated slideInDown">

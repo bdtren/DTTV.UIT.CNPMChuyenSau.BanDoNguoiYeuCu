@@ -11,6 +11,7 @@ body{
 	background: #FF8E00;
 	color: white;
 	padding: 20px;
+	
 }
 
 .accordion .card .card-header{
@@ -23,6 +24,8 @@ body{
 	text-decoration: none;
 	
 }
+
+
 
 .accordion .card .collapse .list-group-item a{
 	text-decoration: none;
@@ -47,6 +50,11 @@ body{
 
 .card .card-product{
 	overflow-x: auto;
+	border-radius: 25px;
+}
+
+.card .card-product:hover{
+	box-shadow: 2px 2px 5px 5px #888888;
 }
 
 .card .card-text{
@@ -60,12 +68,18 @@ body{
 	font-weight: bolder;
 }
 
+.price{
+	color:#FB0046;
+	font-weight: bold;
+}
+
 .user-name{
 	color: #9E00AD;
 }
 .type-info{
 	color: #5100E7;
 }
+
 
 
 
