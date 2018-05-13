@@ -2,6 +2,8 @@
 	$PageName="quenmatkhau";
 ?>
 
+<?php  include "xulyQuenMK.php" ?>
+
 <!doctype html>
 <html>
 <head>
@@ -20,7 +22,7 @@
 	
 	<section id="forget-password">
 		<h1>Quên mật khẩu</h1>
-			<form id="form-forget-password">
+			<form id="form-forget-password" method="POST" action="forget-password.php" >
 			<label>Tên đăng nhập:</label><br>
 			<input type="text" name="username"><br>			
 			<label>Email:</label><br>
