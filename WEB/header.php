@@ -30,7 +30,7 @@
 
 <!--Begin header -->
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="#"><img src="Images/logo-1.png" style="width:210px;"></a>
+				<a class="navbar-brand" href="<?php ?> index.php"><img src="Images/logo-1.png" style="width:210px;"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>

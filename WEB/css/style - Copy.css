@@ -53,7 +53,7 @@
 			box-sizing: border-box;
 		}
 		body{
-			font-family: 'Arima Madurai', cursive;
+			font-family: arial,helvetica;
 			color: #F2F2F2;
 		}
 		h1{
@@ -63,31 +63,111 @@
 		p{
 			font-size: 2em;
 		}
-		.section{
-			text-align: center;
-		}
 		.content{
 			position: relative;
 			top: 0%;
 			transform: translateY(-50%);
 			text-align: center;
 		}
+
+/* Style header */
+header
+{
+	color: white;
+	padding-top: 10px;
+	min-height: 100px;
+	border-bottom:#FF0004 0px solid;
+}
+
+header a
+{
+	color: purple;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+header li
+{
+	float: left;
+	display: inline;
+	padding: 0px 20px 0px 20px;
+}
+
+header .logo
+{
+	font-weight: bold;
+}
+
+header #branding
+{
+	float: left;
+}
+
+header nav
+{
+	float: right;
+	margin-top: 20px;
+}
+
+header #branding h1
+{
+	margin: 0px;
+	background: url(../images/logo.png) no-repeat;
+	background-size: 200px auto;
+	color: white;
+	margin-left: 20px;
+	font-size: 50px;
+	min-width: 200px;
+	min-height: 60px;
+}
+
+header #branding h3
+{
+	margin-left: 20px;
+	color: white;
+	font-size: 20px;
+	font-family: "Consolas", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-style: italic;
+}
+
+header .heading h1{
+	font-size: 50%;
+	font-weight: bold;	
+}
+
+
+header .current a
+{
+	color: #FF0004;
+	font-weight: bold;	
+}
+
+header a:hover{
+	color: #cccccc;
+	font-weight: bold;
+}
+
+/*End style Header */
+
+
+
 		/* Section 1
 		 * --------------------------------------- */
 		#section0{
 			background-image:url(../Images/Home/background12.gif);
+			background-position: center;
 			background-size: cover;
-			background-position: right 50px;
 		}
 		#section0 h1{
 			color: #5197FF;
-			font-family: 'Arima Madurai', cursive;
+			font-family: 'Gravitas One', cursive;
 		
 		}
 
 		#section0 p{
 			color: #A8D4FF;
-			font-family: 'Arima Madurai', cursive;
+			font-family: 'Pacifico', cursive;
 			font-size: 2em;
 		}
 
@@ -95,8 +175,8 @@
 			width: 100% ;
 			height: fit-content;
 			position: absolute;
-			margin-top: -15%;
-			left: 33%;
+			top:102%;
+			left: 36%;
 			animation-delay: 0.1s;
 			opacity: 1;
 		}
@@ -107,7 +187,7 @@
 			height: fit-content;
 			padding: 40px;
 		}
-
+		
 		.login-form h2{
 				font-size: 20px;
 				text-align: center;
@@ -159,16 +239,19 @@
 		}
 		.login-input{
 			border: #0693cd 1px solid;
-			box-shadow: #5197FF 2px;
-			font-family: 'Arima Madurai', cursive;
+			font-family:'Roboto', sans-serif;
 			display: block;
 			width: 100%;
 			padding: 10px;
 			border-radius: 25px;
 		}
+		.login-input:focus{
+			outline: none;
+			box-shadow: #5197FF 2px 2px;			
+		}
 
 		.login-button{
-			background-color:  #19EF08;
+			background-color: #19EF08;
 			background-size: contain;
 			width: 100%;
 			border-radius: 25px;
@@ -182,109 +265,39 @@
 			text-shadow: 0 0 2em rgba(255,255,255,1);
 			color:#FFFFFF;
 			border-color:#FFFFFF;
-			background: #5dff50;
+		}
+		.login-button:active{
+			border: rgb(25, 208, 228) 2px inset;			
+			text-shadow: 0 0 2em rgb(25, 208, 228);
+			color:rgb(25, 208, 228);
+		}
+		.forgot-password{
+			color: #FFFCFC;	
+			font-family: 'Roboto', cursive;
+			font-style: italic;
+			font-weight: bold;
+		}
+		.forgot-password a{
+			color:blue;
+			font-family: 'Pacifico', cursive;
+		}
+		.forgot-password a:active{
+			color:red;
+		}
+		.forgot-password a:visited{
+			color:rebeccapurple;
 		}
 
-
-.login-form a{
-	text-decoration: none;
-	margin-bottom: 1em;
-	color: white;
-}
-	.forgot-password a:hover{
-		color: aqua;
-	}
-
 		.create-account{
-			background: #ff8c05;
+			background: #FF0004;
 			width: 100%;
 			border-radius: 25px;
 			padding: 10px;
 		}
-
-		.create-account:hover{
-			background: #fba035;
-		}
-
 		.create-account a{
 			color: white;
 			font-weight: bolder;
 		}
-
-
-
-
-/* Respondsive section 1 */
-			/*Ipad ngang(1024 x 768)*/
-			@media screen and (max-width: 1024px){
-				#section0{
-					background-position: center;
-				}
-				.login-box{			
-					margin-top: -20%;
-					left: 30%;
-				}
-			}
-
-			/*Ipad ngang(1024 x 768)*/
-			@media screen and (max-width: 960px){
-				.login-box{			
-					margin-top: -20%;
-					left: 30%;
-				}
-			}
-
-			/*Ipad dá»c(768 x 1024)*/
-			@media screen and (max-width: 768px){
-				.login-box{			
-					margin-top: -30%;
-					left: 25%;
-				}
-					.login-form{
-					width: 350px;
-					padding: 13px;
-					}
-			}
-			/*Tablet nhá»(480 x 640)*/
-			@media screen and (max-width: 480px){
-				.login-box{			
-					margin-top: -59%;
-					left: 15%;
-				}
-					.login-form{
-					width: 300px;
-					padding: 13px;
-					}
-				
-			}
-
-				/*Tablet nhá»(480 x 640)*/
-			@media screen and (max-width: 400px){
-					.login-box{	
-					margin-top: -60%;								
-					left: 14%;
-					}
-					.login-form{
-					width: 260px;
-					padding: 13px;
-					}
-				
-			}
-
-			/*Iphone(320 x 640)*/
-			@media screen and (max-width: 320px){
-					.login-box{			
-					margin-top: -70%;
-					left: 8%;					
-					}
-					.login-form{
-					width: 250px;
-					padding: 13px;
-					
-					}
-					
-			}
-
 		/* Section 2
 		 * --------------------------------------- */
 		/*slide 1*/
@@ -292,16 +305,18 @@
 		background-image: url(../Images/Home/memories_hd1.jpg);
 		background-position: center;
 		background-size: cover;
+		position: relative;
 		}
 
 		#section1 #slide1 p{
-			font-family: 'Arima Madurai', cursive;
+			font-family: 'Lora', serif;
 			text-align: left;
 			margin-left: 80px;
 			margin-top: 2%;
 			width: 50%;
 			font-weight: bolder;
 			font-style: italic;
+			position: relative;
 		}
 		.slide-wrap {
 			z-index: 2;
@@ -310,6 +325,7 @@
 			margin-top: 0;
 			overflow: hidden;
 			margin-left: 13%;
+			position: absolute;
 		}
 		.slide-wrap div{
 			display: block;
@@ -324,21 +340,7 @@
 		.container2 {
 			min-width: 320px;
 		}
-		@media (min-width: 1200px){ 
-			.container2 {
-				width: 960px;
-			}
-		}
-		@media (min-width:700px) and (max-width:1199px){
-			.container2 {
-				width: 640px;
-			}
-		}
-		@media (min-width:520px) and (max-width:699px){
-			.container2 {
-				width: 480px;
-			}
-		}
+		
 		.category-list {
 			float: left;
 			width: 100%;
@@ -364,10 +366,7 @@
 			-webkit-margin-start: 0px;
 			-webkit-margin-end: 0px;
 			-webkit-padding-start: 40px;
-			background: #3D03FF;
 		}
-
-	
 		.category-list ul li {
 			float: left;
 			box-sizing: border-box;
@@ -382,14 +381,6 @@
 		}
 		.category-list ul .size50 {
 			width: 50%;
-		}
-		.category-list ul .sizew50 {
-			width: -webkit-calc((33vh - 18px)*2);
-			width: calc((33vh - 18px)*2);
-		}
-		.category-list ul .sizeh50 {
-			height: -webkit-calc((33vh - 18px)*2);
-			height: calc((33vh - 18px)*2);
 		}
 		.category-list ul li .category-item {
 			-webkit-transition: all ease-in-out 0.3s;
@@ -426,7 +417,7 @@
 		}
 		/*slide 2 */
 		#section1 #slide2{
-			background: url(../Images/Home/ki-niem.jpg) no-repeat 0px -800px;
+			background: url(../Images/Home/askjaskhfkjashfkj82793.jpg) no-repeat 0px -800px;
 			background-position: center;
 			background-size: cover;
 			
@@ -437,15 +428,16 @@
 			margin-top: 2%;
 			margin-right: 20px;
 			text-align: left;
-			color: rgb(36, 34, 34);
+			color: #FFFCFC;
 			font-style: italic;
 			font-weight: bolder;
 		}
 		
+
 		/*slide 3 */
 		#section1 #slide3 
 		{
-			background: url(../Images/Home/tinh-than.jpg);
+			background: url(../Images/Home/Support.jpg);
 			background-position: center;
 			background-size: cover;
 		}
@@ -456,28 +448,10 @@
 			font-size: 2em;
 			margin-top: 11%;
 			font-weight: bolder;
-			text-align: center;
-			color: #FFFCFC;
+			text-align: right;
 			margin-right: 20px;
 		}
 
-		/*slide 4 */
-		#section1 #slide4
-		{
-			background: url(../Images/Home/Support.jpg);
-			background-position: center;
-			background-size: cover;
-		}
-
-		#section1 #slide4 p{
-			font-style: italic;
-			font-family: 'Lora', serif;
-			font-size: 2em;
-			margin-top: 11%;
-			font-weight: bolder;
-			text-align: bottom;
-			margin-right: 20px;
-		}
 
 		/* Section 3
 		 * --------------------------------------- */
@@ -488,6 +462,7 @@
 		}
 		/* Footer
 		 * --------------------------------------- */
+
 		 .generic-anchor {
 			color: #8DB9ED;
 		}
@@ -525,10 +500,10 @@
 		.footer-list-header {
 		  padding: 10px 0 5px 0;
 		  color: #fff;
-		  font: 2.3vw "Oswald", sans-serif;
+		  font: 2.3vw "Oswald", sans-serif
 		}
 		.footer-list-anchor {
-		  font: 1.3em "Open Sans", sans-serif;
+		  font: 1.3em "Open Sans", sans-serif
 		}
 		.footer-social-section {
 		  width: 100%;
@@ -586,95 +561,7 @@
 		  display: inline;
 		  font-style: normal
 		}
-		@media only screen and (max-width: 768px) {
-		  .footer-list-header {
-			font-size: 2em
-		  }
-		  .footer-list-anchor {
-			font-size: 1.1em
-		  }
-		  .footer-social-connect {
-			font-size: 2.5em
-		  }
-		  .footer-social-overlap > a {
-			font-size: 2.24em
-		  }
-		  .footer-bottom-wrapper {
-			font-size: 1.3em
-		  }
-		}
-		@media only screen and (max-width: 568px) {
-		  main {
-			font-size: 5em
-		  }
-		  .footer-list-top {
-			width: 100%
-		  }
-		  .footer-list-header {
-			font-size: 3em;
-		  }
-		  .footer-list-anchor {
-			font-size: 1.5em
-		  }
-		  .footer-social-section {
-			justify-content: center
-		  }
-		  .footer-social-section::after {
-			top: 25%
-		  }
-		  .footer-social-connect {
-			margin-bottom: 10px;
-			padding: 0 10px
-		  }
-		  .footer-social-overlap {
-			display: flex;
-			justify-content: center;
-		  }
-		  .footer-social-icons-wrapper {
-			width: 100%;
-			padding: 0
-		  }
-		  .footer-social-overlap > a:not(:first-child) {
-			margin-left: 20px;
-		  }
-		  .footer-bottom-section {
-			padding: 0 5px 10px 5px
-		  }
-		  .footer-bottom-wrapper {
-			text-align: center;
-			width: 100%;
-			margin-top: 10px
-		  }
-		}
-		@media only screen and (max-width: 480px) {
-		  .footer-social-overlap > a {
-			margin: auto
-		  }
-		  .footer-social-overlap > a:not(:first-child) {
-			margin-left: 0;
-		  }
-		  .footer-bottom-rights {
-			display: block
-		  }
-		}
-		@media only screen and (max-width: 320px) {
-		  .footer-list-header {
-			font-size: 2.2em
-		  }
-		  .footer-list-anchor {
-			font-size: 1.2em
-		  }
-		  .footer-social-connect {
-			font-size: 2.4em
-		  }
-		  .footer-social-overlap > a {
-			font-size: 2.24em
-		  }
-		  .footer-bottom-wrapper {
-			font-size: 1.3em
-		  }
-		}
-
+	
 /* Các thiết kế dành cho trang tạo tài khoản create_account.html */
 body{
 	margin: 0px;
@@ -712,7 +599,7 @@ body{
 
 .container1 .form_contain2{
 	background: #FF1589;
-	height: 610px;
+	height: 530px;
 	top: -50px;
 	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
 	padding: 30px;
@@ -789,61 +676,154 @@ body{
 	
 }
 
+/******************
+Kết thúc phần dành cho create_account.html
+******************/
 
-/*** RESPONDSIVE ***/
-
+/******************************************
+Chỉnh web theo hướng RESPONSIVE
+******************************************/
+	/* ------------------------------------------------------------------- 
+	DESKTOP VÀ LAPTOP */
+@media all  and (min-width : 1200px) {
+	.container2 {
+			width: 960px;
+	}
+}
+@media (min-width:700px) and (max-width:1199px){
+	.container2 {
+		width: 640px;
+	}
+}
+@media (min-width:520px) and (max-width:699px){
+	.container2 {
+		width: 480px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.footer-list-header {
+	font-size: 2em
+	}
+	.footer-list-anchor {
+	font-size: 1.1em
+	}
+	.footer-social-connect {
+	font-size: 2.5em
+	}
+	.footer-social-overlap > a {
+	font-size: 2.24em
+	}
+	.footer-bottom-wrapper {
+	font-size: 1.3em
+	}
+}
+@media only screen and (max-width: 568px) {
+	main {
+	font-size: 5em
+	}
+	.footer-list-top {
+	width: 100%
+	}
+	.footer-list-header {
+	font-size: 3em;
+	}
+	.footer-list-anchor {
+	font-size: 1.5em
+	}
+	.footer-social-section {
+	justify-content: center
+	}
+	.footer-social-section::after {
+	top: 25%
+	}
+	.footer-social-connect {
+	margin-bottom: 10px;
+	padding: 0 10px
+	}
+	.footer-social-overlap {
+	display: flex;
+	justify-content: center;
+	}
+	.footer-social-icons-wrapper {
+	width: 100%;
+	padding: 0
+	}
+	.footer-social-overlap > a:not(:first-child) {
+	margin-left: 20px;
+	}
+	.footer-bottom-section {
+	padding: 0 5px 10px 5px
+	}
+	.footer-bottom-wrapper {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px
+	}
+}
+@media only screen and (max-width: 480px) {
+	.footer-social-overlap > a {
+	margin: auto
+	}
+	.footer-social-overlap > a:not(:first-child) {
+	margin-left: 0;
+	}
+	.footer-bottom-rights {
+	display: block
+	}
+}
+@media only screen and (max-width: 320px) {
+	.footer-list-header {
+	font-size: 2.2em
+	}
+	.footer-list-anchor {
+	font-size: 1.2em
+	}
+	.footer-social-connect {
+	font-size: 2.4em
+	}
+	.footer-social-overlap > a {
+	font-size: 2.24em
+	}
+	.footer-bottom-wrapper {
+	font-size: 1.3em
+	}
+}
 /*
 	Device width 680px or lower
 */
 
 @media screen and (max-width: 680px)
 {
-	
 	section .container1{
 		height: 430px;
 		width: 80%;
 	}
-	
 	.container1{
 		width: 80%;
 	}
-	
 	.container1 .form_contain1{
 		width: 100%;
-	}
-	
+	}	
 	.container1 .form_contain2{
 		width: 100%;
 		margin-top: 10px;
 	}
-	
-	
 }
-
-
 /*
 	Device width 500px or lower
 */
 @media screen and (max-width: 500px)
 {
-	
-	
 	.container1 input{
 		font-size: 12px;
 	}
-
 	.container1{
-		width: 80%;
-		
+		width: 80%;	
 	}
-	
 	.container1{
 		top: 60%;
 	}
 }
-
-
-
 /*
 	Device width 390px or lower
 */
@@ -852,12 +832,10 @@ body{
 	body{		
 		font-size: 12px;
 	}
-		
 	.container1{
 		width: 80%;
 		top: 60%;
 	}
-	
 	.container1 input{
 		font-size: 12px;
 	}
@@ -866,7 +844,6 @@ body{
 		font-size: 12px;
 		margin-left: 20px;
 	}
-	
 	.container1 .form_contain2{
 		margin-top: 10px;
 		height: 500px;
@@ -874,15 +851,114 @@ body{
 
 }
 
+/*------------------------------------------------------------------
+CÁC THIẾT BỊ KHÁC*/
 
+/* Smartphones (portrait and landscape) ----------- */
+@media all and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+}
 
+/* Smartphones (landscape) ----------- */
+@media all and (min-width: 321px) {
+  /* Styles */
+}
 
-/******************
-Kết thúc phần dành cho create_account.html
-******************/
+/* Smartphones (portrait) ----------- */
+@media all and (max-width: 320px) {
+  /* Styles */
+}
 
+/* iPads (portrait and landscape) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
 
+/* iPads (landscape) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
 
+/* iPads (portrait) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/**********
+    iPad 3
+    **********/
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
 
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
 
+/* Large screens ----------- */
+@media all and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media all and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 5 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6 ----------- */
+@media all and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6+ ----------- */
+@media all and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media all and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
 
