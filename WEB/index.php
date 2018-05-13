@@ -2,59 +2,8 @@
 
 <?php session_start(); // khai báo một (sesion)phiên làm việc?>
 
- <?php 
-       if (isset($_SESSION['username']) && $_SESSION['username']){
-           echo 'Bạn đã đăng nhập với tên là '.$_SESSION['username']."<br/>";
-           echo 'Click vào đây để <a href="logout.php">Logout</a>';
-       }
-       else{
-           //echo 'Bạn chưa đăng nhập';
-       }
-?>
 
-<?php
-	include 'databaseconfig.php';
-	// load du lieu vao cac danh muc
-	try {
-		$conn = new PDO("mysql:host=$host;dbname=$databasename", $username, $password); 
-		// set the PDO error mode to exception
-		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		// thông báo kết nối thành công
-		if($conn)
-		{
-			/*echo "<script>";
-			echo "alert('dang load danh muc');";    
-			echo "</script>";*/
-		}
-		 else
-		 {
-			 echo "<script>";
-			  echo "alert('khong the load danh muc');";    
-			  echo "</script>";
-		  }
-	
-		$stmt = $conn->prepare('SELECT TENDM, DDANH FROM DANHMUC');
-		// đặt cấu trúc dữ liệu trả về
-		 $stmt->setFetchMode(PDO::FETCH_ASSOC);// trả về dạng mảng với key là tên cột
-		//Gán giá trị và thực thi
-		$stmt->execute();//array('name' => $username)
-		// mảng lưu đường dẫn ảnh danh mục
-		$a=array(10);
-		$i=0;
-		//Hiển thị kết quả, vòng lặp sau đây sẽ dừng lại khi đã duyệt qua toàn bộ kết quả
-		while($row = $stmt->fetch()) {
-			$a[$i]=$row['DDANH'];
-			$i++;
-		}
-		    // đóng kết nối csdl
-			$conn = null;
-		} catch (PDOException $pe) {
-			die("Could not connect to the database $datebasename :" . $pe->getMessage());
-		}
-
-		
-?>
-
+<?php include "login.php" ?>
 
 
 
@@ -117,7 +66,7 @@
 						<div class="cloud rain animated bounceIn"></div>
 						<div class="cloud cloud2 animated fadeInRight"></div>
 					</div>-->
-					<form action="login.php" method="POST" class="login-form">
+					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
 						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
 						<br>
@@ -125,13 +74,13 @@
 						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
-								<a href="user/forget-password.php">Nhấn vào đây</a>
+								<a href="forget-password.php">Nhấn vào đây</a>
 							</div>
 						<br>
 						<input type="submit" name="login" class="button login-button" value="Đăng nhập">
 						<br><br>
 						<h6  class="create-account" >
-							<a href="user/create-account.php" style="text-decoration:none; color:white;">
+							<a href="create-account.php" style="text-decoration:none; color:white;">
 							Tạo tài khoản</a></h6>
 					</form>
 				</div>

@@ -82,7 +82,6 @@
 		#section0 h1{
 			color: #5197FF;
 			font-family: 'Arima Madurai', cursive;
-		
 		}
 
 		#section0 p{
@@ -678,10 +677,11 @@
 /* Các thiết kế dành cho trang tạo tài khoản create_account.html */
 body{
 	margin: 0px;
+	margin-top: 20px;
 	padding: 0px;
 	font-family: 'Lobster', cursive;
 	letter-spacing: 1px;
-	background: url(../Images/logon/do-you-love-me_personalityhacker.jpg);
+	background: url(../Images/logon/Love_Heart_on_Beach_HD_Photo_Background.jpg);
 	background-size: cover;
 }
 
@@ -692,7 +692,7 @@ body{
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 700px;
-	height: 400px;
+	height: 490px;
 	background: rgba(25,245,0,0.90);
 }
 
@@ -795,6 +795,12 @@ body{
 /*
 	Device width 680px or lower
 */
+@media screen and (max-width: 1300px){
+	.container1{
+		margin-top: 2.5em;
+	}
+}
+
 
 @media screen and (max-width: 680px)
 {
@@ -814,7 +820,7 @@ body{
 	
 	.container1 .form_contain2{
 		width: 100%;
-		margin-top: 10px;
+		margin-top: 10em;
 	}
 	
 	
@@ -868,8 +874,8 @@ body{
 	}
 	
 	.container1 .form_contain2{
-		margin-top: 10px;
-		height: 500px;
+		margin-top: 10em;
+		height: 610px;
 	}
 
 }
