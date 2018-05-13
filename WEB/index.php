@@ -130,13 +130,13 @@
 						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
-								<a href="user/forget-password.php">Nhấn vào đây</a>
+								<a href="forget-password.php">Nhấn vào đây</a>
 							</div>
 						<br>
 						<input type="submit" name="login" class="button login-button" value="Đăng nhập">
 						<br><br>
 						<h6  class="create-account" >
-							<a href="user/create-account.php" style="text-decoration:none; color:white;">
+							<a href="create-account.php" style="text-decoration:none; color:white;">
 							Tạo tài khoản</a></h6>
 					</form>
 				</div>

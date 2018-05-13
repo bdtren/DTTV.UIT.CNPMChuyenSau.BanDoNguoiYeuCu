@@ -16,9 +16,16 @@
 	<?php include('header.php'); ?>
 	<div class="container-fluid">
 		<div class="row main-contain">
-			Trang giới thiệu
+		  <main role="main">
+			<?php include('gioi-thieu/carousel.php')  ?>
+				
+			<?php include('gioi-thieu/author.php') ?>
+  		  </main>
 		</div>
 	</div>
+	
+	
+	
 	
 	
 	
@@ -27,6 +34,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
