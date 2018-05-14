@@ -1,0 +1,22 @@
+{
+  "name": "lovemarket",
+  "version": "1.0.0",
+  "description": "Website lovemarket buy and sell ex's stuff",
+  "main": "service-worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdtren/DTTV.UIT.CNPMChuyenSau.BanDoNguoiYeuCu.git"
+  },
+  "author": "DTTV_UIT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdtren/DTTV.UIT.CNPMChuyenSau.BanDoNguoiYeuCu/issues"
+  },
+  "homepage": "https://github.com/bdtren/DTTV.UIT.CNPMChuyenSau.BanDoNguoiYeuCu#readme",
+  "dependencies": {
+    "workbox-sw": "^3.2.0"
+  }
+}
