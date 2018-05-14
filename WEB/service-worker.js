@@ -14,14 +14,13 @@ const staticAssets = [
   "./manifest.json"
 ];
 /*******Service worker phuong phap don gian */
-// function log(messages, ...data) {
-//   if (data.length > 0) {
-//     console.log(VERSION, messages, data);
-//   } else {
-//     console.log(VERSION, messages);
-//   }
-// }
-
+function log(messages, ...data) {
+  if (data.length > 0) {
+     console.log(VERSION, messages, data);
+  } else {
+     console.log(VERSION, messages);
+  }
+}
 // self.addEventListener("install", async function(event) {
 //   log("Installing Service Worker");
 //   const cache = await caches.open("cache-static");
@@ -105,25 +104,126 @@ self.addEventListener("online", async function(e) {
 });*/
 
 
-
 ///\/\/\/\/\//\/\/\/Sử dụng workbox\/\/\/\/\/\/\/\/\/\/\/\\\
 //install and static caching(cache du lieu tinh)
-workbox.precaching.precacheAndRoute(staticAssets);
+const precacheController = new workbox.precaching.PrecacheController();
+//workbox.precaching.precacheAndRoute(staticAssets);
+precacheController.addToCacheList(staticAssets);
+self.addEventListener('install', (event) => {
+  event.waitUntil(precacheController.install());
+});
+
+//Realtim fetching data and add to cache+indexedDB
+self.addEventListener('fetch', (event) => {
+
+  const req = event.request;
+  const url = new URL(req.url);
+  const cacheCacheFirst = new workbox.strategies.CacheFirst({
+    cacheName: 'dynamic-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        // Cache only 200 file
+        maxEntries: 500,
+        // Cache for a maximum of a week
+        maxAgeSeconds: 7 * 24 * 60 * 60,
+      })
+    ],
+  });
+  const cacheNetworkFirst = new workbox.strategies.NetworkFirst({
+    cacheName: 'dynamic-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        // Cache only 200 file
+        maxEntries: 500,
+        // Cache for a maximum of a week
+        maxAgeSeconds: 7 * 24 * 60 * 60,
+      })
+    ],
+  });
+  const cacheImage = new workbox.strategies.StaleWhileRevalidate({
+    // Use a custom cache name
+    cacheName: 'image-dynamic-cache',
+    plugins: [
+      new workbox.expiration.Plugin({
+        // Cache only 200 images
+        maxEntries: 200,
+        // Cache for a maximum of a week
+        maxAgeSeconds: 7 * 24 * 60 * 60,
+      })
+    ],
+  })
+
+  // Fetching resource
+  if(req.url.indexOf("chrome-extension:")>=0){
+    log("Fetching fail!!!!!", req);
+  } else
+    //log("Fetching", req);  
+  if(req.url.match(/[^/]+(.jpg|.jpeg|.svg|.png|.gif)$/)!=null){
+    event.respondWith(cacheImage.handle({event}));
+  }else if (url.origin == location.origin) {
+      //event.respondWith(cacheFirst(req));
+    event.respondWith(cacheCacheFirst.handle({event}));
+  } else {
+      //event.respondWith(networkFirst(req));
+      event.respondWith(cacheNetworkFirst.handle({event})); 
+  }     
+});  
+  
+
+async function cacheFirst(req) {
+  const cachedResponse = await caches.match(req);
+  return cachedResponse || fetch(req);
+}
+async function networkFirst(req) {
+  const cache = await caches.open("dynamic-cache");
+  try {
+    const res = await fetch(req);
+    cache.put(req, res.clone());
+    log("Adding to cache", req);
+    return res;
+  } catch (error) {
+    return await cache.match(req);
+  }
+}
+self.addEventListener("activate", () => {
+  log("Version is activated");
+  // if(navigator.onLine){
+  //   const cache = await caches.open("app-cache");
+  //   cache.add(staticAssets);
+  // }
+});
+
+//Cap nhat Service Worker moi khi online
+/*var regist = false;
+self.addEventListener("online", async function(e) {
+  if(navigator.onLine){
+    async const cache = await caches.open("app-cache");
+    cache.addAll(staticAssets);
+    regist = true;
+  }
+  
+  if (!regist) {
+    const cache = await caches.open("app-cache");
+    cache.addAll(staticAssets);
+    regist = true;
+  }
+});*/
+
 
 //Runtime and dynamic caching (cache du lieu dong)
 
 
-workbox.routing.registerRoute(
-  // Cache files
-    /.*\.(?:js|css|html|json|php)/,
-  // Use cache but update in the background ASAP
-  workbox.strategies.staleWhileRevalidate({
-    // Use a custom cache name
-    cacheName: 'dynamic-cache',
-  })
-);
+// workbox.routing.registerRoute(
+//   // Cache files
+//     /.*\.(?:js|css|html|json|php)/,
+//   // Use cache but update in the background ASAP
+//   workbox.strategies.networkFirst({
+//     // Use a custom cache name
+//     cacheName: 'dynamic-cache',
+//   })
+// );
 
-workbox.routing.registerRoute(
+/* workbox.routing.registerRoute(
   // Cache image files
   /.*\.(?:png|jpg|jpeg|svg|gif)/,
   // Use the cache if it's available
@@ -139,4 +239,4 @@ workbox.routing.registerRoute(
       })
     ],
   })
-);
+); */
