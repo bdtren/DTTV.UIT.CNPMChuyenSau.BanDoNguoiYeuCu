@@ -1,7 +1,7 @@
 <?php 
 
 	//Kiểm tra người dùng đã đăng nhập chưa
-	$IsLogin="false";
+	$IsLogin="enable";
 	$status="false";
 	if($IsLogin=="false"){
 		//Không cho phép CLick vào "tài khoản"
@@ -30,7 +30,7 @@
 
 <!--Begin header -->
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-				<a class="navbar-brand" href="<?php ?> index.php"><img src="Images/logo-1.png" style="width:210px;"></a>
+				<a class="navbar-brand" href="index.php"><img src="Images/logo-1.png" style="width:210px;"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -46,7 +46,7 @@
 					<a class="nav-link" href="thongbao.php">Thông báo</a>
 					</li>
 					<li class="nav-item <?php echo $arrActive[3]; ?>">
-					<a class="nav-link <?php echo $status; ?>" href="#">Tài khoản</a>
+					<a class="nav-link <?php echo $status; ?>" href="user/user-page.php">Tài khoản</a>
 					</li>
 					<li class="nav-item <?php echo $arrActive[4]; ?>">
 					<a class="nav-link" href="gioithieu.php">Giới thiệu</a>

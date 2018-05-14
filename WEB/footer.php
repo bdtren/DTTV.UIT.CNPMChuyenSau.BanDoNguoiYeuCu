@@ -1,159 +1,150 @@
-<style>
-    /* ************footer************ */
-.generic-anchor {
-	color: #8DB9ED;
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+	  
+	<style type="text/css">
+		
+section {
+    padding: 60px 0;
 }
-.generic-anchor:visited {
-	color: #8DB9ED;
+
+section .section-title {
+    text-align: center;
+    color: #1F99FD;
+    margin-bottom: 50px;
+    text-transform: uppercase;
 }
-.generic-anchor:hover {
-	color: #ccc;
+#footer {
+    background: #1F99FD !important;
 }
-.flex-rw {
-	display: flex;
-	flex-flow: row wrap;
-  }
-  main {
-	flex: 1 1 auto; 
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font: 10em "Oswald", sans-serif;
-	color: rgb(155,155,155);
-	line-height: 1
-  }
-  footer {
-	background: rgb(55,55,55);
-	margin-top: auto;
-	width: 100%
-  }
-  .footer-list-top {
-    width: 33.333%
-  }
-  .footer-list-top > li {
-	text-align: center;
-    padding-bottom: 10px;
-    list-style-type: none;
-  }
-  .footer-list-header {
-	padding: 10px 0 5px 0;
-	color: #fff;
-	font: 2.3vw "Oswald", sans-serif;
-  }
-  .footer-list-anchor {
-    font: 1.3em "Open Sans", sans-serif;
-  }
-  .footer-social-section {
-	width: 100%;
-	align-items: center;
-	justify-content: space-around;
-	position: relative;
-	margin-top: 5px;
-  }
-  .footer-social-section::after {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	top: 50%;
-	left: 10px;
-	border-top: 1px solid #ccc;
-	width: calc(100% - 20px)
-  }
-  .footer-social-overlap {
-	position: relative;
-	z-index: 2;
-	background: rgb(55,55,55);
-	padding: 0 20px
-  }
-  .footer-social-connect {
-	display: flex;
-	align-items: center;
-	font: 3.5em "Oswald", sans-serif;
-	color: #fff
-  }
-  .footer-social-small {
-	font-size: 0.6em;
-	padding: 0px 20px
-  }
-  .footer-social-overlap > a {
-	font-size: 3em
-  }
-  .footer-social-overlap > a:not(:first-child) {
-	margin-left: 0.38em
-  }
-  .footer-bottom-section {
-	width: 100%;
-	padding: 10px;
-	border-top: 1px solid #ccc;
-	margin-top: 10px;
-	text-align: right;		  
-  }
-  .footer-bottom-section > div:first-child {
-	margin-right: auto
-  }
-  .footer-bottom-wrapper {
-	font-size: 1.5em;
-	color: #fff
-  }
-  .footer-address {
-	display: inline;
-	font-style: normal
-  }
-</style>
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
 
-
-<footer class="flex-rw">
-					<ul class="footer-list-top">
-						<li>
-							<h4 class="footer-list-header">Liên kết ngoài </h4>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Facebook</a>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Zalo</a>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Twitter</a>
-						</li>
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+	</style> 
+	 
+  </head>
+  <body>
+	
+	  <!-- Footer -->
+	<section id="footer">
+		<div class="container">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Liên nội bộ</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="index.php"><i class="fa fa-angle-double-right"></i>Trang chủ</a></li>
+						<li><a href="danhmuc.php"><i class="fa fa-angle-double-right"></i>Danh mục sản phẩm</a></li>
+						<li><a href="thongbao.php"><i class="fa fa-angle-double-right"></i>Thông báo</a></li>
 					</ul>
-					<ul class="footer-list-top">
-						<li>
-							<h4 class="footer-list-header">Hỗ trợ khách hàng</h4>
-						</li>
-
-
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor">Liên hệ</a>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor">Câu hỏi thường gặp</a>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor">Các quy định của loveMarket</a>
-						</li>
+				</div>
+				
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Hỗ trợ khách hàng</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Liên hệ</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Câu hỏi thường gặp</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Điều khoản và quy định</a></li>
 					</ul>
-					<ul class="footer-list-top">
-						<li id='help'>
-							<h4 class="footer-list-header">Về chúng tôi</h4>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Giới thiệu</a>
-						</li>
-						<li>
-							<a href='' class="generic-anchor footer-list-anchor" itemprop="significantLink">Truyền thông</a>
-						</li>
+				</div>
+				
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Về chúng tôi</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="gioithieu.php"><i class="fa fa-angle-double-right"></i>Giới thiệu</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Truyền thông</a></li>
 					</ul>
-					<section class="footer-bottom-section">
-						<div class="footer-bottom-wrapper">
-							<i class="fa fa-copyright" role="copyright">
-									© SE214.I21_Nhom4
-							</i> 
-							<br>
-							<address class="footer-address" role="company address">Ho Chi Minh</address>
-							<br>
-							<address class="footer-address" role="email address">email:15520161@gm.uit.edu.vn</address>						
-							<span class="footer-bottom-rights"> </span>
-						</div>
-					</section>
-				</footer>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					
+					<ul class="list-unstyled list-inline social text-center"> 
+						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="#" target="_blank"><i class="fa fa-envelope"></i></a></li>
+					</ul>
+				</div>
+				</hr>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p class="h6">LoveMarket &copy 2018.</p>
+				</div>
+				</hr>
+			</div>	
+		</div>
+	</section>
+	<!-- ./Footer --> 
+	  
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
