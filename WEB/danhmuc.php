@@ -37,20 +37,22 @@
 						Sản phẩm
 					</div>
 					<ul style="list-style: none; ">
-						<?php $cardType = "ribbon-new"; $i=0;
-						include('./danh-muc/product.php'); ?>
-						<?php $cardType = "ribbon-hot"; $i=1;
-						include('./danh-muc/product.php'); ?>
-						<?php $cardType = "ribbon-discount"; $i=2;
-						include('./danh-muc/product.php'); ?>
 						<?php 
-							include('loaddanhmucsanpham.php');
+							include('loaddanhmucsanpham.php');						
+							$cardType = "ribbon-new"; $i=0;
+							include('./danh-muc/product.php');
+							$cardType = "ribbon-hot"; $i=1;
+							include('./danh-muc/product.php'); 
+							$cardType = "ribbon-discount"; $i=2;
+							include('./danh-muc/product.php'); 
 							$cardType = "";
 							$i=3;
 							while($i<9) { 
-								if(!empty($a[$i]))?>
-						<?php include('./danh-muc/product.php'); ?>
-						<?php $i++; } ?>
+								if(!empty($a[$i]))
+						 		include('./danh-muc/product.php');
+								$i++; 
+							} 
+						?>
 
 					</ul>
 				</div>

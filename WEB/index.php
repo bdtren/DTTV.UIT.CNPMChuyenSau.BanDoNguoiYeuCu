@@ -1,6 +1,5 @@
-<?php $PageName="trangchu"; ?>
-
 <?php session_start(); // khai báo một (sesion)phiên làm việc?>
+<?php $PageName="trangchu"; ?>
 
 
 <?php include "login.php"; echo "<!-----------------------LOGIN-------------------->" ?>

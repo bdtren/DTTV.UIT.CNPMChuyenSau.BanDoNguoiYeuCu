@@ -106,12 +106,12 @@ self.addEventListener("online", async function(e) {
 
 ///\/\/\/\/\//\/\/\/Sử dụng workbox\/\/\/\/\/\/\/\/\/\/\/\\\
 //install and static caching(cache du lieu tinh)
-const precacheController = new workbox.precaching.PrecacheController();
+/* const precacheController = new workbox.precaching.PrecacheController();
 //workbox.precaching.precacheAndRoute(staticAssets);
 precacheController.addToCacheList(staticAssets);
 self.addEventListener('install', (event) => {
   event.waitUntil(precacheController.install());
-});
+}); */
 
 //Realtim fetching data and add to cache+indexedDB
 self.addEventListener('fetch', (event) => {
@@ -210,20 +210,24 @@ self.addEventListener("online", async function(e) {
 });*/
 
 
-//Runtime and dynamic caching (cache du lieu dong)
+///\/\/\/\/\//\/\/\/Sử dụng workbox\/\/\/\/\/\/\/\/\/\/\/\\\
+//install and static caching(cache du lieu tinh)
+workbox.precaching.precacheAndRoute(staticAssets);
+
+/* //Runtime and dynamic caching (cache du lieu dong)
 
 
-// workbox.routing.registerRoute(
-//   // Cache files
-//     /.*\.(?:js|css|html|json|php)/,
-//   // Use cache but update in the background ASAP
-//   workbox.strategies.networkFirst({
-//     // Use a custom cache name
-//     cacheName: 'dynamic-cache',
-//   })
-// );
+workbox.routing.registerRoute(
+  // Cache files
+    /.*\.(?:js|css|html|json|php)/,
+  // Use cache but update in the background ASAP
+  workbox.strategies.staleWhileRevalidate({
+    // Use a custom cache name
+    cacheName: 'dynamic-cache',
+  })
+);
 
-/* workbox.routing.registerRoute(
+workbox.routing.registerRoute(
   // Cache image files
   /.*\.(?:png|jpg|jpeg|svg|gif)/,
   // Use the cache if it's available
@@ -239,4 +243,5 @@ self.addEventListener("online", async function(e) {
       })
     ],
   })
-); */
+);
+ */

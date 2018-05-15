@@ -25,7 +25,17 @@
 
 ?>	
 
+	<!-- font Vietnamese -->
+	<html>
+	<head>
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
 
+	<style type="text/css">
+		.header{
+			font-family: 'Lobster', cursive;
+		}
+	</style>
+	</head>
 
 
 <!--Begin header -->
@@ -42,8 +52,20 @@
 					<li class="nav-item <?php echo $arrActive[1]; ?>">
 					<a class="nav-link" href="danhmuc.php">Danh mục sản phẩm</a>
 					</li>
-					<li class="nav-item <?php echo $arrActive[2]; ?>">
-					<a class="nav-link" href="thongbao.php">Thông báo</a>
+					<!-- Nút thông báo -->
+					<li class="nav-item dropdown" <?php echo $arrActive[2]; ?> "btn-group">
+					<!-- Nếu chưa đăng nhập -->
+					<?php if($status=="disabled"){ ?>	
+					<a class="nav-link" href="thongbao.php">Thông báo</a>	
+					<?php } else { ?>
+					<!-- Example single danger button -->
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thông báo</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown01">
+								  <a class="dropdown-item" href="#">Thông báo từ LoveMarket</a>
+								  <a class="dropdown-item" href="#">Thông báo từ người đang theo dõi</a>
+								</div>
+					<?php
+					} ?>
 					</li>
 					<li class="nav-item <?php echo $arrActive[3]; ?>">
 					<a class="nav-link <?php echo $status; ?>" href="user/user-page.php">Tài khoản</a>
