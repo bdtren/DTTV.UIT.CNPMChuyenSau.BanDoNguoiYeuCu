@@ -79,7 +79,7 @@
 **LoveMarket** is licensed under the [Apache 2 License](http://www.apache.org/licenses/LICENSE-2.0.html), meaning you can use it free of charge, without strings attached in commercial and non-commercial projects. The author is not responsible for the users of this project that violates copyright laws!
 
  ## Download and Using
-Downloading this project is permitted for the purpose of sharing programming resources for students, alumni, and PhD student,... **LoveMarket** does not yet public any website for this project so you can easily using this project offline by localhost or else.
+Downloading this project is permitted for the purpose of sharing programming resources for students, alumni, and PhD student,... **LoveMarket** has two public 2 demo websites: https://lovemarket.000webhostapp.com, https://lovemarket.azurewebsites.net/ we are strongly recommend the first one because of the quality and improvement, you can also using this project offline by localhost or else.
 
  ## Contributor
 * Nguyễn Bảo Duy - student of Software Engineering Faculty University of Information Technology VietNam National University Ho Chi Minh City *Email:15520161@gm.uit.edu.vn
