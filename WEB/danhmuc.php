@@ -12,8 +12,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style-danh-muc.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<!-- Font -->
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
+	
 	
 <title>Danh mục sản phẩm</title>
 
@@ -61,8 +66,10 @@
 			
 		</div>
 	</div>
-	<?php include('./footer.php');?>
 	
+
+	<?php include('footer.php');?>
+
 	
 	
 	<!-- Optional JavaScript -->
