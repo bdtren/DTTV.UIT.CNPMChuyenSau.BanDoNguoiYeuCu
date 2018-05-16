@@ -2,15 +2,19 @@
 
 
 /*****************globals*************/
-body {
+body{
+	background: #1F99FD;
+}
+
+.container-fluid{
   font-family: 'open sans';
   overflow-x: hidden; 
-	background: #2D86FF;
 	color: white;
 }
 
 img {
-  max-width: 100%; }
+  max-width: 100%; 
+}
 
 .preview {
 	height: 38em;
@@ -75,7 +79,7 @@ img {
   line-height: 1.5em; }
 
 .card-header{
-	background: #fecc00;
+	background: #FE9D00;
 	font-weight: bolder;
 	font-size: 24px;
 }
@@ -108,7 +112,7 @@ img {
 .description{
 	width: 100%;
 	margin-top: 10px;
-	background: #0295FF;
+	background: #fecc00;
 	border: none;
 	
 }
