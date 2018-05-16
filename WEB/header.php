@@ -51,13 +51,13 @@
 					<a class="nav-link" href="index.php">Trang chủ</a>
 					</li>
 					<li class="nav-item <?php echo $arrActive[1]; ?>">
-					<a class="nav-link" href="danhmuc.php">Danh mục sản phẩm</a>
+					<a class="nav-link" href="category.php">Danh mục sản phẩm</a>
 					</li>
 					<!-- Nút thông báo -->
 					<li class="nav-item dropdown" <?php echo $arrActive[2]; ?> "btn-group">
 					<!-- Nếu chưa đăng nhập -->
 					<?php if($status=="disabled"){ ?>	
-					<a class="nav-link" href="thongbao.php">Thông báo</a>	
+					<a class="nav-link" href="notification.php">Thông báo</a>	
 					<?php } else { ?>
 					<!-- Example single danger button -->
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thông báo</a>
@@ -72,7 +72,7 @@
 					<a class="nav-link <?php echo $status; ?>" href="user/user-page.php">Tài khoản</a>
 					</li>
 					<li class="nav-item <?php echo $arrActive[4]; ?>">
-					<a class="nav-link" href="gioithieu.php">Giới thiệu</a>
+					<a class="nav-link" href="introduction.php">Giới thiệu</a>
 					</li>
 
 				</ul>
