@@ -7,8 +7,11 @@
 <meta charset="utf-8">
 <title></title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<!-- Icon -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	
 </head>
 
 <body>
@@ -63,7 +66,7 @@
 					
 					
 					<div class="details col-md-4 col-lg-6 ">
-						<h3 style="font-weight: bolder; text-align: center; color: #8D00CB;">Thông tin chi tiết</h3>
+						<p style="font-weight: 20px; text-align: center; color: #8D00CB; margin-top: 10px;">Thông tin chi tiết</p>
 						<ul class="list-group list-group-flush">
 						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin</li>
 						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá </li>
@@ -84,8 +87,13 @@
 					
 				</div>
 			</div>
-		</div>
+			</div>
 	</div>
+	
+		<?php include('footer.php'); ?>
+		
+
+		
 	
 	
 	
