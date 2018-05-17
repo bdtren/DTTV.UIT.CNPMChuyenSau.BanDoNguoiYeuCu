@@ -9,6 +9,8 @@ insert into CHUCVU values('CV0005','NV Tài chính-Kế toán','2','3000000');
 insert into CHUCVU values('CV0006','NV Kỹ thuật','1','3000000');
 
 /*Báng danhmuc */
+<<<<<<< HEAD
+<<<<<<< HEAD
 insert into DANHMUC values('DM0001','Bất động sản','../Images/danh-muc/bds2.jpg','sze50');
 insert into DANHMUC values('DM0002','Nội ngoại thất, đồ gia dụng','../Images/danh-muc/noithat.jpg','');
 insert into DANHMUC values('DM0003','Đồ điện tử','../Images/danh-muc/dientu2.jpg','');
@@ -22,21 +24,59 @@ insert into DANHMUC values('DM0010','Việc làm dịch vụ','../Images/danh-mu
 insert into DANHMUC values('DM0011','Các loại khác','../Images/danh-muc/loaikhach.jpg','');
 insert into DANHMUC values('DM0012','Tất cả danh mục','../Images/danh-muc/tatca.jpg','');
 insert into DANHMUC values('DM0013','Cho tặng miễn phí','../Images/danh-muc/chotang.jpg','');
-insert into DANHMUC values('DM0014','Món quà đầu tiên','../Images/danh-muc/quadautien.jpg','size50');
-insert into DANHMUC values('DM0015','Ngày valentine 14-2','../Images/danh-muc/valentine.jpg','');
-insert into DANHMUC values('DM0016','Ngày Quốc tế Phụ nữ 8-3','../Images/danh-muc/8-3.jpg','');
-insert into DANHMUC values('DM0017','Ngày Phụ nữ Việt Nam 20-10','../Images/danh-muc/20-10.jpg','');
-insert into DANHMUC values('DM0018','Dịp sinh nhật','../Images/danh-muc/sinhnhat.jpg','');
-insert into DANHMUC values('DM0019','100 ngày yêu','../Images/danh-muc/100ngay.jpg','');
-insert into DANHMUC values('DM0020','Khi người ấy giận','../Images/danh-muc/nguoiaygian.jpg','');
-insert into DANHMUC values('DM0021','Thư tay','../Images/danh-muc/thu.jpg','');
-insert into DANHMUC values('DM0022','Handmade','../Images/danh-muc/handmade.jpg','');
-insert into DANHMUC values('DM0023','Bài hát','../Images/danh-muc/baihat3.jpg','');
-insert into DANHMUC values('DM0024','Bài thơ','../Images/danh-muc/baitho2.jpg','');
-insert into DANHMUC values('DM0025','Quà ngày lễ khác','../Images/danh-muc/ngaylekhac.jpg','');
-insert into DANHMUC values('DM0026','Quà cầu hôn','../Images/danh-muc/cauhon.jpg','');
-insert into DANHMUC values('DM0027','Quà chia tay','../Images/danh-muc/chiatay.jpg','');
-insert into DANHMUC values('DM0028','Quà kỉ niệm khác','../Images/danh-muc/kiniem.jpg','');
+insert into DANHMUC values('DM1001','Món quà đầu tiên','../Images/danh-muc/quadautien.jpg','size50');
+insert into DANHMUC values('DM1002','Ngày valentine 14-2','../Images/danh-muc/valentine.jpg','');
+insert into DANHMUC values('DM1003','Ngày Quốc tế Phụ nữ 8-3','../Images/danh-muc/8-3.jpg','');
+insert into DANHMUC values('DM1004','Ngày Phụ nữ Việt Nam 20-10','../Images/danh-muc/20-10.jpg','');
+insert into DANHMUC values('DM1005','Dịp sinh nhật','../Images/danh-muc/sinhnhat.jpg','');
+insert into DANHMUC values('DM1006','Quà ngày lễ khác','../Images/danh-muc/ngaylekhac.jpg','');
+insert into DANHMUC values('DM1007','100 ngày yêu','../Images/danh-muc/100ngay.jpg','');
+insert into DANHMUC values('DM1008','Quà cầu hôn','../Images/danh-muc/cauhon.jpg','');
+insert into DANHMUC values('DM1009','Khi người ấy giận','../Images/danh-muc/nguoiaygian.jpg','');
+insert into DANHMUC values('DM1010','Quà chia tay','../Images/danh-muc/chiatay.jpg','');
+insert into DANHMUC values('DM1011','Quà kỉ niệm khác','../Images/danh-muc/kiniem.jpg','');
+insert into DANHMUC values('DM2001','Thư tay','../Images/danh-muc/thu.jpg','');
+insert into DANHMUC values('DM2002','Handmade','../Images/danh-muc/handmade.jpg','');
+insert into DANHMUC values('DM2003','Bài hát','../Images/danh-muc/baihat3.jpg','');
+insert into DANHMUC values('DM2004','Bài thơ','../Images/danh-muc/baitho2.jpg','');
+
+
+
+=======
+=======
+>>>>>>> 839b74855dce209be51aea73410ad3d4bd6cd5d4
+insert into DANHMUC values('DM0001','Bất động sản','./Images/danh-muc/bds2.jpg','sze50');
+insert into DANHMUC values('DM0002','Nội ngoại thất, đồ gia dụng','./Images/danh-muc/noithat.jpg','');
+insert into DANHMUC values('DM0003','Đồ điện tử','./Images/danh-muc/dientu2.jpg','');
+insert into DANHMUC values('DM0004','Xe cộ','./Images/danh-muc/xeco2.jpg','size50');
+insert into DANHMUC values('DM0005','Thời trang, đồ dùng cá nhân','./Images/danh-muc/thoitrang.jpg','');
+insert into DANHMUC values('DM0006','Mẹ và bé','./Images/danh-muc/mebe2.jpg','');
+insert into DANHMUC values('DM0007','Thú cưng','./Images/danh-muc/thucung2.jpg','');
+insert into DANHMUC values('DM0008','Giải trí, thể thao, sở thích','./Images/danh-muc/giaitri2.jpg','');
+insert into DANHMUC values('DM0009','Đồ văn phòng, công nông nghiệp','./Images/danh-muc/vanphong2.jpg','');
+insert into DANHMUC values('DM0010','Việc làm dịch vụ','./Images/danh-muc/dichvu2.jpg','');
+insert into DANHMUC values('DM0011','Các loại khác','./Images/danh-muc/loaikhach.jpg','');
+insert into DANHMUC values('DM0012','Tất cả danh mục','./Images/danh-muc/tatca.jpg','');
+insert into DANHMUC values('DM0013','Cho tặng miễn phí','./Images/danh-muc/chotang.jpg','');
+insert into DANHMUC values('DM1001','Món quà đầu tiên','./Images/danh-muc/quadautien.jpg','size50');
+insert into DANHMUC values('DM1002','Ngày valentine 14-2','./Images/danh-muc/valentine.jpg','');
+insert into DANHMUC values('DM1003','Ngày Quốc tế Phụ nữ 8-3','./Images/danh-muc/8-3.jpg','');
+insert into DANHMUC values('DM1004','Ngày Phụ nữ Việt Nam 20-10','./Images/danh-muc/20-10.jpg','');
+insert into DANHMUC values('DM1008','Quà ngày lễ khác','./Images/danh-muc/ngaylekhac.jpg','');
+insert into DANHMUC values('DM1005','Dịp sinh nhật','./Images/danh-muc/sinhnhat.jpg','');
+insert into DANHMUC values('DM1006','100 ngày yêu','./Images/danh-muc/100ngay.jpg','');
+insert into DANHMUC values('DM1009','Quà cầu hôn','./Images/danh-muc/cauhon.jpg','');
+insert into DANHMUC values('DM1007','Khi người ấy giận','./Images/danh-muc/nguoiaygian.jpg','');
+insert into DANHMUC values('DM1010','Quà chia tay','./Images/danh-muc/chiatay.jpg','');
+insert into DANHMUC values('DM1011','Quà kỉ niệm khác','./Images/danh-muc/kiniem.jpg','');
+insert into DANHMUC values('DM2001','Thư tay','./Images/danh-muc/thu.jpg','');
+insert into DANHMUC values('DM2002','Handmade','./Images/danh-muc/handmade.jpg','');
+insert into DANHMUC values('DM2003','Bài hát','./Images/danh-muc/baihat3.jpg','');
+insert into DANHMUC values('DM2004','Bài thơ','./Images/danh-muc/baitho2.jpg','');
+<<<<<<< HEAD
+>>>>>>> 839b74855dce209be51aea73410ad3d4bd6cd5d4
+=======
+>>>>>>> 839b74855dce209be51aea73410ad3d4bd6cd5d4
 
 /*Báng taikhoan */
 insert into TAIKHOAN values('TK0001','leminhtuan','minhtuan');
@@ -115,27 +155,27 @@ values ('TD0018','NV0003','DM0012','KH0002','0','2018/4/30','Bán','Bán điện
 insert into TINDANG
 values ('TD0019','NV0003','DM0013','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','../Images/san-pham/tindang19.png','tâm sự abc','Tặng','đang đăng','Tặng');
 insert into TINDANG
-values ('TD0020','NV0003','DM0014','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','../Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
+values ('TD0020','NV0003','DM1001','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','../Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
 insert into TINDANG
-values ('TD0021','NV0003','DM0015','KH0003','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','../Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','đang đăng','Bán');
+values ('TD0021','NV0003','DM1002','KH0003','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','../Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','đang đăng','Bán');
 insert into TINDANG
-values ('TD0022','NV0003','DM0016','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','../Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
+values ('TD0022','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','../Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
 insert into TINDANG
-values ('TD0023','NV0003','DM0017','KH0001','0','2018/4/30','Mua','Mua áo sơ mi','200000','mới','../Images/san-pham/tindang23.png','tâm sự abc','tiền mặt','đang đăng','Mua');
+values ('TD0023','NV0003','DM1004','KH0001','0','2018/4/30','Mua','Mua áo sơ mi','200000','mới','../Images/san-pham/tindang23.png','tâm sự abc','tiền mặt','đang đăng','Mua');
 insert into TINDANG
-values ('TD0024','NV0003','DM0018','KH0002','0','2018/4/30','Bán','Bán xe hơi','1000000000','mới','../Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','đang đăng','Bán');
+values ('TD0024','NV0003','DM1005','KH0002','0','2018/4/30','Bán','Bán xe hơi','1000000000','mới','../Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','đang đăng','Bán');
 insert into TINDANG
-values ('TD0025','NV0003','DM0019','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','../Images/san-pham/tindang25.png','tâm sự abc','Tặng','đang đăng','Tặng');
+values ('TD0025','NV0003','DM1007','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','../Images/san-pham/tindang25.png','tâm sự abc','Tặng','đang đăng','Tặng');
 insert into TINDANG
-values ('TD0026','NV0003','DM0020','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','../Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
+values ('TD0026','NV0003','DM1009','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','../Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','đang đăng','Bán');
 insert into TINDANG
-values ('TD0027','NV0003','DM0021','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','../Images/san-pham/tindang27.png','tâm sự abc','Tặng','đang đăng','Tặng');
+values ('TD0027','NV0003','DM2001','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','../Images/san-pham/tindang27.png','tâm sự abc','Tặng','đang đăng','Tặng');
 insert into TINDANG
-values ('TD0028','NV0003','DM0022','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','../Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','đang đăng','Bán');
+values ('TD0028','NV0003','DM2002','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','../Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','đang đăng','Bán');
 insert into TINDANG
-values ('TD0029','NV0003','DM0023','KH0001','0','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','../Images/san-pham/tindang29.png','tâm sự abc','tặng','đang đăng','Tặng');
+values ('TD0029','NV0003','DM2003','KH0001','0','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','../Images/san-pham/tindang29.png','tâm sự abc','tặng','đang đăng','Tặng');
 insert into TINDANG
-values ('TD0030','NV0003','DM0024','KH0002','0','2018/4/30','Tặng','Tặng truyện','0','mới','../Images/san-pham/tindang30.png','tâm sự abc','tặng','đang đăng','Tặng');
+values ('TD0030','NV0003','DM2004','KH0002','0','2018/4/30','Tặng','Tặng truyện','0','mới','../Images/san-pham/tindang30.png','tâm sự abc','tặng','đang đăng','Tặng');
 insert into TINDANG
 values ('TD0031','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','../Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','đang đăng','Mua');
 insert into TINDANG
