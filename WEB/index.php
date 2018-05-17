@@ -405,7 +405,7 @@
 		});
 	</script>
 	<!--Progressive Web App(PWA): install, service worker-->
-	<script src="./check_browser.js"></script>
+	<!-- <script src="./check_browser.js"></script> -->
 	<script src="./sw-register.js"></script>
 	
 

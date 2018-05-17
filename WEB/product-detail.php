@@ -5,12 +5,15 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="icon" href="./Images/Home/favicon.png"/>
 <title></title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
 	<!-- Icon -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="manifest" href="./manifest.json"> 
 	
 </head>
 
@@ -92,10 +95,6 @@
 	
 		<?php include('footer.php'); ?>
 		
-
-		
-	
-	
 	
 
 
@@ -129,5 +128,7 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+		<!--Progressive Web App(PWA): install, service worker-->
+	<script src="./sw-register.js"></script>
 </body>
 </html>

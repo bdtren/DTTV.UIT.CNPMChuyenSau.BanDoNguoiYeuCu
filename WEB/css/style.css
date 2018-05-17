@@ -338,6 +338,37 @@
 				width: 480px;
 			}
 		}
+
+		/* @media (min-width: 1200px){ 
+			.container2 {
+				width: 960px;
+				height: auto; 
+				padding: 0 2px;
+			}
+			.category-list ul li{
+				width: 25%;
+			}
+		}
+		@media (min-width:700px) and (max-width:1199px){
+			.container2 {
+				width: 640px;
+				height: auto; 
+				padding: 0 2px;
+			}
+			.category-list ul li{
+				width: 25%;
+			}
+		}
+		@media (min-width:520px) and (max-width:699px){
+			.container2 {
+				width: 480px;
+				height: auto;
+				padding: 0 2px;
+			}
+			.category-list ul li{
+				width: 25%;
+			}
+		} */
 		.category-list {
 			float: left;
 			width: 100%;

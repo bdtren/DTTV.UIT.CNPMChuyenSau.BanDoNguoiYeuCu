@@ -8,7 +8,8 @@
 <head>
  <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="./Images/Home/favicon.png"/>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,6 +22,8 @@
 	
 	
 <title>Danh mục sản phẩm</title>
+
+<link rel="manifest" href="./manifest.json"> 
 
 </head>
 	
@@ -76,6 +79,9 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    	<script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+	<!--Progressive Web App(PWA): install, service worker-->
+	<script src="./sw-register.js"></script>
 </body>
 </html>

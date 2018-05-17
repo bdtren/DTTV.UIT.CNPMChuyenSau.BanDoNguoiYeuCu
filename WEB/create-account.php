@@ -11,7 +11,8 @@
 
 	<!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="./Images/Home/favicon.png"/>
 
      <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,6 +22,8 @@
 	
 		<!-- Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+
+	<link rel="manifest" href="./manifest.json"> 
 	
 </head>
 
@@ -88,5 +91,7 @@
     <script src="js/popper.min.js"></script>
    	<script src="js/bootstrap.min.js"></script>
 
+	<!--Progressive Web App(PWA): install, service worker-->
+	<script src="./sw-register.js"></script>
 </body>
 </html>

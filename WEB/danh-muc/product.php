@@ -35,8 +35,8 @@
 				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['gia'] ?> VND
 					<span style="float: right; font-weight: bold;">
 				</li>
-				<li class="list-group-item type-info">
-					<p class="card-text">Nội dung tin đăng</p>
+				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['ten'] ?>
+					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
 
@@ -46,8 +46,8 @@
 		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#down<?php echo $i ?>">Xem thêm</button>
 		<div id="down<?php echo $i ?>" class="collapse">
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['ten'] ?>
-					<span style="float: right; font-weight: bold;">
+			<li class="list-group-item type-info">
+					<p class="card-text">Nội dung tin đăng</p>
 				</li>
 				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['loai'] ?>
 				</li>
