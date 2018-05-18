@@ -2,24 +2,21 @@
      
     include "connect.php";
     
-    $stmt = $conn->prepare('SELECT TENDM, DDANH FROM DANHMUC');
-	// đặt cấu trúc dữ liệu trả về
-	$stmt->setFetchMode(PDO::FETCH_ASSOC);// trả về dạng mảng với key là tên cột
-	//Gán giá trị và thực thi
-	if($stmt->execute())
+    $DanhMuc=array(28);
+	$i=0;
+
+	$sql = "SELECT DDANH FROM DANHMUC";
+	if($result = mysqli_query($conn, $sql))
 	{
-		//array('name' => $username)
-		// mảng lưu đường dẫn ảnh danh mục
-		$a=array(10);
-		$i=0;
-		// Lấy đường dẫn ảnh danh mục lưu vào mảng
-		while($row = $stmt->fetch()) 
+		while($row = mysqli_fetch_assoc($result))
 		{
-			$a[$i]=$row['DDANH'];
+			$DanhMuc[$i]=$row['DDANH'];
 			$i++;
-		} 
+			//echo $DanhMuc[0];
+		}
 	}
+	
 	// đóng kết nối csdl  
-    $conn = null;
+    mysqli_close($conn);
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $host = 'localhost';
+    $servername = 'localhost';
     $databasename = 'doan';
     $username = 'root';
     $password = '';

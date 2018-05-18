@@ -2,6 +2,7 @@
 	$PageName="taotaikhoan";
 ?>
 
+<?php include "XuLyTaoTaiKhoan.php"; ?>
 
 <!doctype html>
 <html>
@@ -32,6 +33,7 @@
 		<?php include('header.php') ?>
 	
 	<section>
+		<form method="POST" action="create-account.php">
 		<div class="container1">
 			<div class="form_contain1">
 				<h1 id="dktk">Đăng ký tài khoản</h1>
@@ -49,17 +51,14 @@
 			</div>
 			
 			<div class="form_contain2">
-				<form>
 				<label >Họ và tên:</label>
 				<input type="text" class="textinput" name="name" required=""> 		
 				<label >Ngày sinh:</label>
 				<input type="date" name="Date" class="textinput" format required="" min="1960-01-01" max="2012-12-30" value="2012-01-01"> 
 				<label>Giới tính:</label>
-					<form>
 						<input type="radio" name="gender" value="male"> <font color="white">Nam</font> 
 						<input type="radio" name="gender" value="female" > <font color="white">Nữ</font> 
 						<input type="radio" name="gender" value="other" > <font color="white">Khác</font> 
-					</form>
 				<label >Địa chỉ:</label>
 				<input type="text" class="textinput" name="address" required="">
 				<label >Điện thoại:</label>
@@ -67,11 +66,10 @@
 				
 				<label>Đôi dòng tâm sự:</label>
 				<textarea name="text" class="textTalk" rows="4"></textarea>
-				<input type="submit" name="accept" value="Tạo tài khoản">
-				</form>
-							
+				<input type="submit" name="accept" value="Tạo tài khoản">							
+			</div>
 		</div>
-	</div>
+		</form>
 	</section>
 	
 	<div id="footerpage">
