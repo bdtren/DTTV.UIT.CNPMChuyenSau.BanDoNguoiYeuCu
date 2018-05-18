@@ -13,9 +13,9 @@
 	}
 	else
 	{
-		echo '<script language="javascript">';
-		echo 'alert("ket noi csdl thanh cong")';
-		echo '</script>';
+		// echo '<script language="javascript">';
+		// echo 'alert("ket noi csdl thanh cong")';
+		// echo '</script>';
 	}
 
 ?>
