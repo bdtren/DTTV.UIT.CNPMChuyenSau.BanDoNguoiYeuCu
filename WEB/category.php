@@ -1,13 +1,15 @@
 <?php 
 	$PageName="danhmuc";
 ?>
- 
+
+<?php include('loaddanhmucsanpham.php'); ?>
 
 <!doctype html>
 <html>
 <head>
  <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <!-- <meta charset="utf-8"> -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="./Images/Home/favicon.png"/>
 
@@ -45,19 +47,28 @@
 						Sản phẩm
 					</div>
 					<ul style="list-style: none; ">
-						<?php 
-							include('loaddanhmucsanpham.php');						
-							$cardType = "ribbon-new"; $i=0;
-							include('./danh-muc/product.php');
-							$cardType = "ribbon-hot"; $i=1;
-							include('./danh-muc/product.php'); 
-							$cardType = "ribbon-discount"; $i=2;
-							include('./danh-muc/product.php'); 
+						<?php 	
+							$a = LoadSpHot($DanhMuc);
+							$i=0;
+							foreach($a as $value)
+							{
+								switch($value['LOAITIN'])
+								{
+									case 'ribbon-new': $cardType = "ribbon-new"; break;
+									case 'ribbon-hot': $cardType = "ribbon-hot"; break;
+									case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+								}
+								include('./danh-muc/product.php');
+								$i++;
+							}
 							$cardType = "";
-							$i=3;
-							while($i<9) { 
+							$i=0;	
+							$a = LoadSP($numpage,$DanhMuc);
+							//print_r($a);
+							while($i<6) 
+							{ 
 								if(!empty($a[$i]))
-						 		include('./danh-muc/product.php');
+						 			include('./danh-muc/product.php');
 								$i++; 
 							} 
 						?>

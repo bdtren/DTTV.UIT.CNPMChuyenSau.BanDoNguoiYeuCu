@@ -28,14 +28,14 @@
 			<!-- thẻ thông tin -->".$cImg."\n
 		</div>\n";
 		?>
-		<img class="card-img-top" src="Images/san-pham/demo.jpg" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
+		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
 		<div class="card-body">
-			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['tieude'] ?> </h5>
+			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['gia'] ?> VND
+				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['GIABAN'] ?> VND
 					<span style="float: right; font-weight: bold;">
 				</li>
-				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['ten'] ?>
+				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['HOTEN'] ?>
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
@@ -47,17 +47,17 @@
 		<div id="down<?php echo $i ?>" class="collapse">
 			<ul class="list-group list-group-flush">
 			<li class="list-group-item type-info">
-					<p class="card-text">Nội dung tin đăng</p>
+					<p class="card-text"><?php echo $a[$i]['TAMSU'] ?></p>
 				</li>
-				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['loai'] ?>
+				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['LOAITD'] ?>
 				</li>
 			</ul>
 			<div class="card-body">
-				<a href="#" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
+				<a href="<?php echo "product-detail.php?MATD=".$a[$i]['MATD']; ?>" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
 			</div>
 			<!-- footer card -->
 			<div class="card-footer">
-				<small class="text-muted"><i class="fa fa-calendar"></i><?php echo $a[$i]['ngay'] ?>
+				<small class="text-muted"><i class="fa fa-calendar"></i><?php echo $a[$i]['NGAYDANG'] ?>
 				</small>
 			</div>
 		</div>

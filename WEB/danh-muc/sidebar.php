@@ -19,9 +19,9 @@
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Thời trang</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Đồ dùng cá nhân</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Thú cưng</a></li>
+										<li class="list-group-item"><a href="category.php?DanhMuc=DM0005"><i class="fa fa-star"></i>  Thời trang</a></li>
+										<li class="list-group-item"><a href="category.php?DanhMuc=DM0005"><i class="fa fa-star"></i>  Đồ dùng cá nhân</a></li>
+										<li class="list-group-item"><a href="category.php?DanhMuc=DM0007"><i class="fa fa-star"></i>  Thú cưng</a></li>
 										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Đồ gia dụng</a></li>
 										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Quà lưu niệm</a></li>
 									  </ul>
