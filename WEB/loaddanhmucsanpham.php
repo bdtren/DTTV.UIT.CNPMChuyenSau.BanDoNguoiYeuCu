@@ -168,7 +168,7 @@
                    $LOAITD='Cần Bán';
                 else
                    $LOAITD='Cần Mua';
-                $a = array('SDT' => $row['SDT'], 'EMAIL' => $row['EMAIL'],'FACEBOOK' => $row['FACEBOOK'],'TINHTRANGMH' => $row['TINHTRANGMH'], 'DIACHI' => $row['DIACHI'], 'PTGD'=>$row['PTGD'],'MATD' => $row['MATD'],'TIEUDE' => $row['TIEUDE'],'GIABAN' => $row['GIABAN'], 'HOTEN' => $row['HOTEN'],'LOAITD' => $LOAITD,'NGAYDANG' => $row['NGAYDANG'],'HINHANH' => $row['HINHANH'] ,'TAMSU' => $row['TINDANG.TAMSU']);
+                $a = array('MAKH' => $row['MAKH'],'SDT' => $row['SDT'], 'EMAIL' => $row['EMAIL'],'FACEBOOK' => $row['FACEBOOK'],'TINHTRANGMH' => $row['TINHTRANGMH'], 'DIACHI' => $row['DIACHI'], 'PTGD'=>$row['PTGD'],'MATD' => $row['MATD'],'TIEUDE' => $row['TIEUDE'],'GIABAN' => $row['GIABAN'], 'HOTEN' => $row['HOTEN'],'LOAITD' => $LOAITD,'NGAYDANG' => $row['NGAYDANG'],'HINHANH' => $row['HINHANH'] ,'TAMSU' => $row['TAMSU']);
             } 
         }
         mysqli_close($conn);
@@ -195,6 +195,55 @@
         }
         mysqli_close($conn);
     }
-	
+
+     // load thong tin khachahng
+     
+     function LoadKH($MAKH)
+     {
+         include "connect.php";
+         $sql = "SELECT  *
+                 FROM    KHACHHANG 
+                 WHERE   MAKH = '$MAKH'";
+         $a = array();
+         mysqli_set_charset($conn, "utf8");
+         if ($result = mysqli_query($conn, $sql)) 
+         {
+             if($row = mysqli_fetch_assoc($result))
+             {
+                 $a = array('MAKH' => $row['MAKH'],'SDT' => $row['SDT'], 'EMAIL' => $row['EMAIL'],'FACEBOOK' => $row['FACEBOOK'],'AVATAR' => $row['AVATAR'], 'DIACHI' => $row['DIACHI'], 'TAMSU'=>$row['TAMSU'],'GIOITINH' => $row['GIOITINH'], 'HOTEN' => $row['HOTEN']);
+             } 
+         }
+         mysqli_close($conn);
+         return $a;
+     }
+
+     function LoadDSTin($MAKH)
+     {
+        include "connect.php";
+        $sql = "SELECT  *
+                FROM    TINDANG,KHACHHANG 
+                WHERE   TINDANG.MAKH=KHACHHANG.MAKH 
+                AND     TINDANG.MAKH = '$MAKH'";
+        $a = array();
+        $i=0;
+        mysqli_set_charset($conn, "utf8");
+        $count = mysqli_num_rows(mysqli_query($conn, $sql));
+        if ($result = mysqli_query($conn, $sql)) 
+        {
+            while($row = mysqli_fetch_assoc($result))
+            {
+                $ha = XuLyAnh($row['HINHANH']);
+                if($row['LOAITD']=='Ban')
+                   $LOAITD='Cần Bán';
+                else
+                   $LOAITD='Cần Mua';
+                $a[$i] = array('LOAITD' => $LOAITD,'SL' => $count,'MAKH' => $row['MAKH'],'TINHTRANGMH' => $row['TINHTRANGMH'], 'MATD' => $row['MATD'],'TIEUDE' => $row['TIEUDE'],'GIABAN' => $row['GIABAN'],'NGAYDANG' => $row['NGAYDANG'],'HINHANH' => $ha[0] ,'TAMSU' => $row['TAMSU']);
+            $i++;
+            } 
+        }
+        mysqli_close($conn);
+        return $a;
+     }
+ 
 
 ?>

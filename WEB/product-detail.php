@@ -88,7 +88,7 @@
 						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="all-post.php" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
+						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
 						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
 						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
