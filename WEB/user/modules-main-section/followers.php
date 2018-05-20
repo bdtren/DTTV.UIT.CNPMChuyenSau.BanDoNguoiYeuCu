@@ -13,7 +13,7 @@
 												<!-- Dòng dữ liệu -->
                                               <tr>
                                                 <th scope="row">1</th>
-                                                <td>ABC</td>
+                                                <td><a href="../all-post.php" style="text-decoration: none;">ABC</a></td>
                                                 <td>0123456789</td>
                                               	<!-- Kết thúc dòng dữ liệu -->
 										

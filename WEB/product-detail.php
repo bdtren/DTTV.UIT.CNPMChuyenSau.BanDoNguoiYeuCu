@@ -27,16 +27,16 @@
 			<div class="container-fluid">
 				<div class="wrapper row">
 					<div class="preview col-md-8 col-lg-6">
-
+						<div class="preview-pic tab-content">
 						<?php  $b=  XuLyAnh($a["HINHANH"]); $s=0; 
-						echo '<div class="preview-pic tab-content">';
+						
 							foreach($b as $value)
 							{
 								echo '<script language="javascript"> alert("'.$value.'") </script>';
 								if($s==0)
-									echo "<div class='tab-pane active' id='$s'><img src='$value'></div>";
+									echo "<div class='tab-pane active' id='pic-$s'><img src='$value'></div>";
 								else
-									echo "<div class='tab-pane' id='$s'><img src='$value'></div>";
+									echo "<div class='tab-pane' id='pic-$s'><img src='$value'></div>";
 								 $s++;
 							}
 						  // <div class="tab-pane active" id="pic-1"><img src="Images/san-pham/demo.jpg"></div>
@@ -45,12 +45,17 @@
 						  // <div class="tab-pane" id="pic-4"><img src="Images/san-pham/demo.jpg" /></div>
 						  // <div class="tab-pane" id="pic-5"><img src="Images/san-pham/demo.jpg" /></div>
 						  // <div class="tab-pane" id="pic-6"><img src="Images/san-pham/demo.jpg" /></div> 
-						echo '</div>';
+						?>
+						</div>
+							
+						
+						<ul class="preview-thumbnail nav nav-tabs">
+						<?php
 						$s=0;
-						echo '<ul class="preview-thumbnail nav nav-tabs">';
+				
 							foreach($b as $value)
 							{
-								$k = "#".$s;
+								$k = "#pic-".$s;
 								if($s==0)
 									echo "<li class='active'><a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
 								else
@@ -64,8 +69,9 @@
 						  // <li><a data-target="#pic-4" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
 						  // <li><a data-target="#pic-5" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
 						  // <li><a data-target="#pic-6" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li> 
-						echo '</ul>';
+						
 						?>
+						</ul>
 						
 						<p style="margin-top: 20px;">
 							
@@ -97,7 +103,7 @@
 						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-user-circle"></i>  Người đăng : <?php  echo $a["HOTEN"]; ?></li>
+						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="all-post.php" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
 						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
 						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>

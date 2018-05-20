@@ -28,14 +28,15 @@
 			<!-- thẻ thông tin -->".$cImg."\n
 		</div>\n";
 		?>
-		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
+		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px; background-size: cover; background-position: center;">
 		<div class="card-body">
 			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['GIABAN'] ?> VND
+				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['GIABAN'] ?>Đ
 					<span style="float: right; font-weight: bold;">
 				</li>
-				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['HOTEN'] ?>
+				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i>
+					<a href="all-post.php" style="text-decoration: none;"><?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
