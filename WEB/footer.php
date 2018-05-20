@@ -1,4 +1,6 @@
-
+<header>
+	<link rel="stylesheet" href="css/style.css">
+</header>
 	<section id="footer">
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
@@ -7,24 +9,24 @@
 					<h5>Liên nội bộ</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="index.php"><i class="fa fa-angle-double-right"></i>Trang chủ</a></li>
-						<li><a href="danhmuc.php"><i class="fa fa-angle-double-right"></i>Danh mục sản phẩm</a></li>
-						<li><a href="thongbao.php"><i class="fa fa-angle-double-right"></i>Thông báo</a></li>
+						<li><a href="category.php"><i class="fa fa-angle-double-right"></i>Danh mục sản phẩm</a></li>
+						<li><a href="notification.php"><i class="fa fa-angle-double-right"></i>Thông báo</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Hỗ trợ khách hàng</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Liên hệ</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Câu hỏi thường gặp</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Điều khoản và quy định</a></li>
+						<li><a href="contact-us.php"><i class="fa fa-angle-double-right"></i>Liên hệ</a></li>
+						<li><a href="FAQ.php"><i class="fa fa-angle-double-right"></i>Câu hỏi thường gặp</a></li>
+						<li><a href="terms-and-services.php"><i class="fa fa-angle-double-right"></i>Điều khoản và quy định</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Về chúng tôi</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="gioithieu.php"><i class="fa fa-angle-double-right"></i>Giới thiệu</a></li>
+						<li><a href="introduction.php"><i class="fa fa-angle-double-right"></i>Giới thiệu</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Truyền thông</a></li>
 					</ul>
 				</div>
