@@ -3,6 +3,7 @@
 ?>
 
 <?php include('loaddanhmucsanpham.php'); ?>
+<?php include('loadDanhMuc.php'); ?>
 
 <!doctype html>
 <html>

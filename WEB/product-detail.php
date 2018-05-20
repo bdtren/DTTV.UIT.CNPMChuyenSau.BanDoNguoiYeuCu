@@ -32,23 +32,15 @@
 						
 							foreach($b as $value)
 							{
-								echo '<script language="javascript"> alert("'.$value.'") </script>';
 								if($s==0)
 									echo "<div class='tab-pane active' id='pic-$s'><img src='$value'></div>";
 								else
 									echo "<div class='tab-pane' id='pic-$s'><img src='$value'></div>";
 								 $s++;
 							}
-						  // <div class="tab-pane active" id="pic-1"><img src="Images/san-pham/demo.jpg"></div>
-						  // <div class="tab-pane" id="pic-2"><img src="Images/san-pham/demo.jpg"></div>
-						  // <div class="tab-pane" id="pic-3"><img src="Images/san-pham/demo.jpg" /></div>
-						  // <div class="tab-pane" id="pic-4"><img src="Images/san-pham/demo.jpg" /></div>
-						  // <div class="tab-pane" id="pic-5"><img src="Images/san-pham/demo.jpg" /></div>
-						  // <div class="tab-pane" id="pic-6"><img src="Images/san-pham/demo.jpg" /></div> 
 						?>
 						</div>
-							
-						
+												
 						<ul class="preview-thumbnail nav nav-tabs">
 						<?php
 						$s=0;
@@ -60,15 +52,8 @@
 									echo "<li class='active'><a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
 								else
 									echo "<li <a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
-
 								$s++;
 							}
-						  // <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
-						  // <li><a data-target="#pic-2" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
-						  // <li><a data-target="#pic-3" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
-						  // <li><a data-target="#pic-4" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
-						  // <li><a data-target="#pic-5" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
-						  // <li><a data-target="#pic-6" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li> 
 						
 						?>
 						</ul>

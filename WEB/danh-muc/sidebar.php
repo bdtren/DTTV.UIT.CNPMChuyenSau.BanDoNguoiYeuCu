@@ -19,11 +19,9 @@
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<li class="list-group-item"><a href="category.php?DanhMuc=DM0005"><i class="fa fa-star"></i>  Thời trang</a></li>
-										<li class="list-group-item"><a href="category.php?DanhMuc=DM0005"><i class="fa fa-star"></i>  Đồ dùng cá nhân</a></li>
-										<li class="list-group-item"><a href="category.php?DanhMuc=DM0007"><i class="fa fa-star"></i>  Thú cưng</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Đồ gia dụng</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-star"></i>  Quà lưu niệm</a></li>
+										<?php $i=0; $a= loadDanhMuc(); while($i<13) { ?>								
+										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php $i++;	} ?>
 									  </ul>
 									</div>
 							</div>  
@@ -44,13 +42,9 @@
 							<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Món quà đầu tiên</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Ngày Valentine 14-2</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Ngày Quốc tế phụ nữ 8-3</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Ngày phụ nữ Việt Nam 20-10</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Dịp sinh nhật</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  100 ngày yêu</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-calendar-check-o"></i>  Khi người ấy giận</a></li>
+										<?php while($i<24) { ?>								
+										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php $i++;	} ?>
 									  </ul>
 									</div>
 							</div>  
@@ -70,10 +64,9 @@
 							<div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<li class="list-group-item"><a href="#"><i class="fa fa-universal-access"></i>  Thư tay</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-universal-access"></i>  Handmade</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-universal-access"></i>  Bài hát</a></li>
-										<li class="list-group-item"><a href="#"><i class="fa fa-universal-access"></i>  Bài thơ</a></li>		
+										<?php while($i<28) { ?>								
+										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php $i++;	} ?>
 									  </ul>
 									</div>
 							</div>  
