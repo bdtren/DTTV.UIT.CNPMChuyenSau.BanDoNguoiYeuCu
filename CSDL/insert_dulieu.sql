@@ -194,3 +194,5 @@ insert into PHANCONG values('PC0004','NV0004','NV0005','2018/5/1','abcf','5');
 /*Bang xuylyvipham*/
 insert into XULYVIPHAM values('KH0001','NV0003','2108/5/2','vi pham noi quy');
 insert into XULYVIPHAM values('KH0002','NV0003','2108/5/2','vi pham noi quy');
+
+
