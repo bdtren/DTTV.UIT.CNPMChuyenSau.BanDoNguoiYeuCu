@@ -196,3 +196,36 @@ insert into XULYVIPHAM values('KH0001','NV0003','2108/5/2','vi pham noi quy');
 insert into XULYVIPHAM values('KH0002','NV0003','2108/5/2','vi pham noi quy');
 
 
+delimiter |
+create trigger delete_khachhang before delete on KHACHHANG
+for each row
+begin
+	delete from GHINHANPHANHOI where MAKH=old.MAKH;
+	delete from XULYVIPHAM where MAKH=old.MAKH;
+	delete from THACMAC where MAKH=old.MAKH;
+	delete from TINDANG where MAKH=old.MAKH;
+end;
+|
+delimiter 
+
+drop trigger delete_khachhang;
+
+delimiter |
+
+
+create trigger delete_taikhoan before delete on TAIKHOAN
+for each row
+begin
+	delete from KHACHHANG where MATK=old.MATK;
+end;
+|
+delimiter 
+
+
+delete from TAIKHOAN where MATK='TK0001';
+
+delete from KHACHHANG where MAKH='KH0004';
+delete from THACMAC where MAKH='KH0003';
+delete from XULYVIPHAM where MAKH='KH0003';
+delete from GHINHANPHANHOI where MAKH='KH0003';
+
