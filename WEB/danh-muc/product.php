@@ -53,7 +53,7 @@
 				</li>
 			</ul>
 			<div class="card-body">
-				<a href="product-detail.php?id=blabla" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
+				<a href="#" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
 			</div>
 			<!-- footer card -->
 			<div class="card-footer">
