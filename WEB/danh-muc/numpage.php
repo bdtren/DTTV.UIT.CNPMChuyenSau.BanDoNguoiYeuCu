@@ -6,7 +6,7 @@
 		$actNum = "";
 		while( $z <= DemSp($DanhMuc))
 		{
-			if($numpage==$z||$numpage==0){
+			if($numpage==$z||($numpage==0&&$z==1)){
 				$actNum = "active";
 			}
 			else{
