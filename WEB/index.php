@@ -100,6 +100,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
+<<<<<<< HEAD
 									<li class="size50">
 										<a href="category.php?id=bds" class="">
 											<div class="category-item" style="background: url(<?php echo $DanhMuc[0]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -204,6 +205,19 @@
 											</div>
 										</a>
 									</li>
+=======
+								<?php $i=0; $a= loadDanhMuc(); while($i<13) { ?>
+									<li class="<?php echo $a[$i]['KTDM']?>">
+									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
+										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
+										<div class="category-text">
+											<span><?php echo $a[$i]['TENDM'] ?></span>
+										</div>
+									</a>
+									</li>
+								<?php $i++;	} ?>
+									
+>>>>>>> 5c445737fb8de0ea3cf186c5cdd65fcf165b2c2c
 								</ul>
 							</div>
 						</div>
@@ -219,94 +233,16 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-									<li class="size50">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[13]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Món quà đầu tiên</span>
-											</div>
-										</a>
+								<?php while($i<24) { ?>
+									<li class="<?php echo $a[$i]['KTDM']?>">
+									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
+										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
+										<div class="category-text">
+											<span><?php echo $a[$i]['TENDM'] ?></span>
+										</div>
+									</a>
 									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[14]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Ngày Valentine 14-2</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[15]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Ngày Quốc tế phụ nữ 8-3</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[16]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Ngày Phụ nữ việt nam 20-10</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[17]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà sinh nhật</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[18]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà ngày lễ khác</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[19]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>100 ngày yêu</span>
-											</div>
-										</a>
-									</li>
-									<li class="size50">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[20]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà cầu hôn</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[21]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà khi người ấy giận</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[22]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà chia tay</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[23]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Quà kỉ niệm khác</span>
-											</div>
-										</a>
-									</li>
+								<?php $i++;	} ?>
 								</ul>
 							</div>
 						</div>
@@ -322,38 +258,16 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[24]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Thư tay</span>
-											</div>
-										</a>
+								<?php while($i<28) { ?>
+									<li class="<?php echo $a[$i]['KTDM']?>">
+									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
+										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
+										<div class="category-text">
+											<span><?php echo $a[$i]['TENDM'] ?></span>
+										</div>
+									</a>
 									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[25]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Handmade</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[26]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Bài hát</span>
-											</div>
-										</a>
-									</li>
-									<li class="">
-										<a href="#" class="">
-											<div class="category-item" style="background: url(<?php echo $DanhMuc[27]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
-											<div class="category-text">
-												<span>Bài thơ</span>
-											</div>
-										</a>
-									</li>
+								<?php $i++;	} ?>
 								</ul>
 							</div>
 						</div>
@@ -408,7 +322,7 @@
 	</script>
 	<!--Progressive Web App(PWA): install, service worker-->
 	<!-- <script src="./check_browser.js"></script> -->
-	<script src="./sw-register.js"></script>
+	<!-- <script src="./sw-register.js"></script> -->
 	
 
 </body>

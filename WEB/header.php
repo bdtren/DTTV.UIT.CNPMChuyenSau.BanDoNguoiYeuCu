@@ -11,6 +11,9 @@
 	}
 
 	//Kiểm tra trạng thái kích hoạt của header 
+	if(!isset($PageName)){
+		$PageName = "";
+	}
 	$arrActive= ["","","","",""];
 	if($PageName=="trangchu"){
 		$arrActive[0]="active";//Trạng thái

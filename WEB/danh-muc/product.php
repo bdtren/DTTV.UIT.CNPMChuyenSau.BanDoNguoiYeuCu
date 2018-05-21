@@ -22,20 +22,22 @@
 
 <!-- Từng sản phẩm -->
 <li class="product">
+	<a href="<?php echo "product-detail.php?MATD=".$a[$i]['MATD']; ?>" style="text-decoration: none;">
 	<div class="card card-product" style="border: 10px solid transparent; padding: 15px; <?php echo $cBorder?>; width: 18rem;float: left; margin-right: 25px; margin-top: 20px;">
 		<?php 
 			echo "<div class=\"corner-ribbon shadow ".$cardType."\">\n
 			<!-- thẻ thông tin -->".$cImg."\n
 		</div>\n";
 		?>
-		<img class="card-img-top" src="Images/san-pham/demo.jpg" alt="Card image cap" style="width: 230px; height: 230px; display: block; margin: auto;">
+		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px;  background-size:contain;">
 		<div class="card-body">
-			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['tieude'] ?> </h5>
+			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['gia'] ?> VND
+				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['GIABAN'] ?>Đ
 					<span style="float: right; font-weight: bold;">
 				</li>
-				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i><?php echo $a[$i]['ten'] ?>
+				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i>
+					<a href="all-post.php" style="text-decoration: none;"><?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
@@ -47,19 +49,24 @@
 		<div id="down<?php echo $i ?>" class="collapse">
 			<ul class="list-group list-group-flush">
 			<li class="list-group-item type-info">
-					<p class="card-text">Nội dung tin đăng</p>
+					<p class="card-text"><?php echo $a[$i]['TAMSU'] ?></p>
 				</li>
-				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['loai'] ?>
+				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['LOAITD'] ?>
 				</li>
 			</ul>
 			<div class="card-body">
+<<<<<<< HEAD
 				<a href="product-detail.php?id=blabla" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
+=======
+				<a href="<?php echo "product-detail.php?MATD=".$a[$i]['MATD']; ?>" class="card-link"><i class="fa fa-plus-square"></i> Xem chi tiết</a>
+>>>>>>> 5c445737fb8de0ea3cf186c5cdd65fcf165b2c2c
 			</div>
 			<!-- footer card -->
 			<div class="card-footer">
-				<small class="text-muted"><i class="fa fa-calendar"></i><?php echo $a[$i]['ngay'] ?>
+				<small class="text-muted"><i class="fa fa-calendar"></i><?php echo $a[$i]['NGAYDANG'] ?>
 				</small>
 			</div>
 		</div>
 	</div>
-</li <!-- Kết thúc sản phẩm -->
+	</a>
+		</li> <!-- Kết thúc sản phẩm -->
