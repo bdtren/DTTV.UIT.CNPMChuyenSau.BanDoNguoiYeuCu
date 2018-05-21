@@ -22,7 +22,6 @@
 	
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"> 
 	
 <title>Danh mục sản phẩm</title>
 

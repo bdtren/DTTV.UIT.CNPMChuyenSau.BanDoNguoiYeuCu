@@ -11,7 +11,7 @@
 							<div class="card-header" id="headingOne">
 							  <h5 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								 <i class="fa fa-star"></i>  Ngành hàng
+								<i class="fa fa-shopping-bag" aria-hidden="true"></i></i>  Ngành hàng
 								</button>
 							  </h5>
 							</div>
@@ -27,7 +27,7 @@
 												$actBar = "";
 											}
 											?>								
-										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></a></li>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -68,7 +68,7 @@
 							<div class="card-header" id="headingThree">
 							  <h5 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-								 <i class="fa fa-universal-access"></i> Quà tinh thần
+								<i class="fa fa-gift" aria-hidden="true"></i>  Quà tinh thần
 								</button>
 							  </h5>
 							</div>
@@ -84,7 +84,7 @@
 												$actBar = "";
 											}	
 										?>								
-										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-gift" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></a></li>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>

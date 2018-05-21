@@ -31,13 +31,13 @@
 		?>
 		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px;  background-size:contain;">
 		<div class="card-body">
-			<h5 class="card-title"><i class="fa fa-diamond"></i><?php echo $a[$i]['TIEUDE'] ?> </h5>
+			<h5 class="card-title"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item price"><i class="fa fa-money"></i><?php echo $a[$i]['GIABAN'] ?>Đ
+				<li class="list-group-item price"><i class="fa fa-money"></i>  <?php echo $a[$i]['GIABAN'] ?>Đ
 					<span style="float: right; font-weight: bold;">
 				</li>
 				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i>
-					<a href="all-post.php" style="text-decoration: none;"><?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
+				<a href="all-post.php" style="text-decoration: none;">  <?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
@@ -49,9 +49,8 @@
 		<div id="down<?php echo $i ?>" class="collapse">
 			<ul class="list-group list-group-flush">
 			<li class="list-group-item type-info">
-					<p class="card-text"><?php echo $a[$i]['TAMSU'] ?></p>
-				</li>
-				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i><?php echo $a[$i]['LOAITD'] ?>
+			  <p style="font-size: 16px; color:black;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  <?php echo $a[$i]['TAMSU'] ?></p></li>
+				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i>  <?php echo $a[$i]['LOAITD'] ?>
 				</li>
 			</ul>
 			<div class="card-body">
@@ -59,7 +58,7 @@
 			</div>
 			<!-- footer card -->
 			<div class="card-footer">
-				<small class="text-muted"><i class="fa fa-calendar"></i><?php echo $a[$i]['NGAYDANG'] ?>
+				<small class="text-muted"><i class="fa fa-calendar"></i>  <?php echo $a[$i]['NGAYDANG'] ?>
 				</small>
 			</div>
 		</div>

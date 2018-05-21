@@ -18,6 +18,8 @@
      <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-create-account.css">
+
 	<!-- font Vietnamese -->
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
 	
