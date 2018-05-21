@@ -29,7 +29,7 @@ insert into DANHMUC values('DM1004','Ngày Phụ nữ Việt Nam 20-10','./Image
 insert into DANHMUC values('DM1005','Dịp sinh nhật','./Images/danh-muc/sinhnhat.jpg','');
 insert into DANHMUC values('DM1006','Quà ngày lễ khác','./Images/danh-muc/ngaylekhac.jpg','');
 insert into DANHMUC values('DM1007','100 ngày yêu','./Images/danh-muc/100ngay.jpg','');
-insert into DANHMUC values('DM1008','Quà cầu hôn','./Images/danh-muc/cauhon.jpg','');
+insert into DANHMUC values('DM1008','Quà cầu hôn','./Images/danh-muc/cauhon.jpg','size50');
 insert into DANHMUC values('DM1009','Khi người ấy giận','./Images/danh-muc/nguoiaygian.jpg','');
 insert into DANHMUC values('DM1010','Quà chia tay','./Images/danh-muc/chiatay.jpg','');
 insert into DANHMUC values('DM1011','Quà kỉ niệm khác','./Images/danh-muc/kiniem.jpg','');

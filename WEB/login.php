@@ -34,7 +34,7 @@ if (isset($_POST['login']))
                 $mk = $row['MatKhau'];
     
             //So sánh 2 mật khẩu có trùng khớp hay không
-            if ($password != md5($mk)) 
+            if ($password != $mk) 
             {
                 echo '<script language="javascript"> alert("Mật khẩu không đúng") </script>';
                 //echo "Mật khẩu không đúng. Vui lòng nhập lại $password wfwf $mk  . <a href='javascript: history.go(-1)'>Trở lại</a>";
