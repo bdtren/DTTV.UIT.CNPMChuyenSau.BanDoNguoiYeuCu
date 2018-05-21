@@ -101,7 +101,7 @@
 							<div class="category-list" id="boxListCate">
 								<ul>
 									<li class="size50">
-										<a href="#" class="">
+										<a href="category.php?id=bds" class="">
 											<div class="category-item" style="background: url(<?php echo $DanhMuc[0]; ?>) no-repeat center center; background-size: 100% 100%;"></div>
 											<div class="category-text">
 												<span>Bất động sản</span>
