@@ -1,16 +1,13 @@
 <?php 
 	$PageName="danhmuc";
 ?>
-
-<?php include('loaddanhmucsanpham.php'); ?>
-<?php include('loadDanhMuc.php'); ?>
+ 
 
 <!doctype html>
 <html>
 <head>
  <!-- Required meta tags -->
-    <!-- <meta charset="utf-8"> -->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="./Images/Home/favicon.png"/>
 
@@ -22,7 +19,7 @@
 	
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet"> 
+	
 	
 <title>Danh mục sản phẩm</title>
 
@@ -45,64 +42,22 @@
 			<div class="col-lg-9 col-sm-12 col-md-9">
 				<div class="card card-main" style="width: 100%; background: #F4F4F4;">
 					<div class="card-header card-main-header">
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-md-6" style="font-weight: bold; font-size: 25px;">Danh sách sản phẩm</div>
-
-								<div class="col-md-2" style="font-size: 20px;">Sắp xếp theo:</div>
-								
-								<div class="col-md-2">
-									  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-										<option selected disabled>Kiểu</option>
-										<option value="1">Thời gian</option>
-										<option value="2">Giá</option>
-										<option value="3">Chữ cái</option>
-									  </select>
-								</div>
-							<div class="col-md-2">						
-									  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-										<option selected disabled>Thứ tự</option>
-										<option value="1">Tăng dần</option>
-										<option value="2">Giảm dần</option>
-										<option value="3">Mặc định</option>
-									  </select>
-								</div>
-								
-							</div>
-						
-						</div>
-						
-						
+						Sản phẩm
 					</div>
-					
-					<div class="container-fluid">
-
-
-					</div>
-					
 					<ul style="list-style: none; ">
-						<?php 	
-							$a = LoadSpHot($DanhMuc);
-							$i=0;
-							foreach($a as $value)
-							{
-								switch($value['LOAITIN'])
-								{
-									case 'ribbon-new': $cardType = "ribbon-new"; break;
-									case 'ribbon-hot': $cardType = "ribbon-hot"; break;
-									case 'ribbon-discount': $cardType = "ribbon-discount"; break;
-								}
-								include('./danh-muc/product.php');
-								$i++;
-							}
+						<?php 
+							include('loaddanhmucsanpham.php');						
+							$cardType = "ribbon-new"; $i=0;
+							include('./danh-muc/product.php');
+							$cardType = "ribbon-hot"; $i=1;
+							include('./danh-muc/product.php'); 
+							$cardType = "ribbon-discount"; $i=2;
+							include('./danh-muc/product.php'); 
 							$cardType = "";
-							$i=0;	
-							$a = LoadSP($numpage,$DanhMuc);
-							//print_r($a);
-							while($i<6) 
-							{ 
+							$i=3;
+							while($i<9) { 
 								if(!empty($a[$i]))
-						 			include('./danh-muc/product.php');
+						 		include('./danh-muc/product.php');
 								$i++; 
 							} 
 						?>

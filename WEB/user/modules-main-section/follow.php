@@ -14,7 +14,7 @@
 												<!-- Dòng dữ liệu -->
                                               <tr>
                                                 <th scope="row">1</th>
-                                                <td><a href="../all-post.php" style="text-decoration: none;">ABC</a></td>
+                                                <td>ABC</td>
                                                 <td>0123456789</td>
                                                 <td><a class="btn btn-danger" href="#" style="color:white;">Bỏ theo dõi</a></td>
                                               </tr>

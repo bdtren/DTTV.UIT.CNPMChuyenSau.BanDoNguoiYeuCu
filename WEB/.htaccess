@@ -1,8 +1,0 @@
-
-# HTID:5273751: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
-php_value display_errors 1
-# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:5273751:
-
-RewriteEngine On
-RewriteRule ^/([a-zA-Z-_]+)-([0-9]+).html$ product-detail.php?page=$1&act=$2&id=$3 [NC,L]
-RewriteRule ^([0-9a-zA-Z-_]+).html$ category.php?u=$1&id=$2&name=$3 [NC,L]

@@ -1,6 +1,5 @@
 <?php $PageName="chitietsanpham"; ?>
 
-<?php include('loaddanhmucsanpham.php'); ?>
 
 <!doctype html>
 <html>
@@ -20,42 +19,29 @@
 
 <body>
 	<?php include('header.php'); ?>
-		<?php $a = LoadChiTietSP($_GET['MATD']) ?>
+	
 		<div class="container-fluid" style="margin-top: 6em;">
-		<div class="card-header"><?php  echo $a["TIEUDE"]; ?></div>
+		<div class="card-header">Tiêu đề tin đăng</div>
 		<div class="card">
 			<div class="container-fluid">
 				<div class="wrapper row">
 					<div class="preview col-md-8 col-lg-6">
 						<div class="preview-pic tab-content">
-						<?php  $b=  XuLyAnh($a["HINHANH"]); $s=0; 
-						
-							foreach($b as $value)
-							{
-								if($s==0)
-									echo "<div class='tab-pane active' id='pic-$s'><img src='$value'></div>";
-								else
-									echo "<div class='tab-pane' id='pic-$s'><img src='$value'></div>";
-								 $s++;
-							}
-						?>
+						  <div class="tab-pane active" id="pic-1"><img src="Images/san-pham/demo.jpg"></div>
+						  <div class="tab-pane" id="pic-2"><img src="Images/san-pham/demo.jpg"></div>
+						  <div class="tab-pane" id="pic-3"><img src="Images/san-pham/demo.jpg" /></div>
+						  <div class="tab-pane" id="pic-4"><img src="Images/san-pham/demo.jpg" /></div>
+						  <div class="tab-pane" id="pic-5"><img src="Images/san-pham/demo.jpg" /></div>
+						  <div class="tab-pane" id="pic-6"><img src="Images/san-pham/demo.jpg" /></div>
 						</div>
-												
-						<ul class="preview-thumbnail nav nav-tabs">
-						<?php
-						$s=0;
-				
-							foreach($b as $value)
-							{
-								$k = "#pic-".$s;
-								if($s==0)
-									echo "<li class='active'><a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
-								else
-									echo "<li <a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
-								$s++;
-							}
 						
-						?>
+						<ul class="preview-thumbnail nav nav-tabs">
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
+						  <li><a data-target="#pic-3" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
+						  <li><a data-target="#pic-4" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
+						  <li><a data-target="#pic-5" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
+						  <li><a data-target="#pic-6" data-toggle="tab"><img src="Images/san-pham/demo.jpg" /></a></li>
 						</ul>
 						
 						<p style="margin-top: 20px;">
@@ -72,9 +58,9 @@
 							<div class="collapse" id="collapseExample">
 							  <div class="card card-body">
 								<ul class="list-group list-group-flush">
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Số điện thoại: <?php  echo $a["SDT"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Facebook: <?php  echo $a["FACEBOOK"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Email: <?php  echo $a["EMAIL"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Số điện thoại: </li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Facebook: </li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Email: </li>
 								  </ul>
 							  </div>
 							</div>
@@ -83,16 +69,16 @@
 					
 					
 					<div class="details col-md-4 col-lg-6 ">
-						<p style="font-weight: 20px; text-align: center; color: #8D00CB; margin-top: 10px;">Thông tin chi tiết : <?php  echo $a["TAMSU"]; ?></p>
+						<p style="font-weight: 20px; text-align: center; color: #8D00CB; margin-top: 10px;">Thông tin chi tiết</p>
 						<ul class="list-group list-group-flush">
-						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
-						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
-						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-calendar"></i>  Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></li>
+						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin</li>
+						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá </li>
+						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng</li>
+						<li class="list-group-item description"><i class="fa fa-user-circle"></i>  Người đăng</li>
+						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ</li>
+						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết</li>
+						<li class="list-group-item description"><i class="fa fa-credit-card"></i>  Phương thức giao dịch</li>
+						<li class="list-group-item description"><i class="fa fa-calendar"></i>  Ngày đăng: </li>
 						
 							
 							
