@@ -1,3 +1,4 @@
+<?php $actBar=""?>
 <div class="card" style="width: 100%;">
 					  <div class="card-header">
 						Danh mục sản phẩm
@@ -19,8 +20,14 @@
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<?php $i=0; $a= loadDanhMuc(); while($i<13) { ?>								
-										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php $i=0; $a= loadDanhMuc(); while($i<13) { 
+											if($DanhMuc==$a[$i]['MADM']){
+												$actBar = "active";
+											} else{
+												$actBar = "";
+											}
+											?>								
+										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -42,8 +49,14 @@
 							<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<?php while($i<24) { ?>								
-										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php while($i<24) { 
+											if($DanhMuc==$a[$i]['MADM']){
+												$actBar = "active";
+											} else{
+												$actBar = "";
+											}
+										?>								
+										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -64,8 +77,14 @@
 							<div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<?php while($i<28) { ?>								
-										<li class="list-group-item"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<?php while($i<28) { 
+											if($DanhMuc==$a[$i]['MADM']){
+												$actBar = "active";
+											} else{
+												$actBar = "";
+											}	
+										?>								
+										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
