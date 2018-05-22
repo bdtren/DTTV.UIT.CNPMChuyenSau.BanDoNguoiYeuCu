@@ -36,12 +36,12 @@
 
         table {
             width: 100%;
-            display: block;
+            overflow: auto;
         }
 
         thead {
             display: inline-table;
-            width: 95%;
+            width: 100%;
             height: 30px;
         }
 
@@ -49,5 +49,68 @@
             height: 150px;
             display: inline-block;
             width: 100%;
-            overflow: auto;
+            overflow-y: auto;
+            overflow-x: visible;
+        }
+
+        .chart {
+            width: 100%;
+            min-height: 450px;
+        }
+
+        .row {
+            margin: 0 !important;
+        }
+
+        /* Reoport tablesorter */
+        /* th.headerSortUp { 
+            background-image: url(../Images/sort/asc.gif); 
+            background-color: #3399FF; 
+        }
+        th.headerSortDown { 
+            background-image: url(../Images/sort/desc.gif); 
+            background-color: #3399FF; 
+        }  
+        th.header { 
+            background-image: url(../Images/sort/bg.gif); 
+            cursor: pointer; 
+            font-weight: bold; 
+            background-repeat: no-repeat; 
+            background-position: center left; 
+            padding-left: 20px; 
+            border-right: 1px solid #dad9c7; 
+            margin-left: -1px; 
+        }  */
+        table thead tr th, table tfoot tr th {
+            background-color: #e6EEEE;
+            border: 1px solid #FFF;
+            padding: 4px;
+        }
+        table thead tr .header {
+            background-image: url(../Images/sort/bg.gif); 
+            cursor: pointer; 
+            font-weight: bold; 
+            background-repeat: no-repeat; 
+            background-position: center left; 
+            padding-left: 20px; 
+            border-right: 1px solid #dad9c7; 
+            margin-left: -1px; 
+        }
+        table tbody td {
+            color: #3D3D3D;
+            padding: 4px;
+            background-color: #FFF;
+            vertical-align: top;
+        }
+        table tbody tr.odd td {
+            background-color:#F0F0F6;
+        }
+        table thead tr .headerSortUp {
+            background-image: url(../Images/sort/asc.gif);
+        }
+        table thead tr .headerSortDown {
+            background-image: url(../Images/sort/desc.gif);
+        }
+        table thead tr .headerSortDown, table thead tr .headerSortUp {
+        background-color: #8dbdd8;
         }
