@@ -1,7 +1,7 @@
-	<div class="card" style="height: 15em; overflow-y: scroll;">
+	<div class="card" style="height: 30em;">
                             <h5 class="card-header main-color-bg">Bài bán đã duyệt</h5>
                             <div class="card-body">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped" style="overflow-y: scroll;">
                                             <thead>
                                               <tr>
                                                 <th scope="col">STT</th>

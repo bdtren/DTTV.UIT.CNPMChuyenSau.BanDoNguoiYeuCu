@@ -22,7 +22,7 @@
 
 	  <!-- Nội dung chính -->
     <section id="main">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
 				 <div class="col-md-3">
 					 <?php
@@ -30,21 +30,28 @@
 					 ?>
 				</div>
 
-				  <div class="col-md-9">
+				  <div class="col-md-6">
 					  <?php
 					  	include('modules-main-section/main-section.php');
+					  ?>
+				</div>
+				
+				<div class="col-md-3">
+					  <?php
+					  	include('modules-main-section/profile.php');
 					  ?>
 				</div>
             </div>
         </div>
     </section>
 
+	  
 	 <!-- Modal -->
-    <!-- Thêm bài đăng bán-->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Thêm câu hỏi-->
+<div class="modal fade" id="addPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document" >
               <div class="modal-content" >
-              <form style="overflow-y: scroll;" >
+              <form>
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLongTitle">Thêm bài đăng</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -106,6 +113,40 @@
                     			<div class="modal-footer">
                   					<button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
                  					<button type="button" class="btn btn-primary">Đăng</button>
+                				</div>
+
+						</form>
+                </div>
+	
+            	</form>
+              </div>
+            </div>
+          </div>
+	
+	
+	
+	<div class="modal fade" id="addQues" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" >
+              <div class="modal-content" >
+              <form>
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Thắc mắc, phản hồi</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+				  
+                <div class="modal-body">
+                        <form>							
+                                <div class="form-group">
+                                    <label>Nội dung thắc mắc và phản hồi</label>
+                                    <textarea class="form-control" rows="6" style="resize: none;"></textarea>
+                                </div>
+
+							
+                    			<div class="modal-footer">
+                  					<button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                 					<button type="button" class="btn btn-primary">Gửi</button>
                 				</div>
 
 						</form>

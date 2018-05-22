@@ -1,4 +1,7 @@
 <!-- Phần nội dung bên trái Sidebar -->
+						
+
+
                
                         <div class="list-group">
                                 <a href="user-page.php" class="list-group-item list-group-item-action active main-color-bg">
@@ -24,3 +27,6 @@
                                 </div>
 
                         </div>
+
+
+<!-- Xem thông tin chi tiết của người dùng -->

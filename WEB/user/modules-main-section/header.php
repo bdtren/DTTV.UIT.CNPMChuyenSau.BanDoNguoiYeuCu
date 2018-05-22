@@ -21,20 +21,37 @@
     </nav>
 <!-- Kết thúc thanh tiêu đề -->
 
-	 
+
+<style>
+	#thacmac{
+		color: white; 
+		background: #AA00BB; 
+		border: none;
+	}
+	#thacmac:hover{
+		background: #BB07FF;
+	}
+	
+</style>	 
+
+
 	  <!-- Thanh tiêu đề -->
     <header id="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-9">
                     <h1><i class="fa fa-dashboard"></i> <small>Trang người dùng</small></h1>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                         <!-- Example single danger button -->
                         <div class="btn-group create">
 							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" style="color: white;">
+							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addPost" style="color: white;">
 							  Thêm bài đăng
+							</button>
+														
+							<button type="button" class="btn btn-primary" id="thacmac" data-toggle="modal" data-target="#addQues">
+								Thắc mắc,phản hồi
 							</button>
                          </div>
                 </div>
