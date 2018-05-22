@@ -50,3 +50,49 @@ begin
 end;
 |
 delimiter;
+
+/*tao trigger truoc khi xoa nhanvien*/
+
+/*drop trigger before_delete_nhanvien;*/
+
+delimiter |
+create trigger before_delete_nhanvien before delete on NHANVIEN
+for each row
+begin
+	delete from THANHTOANLUONG where MANV=old.MANV;
+    delete from XULYVIPHAM where MANV=old.MANV;
+    delete from THACMAC where MANV=old.MANV;
+    delete from TINDANG where MANV=old.MANV;
+    delete from KIEMTRATB where MANV=old.MANV;
+    delete from PHANCONG where MANV=old.MANV;
+    delete from THIETBI where MANV=old.MANV;
+    delete from DOANHTHU where MANV=old.MANV;
+end;
+|
+delimiter;
+
+/*tao trigger sau khi xoa nhan vien*/
+
+/*drop trigger after_delete_nhanvien;*/
+
+delimiter |
+create trigger after_delete_nhanvien after delete on NHANVIEN
+for each row
+begin
+	delete from TAIKHOAN where MATK=old.MATK;
+end;
+|
+delimiter;
+
+/*tao trigger truoc khi xoa chuc vu*/
+
+/*drop trigger before_delete_chucvu;*/
+
+delimiter |
+create trigger before_delete_chucvu before delete on CHUCVU
+for each row
+begin
+	delete from NHANVIEN where MACV=old.MACV;
+end;
+|
+delimiter;

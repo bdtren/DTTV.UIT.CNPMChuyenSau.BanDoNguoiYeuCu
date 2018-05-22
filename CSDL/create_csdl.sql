@@ -306,6 +306,7 @@ create table THANHTOANLUONG
    MATT                           char(6)                        not null,
    MANV                           char(6)                        not null,
    TIENTHANHTOAN                  double                         not null,
+   NGAYTT						  date							 not null,
    primary key (MATT)
 )
 ;
