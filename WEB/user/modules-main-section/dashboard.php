@@ -1,4 +1,9 @@
 <!-- Website Overview-->
+<style>
+	.card .card-body .row .col-md-3 i{
+		color: #888888;
+	}
+</style>
                     <div class="card">
                         <h5 class="card-header main-color-bg">Tổng quan</h5>
                         <div class="card-body">
@@ -7,7 +12,7 @@
 								
                             <div class="col-md-3 ">
                                 <div class="border main-card-overview">
-                                    <h2><i class="fa fa-user-circle"></i>  5</h2>
+                                    <h2><i class="fa fa-newspaper-o"></i>  5</h2>
                                     <h4>Số bài đăng bán</h4>
                                 </div>
                             </div>
@@ -21,7 +26,7 @@
 
                             <div class="col-md-3">
                                     <div class="border  main-card-overview">
-                                        <h2><i class="fa fa-pencil"></i>  20</h2>
+                                        <h2><i class="fa fa-users"></i>  20</h2>
                                         <h4>Người theo dõi</h4>
                                     </div>
                             </div>
@@ -29,7 +34,7 @@
                             <div class="col-md-3">
                                         <div class="border  main-card-overview">
                                             <h2><i class="fa fa-users"></i>  203</h2>
-                                            <h4>Người đang theo dõi</h4>
+                                            <h4>Đang theo dõi</h4>
                                         </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
  <!-- Website Overview-->
 							<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg">Bài bán đã duyệt</h5>
+                            <h5 class="card-header main-color-bg"><i class="fa fa-check" style="color: #00B2E0"></i>  Bài bán đã duyệt</h5>
                             <div class="card-body">
                                     <table class="table table-striped" style="overflow-y: auto;">
                                             <thead>
@@ -23,7 +23,7 @@
 												<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createspecial">
 												Tin đặc biệt
 												</button></td>
-												<td><a class="btn btn-success" href="#" style="color:white;">Xem</a></td>
+												<td><a class="btn btn-success" href="../product-detail.php" style="color:white;">Xem</a></td>
                                               </tr>
                                               	<!-- Kết thúc dòng dữ liệu -->
 										

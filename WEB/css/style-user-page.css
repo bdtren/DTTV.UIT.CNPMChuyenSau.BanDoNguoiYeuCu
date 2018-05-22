@@ -93,21 +93,6 @@ body{
   }
 
 
-  /* Breadcrumb */
-  .breadcrumb{
-      background: #5c8eff;
-      color: white;
-  }
-
-  .breadcrumb a{
-      color: white;
-  }
-
-
-
-
-
-
   /* Progress bar */
   .progress-bar{
     background: #6aed00;

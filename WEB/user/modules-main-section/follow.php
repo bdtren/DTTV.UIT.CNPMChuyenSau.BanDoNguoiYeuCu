@@ -1,5 +1,5 @@
 	<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg">Bài bán đã duyệt</h5>
+                            <h5 class="card-header main-color-bg"><i class="fa fa-users" style="color: #00B2E0"></i>  Người bạn đang theo dõi</h5>
                             <div class="card-body">
                                     <table class="table table-striped" style="overflow-y: scroll;">
                                             <thead>

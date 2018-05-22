@@ -1,5 +1,10 @@
 <!-- Phần nội dung bên trái Sidebar -->
-						
+		<style>
+			.list-group i{
+				color: #00B2E0;
+			}
+			
+		</style>				
 
 
                
@@ -8,16 +13,16 @@
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="user-page.php?page=waiting" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Bài đăng chờ duyệt <span class="badge badge-danger" style="float: right;">20</span></a>
+								 <a href="user-page.php?page=waiting" class="list-group-item list-group-item-action"><i class="fa fa-spinner"></i>  Bài đăng chờ duyệt <span class="badge badge-danger" style="float: right;">20</span></a>
 							
 							
-                                <a href="user-page.php?page=article-sale" class="list-group-item list-group-item-action"><i class="fa fa-newspaper-o"></i>  Bài bán đã duyệt <span class="badge badge-danger" style="float: right;">10</span></a>
+                                <a href="user-page.php?page=article-sale" class="list-group-item list-group-item-action"><i class="fa fa-check"></i>  Bài bán đã duyệt <span class="badge badge-danger" style="float: right;">10</span></a>
 							
-                                <a href="user-page.php?page=article-buy" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Bài mua đã duyệt <span class="badge badge-danger" style="float: right;">20</span></a>
+                                <a href="user-page.php?page=article-buy" class="list-group-item list-group-item-action"><i class="fa fa-check"></i>  Bài mua đã duyệt <span class="badge badge-danger" style="float: right;">20</span></a>
 							
-                                <a href="user-page.php?page=follower" class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  Người theo dõi <span class="badge badge-danger" style="float: right;">5</span></a>
+                                <a href="user-page.php?page=follower" class="list-group-item list-group-item-action"><i class="fa fa-users"></i>  Người theo dõi <span class="badge badge-danger" style="float: right;">5</span></a>
 							
-								<a href="user-page.php?page=follow" class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  Đang theo dõi <span class="badge badge-danger" style="float: right;">5</span></a>
+								<a href="user-page.php?page=follow" class="list-group-item list-group-item-action"><i class="fa fa-users"></i>  Đang theo dõi <span class="badge badge-danger" style="float: right;">5</span></a>
                         </div>
 
                         <div class="well border" style="padding: 10px; margin-top: 10px;">

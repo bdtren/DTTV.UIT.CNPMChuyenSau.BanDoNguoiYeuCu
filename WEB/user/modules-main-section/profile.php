@@ -1,12 +1,27 @@
+<style>
+	.card #seeDetailProfile{
+		color: white;
+		background: #01D812;
+	}
+	.card #seeDetailProfile:hover{
+		background: #08F91B;
+	}
+	.card i{
+		color: #0073FC;
+	}
+</style>
+
+
+
 <div class="card" style="margin-bottom: 10px; padding: 10px;">    
 							  
 								<img class="card-img-top" src="../Images/user/avatar8.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 							  	  
-								 <a class="list-group-item list-group-item-action"><i class=""></i>  username </a>
+								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  Username </a>
 							
-								<a class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Ngày sinh </a>
+								<a class="list-group-item list-group-item-action"><i class="fa fa-calendar"></i>  Ngày sinh </a>
 							
-								<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#seeProfile" style="color: white;">
+								<button type="button" id="seeDetailProfile" class="btn" data-toggle="modal" data-target="#seeProfile">
 							 	Xem chi tiết
 								</button>
                                
