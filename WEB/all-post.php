@@ -1,7 +1,7 @@
 <?php
 	$PageName="xemtrangnguoidung";
 ?>
-<?php include('loaddanhmucsanpham.php');?>
+<?php include('xulyphp/xulytindang.php');?>
 
 <!doctype html>
 <html>
@@ -26,13 +26,13 @@
 	<?php include('header.php') ?>
 	<div class="container">
 		<div class="row main">
-			<?php $a = LoadKH($_GET['MAKH'])?>
+			<?php $a = TaiThongTinKhachHang($_GET['MAKH'])?>
 			<!-- Thông tin người dùng -->
 			<div class="col-md-4 profile">
 				<div class="card">
 				  <img class="card-img-top" src="<?php echo $a['AVATAR']; ?>" alt="Card image cap">
 				  <div class="card-body">
-					<p class="card-text username">Username</p>
+					<p class="card-text username"><?php echo $a['TENTK']; ?></p>
 				  </div>
 				  <ul class="list-group list-group-flush">
 					<li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i>
@@ -73,36 +73,32 @@
 				 <div class="my-3 p-3 bg-white rounded box-shadow">
 					<h6 class="border-bottom border-gray pb-2 mb-0">Các tin đã đăng</h6>
 					 
-					 <?php $b= LoadDSTin($_GET['MAKH']);
-						$z=0; //$num=5; //Số tin đăng
-					 	while($z< $b[0]['SL']){
+					 <?php
+							 if(!empty(TaiDanhSachTin($_GET['MAKH'])))
+							 {
+								 foreach(TaiDanhSachTin($_GET['MAKH']) as $b)
+								 {
 					 ?>
 					 <!-- tin đăng -->
 					<div class="media text-muted pt-3 border-bottom ">
-					  <img src="<?php echo $b[$z]['HINHANH'];?>" alt="" class="mr-2 rounded">
+					  <img src="<?php echo Chuoi2Mang($b['HINHANH'])[0];?>" alt="" class="mr-2 rounded">
 					  <p class="media-body pb-3 mb-0 small lh-125 border-gray">
-						  <strong class="d-block text-gray-dark"><i class="fa fa-diamond"></i>  <?php echo $b[$z]['TIEUDE'];?> <span style="float: right"><i class="fa fa-calendar"></i>  <?php echo $b[$z]['NGAYDANG'];?> </span></strong>
-						<i class="fa fa-shopping-bag"></i>  <?php echo $b[$z]['LOAITD'];?><br>
-						<i class="fa fa-money"></i>  <?php echo $b[$z]['GIABAN'];?><br>
-						Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng Nội dung của tin đăng <br>
-						  
-						 <span style="float: right;"><a href="<?php echo "product-detail.php?MATD=".$b[$z]['MATD'];?>" style="text-decoration: none;"><i class="fa fa-plus-square" style="color: #00A1FB;"></i>  Xem chi tiết</a></span> <!-- Dẫn đển trang product-detail.php -->
+						  <strong class="d-block text-gray-dark"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span style="float: right"><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
+						<i class="fa fa-shopping-bag"></i>  <?php echo $b['LOAITD'];?><br>
+						<i class="fa fa-money"></i>  <?php echo $b['GIABAN'];?><br><?php echo $b['TSTD'];?><br>
+						 <span style="float: right;"><a href="<?php echo "product-detail.php?MATD=".$b['MATD'];?>" style="text-decoration: none;"><i class="fa fa-plus-square" style="color: #00A1FB;"></i>  Xem chi tiết</a></span> <!-- Dẫn đển trang product-detail.php -->
 					  </p>
 					</div>	
 					 <!-- Kết thúc tin đăng -->
-					  <?php 
-							$z++;
+						<?php 
+							 }
 						}
 					 ?>
 				  </div>
 			</div>
 		</div>
 	</div>
-	
-	
-	
-	
-	
+
 	<!-- footer -->
 	<?php include('footer.php'); ?>
 	    <!-- Optional JavaScript -->

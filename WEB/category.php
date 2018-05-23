@@ -1,9 +1,25 @@
 <?php 
 	$PageName="danhmuc";
+	if(isset($_GET['numpage']))
+    {
+        $numpage = $_GET['numpage'];
+    }
+    else
+    {
+        $numpage = 0;
+    }
+    
+    if(isset($_GET['DanhMuc']))
+    {
+        $DanhMuc = $_GET['DanhMuc'];
+    }
+    else
+    {
+        $DanhMuc = '';
+    }
 ?>
 
-<?php include('loaddanhmucsanpham.php'); ?>
-<?php include('loadDanhMuc.php'); ?>
+<?php include('xulyphp/xulytindang.php'); ?>
 
 <!doctype html>
 <html>
@@ -81,28 +97,34 @@
 					
 					<ul style="list-style: none; ">
 						<?php 	
-							$a = LoadSpHot($DanhMuc);
-							$i=0;
-							foreach($a as $value)
+							$a = TaiSanPhamHot($DanhMuc);
+							$i = 0;
+							$z = 0;
+							if(!empty($a))
 							{
-								switch($value['LOAITIN'])
+								foreach($a as $value)
 								{
-									case 'ribbon-new': $cardType = "ribbon-new"; break;
-									case 'ribbon-hot': $cardType = "ribbon-hot"; break;
-									case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+									switch(Chuoi2Mang($value['LOAITIN'])[0])
+									{
+										case 'ribbon-new': $cardType = "ribbon-new"; break;
+										case 'ribbon-hot': $cardType = "ribbon-hot"; break;
+										case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+									}
+									include('./danh-muc/product.php');
+									$i++;
+									$z++;
 								}
-								include('./danh-muc/product.php');
-								$i++;
 							}
+							
 							$cardType = "";
-							$i=0;	
-							$a = LoadSP($numpage,$DanhMuc);
-							//print_r($a);
+							$i = 0;	
+							$a = TaiSanPhamThuong($numpage,$DanhMuc);
 							while($i<6) 
 							{ 
 								if(!empty($a[$i]))
 						 			include('./danh-muc/product.php');
 								$i++; 
+								$z++;
 							} 
 						?>
 
@@ -126,6 +148,6 @@
 	<script src="js/bootstrap.min.js"></script>
 	
 	<!--Progressive Web App(PWA): install, service worker-->
-	<script src="./sw-register.js"></script>
+	<!-- <script src="./sw-register.js"></script> -->
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php $PageName="chitietsanpham"; ?>
 
-<?php include('loaddanhmucsanpham.php'); ?>
+<?php include('xulyphp/xulytindang.php'); ?>
 
 <!doctype html>
 <html>
@@ -20,7 +20,7 @@
 
 <body>
 	<?php include('header.php'); ?>
-		<?php $a = LoadChiTietSP($_GET['MATD']) ?>
+		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
 		<div class="container-fluid" style="margin-top: 6em;">
 		<div class="card-header"><?php  echo $a["TIEUDE"]; ?></div>
 		<div class="card">
@@ -28,7 +28,7 @@
 				<div class="wrapper row">
 					<div class="preview col-md-8 col-lg-6">
 						<div class="preview-pic tab-content">
-						<?php  $b=  XuLyAnh($a["HINHANH"]); $s=0; 
+						<?php  $b =  Chuoi2Mang($a["HINHANH"]); $s=0; 
 						
 							foreach($b as $value)
 							{

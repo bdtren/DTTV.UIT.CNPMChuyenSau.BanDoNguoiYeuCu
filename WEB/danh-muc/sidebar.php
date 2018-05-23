@@ -20,7 +20,7 @@
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<?php $i=0; $a= loadDanhMuc(); while($i<13) { 
+										<?php $i=0; $a= TaiDanhMuc(); while($i<13) { 
 											if($DanhMuc==$a[$i]['MADM']){
 												$actBar = "active";
 											} else{

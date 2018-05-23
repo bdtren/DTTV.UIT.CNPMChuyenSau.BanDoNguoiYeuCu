@@ -29,7 +29,7 @@
 			<!-- thẻ thông tin -->".$cImg."\n
 		</div>\n";
 		?>
-		<img class="card-img-top" src="<?php echo $a[$i]['HINHANH'] ?>" alt="Card image cap" style="width: 230px; height: 230px;  background-size:contain;">
+		<img class="card-img-top" src="<?php echo Chuoi2Mang($a[$i]['HINHANH'])[0] ?>" alt="Card image cap" style="width: 230px; height: 230px;  background-size:contain;">
 		<div class="card-body">
 			<h5 class="card-title"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
@@ -37,7 +37,7 @@
 					<span style="float: right; font-weight: bold;">
 				</li>
 				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i>
-				<a href="all-post.php" style="text-decoration: none;">  <?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
+				<a href="<?php echo 'all-post.php?MAKH='.$a[$i]['MAKH'] ?>" style="text-decoration: none;">  <?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>
@@ -45,11 +45,11 @@
 		</div>
 
 		<!--Xem thêm thông tin -->
-		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#down<?php echo $i ?>">Xem thêm</button>
-		<div id="down<?php echo $i ?>" class="collapse">
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#down<?php echo $z ?>">Xem thêm</button>
+		<div id="down<?php echo $z ?>" class="collapse">
 			<ul class="list-group list-group-flush">
 			<li class="list-group-item type-info">
-			  <p style="font-size: 16px; color:black;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  <?php echo $a[$i]['TAMSU'] ?></p></li>
+			  <p style="font-size: 16px; color:black;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  <?php echo $a[$i]['TSTD'] ?></p></li>
 				<li class="list-group-item type-info"><i class="fa fa-shopping-bag"></i>  <?php echo $a[$i]['LOAITD'] ?>
 				</li>
 			</ul>

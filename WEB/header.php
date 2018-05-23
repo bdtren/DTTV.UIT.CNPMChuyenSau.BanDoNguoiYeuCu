@@ -1,5 +1,5 @@
 <?php 
-
+	$UserName = isset($_SESSION['username']) ? $_SESSION['username'] : "" ;
 	//Kiểm tra người dùng đã đăng nhập chưa
 	$IsLogin="enable";
 	$status="false";
@@ -72,7 +72,7 @@
 					} ?>
 					</li>
 					<li class="nav-item <?php echo $arrActive[3]; ?>">
-					<a class="nav-link <?php echo $status; ?>" href="user/user-page.php">Tài khoản</a>
+					<a class="nav-link <?php echo $status; ?>" <?php if(isset($_SESSION['username'])) echo 'href="user/user-page.php"'; else echo 'href="index.php"'; ?> >Tài khoản <?php echo $UserName; ?></a>
 					</li>
 					<li class="nav-item <?php echo $arrActive[4]; ?>">
 					<a class="nav-link" href="introduction.php">Giới thiệu</a>

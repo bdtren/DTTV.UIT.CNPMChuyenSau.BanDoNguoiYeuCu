@@ -1,3 +1,7 @@
+<?php 
+  session_start(); 
+  $UserName = isset($_SESSION['username']) ? $_SESSION['username'] : "" ;
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -44,11 +48,6 @@
             </div>
         </div>
     </section>
-
-	  
-	 
-		
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

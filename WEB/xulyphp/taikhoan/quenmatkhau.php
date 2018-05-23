@@ -1,8 +1,7 @@
 <?php
-
     if(isset($_POST['accept']))
     {
-        include "connect.php";
+        include('xulyphp/ketnoicsdl.php');
         //Lấy dữ liệu từ form
         $username = addslashes($_POST['username']);
         $email = addslashes($_POST['email']);
@@ -12,14 +11,12 @@
         if (!$username || !$password || !$email || !$confirmpassword) 
         {
             echo '<script language="javascript"> alert("Vui lòng nhập đầy đủ thông tin!") </script>';
-            $mysqli_close($conn);
         }
         else
         {
             if($password != $confirmpassword)
             {
                 echo '<script language="javascript"> alert("Mật khẩu phải giống nhau") </script>';
-                mysqli_close($conn);
             }
             else
             {                
@@ -31,7 +28,7 @@
                 {
                     echo '<script language="javascript"> alert("Tên đăng nhập hoặc email không đúng") </script>';
                     //echo "Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. <a href='javascript: history.go(-1)'>Trở lại</a>";
-                    mysqli_close($conn);
+                    
                 }
                 else
                 {
@@ -54,7 +51,7 @@
                     
                 }
             }
-        }   
+        } 
+        mysqli_close($conn);  
     }
-
 ?>

@@ -4,7 +4,7 @@
 	<?php
 		$z=1; 
 		$actNum = "";
-		while( $z <= DemSp($DanhMuc))
+		while( $z <= CEIL(DemSanPham($DanhMuc)/6))
 		{
 			if($numpage==$z||($numpage==0&&$z==1)){
 				$actNum = "active";
