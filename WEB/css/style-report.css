@@ -1,7 +1,7 @@
         body {
             overflow: auto;
             background-color: #1b1b1b;
-            padding-top: 40px;
+            padding-top: 10px;
         }
 
         /* .form-signin {
@@ -46,7 +46,7 @@
         }
 
         tbody {
-            height: 150px;
+            height: 170px;
             display: inline-block;
             width: 100%;
             overflow-y: auto;
@@ -63,25 +63,8 @@
         }
 
         /* Reoport tablesorter */
-        /* th.headerSortUp { 
-            background-image: url(../Images/sort/asc.gif); 
-            background-color: #3399FF; 
-        }
-        th.headerSortDown { 
-            background-image: url(../Images/sort/desc.gif); 
-            background-color: #3399FF; 
-        }  
-        th.header { 
-            background-image: url(../Images/sort/bg.gif); 
-            cursor: pointer; 
-            font-weight: bold; 
-            background-repeat: no-repeat; 
-            background-position: center left; 
-            padding-left: 20px; 
-            border-right: 1px solid #dad9c7; 
-            margin-left: -1px; 
-        }  */
-        table thead tr th, table tfoot tr th {
+        
+         /* table thead tr th, table tfoot tr th {
             background-color: #e6EEEE;
             border: 1px solid #FFF;
             padding: 4px;
@@ -113,4 +96,30 @@
         }
         table thead tr .headerSortDown, table thead tr .headerSortUp {
         background-color: #8dbdd8;
+        }  */
+
+        table thead tr th, table tfoot tr th {
+            background-color: #e6EEEE;
+            border: 1px solid #FFF;
+            padding: 4px;
         }
+        table thead tr .header {
+            cursor: pointer; 
+            font-weight: bold; 
+            padding-left: 20px; 
+            border-right: 1px solid #dad9c7; 
+            margin-left: -5px; 
+        }
+        table tbody td {
+            color: #3D3D3D;
+            padding: 4px;
+            background-color: #FFF;
+            vertical-align: top;
+        }
+        table tbody tr.odd td {
+            background-color:#F0F0F6;
+
+        }
+        tr.selected td {
+            background-color: #B0BED9 !important; /* Add !important to make sure override datables base styles */
+         }
