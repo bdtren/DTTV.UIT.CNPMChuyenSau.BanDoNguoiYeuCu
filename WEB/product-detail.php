@@ -22,20 +22,20 @@
 	<?php include('header.php'); ?>
 		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
 		<div class="container-fluid" style="margin-top: 6em;">
-		<div class="card-header"><?php  echo $a["TIEUDE"]; ?></div>
+		<div class="card-header"><i class="fa fa-diamond"></i>  <?php  echo $a["TIEUDE"]; ?></div>
 		<div class="card">
 			<div class="container-fluid">
-				<div class="wrapper row">
-					<div class="preview col-md-8 col-lg-6">
+				<div class="wrapper row">	
+					<div class="preview col-sm-12  col-md-7 col-lg-6">
 						<div class="preview-pic tab-content">
 						<?php  $b =  Chuoi2Mang($a["HINHANH"]); $s=0; 
 						
 							foreach($b as $value)
 							{
 								if($s==0)
-									echo "<div class='tab-pane active' id='pic-$s'><img src='$value'></div>";
+									echo "<div class='tab-pane active' id='pic-$s'><img class='zoom' src='$value'></div>";
 								else
-									echo "<div class='tab-pane' id='pic-$s'><img src='$value'></div>";
+									echo "<div class='tab-pane' id='pic-$s'><img src='$value' class='zoom'></div>";
 								 $s++;
 							}
 						?>
@@ -82,16 +82,15 @@
 					</div>
 					
 					
-					<div class="details col-md-4 col-lg-6 ">
-						<p style="font-weight: 20px; text-align: center; color: #8D00CB; margin-top: 10px;">Thông tin chi tiết : <?php  echo $a["TAMSU"]; ?></p>
+					<div class="details col-sm-12 col-md-5 col-lg-6 ">
 						<ul class="list-group list-group-flush">
-						<li class="list-group-item description"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?></li>
+						<li class="list-group-item description" id="type"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
+						<li class="list-group-item description" id="price"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đồng</li>
 						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
 						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
 						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
+						<li class="list-group-item description" id="method"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-calendar"></i>  Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></li>
 						
 							
@@ -103,6 +102,7 @@
 					
 					
 				</div>
+				
 			</div>
 			</div>
 	</div>

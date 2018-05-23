@@ -3,7 +3,7 @@
 
 /*****************globals*************/
 body{
-	background: #1F99FD;
+	background: #454545 !important;
 }
 
 .container-fluid{
@@ -13,11 +13,23 @@ body{
 }
 
 img {
-  max-width: 100%; 
+  max-width: 100%; 	
+}
+
+.zoom{
+	padding: 10px;
+    transition: transform .1s;
+    width: 385px;
+    height: 385px;
+    margin: auto auto;
+}
+
+.zoom:hover {
+    transform: scale(1.5); 
 }
 
 .preview {
-	height: 38em;
+	height: 33em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,13 +47,13 @@ img {
 /*Big Image */
 .preview-pic {
    box-shadow: 10px 5px 8px grey;
-   background-position: center;
+	object-fit: fill;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-	width: 420px;
-	height: 420px;
+	width: 385px;
+	height: 385px;
 	
 }
 
@@ -79,7 +91,7 @@ img {
   line-height: 1.5em; }
 
 .card-header{
-	background: #006CD0;
+	background: #A0A0A0;
 	font-weight: bolder;
 	font-size: 24px;
 }
@@ -89,7 +101,7 @@ img {
 
 
 .details {
-  background: #E0E0E0 ;
+  background: #EDE8ED ;
   height: 40em;
   overflow-y: auto;
   box-shadow: 10px 5px 8px grey;
@@ -112,9 +124,13 @@ img {
 .description{
 	width: 100%;
 	margin-top: 10px;
-	background: #1D6FFF;
-	border: none;
-	
+	background: #6B6B6B; 
+	font-size: 18px;
+}
+.details ul li{
+	padding:15px;
+    border-radius: 20px;
+ 	box-shadow: 10px 5px 8px grey;
 }
 
 .details a{
@@ -127,8 +143,28 @@ img {
 
 .detaildes{
 	overflow-y: auto;
-	height: 10em;
+	height: 8em;
 }
+
+.details ul li i{
+	color: #0FFB04;
+	font-size: 25px;
+	margin-right: 20px;
+}
+.details ul #type{
+	color: #51A0FF;
+	font-weight: bolder;
+}
+.details ul #price{
+	font-size: 22px;
+	color: #F0FF00;
+	font-weight: bolder;
+}
+.details ul #method{
+	color: #00E1FD;
+	font-weight: bolder;
+}
+
 
 @media screen and (min-width: 600px) {
   .wrapper {
