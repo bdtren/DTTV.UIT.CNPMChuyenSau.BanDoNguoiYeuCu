@@ -127,7 +127,7 @@ values ('TD0024','NV0003','DM1005','KH0002','1','2018/4/30','Bán','Bán xe hơi
 insert into TINDANG
 values ('TD0025','NV0003','DM1007','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
-values ('TD0026','NV0003','DM1009','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
+values ('TD0026','NV0003','DM1009','KH0002','1','2018/4/30','Bán','Bán Nhẩn','2000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;4000000');
 insert into TINDANG
 values ('TD0027','NV0003','DM2001','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
