@@ -23,7 +23,7 @@
 <!-- Từng sản phẩm -->
 <li class="product">
 	<a href="<?php echo "product-detail.php?MATD=".$a[$i]['MATD']; ?>" style="text-decoration: none;">
-	<div class="card card-product" style="border: 10px solid transparent; padding: 15px; <?php echo $cBorder?>; width: 18rem;float: left; margin-right: 25px; margin-top: 20px;">
+	<div class="card card-product" style="<?php echo $cBorder?>;">
 		<?php 
 			echo "<div class=\"corner-ribbon shadow ".$cardType."\">\n
 			<!-- thẻ thông tin -->".$cImg."\n
@@ -33,11 +33,22 @@
 		<div class="card-body">
 			<h5 class="card-title"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item price"><i class="fa fa-money"></i>  <?php echo $a[$i]['GIABAN'] ?>Đ
-					<span style="float: right; font-weight: bold;">
+				<!-- Giảm giá -->
+				<?php if($cardType=="ribbon-discount"){
+				?>
+				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo 2000000;?>Đ </span> <span id="priceorginal"><?php echo $a[$i]['GIABAN'] ?>Đ</span>
 				</li>
-				<li class="list-group-item user-name"><i class="fa fa-user-circle"></i>
-				<a href="<?php echo 'all-post.php?MAKH='.$a[$i]['MAKH'] ?>" style="text-decoration: none;">  <?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
+				<?php
+				 		}
+			 		else
+			 			{ 
+					?>
+				<li class="list-group-item price"><i class="fa fa-money"></i><span style="color: red;">  <?php echo $a[$i]['GIABAN'] ?>Đ</span>
+				</li>
+				<?php }?>	
+				<!--Kết thúc Giảm giá -->	
+				<li class="list-group-item user-name" id="person"><i class="fa fa-user-circle"></i>
+				<a href="<?php echo 'all-post.php?MAKH='.$a[$i]['MAKH'] ?>">  <?php echo $a[$i]['HOTEN'] ?></a> <!-- Link đến trang các bài post cùa người dùng -->
 					<span style="float: right; font-weight: bold;">
 				</li>
 			</ul>

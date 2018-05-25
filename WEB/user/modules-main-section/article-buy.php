@@ -46,16 +46,16 @@
                 </div>
 				  
                 <div class="modal-body">
-                        <form>							
-                                <div class="form-group">
-                                    <label>Nội dung tạo tin</label>
-                                    <select class="form-control">
-										  <option>Tin hot</option>
-										  <option>Tin new</option>
-										 <option>Tin discount</option>
-										</select>
-                                </div>
+                        <form>		
+							<div class="form-group">
+								<label>Tạo tin:</label>
+                               <select class="form-control">
+								<option value="1">Tin Hot</option>
+								<option value="2">Tin New</option>
+								</select>
+							</div>
 							
+			
 								<div class="form-group">
                                     <label>Thanh toán bằng thẻ cào</label>
                                     <select class="form-control">
@@ -66,11 +66,13 @@
 										<option>S-fone</option>
 										</select>
                                 </div>
-								
+						
 							<label>Nhập mã thẻ</label>
 							<div class="form-group">
 							  <input type="text" class="form-control" placeholder="Mã thẻ cào">
 							</div>
+							
+							<div id="red" class="colors" style="display:none"> Hello</div>
 							
                     			<div class="modal-footer">
                   					<button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
@@ -84,8 +86,4 @@
               </div>
             </div>
           </div>
-
-
-
-					
-                        
+             

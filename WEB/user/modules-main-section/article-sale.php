@@ -50,12 +50,20 @@
                         <form>							
                                 <div class="form-group">
                                     <label>Nội dung tạo tin</label>
-                                    <select class="form-control">
-										  <option>Tin hot</option>
-										  <option>Tin new</option>
-										 <option>Tin discount</option>
+                                    <select class="form-control" id="getFname" onchange="SelectCheck(this);">
+										  <option value="1">Tin hot</option>
+										  <option value="2">Tin new</option>
+										 <option id="discount" value="3">Tin discount</option>
 										</select>
                                 </div>
+							
+								<div id="DivCheck" style="display:none;">
+									<div class="form-group">
+									<label>Giá sau khi giảm(đồng):</label>
+									 <input type="text" class="form-control" placeholder="Nhập giá sau khi giảm">
+   									 <small class="form-text text-muted">Đừng quên tỉ lệ % giảm giá càng lớn thì càng tăng khả năng khách hàng mua sản phẩm của bạn càng cao</small>
+									</div>
+								</div>
 							
 								<div class="form-group">
                                     <label>Thanh toán bằng thẻ cào</label>

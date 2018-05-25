@@ -152,6 +152,40 @@ body{
 }
 
 
+#pricediscount{
+		font-size: 15px; 
+		color: red;
+	}
+	
+	#priceorginal{
+		font-size: 12px; 
+		text-decoration: line-through; 
+		color: black;
+	}
+	
+	#person a {
+		text-decoration: none;
+		color: black;
+	}
+	
+	#person a:hover{
+		color: #989898;
+	}
+	
+	.product .card-product i{
+		color: #28A5FF;
+	}
+	
+	.product .card-product{
+		border: 10px solid transparent; 
+		padding: 15px;
+		width: 18rem;
+		float: left; 
+		margin-right: 25px; 
+		margin-top: 20px;
+	}
+
+
 
 
 

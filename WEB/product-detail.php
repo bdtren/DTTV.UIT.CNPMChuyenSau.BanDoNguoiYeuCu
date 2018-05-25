@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
 	<!-- Icon -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	
 	<link rel="manifest" href="./manifest.json"> 
 	
@@ -72,9 +72,9 @@
 							<div class="collapse" id="collapseExample">
 							  <div class="card card-body">
 								<ul class="list-group list-group-flush">
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Số điện thoại: <?php  echo $a["SDT"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Facebook: <?php  echo $a["FACEBOOK"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;">Email: <?php  echo $a["EMAIL"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fas fa-phone-square"></i>: <?php  echo $a["SDT"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fab fa-facebook-square"></i>: <?php  echo $a["FACEBOOK"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fas fa-envelope-square"></i>: <?php  echo $a["EMAIL"]; ?></li>
 								  </ul>
 							  </div>
 							</div>
@@ -85,13 +85,13 @@
 					<div class="details col-sm-12 col-md-5 col-lg-6 ">
 						<ul class="list-group list-group-flush">
 						<li class="list-group-item description" id="type"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
-						<li class="list-group-item description" id="price"><i class="fa fa-money"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đồng</li>
-						<li class="list-group-item description"><i class="fa fa-shield"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
+						<li class="list-group-item description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đồng</li>
+						<li class="list-group-item description"><i class="fab fa-staylinked"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
 						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
 						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
-						<li class="list-group-item description detaildes"><i class="fa fa-pencil-square"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
+						<li class="list-group-item description detaildes"><i class="fas fa-edit"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
 						<li class="list-group-item description" id="method"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-calendar"></i>  Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></li>
+						<li class="list-group-item description"><i class="far fa-calendar-alt"></i>  Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></li>
 						
 							
 							
