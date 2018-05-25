@@ -39,7 +39,7 @@
 
     function DemSanPham($DanhMuc)
     {
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         if(empty($DanhMuc))
         {
             $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' ";
@@ -64,7 +64,7 @@
     function TaiSanPhamHot($DanhMuc = '')
     {   
         $a = null;     
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         if(empty($DanhMuc))
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
@@ -102,7 +102,7 @@
     function TaiSanPhamThuong( $index, $DanhMuc = '', $Sort = 'MATD', $SortType = 'ASC' )
     {
         $a = null;
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         if(empty($DanhMuc))
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
@@ -140,7 +140,7 @@
     function TaiChiTietSanPham($MATD)
     {
         $a = null;
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         $sql = "SELECT      *
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
@@ -160,7 +160,7 @@
     function TaiDanhMuc()
     {
         $a = null; 
-        include('ketnoicsdl.php');  
+        include('connect.php');  
         $sql = "SELECT      * 
                 FROM        DANHMUC 
                 ORDER BY    MADM ASC";
@@ -179,7 +179,7 @@
     function TaiThongTinKhachHang($MAKH)
     {
         $a = null; 
-        include('ketnoicsdl.php');
+        include('connect.php');
         $sql = "SELECT      * 
                 FROM        KHACHHANG,TAIKHOAN
                 WHERE       KHACHHANG.MATK=TAIKHOAN.MATK
@@ -200,7 +200,7 @@
     function TaiDanhSachTin($MAKH)
     {
         $a = null; 
-        include('ketnoicsdl.php');
+        include('connect.php');
         $sql = "SELECT      *, TINDANG.TAMSU AS TSTD, KHACHHANG.TAMSU AS TSKH
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 

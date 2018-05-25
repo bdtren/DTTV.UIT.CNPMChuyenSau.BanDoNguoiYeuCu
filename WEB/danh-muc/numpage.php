@@ -16,13 +16,12 @@
 			if(!empty($DanhMuc))
 			{
 				if($z==1)
-					$string = "category.php?DanhMuc="."$DanhMuc";//."&DanhMuc="."$DanhMuc";
+					$string = "category.php?DanhMuc="."$DanhMuc"."&Sort="."$Sort"."&SortType="."$SortType";
 				else
-					$string = "category.php?numpage="."$z"."&DanhMuc="."$DanhMuc";//."&DanhMuc="."$DanhMuc";
-
+					$string = "category.php?DanhMuc="."$DanhMuc"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";
 			}
 			else		
-				$string = "category.php?numpage="."$z";
+				$string = "category.php?&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";
 				
 			echo "<li class='page-item $actNum'><a class='page-link' href='$string'>$z</a></li>";
 			$z++;

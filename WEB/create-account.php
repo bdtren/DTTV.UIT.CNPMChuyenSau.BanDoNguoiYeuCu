@@ -2,7 +2,7 @@
 	$PageName="taotaikhoan";
 ?>
 
-<?php include "XuLyTaoTaiKhoan.php"; ?>
+<?php include "xulyphp/account/signup.php"; ?>
 
 <!doctype html>
 <html>

@@ -1,8 +1,16 @@
 <?php 
 	session_start();
+	if(isset($_SESSION['user']))
+	{
+		$UserName = $_SESSION['user'];
+	}
+	else
+	{
+		$UserName = '';
+	}
 	$PageName="trangchu"; 
 ?>
-<?php include "xulyphp/taikhoan/dangnhap.php"; ?>
+<?php include "xulyphp/account/login.php"; ?>
 <?php include "xulyphp/xulytindang.php"; ?>
 
 <!DOCTYPE html>

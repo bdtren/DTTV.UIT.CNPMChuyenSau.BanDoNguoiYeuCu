@@ -1,4 +1,8 @@
-<?php $PageName="chitietsanpham"; ?>
+<?php 
+	session_start();
+	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+	$PageName="chitietsanpham"; 
+?>
 
 <?php include('xulyphp/xulytindang.php'); ?>
 

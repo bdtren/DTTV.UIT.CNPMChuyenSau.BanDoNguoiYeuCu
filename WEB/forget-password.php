@@ -2,7 +2,7 @@
 	$PageName="quenmatkhau";
 ?>
 
-<?php  include "xulyQuenMK.php" ?>
+<?php  include "xulyphp/account/forgetpassword.php" ?>
 
 <!doctype html>
 <html>
@@ -41,10 +41,6 @@
 	</section>
 
 		<?php include('footer.php'); ?>
-
-	
-
-
 
 	  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
