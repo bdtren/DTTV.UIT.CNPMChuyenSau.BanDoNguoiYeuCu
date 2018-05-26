@@ -35,15 +35,16 @@
 			<ul class="list-group list-group-flush">
 				<!-- Giảm giá -->
 				<?php if($cardType=="ribbon-discount"){
+					$giagiam=substr($a[$i]['LOAITIN'] ,16, strlen($a[$i]['LOAITIN'])-16);
 				?>
-				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo 2000000;?>Đ </span> <span id="priceorginal"><?php echo $a[$i]['GIABAN'] ?>Đ</span>
+				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo $giagiam;?>đ </span> <span id="priceorginal"><?php echo $a[$i]['GIABAN'] ?>đ</span>
 				</li>
 				<?php
 				 		}
 			 		else
 			 			{ 
 					?>
-				<li class="list-group-item price"><i class="fa fa-money"></i><span style="color: red;">  <?php echo $a[$i]['GIABAN'] ?>Đ</span>
+				<li class="list-group-item price"><i class="fa fa-money"></i><span style="color: red;">  <?php echo $a[$i]['GIABAN'] ?>đ</span>
 				</li>
 				<?php }?>	
 				<!--Kết thúc Giảm giá -->	

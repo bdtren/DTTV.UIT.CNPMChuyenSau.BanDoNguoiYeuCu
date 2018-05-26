@@ -68,14 +68,8 @@
 		<?php include('header.php') ?>	
 	
 			<div class="content">
-				<!--<h1>Love Market</h1>-->
-				<div class="login-box  animated slideInDown">
-					<!--<div class="login-image">
-						<div class="cloud cloud1 animated fadeInLeft"></div>
-						<div class="cloud thunder animated bounceIn"></div>
-						<div class="cloud rain animated bounceIn"></div>
-						<div class="cloud cloud2 animated fadeInRight"></div>
-					</div>-->
+				<!-- Nếu chưa đăng nhập -->
+				<!--<div class="login-box  animated slideInDown">
 					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
 						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
@@ -93,7 +87,11 @@
 							<a href="create-account.php" style="text-decoration:none; color:white;">
 							Tạo tài khoản</a></h6>
 					</form>
-				</div>
+				</div> -->
+				<!-- Nếu đã đăng nhập -->
+				
+				
+				
 			</div>
 		</div>
 

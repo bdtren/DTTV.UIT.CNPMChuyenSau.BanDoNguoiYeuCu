@@ -69,7 +69,17 @@
 						<ul class="list-group list-group-flush">
 						<li id="tieude"><?php  echo $a["TIEUDE"]; ?></li>
 						<li class="description"> <span>Loại tin:</span> <?php  echo $a["LOAITD"]; ?>, <span>Tình trạng:</span> <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đồng</li>
+						<!-- Giá bán -->
+						<!-- chọn sản phẩm giảm giá -->
+						<?php
+							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!=""){								$giagiam=substr($a["LOAITIN"] ,16, strlen($a["LOAITIN"])-16);
+							?>
+						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
+						<?php } else { ?>	
+						<!-- chọn sản phẩm thông thường -->
+						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
+							<?php } ?>
+							
 						<div class="row" style="margin: 5px;" id="buttons">
 							<p>
 							  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">

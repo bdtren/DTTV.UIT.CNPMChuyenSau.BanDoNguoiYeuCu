@@ -145,6 +145,13 @@ img {
 	padding: 10px;
 }
 
+#diproduct{
+	text-decoration: line-through;
+	font-size: 22px;
+	margin-left: 10px;
+	color: #4D4D4D;
+}
+
 .details ul #buttons{
 	border-bottom: 1px solid #eff0f5;
 	padding: 10px;
@@ -174,6 +181,8 @@ img {
 	padding: 10px;
 	border-top: 1px solid #eff0f5;
 }
+
+
 
 
 @media screen and (min-width: 600px) {

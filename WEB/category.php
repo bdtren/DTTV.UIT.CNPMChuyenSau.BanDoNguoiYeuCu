@@ -83,12 +83,12 @@
 					<div class="card-header card-main-header">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-md-6" style="font-weight: bold; font-size: 25px;">Danh sách sản phẩm</div>
+								<div class="col-md-6 text-head">Danh sách sản phẩm</div>
 
-								<div class="col-md-2" style="font-size: 20px;">Sắp xếp theo:</div>
+								<div class="col-md-2 text-head">Sắp xếp theo:</div>
 		
-								<div class="col-md-2">
-									  <select class="custom-select mr-sm-2" id="SortSelect" onchange="SortChanged(this)">
+								<div class="col-md-2 ">
+									  <select class="custom-select mr-sm-2 text-chose" id="SortSelect" onchange="SortChanged(this)">
 										<option value="MATD" <?php if($Sort == "MATD") echo "selected";?> >Mặc định</option>
 										<option value="NGAYDANG" <?php if($Sort == "NGAYDANG") echo "selected";?>>Thời gian</option>
 										<option value="GIABAN" <?php if($Sort == "GIABAN") echo "selected";?>>Giá</option>
@@ -96,7 +96,7 @@
 									  </select>
 								</div>
 							<div class="col-md-2">						
-									  <select class="custom-select mr-sm-2" id="SortTypeSelect" onchange="SortTypeChanged(this)">
+									  <select class="custom-select mr-sm-2 text-chose" id="SortTypeSelect" onchange="SortTypeChanged(this)">
 										<option value="ASC" <?php if($SortType == "ASC") echo "selected";?> >Tăng dần</option>
 										<option value="DESC" <?php if($SortType == "DESC") echo "selected";?> >Giảm dần</option>
 									  </select>

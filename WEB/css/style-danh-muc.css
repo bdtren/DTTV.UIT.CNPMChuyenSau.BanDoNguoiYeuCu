@@ -1,5 +1,5 @@
 body{
-	background: rgba(223,219,219,1.00);
+	background: white;
 }
 
 .main-contain{
@@ -9,41 +9,49 @@ body{
 
 /* sidebar */
 .card  .card-header{
-	background: #636363;
+	background: #24344b;
 	color: white;
 	padding: 20px;
 	
 }
 
 .accordion .card .card-header{
-	background: #787878;
+	background: #2c3d59;
 	padding: 5px;
 }
 
 .accordion .card .card-header button{
-	color: white;
+	color: #d9ecfb;
 	text-decoration: none;
 	
 }
 
 .accordion .card .collapse .list-group-item a{
 	text-decoration: none;
-	color: white;
+	color: #d9ecfb;
 }
 
 .accordion .card .collapse .list-group-item{
-	background: #A0A0A0;
+	background: #334768;
 }
 
 .accordion .card .collapse .list-group-item:hover{
-	background:  #D0D0D0;
-	color: white;
+	background: #445475;
 }
+
 
 /* Main section */
 
 .card .card-main-header{
 	background: #FF2892;
+}
+
+.card-main .card-main-header .container-fluid .row .text-head{
+	font-size: 20px;
+}
+
+.card-main .card-main-header .container-fluid .row .text-chose{
+	font-size: 15px;
 }
 
 /* Nhan new, hot, discount */
@@ -60,7 +68,6 @@ body{
 	left: auto;
   	transform: rotate(45deg);
   	-webkit-transform: rotate(45deg);
-
 }
 .corner-ribbon.shadow{
 	box-shadow: 0 0 3px rgba(0,0,0,.3);
@@ -181,12 +188,65 @@ body{
 		padding: 15px;
 		width: 18rem;
 		float: left; 
-		margin-right: 25px; 
+		margin-left: 30px;
 		margin-top: 20px;
 	}
 
+/* respondsive */
+@media only screen and (max-width: 1333px){
+	.product .card-product{
+		margin-left: 100px;
+	}
+}
 
 
+@media only screen and (max-width: 1170px){
+	.product .card-product{
+		margin-left: 50px;
+	}
+}
 
+@media only screen and (max-width: 960px){
+	
+	.product .card-product{
+		margin-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 880px){
+	
+	.product .card-product{
+		margin-left: 100px;
+	}
+}
+
+@media only screen and (max-width: 770px){
+	
+	.product .card-product{
+		margin-left: 30px;
+	}
+}
+
+
+@media only screen and (max-width: 675px){
+
+	.product .card-product{
+		margin-left: 100px;
+	}
+}
+
+@media only screen and (max-width: 500px){
+	.product .card-product{
+		margin-left: 20px;
+	}
+}
+
+
+/*
+	body{
+		background: #7411EF;
+	}
+
+*/
 
 
