@@ -37,18 +37,43 @@
         return null;
     }
 
-    function DemSanPham($DanhMuc)
+    function TimKiemSanPham( $index, $Search, $Sort = 'MATD', $SortType = 'ASC' )
     {
+        // chuyển chuỗi tìm kiếm về chữ thường
+        $st=strtolower($Search);
+        $sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
+        $a = null;
         include('xulyphp/connect.php');
-        if(empty($DanhMuc))
+        $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
+                FROM        TINDANG,KHACHHANG 
+                WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
+                AND         TINHTRANGTIN = 'da dang'
+                AND         LOAITIN = ''
+                AND         TIEUDE LIKE '%$st%'
+                ORDER BY    $Sort $SortType
+                LIMIT       $index,9";
+        if($result = mysqli_query($conn, $sql))
         {
-            $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' ";
+            while($row = mysqli_fetch_assoc($result))
+            {                    
+                $a[] = $row;
+            } 
         }
-        else
-        {
-            $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' AND MADM = '$DanhMuc'  ";
-        }
-        mysqli_set_charset($conn, "utf8");
+        mysqli_close($conn);
+        return $a;
+    }
+
+    function DemSanPhamTimKiem($Search)
+    {
+        // chuyển chuỗi tìm kiếm về chữ thường
+        $st=strtolower($Search);
+        $sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
+        $a = null;
+        include('xulyphp/connect.php');
+        $sql = "SELECT      *
+                FROM        TINDANG
+                WHERE       TINHTRANGTIN = 'da dang'
+                AND         TIEUDE LIKE '%$st%' ";
         if($count = mysqli_num_rows(mysqli_query($conn, $sql)))
         {
             mysqli_close($conn);
@@ -61,11 +86,34 @@
         }
     }
 
-    function TaiSanPhamHot($DanhMuc = '')
+    function DemSanPham($DanhMuc)
+    {
+        include('xulyphp/connect.php');
+        if($DanhMuc == 'DM0000' )
+        {
+           $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang'  AND  LOAITIN = '' ";
+        }
+        else
+        {
+            $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' AND MADM = '$DanhMuc'  AND  LOAITIN = '' ";
+        }
+        if($count = mysqli_num_rows(mysqli_query($conn, $sql)))
+        {
+            mysqli_close($conn);
+            return $count;
+        }
+        else
+        {
+            mysqli_close($conn);
+            return 0;
+        }
+    }
+
+    function TaiSanPhamHot($DanhMuc)
     {   
         $a = null;     
         include('xulyphp/connect.php');
-        if(empty($DanhMuc))
+        if( $DanhMuc == 'DM0000')
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
                     FROM        TINDANG,KHACHHANG 
@@ -86,7 +134,6 @@
                     ORDER BY    RAND()
                     LIMIT       3";   
         }       
-        mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
         {
             while($row = mysqli_fetch_assoc($result))
@@ -99,11 +146,11 @@
     }
 
     // hàm load 6 sản phẩm tin thường
-    function TaiSanPhamThuong( $index, $DanhMuc = '', $Sort = 'MATD', $SortType = 'ASC' )
+    function TaiSanPhamThuong( $index, $DanhMuc , $Sort = 'MATD', $SortType = 'ASC' )
     {
         $a = null;
         include('xulyphp/connect.php');
-        if(empty($DanhMuc))
+        if($DanhMuc == 'DM0000')
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
                     FROM        TINDANG,KHACHHANG 
@@ -124,7 +171,6 @@
                     ORDER BY    $Sort $SortType
                     LIMIT       $index,6";     
         }
-        mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
         {
             while($row = mysqli_fetch_assoc($result))
@@ -145,7 +191,6 @@
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         MATD = '$MATD'";
-        mysqli_set_charset($conn, "utf8");
         if ($result = mysqli_query($conn, $sql)) 
         {
             if($row = mysqli_fetch_assoc($result))
@@ -164,7 +209,6 @@
         $sql = "SELECT      * 
                 FROM        DANHMUC 
                 ORDER BY    MADM ASC";
-        mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
         {
             while($row = mysqli_fetch_assoc($result))
@@ -206,7 +250,6 @@
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         TINDANG.MAKH = '$MAKH'
                 ORDER BY    NGAYDANG DESC";
-        mysqli_set_charset($conn, "utf8");
         $count = mysqli_num_rows(mysqli_query($conn, $sql));
         if ($result = mysqli_query($conn, $sql)) 
         {
