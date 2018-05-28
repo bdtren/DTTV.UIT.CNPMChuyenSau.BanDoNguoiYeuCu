@@ -2,7 +2,7 @@
 	$PageName="taotaikhoan";
 ?>
 
-<?php include "XuLyTaoTaiKhoan.php"; ?>
+<?php include "xulyphp/signup.php"; ?>
 
 <!doctype html>
 <html>
@@ -68,7 +68,7 @@
 				
 				<label>Đôi dòng tâm sự:</label>
 				<textarea name="text" class="textTalk" rows="4"></textarea>
-				<input type="submit" name="accept" value="Tạo tài khoản">							
+				<input type="submit" name="signup" value="Tạo tài khoản">							
 			</div>
 		</div>
 		</form>
@@ -77,14 +77,6 @@
 	<div id="footerpage">
 		<?php include('footer.php'); ?>
 	</div>
-		
-
-	
-		
-
-	
-	
-	
 	 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
  	<script src="js/jquery-3.3.1.min.js"></script>

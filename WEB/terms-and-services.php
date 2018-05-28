@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+  $UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 

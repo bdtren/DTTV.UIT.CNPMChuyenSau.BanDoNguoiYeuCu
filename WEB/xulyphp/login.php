@@ -1,7 +1,7 @@
 <?php
    if (isset($_POST['login'])) 
     {     
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         //Lấy dữ liệu từ form
         $username = addslashes($_POST['username']);
         $password = addslashes($_POST['password']);
@@ -26,9 +26,7 @@
             else
             {
                 //Lưu tên đăng nhập 
-                $_SESSION['username'] = $username;
-                echo '<script language="javascript"> alert("Xin chào '.$username.'") </script>';
-                // ẩn trang đăng nhập
+                $_SESSION['user'] = $username;
             }   
         }   
         mysqli_close($conn);

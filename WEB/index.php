@@ -1,8 +1,9 @@
 <?php 
 	session_start();
+	$UserName = (isset($_SESSION['user']))? $_SESSION['user'] : '' ;
 	$PageName="trangchu"; 
 ?>
-<?php include "xulyphp/taikhoan/dangnhap.php"; ?>
+<?php include "xulyphp/login.php"; ?>
 <?php include "xulyphp/xulytindang.php"; ?>
 
 <!DOCTYPE html>
@@ -60,14 +61,9 @@
 		<?php include('header.php') ?>	
 	
 			<div class="content">
-				<!--<h1>Love Market</h1>-->
+
+			<?php if(empty($UserName))  { ?>
 				<div class="login-box  animated slideInDown">
-					<!--<div class="login-image">
-						<div class="cloud cloud1 animated fadeInLeft"></div>
-						<div class="cloud thunder animated bounceIn"></div>
-						<div class="cloud rain animated bounceIn"></div>
-						<div class="cloud cloud2 animated fadeInRight"></div>
-					</div>-->
 					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
 						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
@@ -86,6 +82,9 @@
 							Tạo tài khoản</a></h6>
 					</form>
 				</div>
+			
+			<?php } ?>
+	
 			</div>
 		</div>
 
@@ -99,7 +98,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php $i=0; $a= TaiDanhMuc(); while($i<13) { ?>
+								<?php $i=1; $a= TaiDanhMuc(); while($i<14) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -125,7 +124,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php while($i<24) { ?>
+								<?php while($i<25) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -150,7 +149,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php while($i<28) { ?>
+								<?php while($i<29) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>

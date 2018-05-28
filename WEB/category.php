@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	$PageName="danhmuc";
 	if(isset($_GET['numpage']))
     {
@@ -6,7 +7,7 @@
     }
     else
     {
-        $numpage = 0;
+        $numpage = 1;
     }
     
     if(isset($_GET['DanhMuc']))
@@ -15,9 +16,30 @@
     }
     else
     {
-        $DanhMuc = '';
+        $DanhMuc = 'DM0000';
+	}
+	//$DanhMuc = "DMooo";
+	//echo "<script language='javascript'> alert('$DanhMuc')</script>";
+	if(isset($_GET['Sort']))
+    {
+        $Sort = $_GET['Sort'];
     }
+    else
+    {
+        $Sort = 'MATD';
+	}
+
+	if(isset($_GET['SortType']))
+    {
+        $SortType = $_GET['SortType'];
+    }
+    else
+    {
+        $SortType = 'ASC';
+	}
 ?>
+ 
+</script>
 
 <?php include('xulyphp/xulytindang.php'); ?>
 
@@ -62,27 +84,37 @@
 					<div class="card-header card-main-header">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-md-6" style="font-weight: bold; font-size: 25px;">Danh sách sản phẩm</div>
+								<div class="col-md-6 text-head">Danh sách sản phẩm</div>
 
-								<div class="col-md-2" style="font-size: 20px;">Sắp xếp theo:</div>
-								
-								<div class="col-md-2">
-									  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-										<option selected disabled>Kiểu</option>
-										<option value="1">Thời gian</option>
-										<option value="2">Giá</option>
-										<option value="3">Chữ cái</option>
+								<div class="col-md-2 text-head">Sắp xếp theo:</div>
+		
+								<div class="col-md-2 ">
+									  <select class="custom-select mr-sm-2 text-chose" id="SortSelect" onchange="SortChanged(this)">
+										<option value="MATD" <?php if($Sort == "MATD") echo "selected";?> >Mặc định</option>
+										<option value="NGAYDANG" <?php if($Sort == "NGAYDANG") echo "selected";?>>Thời gian</option>
+										<option value="GIABAN" <?php if($Sort == "GIABAN") echo "selected";?>>Giá</option>
+										<option value="TIEUDE" <?php if($Sort == "TIEUDE") echo "selected";?>>Chữ cái</option>
 									  </select>
 								</div>
 							<div class="col-md-2">						
-									  <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-										<option selected disabled>Thứ tự</option>
-										<option value="1">Tăng dần</option>
-										<option value="2">Giảm dần</option>
-										<option value="3">Mặc định</option>
+									  <select class="custom-select mr-sm-2 text-chose" id="SortTypeSelect" onchange="SortTypeChanged(this)">
+										<option value="ASC" <?php if($SortType == "ASC") echo "selected";?> >Tăng dần</option>
+										<option value="DESC" <?php if($SortType == "DESC") echo "selected";?> >Giảm dần</option>
 									  </select>
 								</div>
-								
+
+								<script language="javascript">
+
+									function SortChanged(SortSelect)
+									{
+										location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+									}
+									function SortTypeChanged(SortTypeSelect)
+									{
+										location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+									}
+
+								</script>						
 							</div>
 						
 						</div>
@@ -118,7 +150,7 @@
 							
 							$cardType = "";
 							$i = 0;	
-							$a = TaiSanPhamThuong($numpage,$DanhMuc);
+							$a = TaiSanPhamThuong($numpage*6-6,$DanhMuc,$Sort,$SortType);
 							while($i<6) 
 							{ 
 								if(!empty($a[$i]))

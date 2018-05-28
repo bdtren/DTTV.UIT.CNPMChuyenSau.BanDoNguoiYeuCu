@@ -1,4 +1,8 @@
-<?php $PageName="chitietsanpham"; ?>
+<?php 
+	session_start();
+	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+	$PageName="chitietsanpham"; 
+?>
 
 <?php include('xulyphp/xulytindang.php'); ?>
 
@@ -12,8 +16,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
 	<!-- Icon -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="manifest" href="./manifest.json"> 
 	
 </head>
@@ -21,8 +24,7 @@
 <body>
 	<?php include('header.php'); ?>
 		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
-		<div class="container-fluid" style="margin-top: 6em;">
-		<div class="card-header"><i class="fa fa-diamond"></i>  <?php  echo $a["TIEUDE"]; ?></div>
+		<div class="container" style="margin-top: 6em;">
 		<div class="card">
 			<div class="container-fluid">
 				<div class="wrapper row">	
@@ -58,41 +60,53 @@
 						?>
 						</ul>
 						
-						<p style="margin-top: 20px;">
-							
-							  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-								  <i class="fa fa-phone-square"></i>  Liên hệ
-							  </button>
-							
-							 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-							  Báo cáo
-							</button>
-							
-							</p>
-							<div class="collapse" id="collapseExample">
-							  <div class="card card-body">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fas fa-phone-square"></i>: <?php  echo $a["SDT"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fab fa-facebook-square"></i>: <?php  echo $a["FACEBOOK"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: #331CFF; font-weight: bold;"><i class="fas fa-envelope-square"></i>: <?php  echo $a["EMAIL"]; ?></li>
-								  </ul>
-							  </div>
-							</div>
+					
 								
 					</div>
 					
 					
 					<div class="details col-sm-12 col-md-5 col-lg-6 ">
 						<ul class="list-group list-group-flush">
-						<li class="list-group-item description" id="type"><i class="fa fa-shopping-bag"></i>  Loại tin : <?php  echo $a["LOAITD"]; ?></li>
-						<li class="list-group-item description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đồng</li>
-						<li class="list-group-item description"><i class="fab fa-staylinked"></i>  Tình trạng : <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<li class="list-group-item description"><i class="fa fa-user-circle"></i> Người đăng :  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" style="text-decoration: none;"><?php  echo $a["HOTEN"]; ?></a></li>
-						<li class="list-group-item description"><i class=" 	fa fa-address-book"></i>  Địa chỉ : <?php  echo $a["DIACHI"]; ?></li>
-						<li class="list-group-item description detaildes"><i class="fas fa-edit"></i>  Mô tả chi tiết : <?php  echo $a["TAMSU"]; ?></li>
-						<li class="list-group-item description" id="method"><i class="fa fa-credit-card"></i>  Phương thức giao dịch : <?php  echo $a["PTGD"]; ?></li>
-						<li class="list-group-item description"><i class="far fa-calendar-alt"></i>  Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></li>
-						
+						<li id="tieude"><?php  echo $a["TIEUDE"]; ?></li>
+						<li class="description"> <span>Loại tin:</span> <?php  echo $a["LOAITD"]; ?>, <span>Tình trạng:</span> <?php  echo $a["TINHTRANGMH"]; ?></li>
+						<!-- Giá bán -->
+						<!-- chọn sản phẩm giảm giá -->
+						<?php
+							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!=""){								$giagiam=substr($a["LOAITIN"] ,16, strlen($a["LOAITIN"])-16);
+							?>
+						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
+						<?php } else { ?>	
+						<!-- chọn sản phẩm thông thường -->
+						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
+							<?php } ?>
+							
+						<div class="row" style="margin: 5px;" id="buttons">
+							<p>
+							  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+								Liên hệ
+							  </a>
+							  <a button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+								Báo cáo
+							  </a>
+							  <a button type="button" class="btn btn-success">
+								Theo dõi tin
+							  </a>
+							</p>
+							<div class="collapse" id="collapseExample">
+							  <div class="card card-body">
+								<ul class="list-group ">
+									<li class="list-group-item" style="width: 100%; color: black;"><span>Số điện thoại:</span> <?php  echo $a["SDT"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: black;"><span>Facebook:</span> <?php  echo $a["FACEBOOK"]; ?></li>
+									<li class="list-group-item" style="width: 100%; color: black; "><span>Email:</span> <?php  echo $a["EMAIL"]; ?></li>
+								  </ul>
+							  </div>
+							</div>
+						</div>
+						<li class="description"><span>Người đăng:</span>  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" id="user"><?php  echo $a["HOTEN"]; ?></a></li>
+						<li class="description"><span>Địa chỉ:</span> <?php  echo $a["DIACHI"]; ?></li>
+						<li class="description" id="method"><span>Phương thức giao dịch:</span> <?php  echo $a["PTGD"]; ?></li>
+						<li class="description" id="date"><span>Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></span></li>
+							<li class="description detaildes"><span>Mô tả chi tiết:</span></br> <?php  echo $a["TAMSU"]; ?></li>
 							
 							
 							

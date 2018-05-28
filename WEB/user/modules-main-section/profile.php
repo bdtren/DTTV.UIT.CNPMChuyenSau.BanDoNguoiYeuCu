@@ -10,16 +10,15 @@
 		color: #0073FC;
 	}
 </style>
-
-
+<?php if(!empty($UserName)) $a = TaiChiTietKhachHang($UserName); ?>
 
 <div class="card" style="margin-bottom: 10px; padding: 10px;">    
 							  
 								<img class="card-img-top" src="../Images/user/avatar8.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 							  	  
-								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  Username </a>
+								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  Username : <?php echo $a['TENTK'] ?> </a>
 							
-								<a class="list-group-item list-group-item-action"><i class="fa fa-calendar"></i>  Ngày sinh </a>
+								<a class="list-group-item list-group-item-action"><i class="fa fa-calendar"></i>  Ngày sinh : <?php echo $a['NGAYSINH'] ?> </a>
 							
 								<button type="button" id="seeDetailProfile" class="btn" data-toggle="modal" data-target="#seeProfile">
 							 	Xem chi tiết
@@ -35,7 +34,7 @@
               <div class="modal-content" >
               <form >
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Họ tên khách hàng</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Họ tên khách hàng : <?php echo $a['HOTEN'] ?> </h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -51,14 +50,14 @@
 								</div>
 								<div class="col-8">
 								<div class="form-group">
-                                  <label >Tên tài khoản: </label>
+                                  <label >Tên tài khoản: <?php echo $a['TENTK'] ?> </label>
                                 </div>
 							
 								<div class="form-group">
-                                  <label >Giới tính: </label>
+                                  <label >Giới tính: <?php echo $a['GIOITINH'] ?> </label>
                                 </div>
 								<div class="form-group">
-                                  <label >Ngày sinh: </label>
+                                  <label >Ngày sinh: <?php echo $a['NGAYSINH'] ?> </label>
                                 </div>
 								</div>
 							</div>          
@@ -66,24 +65,24 @@
 								
 							
 								 <div class="form-group">
-                                  <label >Địa chỉ:</label>
+                                  <label >Địa chỉ: <?php echo $a['DIACHI'] ?> </label>
                                  </div>
 							
 								<div class="form-group">
-								 <label >Số điện thoại:</label>
+								 <label >Số điện thoại:<?php echo $a['SDT'] ?> </label>
                               	</div>
 								
 								<div class="form-group">
-								 <label >Facebook:</label>
+								 <label >Facebook:<?php echo $a['FACEBOOK'] ?> </label>
                               	</div>
 							
 								<div class="form-group">
-								 <label >Email:</label>
+								 <label >Email:<?php echo $a['EMAIL'] ?> </label>
                               	</div>
                                						
 							
                                 <div class="form-group">
-                                    <label>Đôi dòng tâm sự: </label>
+                                    <label>Đôi dòng tâm sự: <?php echo $a['TAMSU'] ?> </label>
                                     <textarea class="form-control" rows="4" style="resize: none;" disabled></textarea>
                                 </div>
 				

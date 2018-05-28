@@ -4,33 +4,21 @@
 	<?php
 		$z=1; 
 		$actNum = "";
-		while( $z <= CEIL(DemSanPham($DanhMuc)/6))
+		$numOfPages=CEIL((float)DemSanPham($DanhMuc)/6);	
+		while( $z <= $numOfPages)
 		{
-			if($numpage==$z||($numpage==0&&$z==1)){
+			if($numpage==$z)
+			{
 				$actNum = "active";
 			}
-			else{
-				$actNum = "";
-			}
-			
-			if(!empty($DanhMuc))
+			else
 			{
-				if($z==1)
-					$string = "category.php?DanhMuc="."$DanhMuc";//."&DanhMuc="."$DanhMuc";
-				else
-					$string = "category.php?numpage="."$z"."&DanhMuc="."$DanhMuc";//."&DanhMuc="."$DanhMuc";
-
-			}
-			else		
-				$string = "category.php?numpage="."$z";
-				
+				$actNum = "";
+			}			
+			$string = "category.php?DanhMuc="."$DanhMuc"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";			
 			echo "<li class='page-item $actNum'><a class='page-link' href='$string'>$z</a></li>";
 			$z++;
 		}
-	
-	//<li class="page-item active"><a class="page-link" href="#">1</a></li>
-	//<li class="page-item"><a class="page-link" href="#">2</a></li>
-	//<li class="page-item"><a class="page-link" href="#">3</a></li>
-	?>
+	?>	
 	</ul>
 </nav>

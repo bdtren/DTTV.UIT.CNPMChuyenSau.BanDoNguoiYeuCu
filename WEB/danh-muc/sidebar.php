@@ -17,7 +17,7 @@
 							</div>
 
 							  <!-- Danh mục con -->
-							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
 										<?php $i=0; $a= TaiDanhMuc(); while($i<13) { 
@@ -46,7 +46,7 @@
 							</div>
 
 							  <!-- Danh mục con -->
-							<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
 										<?php while($i<24) { 

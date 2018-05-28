@@ -1,7 +1,7 @@
 <?php
     if(isset($_POST['accept']))
     {
-        include('xulyphp/ketnoicsdl.php');
+        include('xulyphp/connect.php');
         //Lấy dữ liệu từ form
         $username = addslashes($_POST['username']);
         $email = addslashes($_POST['email']);
