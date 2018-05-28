@@ -1,14 +1,15 @@
 /*file script chay du lieu*/
 
 /*Báng chucvu */
-insert into CHUCVU values('CV0001','NV Quản lý','3','5000000');
-insert into CHUCVU values('CV0002','NV Quảng Cáo','2','3000000');
-insert into CHUCVU values('CV0003','NV Chăm sóc KH','2','3000000');
-insert into CHUCVU values('CV0004','NV Kiểm duyệt','1','3000000');
-insert into CHUCVU values('CV0005','NV Tài chính-Kế toán','2','3000000');
-insert into CHUCVU values('CV0006','NV Kỹ thuật','1','3000000');
+insert into CHUCVU values('CV0001','NV Quản lý','3','100000');
+insert into CHUCVU values('CV0002','NV Quảng Cáo','2','50000');
+insert into CHUCVU values('CV0003','NV Chăm sóc KH','2','50000');
+insert into CHUCVU values('CV0004','NV Kiểm duyệt','1','50000');
+insert into CHUCVU values('CV0005','NV Tài chính-Kế toán','2','50000');
+insert into CHUCVU values('CV0006','NV Kỹ thuật','1','70000');
 
 /*Bang danhmuc*/
+insert into DANHMUC values('DM0000','Tất cả danh mục','./Images/danh-muc/tatca.jpg','');
 insert into DANHMUC values('DM0001','Bất động sản','./Images/danh-muc/bds2.jpg','size50');
 insert into DANHMUC values('DM0002','Nội ngoại thất, đồ gia dụng','./Images/danh-muc/noithat.jpg','');
 insert into DANHMUC values('DM0003','Đồ điện tử','./Images/danh-muc/dientu2.jpg','');
@@ -20,8 +21,7 @@ insert into DANHMUC values('DM0008','Giải trí, Thể thao, Sở thích','./Im
 insert into DANHMUC values('DM0009','Đồ văn phòng, Công nông nghiệp','./Images/danh-muc/vanphong2.jpg','');
 insert into DANHMUC values('DM0010','Việc làm dịch vụ','./Images/danh-muc/dichvu2.jpg','');
 insert into DANHMUC values('DM0011','Các loại khác','./Images/danh-muc/loaikhac.jpg','');
-insert into DANHMUC values('DM0012','Tất cả danh mục','./Images/danh-muc/tatca.jpg','');
-insert into DANHMUC values('DM0013','Cho tặng miễn phí','./Images/danh-muc/chotang.png','');
+insert into DANHMUC values('DM0012','Cho tặng miễn phí','./Images/danh-muc/chotang.png','');
 insert into DANHMUC values('DM1001','Món quà đầu tiên','./Images/danh-muc/quadautien.jpg','size50');
 insert into DANHMUC values('DM1002','Ngày Valentine 14-2','./Images/danh-muc/valentine.jpg','');
 insert into DANHMUC values('DM1003','Ngày Quốc tế Phụ nữ 8-3','./Images/danh-muc/8-3.jpg','');
@@ -81,13 +81,13 @@ values ('TD0001','NV0003','DM0001','KH0001','1','2018/4/30','Bán','Bán nhà ng
 insert into TINDANG
 values ('TD0002','NV0003','DM0002','KH0002','1','2018/4/30','Bán','Bán tủ lạnh','4000000','mới','./Images/san-pham/tindang2.png','tâm sự abc','chuyển khoản','da dang','');
 insert into TINDANG
-values ('TD0003','NV0003','DM0003','KH0003','1','2018/4/30','Mua','Bán Tivi','3000000','mới','./Images/san-pham/tindang3.png','tâm sự abc','tiền mặt','da dang','');
+values ('TD0003','NV0003','DM0003','KH0003','1','2018/4/30','Mua','Mua Tivi','3000000','mới','./Images/san-pham/tindang3.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
 values ('TD0004','NV0003','DM0004','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang4.png','tâm sự abc','chuyển khoản','da dang','');
 insert into TINDANG
-values ('TD0005','NV0003','DM0005','KH0005','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang5.png','tâm sự abc','tiền mặt','dang dang','ribbon-new');
+values ('TD0005','NV0003','DM0005','KH0005','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang5.png','tâm sự abc','tiền mặt','da dang','ribbon-new');
 insert into TINDANG
-values ('TD0006','NV0003','DM0006','KH0005','0','2018/4/30','Bán','Bán xe đạp em bé','1000000','mới','./Images/san-pham/tindang6.png','tâm sự abc','tiền mặt','dang cho','');
+values ('TD0006','NV0003','DM0006','KH0005','1','2018/4/30','Bán','Bán xe đạp em bé','1000000','mới','./Images/san-pham/tindang6.png','tâm sự abc','tiền mặt','dang cho','');
 insert into TINDANG
 values ('TD0007','NV0003','DM0007','KH0001','1','2018/4/30','Mua','Mua chó kiểng','4000000','mới','./Images/san-pham/tindang7.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
@@ -99,9 +99,9 @@ values ('TD0010','NV0003','DM0004','KH0004','1','2018/4/30','Mua','Mua xe đạp
 insert into TINDANG
 values ('TD0011','NV0003','DM0005','KH0001','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an','');
 insert into TINDANG
-values ('TD0012','NV0003','DM0006','KH0005','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','dang dang','');
+values ('TD0012','NV0003','DM0006','KH0005','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0013','NV0003','DM0007','KH0001','0','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','');
+values ('TD0013','NV0003','DM0007','KH0001','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','');
 insert into TINDANG
 values ('TD0014','NV0003','DM0008','KH0002','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','da huy','');
 insert into TINDANG
@@ -109,11 +109,11 @@ values ('TD0015','NV0003','DM0009','KH0003','1','2018/4/30','Mua','Mua máy lạ
 insert into TINDANG
 values ('TD0016','NV0003','DM0010','KH0004','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0017','NV0003','DM0011','KH0001','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','dang dang','');
+values ('TD0017','NV0003','DM0011','KH0001','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0018','NV0003','DM0012','KH0002','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','dang dang','');
+values ('TD0018','NV0003','DM0003','KH0002','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0019','NV0003','DM0013','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','');
+values ('TD0019','NV0003','DM0012','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
 values ('TD0020','NV0003','DM1001','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang','');
 insert into TINDANG
@@ -121,9 +121,9 @@ values ('TD0021','NV0003','DM1002','KH0003','1','2018/4/30','Bán','Bán dây ch
 insert into TINDANG
 values ('TD0022','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','');
 insert into TINDANG
-values ('TD0023','NV0003','DM1004','KH0001','0','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','dang cho','ribbon-hot');
+values ('TD0023','NV0003','DM1004','KH0001','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','ribbon-hot');
 insert into TINDANG
-values ('TD0024','NV0003','DM1005','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','dang dang','');
+values ('TD0024','NV0003','DM1005','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
 insert into TINDANG
 values ('TD0025','NV0003','DM1007','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
@@ -133,9 +133,9 @@ values ('TD0027','NV0003','DM2001','KH0003','1','2018/4/30','Tặng','Thư tỏ 
 insert into TINDANG
 values ('TD0028','NV0003','DM2002','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0029','NV0003','DM2003','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','dang dang','');
+values ('TD0029','NV0003','DM2003','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','da dang','');
 insert into TINDANG
-values ('TD0030','NV0003','DM2004','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','dang dang','');
+values ('TD0030','NV0003','DM2004','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','da dang','');
 insert into TINDANG
 values ('TD0031','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
 insert into TINDANG
@@ -145,16 +145,145 @@ values ('TD0033','NV0003','DM0003','KH0003','1','2018/4/30','Mua','Mua máy tín
 insert into TINDANG
 values ('TD0034','NV0003','DM0004','KH0004','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
-values ('TD0035','NV0003','DM0005','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','dang dang','');
+values ('TD0035','NV0003','DM0005','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
 values ('TD0036','NV0003','DM0006','KH0002','0','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
-
+/*
+insert into TINDANG
+values ('TD0037','NV0003','DM0007','KH0001','1','2018/4/30','Bán','Bán nhà người yêu cũ','3000000000','mới','./Images/san-pham/tindang1.png;./Images/san-pham/tindang1_2.png','tâm sự abc','tiền mặt','da dang','ribbon-new');
+insert into TINDANG
+values ('TD0038','NV0003','DM0008','KH0002','1','2018/4/30','Bán','Bán tủ lạnh','4000000','mới','./Images/san-pham/tindang2.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0039','NV0003','DM0009','KH0003','1','2018/4/30','Mua','Mua Tivi','3000000','mới','./Images/san-pham/tindang3.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0040','NV0003','DM0010','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang4.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0041','NV0003','DM0011','KH0005','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang5.png','tâm sự abc','tiền mặt','da dang','ribbon-new');
+insert into TINDANG
+values ('TD0042','NV0003','DM0012','KH0005','1','2018/4/30','Bán','Bán xe đạp em bé','1000000','mới','./Images/san-pham/tindang6.png','tâm sự abc','tiền mặt','dang cho','');
+insert into TINDANG
+values ('TD0043','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua chó kiểng','4000000','mới','./Images/san-pham/tindang7.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0044','NV0003','DM1002','KH0002','1','2018/4/30','Mua','Mua banh','200000','mới/cũ','./Images/san-pham/tindang8.png','tâm sự abc','tiền mặt/chuyển khoản','da huy','');
+insert into TINDANG
+values ('TD0045','NV0003','DM1003','KH0003','1','2018/4/30','Bán','Bán bàn làm việc','1000000','cũ','./Images/san-pham/tindang9.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0046','NV0003','DM1004','KH0004','1','2018/4/30','Mua','Mua xe đạp','700000','mới','./Images/san-pham/tindang10.png;./Images/san-pham/tindang10_2.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0047','NV0003','DM1005','KH0001','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an','');
+insert into TINDANG
+values ('TD0048','NV0003','DM1006','KH0005','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0049','NV0003','DM1007','KH0001','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','');
+insert into TINDANG
+values ('TD0050','NV0003','DM1008','KH0002','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','da huy','');
+insert into TINDANG
+values ('TD0051','NV0003','DM1009','KH0003','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang15.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0052','NV0003','DM1010','KH0004','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0053','NV0003','DM1011','KH0001','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0054','NV0003','DM2001','KH0002','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0055','NV0003','DM2002','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0056','NV0003','DM2003','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0057','NV0003','DM2004','KH0003','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0058','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','');
+insert into TINDANG
+values ('TD0059','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','ribbon-hot');
+insert into TINDANG
+values ('TD0060','NV0003','DM0002','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0061','NV0003','DM0003','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0062','NV0003','DM0004','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
+insert into TINDANG
+values ('TD0063','NV0003','DM0005','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0064','NV0003','DM0006','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0065','NV0003','DM0007','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','da dang','');
+insert into TINDANG
+values ('TD0066','NV0003','DM0008','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','da dang','');
+insert into TINDANG
+values ('TD0067','NV0003','DM0009','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0068','NV0003','DM0010','KH0002','1','2018/4/30','Bán','Bán máy lạnh','4000000','mới','./Images/san-pham/tindang32.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0069','NV0003','DM0011','KH0003','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an','');
+insert into TINDANG
+values ('TD0070','NV0003','DM0012','KH0004','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0071','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0072','NV0003','DM1002','KH0002','1','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
+insert into TINDANG
+values ('TD0073','NV0003','DM1003','KH0003','1','2018/4/30','Bán','Bán bàn làm việc','1000000','cũ','./Images/san-pham/tindang9.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0074','NV0003','DM1004','KH0004','1','2018/4/30','Mua','Mua xe đạp','700000','mới','./Images/san-pham/tindang10.png;./Images/san-pham/tindang10_2.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0075','NV0003','DM1005','KH0001','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an','');
+insert into TINDANG
+values ('TD0076','NV0003','DM1006','KH0005','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0077','NV0003','DM1007','KH0001','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','');
+insert into TINDANG
+values ('TD0078','NV0003','DM1008','KH0002','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','da huy','');
+insert into TINDANG
+values ('TD0079','NV0003','DM1009','KH0003','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang15.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0080','NV0003','DM1010','KH0004','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0081','NV0003','DM1011','KH0001','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0082','NV0003','DM2001','KH0002','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0083','NV0003','DM2002','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0084','NV0003','DM2003','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0085','NV0003','DM2004','KH0003','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0086','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','');
+insert into TINDANG
+values ('TD0087','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','ribbon-hot');
+insert into TINDANG
+values ('TD0088','NV0003','DM0002','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0089','NV0003','DM0003','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0090','NV0003','DM0004','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
+insert into TINDANG
+values ('TD0091','NV0003','DM0005','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
+insert into TINDANG
+values ('TD0092','NV0003','DM0006','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0093','NV0003','DM0007','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','da dang','');
+insert into TINDANG
+values ('TD0094','NV0003','DM0008','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','da dang','');
+insert into TINDANG
+values ('TD0095','NV0003','DM0009','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
+insert into TINDANG
+values ('TD0096','NV0003','DM0010','KH0002','1','2018/4/30','Bán','Bán máy lạnh','4000000','mới','./Images/san-pham/tindang32.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0097','NV0003','DM0011','KH0003','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an','');
+insert into TINDANG
+values ('TD0098','NV0003','DM0012','KH0004','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0099','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
+insert into TINDANG
+values ('TD0100','NV0003','DM1002','KH0002','1','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
+*/
 
 /* Báng thanhtoanluong */
-insert into THANHTOANLUONG values ('TT0001','NV0001','3000000');
-insert into THANHTOANLUONG values ('TT0002','NV0002','4000000');
-insert into THANHTOANLUONG values ('TT0003','NV0003','5000000');
-insert into THANHTOANLUONG values ('TT0004','NV0004','6000000');
+insert into THANHTOANLUONG values ('TT0001','NV0001','3000000','2018/5/2');
+insert into THANHTOANLUONG values ('TT0002','NV0002','4000000','2018/5/2');
+insert into THANHTOANLUONG values ('TT0003','NV0003','5000000','2018/5/2');
+insert into THANHTOANLUONG values ('TT0004','NV0004','6000000','2018/5/2');
 
 /* Báng thacmac */
 insert into THACMAC values ('TM0001','KH0002','NV0002','Giải đáp','Cách đăng tin','Chi tiết abc ','Tra loi abc ');

@@ -472,6 +472,6 @@ alter table XULYVIPHAM add constraint FK_XULYVIPHAM foreign key (MAKH)
 
 alter table XULYVIPHAM add constraint FK_XULYVIPHAM2 foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
-ALTER TABLE `taikhoan`
-  ADD UNIQUE KEY `TAIKHOAN_TENTK_U` (`TENTK`);
+/*ALTER TABLE `taikhoan`
+  ADD UNIQUE KEY `TAIKHOAN_TENTK_U` (`TENTK`);*/
 
