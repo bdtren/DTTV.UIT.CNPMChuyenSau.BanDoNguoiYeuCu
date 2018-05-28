@@ -86,32 +86,12 @@
 					</li>
 
 				</ul>
-				<!-- <form class="form-inline mt-2 mt-md-0" method='GET' action='xulyphp/search.php'>
+				<form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
 					<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Tìm kiếm</button>
-				</form> -->
-				<div class="form-inline mt-2 mt-md-0">
-					<input id='key' name='key' class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
-					<input type="button" class="btn btn-outline-primary my-2 my-sm-0"  name="timkiem" id='sreach' onclick="Search()" value='Tìm kiếm'>
+				</form>
 				</div>
-					
-				<script language="javascript">
-
-					function Search(sreach)
-					{		
-						//document.getElementById("field2").value;
-						if(document.getElementById("key").value != '')
-						{
-							//alert(document.getElementById("key").value);
-							location.href = 'category.php?Search='+key.value;
-						}
-						
-					}
-
-				</script>	
-
-				</div>
-    		</nav>
-		</div>
+    		  </nav>
+			</div>
 	<!--End header -->
 	</body>

@@ -1,4 +1,9 @@
 <?php
+     
+	
+
+
+
 	function TangMa($Ma)
     {
         if(!empty($Ma))
@@ -39,7 +44,7 @@
 
     function DemSanPham($DanhMuc)
     {
-        include('xulyphp/connect.php');
+        KetNoiCSDL();
         if(empty($DanhMuc))
         {
             $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' ";
@@ -48,7 +53,6 @@
         {
             $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' AND MADM = '$DanhMuc'  ";
         }
-        mysqli_set_charset($conn, "utf8");
         if($count = mysqli_num_rows(mysqli_query($conn, $sql)))
         {
             mysqli_close($conn);
@@ -64,7 +68,7 @@
     function TaiSanPhamHot($DanhMuc = '')
     {   
         $a = null;     
-        include('xulyphp/connect.php');
+        KetNoiCSDL();
         if(empty($DanhMuc))
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
@@ -91,7 +95,7 @@
         {
             while($row = mysqli_fetch_assoc($result))
             {
-                $a[] = $row;
+                $a[$i] = $row;
             }
         }
         mysqli_close($conn);
@@ -102,7 +106,7 @@
     function TaiSanPhamThuong( $index, $DanhMuc = '', $Sort = 'MATD', $SortType = 'ASC' )
     {
         $a = null;
-        include('xulyphp/connect.php');
+        KetNoiCSDL();
         if(empty($DanhMuc))
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
@@ -140,7 +144,7 @@
     function TaiChiTietSanPham($MATD)
     {
         $a = null;
-        include('xulyphp/connect.php');
+        KetNoiCSDL();
         $sql = "SELECT      *
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
@@ -160,11 +164,10 @@
     function TaiDanhMuc()
     {
         $a = null; 
-        include('connect.php');  
+        KetNoiCSDL();   
         $sql = "SELECT      * 
                 FROM        DANHMUC 
                 ORDER BY    MADM ASC";
-        mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
         {
             while($row = mysqli_fetch_assoc($result))
@@ -179,7 +182,7 @@
     function TaiThongTinKhachHang($MAKH)
     {
         $a = null; 
-        include('connect.php');
+        KetNoiCSDL();
         $sql = "SELECT      * 
                 FROM        KHACHHANG,TAIKHOAN
                 WHERE       KHACHHANG.MATK=TAIKHOAN.MATK
@@ -200,8 +203,8 @@
     function TaiDanhSachTin($MAKH)
     {
         $a = null; 
-        include('connect.php');
-        $sql = "SELECT      *, TINDANG.TAMSU AS TSTD, KHACHHANG.TAMSU AS TSKH
+        KetNoiCSDL();
+        $sql = "SELECT      *, TINDANG.TAMSU AS TDTS, KHACHHANG.TAMSU AS KHTS
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         TINDANG.MAKH = '$MAKH'
@@ -218,4 +221,6 @@
         mysqli_close($conn);
         return $a;
     }
+ 
+
 ?>

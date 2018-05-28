@@ -2,7 +2,7 @@
 	$PageName="quenmatkhau";
 ?>
 
-<?php  include "xulyphp/forgetpassword.php" ?>
+<?php  include "xulyphp/account/forgetpassword.php" ?>
 
 <!doctype html>
 <html>

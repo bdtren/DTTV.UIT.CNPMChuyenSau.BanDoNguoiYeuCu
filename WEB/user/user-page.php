@@ -1,7 +1,6 @@
 <?php 
   session_start(); 
-  $UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
-  include("../xulyphp/account-detail.php");
+  $UserName = isset($_SESSION['username']) ? $_SESSION['username'] : "" ;
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,7 +48,6 @@
             </div>
         </div>
     </section>
-    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

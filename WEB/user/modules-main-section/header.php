@@ -33,7 +33,7 @@
                 <a class="nav-link">Chào mừng <?php echo $UserName; ?></a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="../xulyphp/logout.php">Đăng xuất</a>
+              <a class="nav-link" href="../xulyphp/taikhoan/dangxuat.php">Đăng xuất</a>
             </li>
           </ul>
     
