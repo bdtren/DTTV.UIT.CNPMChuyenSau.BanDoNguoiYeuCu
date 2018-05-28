@@ -50,18 +50,33 @@ insert into TAIKHOAN values('TK0008','nguyenthitrang','thitrang');
 insert into TAIKHOAN values('TK0009','hoangtuananh','tuananh');
 insert into TAIKHOAN values('TK0010','lehoangnam','hoangnam');
 insert into TAIKHOAN values('TK0011','hoxuanthuong','baoanh');
+insert into TAIKHOAN values('TK0012','nguyenhoang','nguyenhoang');
+insert into TAIKHOAN values('TK0013','','');
+insert into TAIKHOAN values('TK0014','','');
+insert into TAIKHOAN values('TK0015','','');
+insert into TAIKHOAN values('TK0016','','');
 
 /*Báng khachhang */
 insert into KHACHHANG
-values('KH0001','TK0005','Nguyễn Văn Đức','Hồ Chí Minh','0123456789','abcd.facebook','1997/5/6','Nam','abc@gmail.com','./Images/user/avatar1.png','tam su abc...');
+values('KH0001','TK0005','Nguyễn Văn Đức','Hồ Chí Minh','0123456789','vanduc.facebook','1997/5/6','Nam','vanduc@gmail.com','./Images/user/avatar1.png','tam su kh0001...');
 insert into KHACHHANG
-values('KH0002','TK0006','Tran Anh Việt','Bình Dương','01232456789','abcde.facebook','1996/2/14','Nam','abcd@gmail.com','./Images/user/avatar2.png','tam su def...');
+values('KH0002','TK0006','Tran Anh Việt','Bình Dương','01232456789','anhviet.facebook','1996/2/14','Nam','anhviet@gmail.com','./Images/user/avatar2.png','tam su kh0002...');
 insert into KHACHHANG
-values('KH0003','TK0007','Hồ Xuân Hương','Đồng Nai','00123456789','abcdf.facebook','1997/8/27','Nu','abcdf@gmail.com','./Images/user/avatar3.png','tam su bcd...');
+values('KH0003','TK0007','Hồ Xuân Hương','Đồng Nai','00123456789','xuanhuong.facebook','1997/8/27','Nu','xuanhuong@gmail.com','./Images/user/avatar3.png','tam su kh0003...');
 insert into KHACHHANG
-values('KH0004','TK0008','Nguyễn Thị Trang','Tiền Giang','1223456789','abcdfe.facebook','1998/3/13','Nu','abcdfef@gmail.com','./Images/user/avatar4.png','tam su abc...');
+values('KH0004','TK0008','Nguyễn Thị Trang','Tiền Giang','1223456789','thitrang.facebook','1998/3/13','Nu','thitrang@gmail.com','./Images/user/avatar4.png','tam su kh0004...');
 insert into KHACHHANG
-values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar4.png','tam su abc...');
+values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','xuanthuong.facebook','1996/7/13','Nam','xuanthuong@gmail.com','./Images/user/avatar5.png','tam su kh0005...');
+insert into KHACHHANG
+values('KH0006','TK0012','Nguyễn Hoàng','Hồ Chí Minh','01208353316','nguyenhoang.facebook','1990/5/9','Nam','nguyenhoang@gmail.com','./Images/user/avatar6.png','tam su kh0006...');
+insert into KHACHHANG
+values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar7.png','tam su kh0007...');
+insert into KHACHHANG
+values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar8.png','tam su kh0008...');
+insert into KHACHHANG
+values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar9.png','tam su kh0009...');
+insert into KHACHHANG
+values('KH0005','TK0011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar10.png','tam su kh0010...');
 
 /* Báng nhanvien */
 insert into NHANVIEN
@@ -127,7 +142,7 @@ values ('TD0024','NV0003','DM1005','KH0002','1','2018/4/30','Bán','Bán xe hơi
 insert into TINDANG
 values ('TD0025','NV0003','DM1007','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
-values ('TD0026','NV0003','DM1009','KH0002','1','2018/4/30','Bán','Bán Nhẩn','2000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;4000000');
+values ('TD0026','NV0003','DM1009','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
 insert into TINDANG
 values ('TD0027','NV0003','DM2001','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
 insert into TINDANG
@@ -148,7 +163,7 @@ insert into TINDANG
 values ('TD0035','NV0003','DM0005','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
 values ('TD0036','NV0003','DM0006','KH0002','0','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
-/*
+
 insert into TINDANG
 values ('TD0037','NV0003','DM0007','KH0001','1','2018/4/30','Bán','Bán nhà người yêu cũ','3000000000','mới','./Images/san-pham/tindang1.png;./Images/san-pham/tindang1_2.png','tâm sự abc','tiền mặt','da dang','ribbon-new');
 insert into TINDANG
@@ -277,7 +292,7 @@ insert into TINDANG
 values ('TD0099','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
 insert into TINDANG
 values ('TD0100','NV0003','DM1002','KH0002','1','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
-*/
+
 
 /* Báng thanhtoanluong */
 insert into THANHTOANLUONG values ('TT0001','NV0001','3000000','2018/5/2');
