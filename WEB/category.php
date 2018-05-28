@@ -7,7 +7,7 @@
     }
     else
     {
-        $numpage = 0;
+        $numpage = 1;
     }
     
     if(isset($_GET['DanhMuc']))
@@ -16,9 +16,10 @@
     }
     else
     {
-        $DanhMuc = '';
+        $DanhMuc = 'DM0000';
 	}
-	
+	//$DanhMuc = "DMooo";
+	//echo "<script language='javascript'> alert('$DanhMuc')</script>";
 	if(isset($_GET['Sort']))
     {
         $Sort = $_GET['Sort'];
@@ -149,7 +150,7 @@
 							
 							$cardType = "";
 							$i = 0;	
-							$a = TaiSanPhamThuong($numpage,$DanhMuc,$Sort,$SortType);
+							$a = TaiSanPhamThuong($numpage*6-6,$DanhMuc,$Sort,$SortType);
 							while($i<6) 
 							{ 
 								if(!empty($a[$i]))

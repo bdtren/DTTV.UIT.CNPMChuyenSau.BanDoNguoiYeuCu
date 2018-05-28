@@ -27,8 +27,6 @@
             {
                 //Lưu tên đăng nhập 
                 $_SESSION['user'] = $username;
-                echo '<script language="javascript"> alert("Xin chào '.$username.'") </script>';
-                // ẩn trang đăng nhập
             }   
         }   
         mysqli_close($conn);
