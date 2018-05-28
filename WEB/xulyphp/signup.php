@@ -1,4 +1,32 @@
 <?php
+    function TangMa($Ma)
+    {
+        if(!empty($Ma))
+        {
+            $tukhoa = substr($Ma,0,2);
+            $m = substr($Ma,2);
+            $z = 1 + $m;
+            $MaMoi = '';
+            if($z<10)
+            {
+                $MaMoi = $tukhoa."000".$z;
+            } 
+            else if($z<100)
+            {
+                    $MaMoi = $tukhoa."00".$z;
+            }
+            else if($z<1000)
+            {
+                $MaMoi = $tukhoa."0".$z;
+            }
+            else
+            {
+                $MaMoi = $tukhoa.$z;
+            }
+            return $MaMoi;
+        }
+        return null;       
+    }
     if(isset($_POST['signup']))
     {
         include('xulyphp/connect.php');
@@ -28,7 +56,7 @@
             else
             {
                 // Mã khóa mật khẩu
-                $password = md5($password);
+                //$password = md5($password);
                         
                 //Kiểm tra tên đăng nhập này đã có người dùng chưa
                 //Kiểm tra email đã có người dùng chưa
