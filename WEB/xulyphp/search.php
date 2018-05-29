@@ -11,7 +11,7 @@
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         TINHTRANGTIN = 'da dang'
                 AND         LOAITIN = ''
-                AND         TIEUDE LIKE '%$str%'
+                AND         TIEUDE LIKE '%$st%'
                 ORDER BY    $Sort $SortType
                 LIMIT       $index,9";
         if($result = mysqli_query($conn, $sql))

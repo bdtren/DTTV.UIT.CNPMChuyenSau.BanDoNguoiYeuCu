@@ -7,8 +7,19 @@
     }
     else
     {
-        $numpage = 0;
+        $numpage = 1;
+	}
+
+	if(isset($_GET['Search']))
+    {
+        $Search = $_GET['Search'];
     }
+    else
+    {
+        $Search = '';
+	}
+	
+    
     
     if(isset($_GET['DanhMuc']))
     {
@@ -16,9 +27,10 @@
     }
     else
     {
-        $DanhMuc = '';
+        $DanhMuc = 'DM0000';
 	}
-	
+	//$DanhMuc = "DMooo";
+	//echo "<script language='javascript'> alert('$DanhMuc')</script>";
 	if(isset($_GET['Sort']))
     {
         $Sort = $_GET['Sort'];
@@ -106,11 +118,19 @@
 
 									function SortChanged(SortSelect)
 									{
-										location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+										var q = '<?php echo $Search ?>';
+										if( q == '')
+											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;	
+										else
+											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
 									}
 									function SortTypeChanged(SortTypeSelect)
 									{
-										location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+										var p = '<?php echo $Search ?>';
+										if( p == '')
+											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+										else
+											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
 									}
 
 								</script>						
@@ -127,36 +147,61 @@
 					</div>
 					
 					<ul style="list-style: none; ">
-						<?php 	
-							$a = TaiSanPhamHot($DanhMuc);
-							$i = 0;
-							$z = 0;
-							if(!empty($a))
-							{
-								foreach($a as $value)
+						<?php 
+							if(empty($Search))
+							{	
+								$a = TaiSanPhamHot($DanhMuc);
+								$i = 0;
+								$z = 0;
+								if(!empty($a))
 								{
-									switch(Chuoi2Mang($value['LOAITIN'])[0])
+									foreach($a as $value)
 									{
-										case 'ribbon-new': $cardType = "ribbon-new"; break;
-										case 'ribbon-hot': $cardType = "ribbon-hot"; break;
-										case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+										switch(Chuoi2Mang($value['LOAITIN'])[0])
+										{
+											case 'ribbon-new': $cardType = "ribbon-new"; break;
+											case 'ribbon-hot': $cardType = "ribbon-hot"; break;
+											case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+										}
+										include('./danh-muc/product.php');
+										$i++;
+										$z++;
 									}
-									include('./danh-muc/product.php');
-									$i++;
+								}
+								
+								$cardType = "";
+								$i = 0;	
+								$a = TaiSanPhamThuong($numpage*6-6,$DanhMuc,$Sort,$SortType);
+								while($i<6) 
+								{ 
+									if(!empty($a[$i]))
+										include('./danh-muc/product.php');
+									$i++; 
 									$z++;
+								} 
+							}
+							else
+							{
+								$a = TimKiemSanPham($numpage*9-9,$Search,$Sort,$SortType);
+								$i = 0;
+								$z = 0;
+								if(!empty($a))
+								{
+									foreach($a as $value)
+									{
+										switch(Chuoi2Mang($value['LOAITIN'])[0])
+										{
+											case 'ribbon-new': $cardType = "ribbon-new"; break;
+											case 'ribbon-hot': $cardType = "ribbon-hot"; break;
+											case 'ribbon-discount': $cardType = "ribbon-discount"; break;
+											default : $cardType = '';
+										}
+										include('./danh-muc/product.php');
+										$i++;
+										$z++;
+									}
 								}
 							}
-							
-							$cardType = "";
-							$i = 0;	
-							$a = TaiSanPhamThuong($numpage,$DanhMuc,$Sort,$SortType);
-							while($i<6) 
-							{ 
-								if(!empty($a[$i]))
-						 			include('./danh-muc/product.php');
-								$i++; 
-								$z++;
-							} 
 						?>
 
 					</ul>
