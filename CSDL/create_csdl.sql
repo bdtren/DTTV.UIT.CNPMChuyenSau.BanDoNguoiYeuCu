@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     5/28/2018 4:05:14 PM                         */
+/* Created on:     5/29/2018 5:31:08 PM                         */
 /*==============================================================*/
 
 /*
@@ -50,6 +50,12 @@ drop table if exists PHANCONG;
 
 drop table if exists TAIKHOAN;
 
+drop index TD_THUOC_DM2_FK on TD_THUOC_DM;
+
+drop index TD_THUOC_DM_FK on TD_THUOC_DM;
+
+drop table if exists TD_THUOC_DM;
+
 drop index NV_XULYTHACMAC_KH_FK on THACMAC;
 
 drop index KH_CO_TM_FK on THACMAC;
@@ -68,8 +74,6 @@ drop index KH_CO_TD_FK on TINDANG;
 
 drop index NV_KIEMDUYET_TD_FK on TINDANG;
 
-drop index TD_THUOC_DM_FK on TINDANG;
-
 drop table if exists TINDANG;
 
 drop index XULYVIPHAM2_FK on XULYVIPHAM;
@@ -77,6 +81,7 @@ drop index XULYVIPHAM2_FK on XULYVIPHAM;
 drop index XULYVIPHAM_FK on XULYVIPHAM;
 
 drop table if exists XULYVIPHAM;
+*/
 
 /*==============================================================*/
 /* Table: CHUCVU                                                */
@@ -334,6 +339,33 @@ create table TAIKHOAN
 ;
 
 /*==============================================================*/
+/* Table: TD_THUOC_DM                                           */
+/*==============================================================*/
+create table TD_THUOC_DM
+(
+   MATD                           char(6)                        not null,
+   MADM                           char(6)                        not null,
+   primary key (MATD, MADM)
+)
+;
+
+/*==============================================================*/
+/* Index: TD_THUOC_DM_FK                                        */
+/*==============================================================*/
+create index TD_THUOC_DM_FK on TD_THUOC_DM
+(
+   MATD
+);
+
+/*==============================================================*/
+/* Index: TD_THUOC_DM2_FK                                       */
+/*==============================================================*/
+create index TD_THUOC_DM2_FK on TD_THUOC_DM
+(
+   MADM
+);
+
+/*==============================================================*/
 /* Table: THACMAC                                               */
 /*==============================================================*/
 create table THACMAC
@@ -419,7 +451,6 @@ create table TINDANG
 (
    MATD                           char(6)                        not null,
    MANV                           char(6)                        not null,
-   MADM                           char(6)                        not null,
    MAKH                           char(6)                        not null,
    TTKIEMDUYET                    int                            not null,
    NGAYDANG                       date                           not null,
@@ -435,14 +466,6 @@ create table TINDANG
    primary key (MATD)
 )
 ;
-
-/*==============================================================*/
-/* Index: TD_THUOC_DM_FK                                        */
-/*==============================================================*/
-create index TD_THUOC_DM_FK on TINDANG
-(
-   MADM
-);
 
 /*==============================================================*/
 /* Index: NV_KIEMDUYET_TD_FK                                    */
@@ -525,6 +548,12 @@ alter table NHANVIEN add constraint FK_NV_CO_TK foreign key (MATK)
 alter table PHANCONG add constraint FK_NV_PHANCONG foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
+alter table TD_THUOC_DM add constraint FK_TD_THUOC_DM foreign key (MATD)
+      references TINDANG (MATD) on delete restrict on update restrict;
+
+alter table TD_THUOC_DM add constraint FK_TD_THUOC_DM2 foreign key (MADM)
+      references DANHMUC (MADM) on delete restrict on update restrict;
+
 alter table THACMAC add constraint FK_KH_CO_TM foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
 
@@ -542,9 +571,6 @@ alter table TINDANG add constraint FK_KH_CO_TD foreign key (MAKH)
 
 alter table TINDANG add constraint FK_NV_KIEMDUYET_TD foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
-
-alter table TINDANG add constraint FK_TD_THUOC_DM foreign key (MADM)
-      references DANHMUC (MADM) on delete restrict on update restrict;
 
 alter table XULYVIPHAM add constraint FK_XULYVIPHAM foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
