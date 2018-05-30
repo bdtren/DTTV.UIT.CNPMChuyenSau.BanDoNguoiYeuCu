@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     5/29/2018 5:31:08 PM                         */
+/* Created on:     5/30/2018 10:31:56 AM                        */
 /*==============================================================*/
 
 /*
@@ -38,6 +38,8 @@ drop index KIEMTRA_THIETBI_FK on KIEMTRATB;
 
 drop table if exists KIEMTRATB;
 
+drop table if exists LOAITIN;
+
 drop index NV_CO_TK_FK on NHANVIEN;
 
 drop index NV_CO_CV_FK on NHANVIEN;
@@ -69,6 +71,8 @@ drop table if exists THANHTOANLUONG;
 drop index NV_THEM_TB_FK on THIETBI;
 
 drop table if exists THIETBI;
+
+drop index TINDANG_THUOC_LOAITIN_FK on TINDANG;
 
 drop index KH_CO_TD_FK on TINDANG;
 
@@ -268,6 +272,18 @@ create index NV_KIEMTRA_TB_FK on KIEMTRATB
 );
 
 /*==============================================================*/
+/* Table: LOAITIN                                               */
+/*==============================================================*/
+create table LOAITIN
+(
+   LOAITIN                        varchar(50)                    not null,
+   TENLOAI                        varchar(50)                    not null,
+   GIA                            float(8,2)                     not null,
+   primary key (LOAITIN)
+)
+;
+
+/*==============================================================*/
 /* Table: NHANVIEN                                              */
 /*==============================================================*/
 create table NHANVIEN
@@ -452,6 +468,7 @@ create table TINDANG
    MATD                           char(6)                        not null,
    MANV                           char(6)                        not null,
    MAKH                           char(6)                        not null,
+   LOAITIN                        varchar(50)                    not null,
    TTKIEMDUYET                    int                            not null,
    NGAYDANG                       date                           not null,
    LOAITD                         varchar(50)                    not null,
@@ -462,7 +479,6 @@ create table TINDANG
    TAMSU                          longtext,
    PTGD                           varchar(50)                    not null,
    TINHTRANGTIN                   varchar(50)                    not null,
-   LOAITIN                        varchar(50)                    not null,
    primary key (MATD)
 )
 ;
@@ -481,6 +497,14 @@ create index NV_KIEMDUYET_TD_FK on TINDANG
 create index KH_CO_TD_FK on TINDANG
 (
    MAKH
+);
+
+/*==============================================================*/
+/* Index: TINDANG_THUOC_LOAITIN_FK                              */
+/*==============================================================*/
+create index TINDANG_THUOC_LOAITIN_FK on TINDANG
+(
+   LOAITIN
 );
 
 /*==============================================================*/
@@ -571,6 +595,9 @@ alter table TINDANG add constraint FK_KH_CO_TD foreign key (MAKH)
 
 alter table TINDANG add constraint FK_NV_KIEMDUYET_TD foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
+
+alter table TINDANG add constraint FK_TINDANG_THUOC_LOAITIN foreign key (LOAITIN)
+      references LOAITIN (LOAITIN) on delete restrict on update restrict;
 
 alter table XULYVIPHAM add constraint FK_XULYVIPHAM foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;

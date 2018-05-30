@@ -1,3 +1,18 @@
+/*tao trigger truoc khi xoa tin dang */
+
+/*drop trigger before_delete_tindang;*/
+
+delimiter |
+create trigger before_delete_tindang before delete on TINDANG
+for each row
+begin
+	delete from KH_THEODOI_TD where MATD=old.MATD;
+    delete from TD_THUOC_DM where MATD=old.MATD;
+end;
+|
+delimiter
+
+
 /* tao trigger truoc khi xoa khach hang */
 
 /*drop trigger before_delete_khachhang;*/
