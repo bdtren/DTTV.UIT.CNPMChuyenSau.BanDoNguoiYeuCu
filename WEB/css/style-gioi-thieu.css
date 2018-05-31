@@ -2,9 +2,9 @@
 
 .main-contain{
 	margin-top: 4.5em;
-	background: #0073FF;
+	background: #50297a;
 	color: white;
-	
+	font-family: 'Playfair Display', serif;
 }
 
 
@@ -12,21 +12,27 @@
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
-.carousel {
+.main-contain .carousel {
   margin-bottom: 4rem;
 	width: 100vw;
 }
 
-.carousel-caption {
+.carousel-inner .carousel-item .container .carousel-caption h1{
+	font-size: 40px;
+	color: white;
+}
+
+
+.main-contain .carousel-caption {
   bottom: 3rem;
   z-index: 10;
 }
 
-.carousel-item {
+.main-contain .carousel-item {
   height: 35rem;
   background-color: #777;
 }
-.carousel-item img {
+.main-contain .carousel-item img {
   position: absolute;
   top: 0;
   left: 0;
@@ -50,6 +56,36 @@
   margin-left: .75rem;
 }
 
+.carousel-item .container .carousel-caption h1{
+	background: rgba(0,0,0,0.39);
+}
 
+.rounded-circle{
+	width: 140px;
+	height:140px;
+	display: block;
+	margin: auto;
+}
 
+.marketing .row .col-lg-3 h2{
+	text-align: center;
+}
 
+.marketing h1{
+	font-size: 40px;
+	font-weight: bolder;
+	text-align: center; 
+	color: #FFED00;
+	margin-bottom: 2em;
+}
+
+.marketing .row .col-lg-3 h2{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.marketing .row .col-lg-3 p{
+	font-size: 17px;
+	margin-top: 10px;
+}

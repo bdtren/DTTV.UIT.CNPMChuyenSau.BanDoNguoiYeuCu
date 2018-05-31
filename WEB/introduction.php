@@ -12,8 +12,9 @@
 	<link rel="icon" href="./Images/Home/favicon.png"/>
 	<title>Giới thiệu</title>
 	 <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style-gioi-thieu.css">
-
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
 	<link rel="manifest" href="./manifest.json"> 
 </head>
 		

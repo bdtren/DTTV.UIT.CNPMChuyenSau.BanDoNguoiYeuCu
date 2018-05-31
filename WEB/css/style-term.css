@@ -1,2 +1,37 @@
-.tab-content{
-    background: whitesmoke;
+body{
+	background: #7f4e9f;
+}
+.main{
+	margin-top: 5.5em;
+	height: 35em;
+	background: #EBEBEB;
+	font-family: 'Arsenal', sans-serif;
+	margin-bottom: 20px;
+}
+
+.main h2{
+	font-size: 30px;
+	font-weight: bolder;
+	text-align: center;
+	padding: 20px;
+}
+
+.tab-pane{
+	color: black;
+}
+
+.tab-pane h1{
+	font-size: 23px;
+}
+
+.tab-pane h3{
+	font-size: 20px;
+}
+
+.tab-pane li{
+	font-size: 18px;
+}
+
+.tab-pane h4{
+	font-size: 21px;
+}
