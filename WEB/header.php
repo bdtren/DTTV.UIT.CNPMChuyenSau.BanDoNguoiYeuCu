@@ -8,7 +8,7 @@
 		$UserName = '';
 	}
 	//Kiểm tra người dùng đã đăng nhập chưa
-	$IsLogin="enable";
+	$IsLogin="true"; //true hoặc false
 	$status="false";
 	if($IsLogin=="false"){
 		//Không cho phép CLick vào "tài khoản"
@@ -45,6 +45,7 @@
 			font-family: 'Taviraj', serif;
 		}
 	</style>
+	<link rel="stylesheet" href="css/style-notification.css">
 	</head>
 
 	<body>
@@ -64,20 +65,102 @@
 					<a class="nav-link" href="category.php">Danh mục sản phẩm</a>
 					</li>
 					<!-- Nút thông báo -->
-					<li class="nav-item dropdown" <?php echo $arrActive[2]; ?> "btn-group">
-					<!-- Nếu chưa đăng nhập -->
-					<?php if($status=="disabled"){ ?>	
-					<a class="nav-link" href="notification.php">Thông báo</a>	
-					<?php } else { ?>
-					<!-- Example single danger button -->
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Thông báo</a>
-								<div class="dropdown-menu" aria-labelledby="dropdown01">
-								  <a class="dropdown-item" href="#">Thông báo từ LoveMarket</a>
-								  <a class="dropdown-item" href="#">Thông báo từ người đang theo dõi</a>
-								</div>
-					<?php
-					} ?>
+					<li>
+					<div class="dropdown">
+						<a class="nav-link" href="#">Thông báo</a>
+						<!-- Chưa đăng nhập -->
+							<?php if($IsLogin=="false"){  ?>
+						<div class="dropdown-content-nonelogin">
+							<img src="Images/Home/cute_twitter5.png" alt="dangnhaplovemaket">
+							<div>Bạn cần đăng nhập để xem thông báo!</div>
+							<a class="btn" href="create-account.php" id="createacc">Tạo tài khoản</a>
+						</div>
+							<?php  } else { ?>
+						<!-- đã đăng nhập -->
+						<div class="dropdown-content-login">
+							<div id="loginheader">Thông báo từ LoveMarket</div>
+							<!-- Danh sách thông báo mới từ người đang theo dõi -->
+							<ul class="list-group list-group-flush">
+								<?php 
+										   $i=0; $num=2;
+										   while($i<$num){ ?>
+								<!-- vòng lặp thông báo -- Nên cho 2 thông báo -->
+								<a href="product-detail.php"> <!-- Link đến trang chi tiết sản phẩm -->
+								<li class="list-group-item colnotify">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-3">
+												<img class="notiavatar" src="Images/icons/icon-72x72.png" style="border-radius: 0;"> <!-- Mặc định -->
+											</div>
+											<div class="col-9 notidetail" >
+												<div class="row">
+												<div class="col-7">
+													<label class="user">Tiêu đề</label>
+												</div>
+												</div>
+												<div class="row">
+												<div class="col-12">
+													<label class="head">Nội dung</label>
+												</div>	
+												</div>					
+											</div>
+										</div>	
+									</div>						
+								</li>
+								</a>
+								<?php $i++; } ?>
+									<!-- Kết thúc 1 thông báo mới -->
+							 </ul>
+							<a class="btn" href="promotion.php" id="createacc">Xem nhiều hơn</a> <!-- chuyển sang khuyến mãi -->
+							
+							<!-- Danh sách thông báo mới từ LoveMarket -->
+							<div id="loginheader">Thông báo từ người đang theo dõi</div>
+							<ul class="list-group list-group-flush">
+								<?php 
+										   $i=0; $num=2;
+										   while($i<$num){ ?>
+								<!-- vòng lặp thông báo -- Nên cho 3 thông báo -->
+								<a href="product-detail.php"> <!-- Link đến trang chi tiết sản phẩm -->
+								<li class="list-group-item colnotify">
+									<div class="container-fluid">
+										<div class="row">
+											<div class="col-3">
+												<img class="notiavatar" src="Images/user/avatar5.png">
+											</div>
+											<div class="col-9 notidetail" >
+												<div class="row">
+												<div class="col-7">
+													<label class="user">Người đăng</label>
+												</div>
+												<div class="col-5">
+													<label class="time">Thời gian</label>
+												</div>	
+												</div>
+												<div class="row">
+												<div class="col-12">
+													<label class="head">Tiêu đề bài viết</label>
+												</div>	
+												</div>					
+											</div>
+										</div>	
+									</div>						
+								</li>
+								<?php $i++; } ?>
+									<!-- Kết thúc 1 thông báo mới -->
+							 </ul>
+							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> <
+								</a>	
+							
+							
+							
+						</div>  
+							  <?php } ?>	  
+						  
+					</div>
 					</li>
+					<!-- Kết thúc nút thông báo -->
+					
+					
 					<li class="nav-item <?php echo $arrActive[3]; ?>">
 					<a class="nav-link <?php echo $status; ?>" <?php if(isset($_SESSION['user'])) echo 'href="user/user-page.php"'; else echo 'href="index.php"'; ?> >Tài khoản <?php echo $UserName; ?></a>
 					</li>

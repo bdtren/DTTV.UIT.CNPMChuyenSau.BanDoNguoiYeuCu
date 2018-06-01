@@ -9,41 +9,41 @@ body{
 
 /* sidebar */
 .card  .card-header{
-	background: #24344b;
+	background: #723d97;
 	color: white;
 	padding: 20px;
 	
 }
 
 .accordion .card .card-header{
-	background: #2c3d59;
+	background: #7f4e9f;
 	padding: 5px;
 }
 
 .accordion .card .card-header button{
-	color: #d9ecfb;
+	color: white;
 	text-decoration: none;
 	
 }
 
 .accordion .card .collapse .list-group-item a{
 	text-decoration: none;
-	color: #d9ecfb;
+	color: white;
 }
 
 .accordion .card .collapse .list-group-item{
-	background: #334768;
+	background: #a239ca;
 }
 
 .accordion .card .collapse .list-group-item:hover{
-	background: #445475;
+	background: #AF56D1;
 }
 
 
 /* Main section */
 
 .card .card-main-header{
-	background: #FF2892;
+	background: #a239ca;
 }
 
 .card-main .card-main-header .container-fluid .row .text-head{

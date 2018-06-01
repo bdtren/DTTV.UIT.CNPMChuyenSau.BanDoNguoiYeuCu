@@ -3,7 +3,12 @@
 
 /*****************globals*************/
 body{
-	background: #eff0f5 !important;
+	background: white !important;
+}
+
+.mainsection{
+	background: url(../Images/Promotion/pexels-photo-412295.jpeg);
+	font-family: 'Dancing Script', cursive;
 }
 
 .container-fluid{
@@ -19,8 +24,8 @@ img {
 .zoom{
 	padding: 10px;
     transition: transform .1s;
-    width: 385px;
-    height: 385px;
+    width: 400px;
+    height: 400px;
     margin: auto auto;
 }
 
@@ -29,7 +34,7 @@ img {
 }
 
 .preview {
-	height: 34em;
+	height: 45em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,14 +52,9 @@ img {
 /*Big Image */
 .preview-pic {
 	object-fit: fill;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 	width: 100%;
-	height: 500px;
-	border: 1px solid #DCDCDC;
-	
+	height: 450px;	
+	border: 1px solid #CCCCCC;
 }
 
 /* small images */
@@ -84,25 +84,26 @@ img {
             animation-duration: .3s; }
 /* Wrapped */
 
-.card {
-  margin-top: 5px;
-  background: #ffffff;
-  padding: 3em;
-  line-height: 1.5em; }
-
 #tieude{
-	color: #5b3a3a;
+	color: #0052F8;
 	font-size: 28px;
 	font-weight: bolder;
 }
 
+#status{
+	color: black;
+	float: right;
+	margin-right: 20px;
+}
 
-
+#date span, #status span{
+	font-weight: bold;
+}
 
 
 .details {
   background: #ffffff ;
-  height: 40em;
+  height: 45em;
   overflow-y: auto;
   display: -webkit-box;
   display: -webkit-flex;
@@ -128,101 +129,137 @@ img {
 }
 
 .detaildes{
-	overflow-y: auto;
-	height: 8em;
+	color: black;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.detaildes-header{
+	font-size: 20px;
+	background: #135fab;
+	color: white;
+	text-align: center;
+}
+.detaildes ul li span{
+	font-weight: bold;
 }
 
-.details ul #type{
-	clear: both;
-}
-.details ul #price{
+#price{
 	color: #f57224;
 	font-weight: bolder;
-	font-size: 30px;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	border-bottom: 1px solid #eff0f5;
-	padding: 10px;
+	font-size: 25px;
 }
 
 #diproduct{
 	text-decoration: line-through;
-	font-size: 22px;
+	font-size: 20px;
 	margin-left: 10px;
 	color: #4D4D4D;
 }
 
-.details ul #buttons{
-	border-bottom: 1px solid #eff0f5;
-	padding: 10px;
-}
-
-
-.details ul #method{
-	
-}
-
-.details span{
-	color: #9eabc3;
-}
-
-#user{
-	color: #279fb9;
-	text-decoration: none;
-}
-
-#user:hover{
-	color: #b7daef;
-}
 
 #date{
 	font-size: 15px;
-	border-bottom: 1px solid #eff0f5;
-	padding: 10px;
-	border-top: 1px solid #eff0f5;
+	color: rgba(59,59,59,1.00);
+}
+
+.theodoi{
+	background: #135fab;
+	color: white;
+	float: left;
+}
+.baocaobtn{
+	color: white;
+	float: left;
+	margin-left: 10px;
+	background: #FF070B;
+}
+.baocaobtn:hover{
+	background: #FF3E40;
+}
+.theodoi:hover{
+	background: #1672CE;
+}
+.userinfo{
+	float: right;
+}
+.userinfo label{
+	color: rgba(138,0,183,1.00);
+	font-weight: bold;
+	margin-right: 20px;
+}
+.imguser:hover,.userinfo label:hover{
+	color: rgba(208,91,247,1.00);
+}
+.imguser{
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgba(148,148,148,1.00);
+	border-radius: 50%;
 }
 
 
 
 
-@media screen and (min-width: 600px) {
-  .wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; } }
-
-@-webkit-keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-    -webkit-transform: scale(3);
-            transform: scale(3); }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-/*# sourceMappingURL=style.css.map */
-
-
-@media screen and (max-width: 766px){
-	.details{
-		margin-top: 30px
-	}	
-	.preview-pic{
-		width: 90%;
-		height: 10%;
-		margin: auto;
-	}
+.tamsubg{
+	width: 100%;
+	height: 40em;
+	background: url(../Images/Promotion/pexels-photo-412295.jpeg);
 }
 
+.tamsu{
+	width: 100%;
+	height: 40em;
+	background: rgba(96,44,142,0.39);
+}
+
+.tamsu textarea:disabled{
+	height: 32em;
+	resize: none;
+	background: transparent;
+	color: white;
+	border: 0 none;
+	outline: none;
+	padding: 15px;
+	font-family: 'Dancing Script', cursive;
+	font-size: 20px;
+	overflow-y: auto;
+}
+
+#slogan{
+	width: 100%;
+	height: 2em;
+	background: #b3b8ff;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+}
+
+.popuppro, .baocao{
+	font-family: 'IBM Plex Serif', serif;
+}
+.popuppro h5{
+	color: #233CFF; 
+	font-weight: bold; 
+	font-size: 20px;
+}
+.popuppro label{
+	color: black;
+}
+#popupimage{
+	width: 140px;
+	height: 140px;
+	border: 1px solid rgba(173,173,173,1.00);
+	border-radius: 50%;
+}
+.popuppro span{
+	color: rgba(17,155,255,1.00);
+}
+.modal-footer .btnxem{
+	width: 100%;
+}
+
+.baocao h5{
+	color: #3222FF; 
+	font-weight: bold; 
+	font-size: 20px;
+}
