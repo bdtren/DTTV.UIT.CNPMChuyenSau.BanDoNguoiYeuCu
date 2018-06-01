@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Untitled Document</title>
+	<title>Trang cá nhân</title>
 		<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" href="css/style.css">
@@ -71,7 +71,7 @@
 			<!-- Danh sách các bài đăng đã duyệt -->
 			<div class="col-md-8 news">
 				 <div class="my-3 p-3 bg-white rounded box-shadow">
-					<h6 class="border-bottom border-gray pb-2 mb-0">Các tin đã đăng</h6>
+					<h6 class="border-bottom border-gray pb-2 mb-0" style="color: #C500FB; font-weight: bold; font-size: 19px;">Các tin đã đăng</h6>
 					 
 					 <?php
 							 if(!empty(TaiDanhSachTin($_GET['MAKH'])))
@@ -80,15 +80,16 @@
 								 {
 					 ?>
 					 <!-- tin đăng -->
+				<a href="<?php echo "product-detail.php?MATD=".$b['MATD'];?>">
 					<div class="media text-muted pt-3 border-bottom ">
 					  <img src="<?php echo Chuoi2Mang($b['HINHANH'])[0];?>" alt="" class="mr-2 rounded">
-					  <p class="media-body pb-3 mb-0 small lh-125 border-gray">
+					  <p class="media-body pb-3 mb-0 small lh-125 border-gray" style="color: black; font-size: 16px;">
 						  <strong class="d-block text-gray-dark"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span style="float: right"><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
 						<i class="fa fa-shopping-bag"></i>  <?php echo $b['LOAITD'];?><br>
-						<i class="fa fa-money"></i>  <?php echo $b['GIABAN'];?><br><?php echo $b['TSTD'];?><br>
-						 <span style="float: right;"><a href="<?php echo "product-detail.php?MATD=".$b['MATD'];?>" style="text-decoration: none;"><i class="fa fa-plus-square" style="color: #00A1FB;"></i>  Xem chi tiết</a></span> <!-- Dẫn đển trang product-detail.php -->
+						<i class="fa fa-money"></i>  <?php echo $b['GIABAN'];?>đ<br><?php echo $b['TSTD'];?><br>
 					  </p>
-					</div>	
+					</div>
+				</a>
 					 <!-- Kết thúc tin đăng -->
 						<?php 
 							 }

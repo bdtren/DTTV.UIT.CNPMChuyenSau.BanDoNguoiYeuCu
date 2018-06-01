@@ -18,17 +18,36 @@
 	<!-- Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="manifest" href="./manifest.json"> 
-	
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet"> 
 </head>
 
 <body>
 	<?php include('header.php'); ?>
 		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
-		<div class="container" style="margin-top: 6em;">
-		<div class="card">
+		<div class="container-fluid" style="margin-top: 5.5em; border: none;">
 			<div class="container-fluid">
-				<div class="wrapper row">	
-					<div class="preview col-sm-12  col-md-7 col-lg-6">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4">
+						<label id="tieude"><?php  echo $a["TIEUDE"]; ?></label><br>
+						<label id="date">Ngày đăng: <span><?php  echo $a["NGAYDANG"]; ?></span></label>	
+						<label id="status">Tình trạng: <span><?php  echo $a["TINHTRANGMH"]; ?></span></label>
+						</div>
+						<div class="col-md-8" style="margin-top: 30px; margin-bottom: 5px;">
+							<a class="btn  theodoi">Theo dõi</a>
+							<a class="btn  baocaobtn" data-toggle="modal" data-target="#exampleModal">Báo cáo</a>
+							<div class="userinfo" data-toggle="modal" data-target="#contact">
+								<img class="imguser" src="Images/user/avatar1.png">
+								<label> <?php  echo $a["HOTEN"]; ?> </label>
+							</div>
+					</div>
+				</div>
+				
+				<div class="container-fluid">
+					<div class="row">
+						<!-- Hình ảnh -->
+					<div class="preview col-sm-12  col-md-4 col-lg-4">
 						<div class="preview-pic tab-content">
 						<?php  $b =  Chuoi2Mang($a["HINHANH"]); $s=0; 
 						
@@ -60,84 +79,103 @@
 						?>
 						</ul>
 						
-					
-								
-					</div>
-					
-					
-					<div class="details col-sm-12 col-md-5 col-lg-6 ">
-						<ul class="list-group list-group-flush">
-						<li id="tieude"><?php  echo $a["TIEUDE"]; ?></li>
-						<li class="description"> <span>Loại tin:</span> <?php  echo $a["LOAITD"]; ?>, <span>Tình trạng:</span> <?php  echo $a["TINHTRANGMH"]; ?></li>
-						<!-- Giá bán -->
+				<div class="card detaildes" style="width: 100%;">
+					  <div class="card-header detaildes-header">
+						Thông tin
+					  </div>
+					  <ul class="list-group list-group-flush">
+						  <!-- Giá bán -->
 						<!-- chọn sản phẩm giảm giá -->
 						<?php
 							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!=""){								$giagiam=substr($a["LOAITIN"] ,16, strlen($a["LOAITIN"])-16);
 							?>
-						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
 						<?php } else { ?>	
 						<!-- chọn sản phẩm thông thường -->
-						<li class="description" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
 							<?php } ?>
+
+						<li class="list-group-item"> Loại tin: <span><?php  echo $a["LOAITD"]; ?></span></li>
+						  
+						<li class="list-group-item" id="method">Phương thức giao dịch: <span><?php  echo $a["PTGD"]; ?></span></li>
+					  </ul>
+					</div>
+						
+						
+						
+					</div>
+					
+					
+					<div class="details col-sm-12 col-md-8 col-lg-8 ">				
+					<div id="slogan">
+							" Như chưa hề có cuộc chia tay "
+					</div>
+						
+						<div class="tamsubg">
+							<div class="tamsu">
+							<textarea class="form-control" disabled>
+								<?php  echo $a["TAMSU"]; ?>
+							</textarea>
 							
-						<div class="row" style="margin: 5px;" id="buttons">
-							<p>
-							  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-								Liên hệ
-							  </a>
-							  <a button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-								Báo cáo
-							  </a>
-							  <a button type="button" class="btn btn-success">
-								Theo dõi tin
-							  </a>
-							</p>
-							<div class="collapse" id="collapseExample">
-							  <div class="card card-body">
-								<ul class="list-group ">
-									<li class="list-group-item" style="width: 100%; color: black;"><span>Số điện thoại:</span> <?php  echo $a["SDT"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: black;"><span>Facebook:</span> <?php  echo $a["FACEBOOK"]; ?></li>
-									<li class="list-group-item" style="width: 100%; color: black; "><span>Email:</span> <?php  echo $a["EMAIL"]; ?></li>
-								  </ul>
-							  </div>
 							</div>
 						</div>
-						<li class="description"><span>Người đăng:</span>  <a href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>" id="user"><?php  echo $a["HOTEN"]; ?></a></li>
-						<li class="description"><span>Địa chỉ:</span> <?php  echo $a["DIACHI"]; ?></li>
-						<li class="description" id="method"><span>Phương thức giao dịch:</span> <?php  echo $a["PTGD"]; ?></li>
-						<li class="description" id="date"><span>Ngày đăng: <?php  echo $a["NGAYDANG"]; ?></span></li>
-							<li class="description detaildes"><span>Mô tả chi tiết:</span></br> <?php  echo $a["TAMSU"]; ?></li>
-							
-							
-							
-					  </ul>
+						
+						
 						
 					</div>
 					
 					
 				</div>
-				
+				</div>
 			</div>
 			</div>
 	</div>
-	
 		<?php include('footer.php'); ?>
 		
-	
-
-
-<!-- Form báo cáo -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Form liên hệ -->
+<div class="modal fade popuppro" id="contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="color: #FF0004; font-weight: bold; font-size: 20px;">Báo cáo vi phạm</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Thông tin liên hệ</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-	  <label style="color: #FF7600;">Nội dung vi phạm:</label>
+	  <div class="row">
+		  <div class="col-md-4">
+			  <img id="popupimage" src="Images/user/avatar1.png">
+		  </div>
+		  <div class="col-md-8">
+			  <label>Họ tên: <span><?php  echo $a["HOTEN"]; ?></span></label><br>
+			  <label>Địa chỉ: <span><?php  echo $a["DIACHI"]; ?></span></label>
+			  <label>Điện thoại: <span><?php  echo $a["SDT"]; ?></span></label>
+     		 <label>Email: <span><?php  echo $a["EMAIL"]; ?></span></label>
+	 		 <label>Facebook: <span><?php  echo $a["FACEBOOK"]; ?></span></label>
+		  </div>
+	  </div>
+	  <div class="modal-footer">
+        <a class="btn btn-primary btnxem" href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>">Xem trang cá nhân</a>
+      </div>
+      </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- Form báo cáo -->
+<div class="modal fade baocao" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Báo cáo vi phạm</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	  <label style="color: #1470FF;">Nội dung vi phạm:</label>
       <textarea class="form-control">
 	  </textarea>  
 	  <div class="modal-footer">
@@ -148,8 +186,7 @@
    
     </div>
   </div>
-</div>
-	
+	</div>	
 	
 	
 	

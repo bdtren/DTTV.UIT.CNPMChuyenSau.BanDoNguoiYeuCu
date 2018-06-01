@@ -1,0 +1,124 @@
+/* CSS Document */
+	.tieude{
+			font-family: 'EB Garamond', serif;
+		}
+.nav-link{
+			font-size: 18px;
+		}
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* chưa đăng nhập */
+.dropdown-content-nonelogin {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown-content-nonelogin img{
+	width: 150px;
+	height: 150px;
+	display: block;
+	padding: 10px;
+	margin: auto;
+}
+
+#createacc{
+	margin-top: 20px;
+	width: 100%;
+}
+
+.dropdown-content-nonelogin div{
+	color: black;
+	text-align: center;
+}
+
+
+
+
+.dropdown:hover .dropdown-content-nonelogin,.dropdown:hover .dropdown-content-login  {
+    display: block;
+}
+
+/* đã đăng nhập */
+.dropdown-content-login {
+    display: none;
+    position: absolute;
+    background-color: #1200FF;
+    min-width: 400px;
+	background: white;
+	padding: 12px 16px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#loginheader{
+	color: #FF005F;
+	text-align: left;
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+
+.dropdown-content-login .notiavatar{
+	width: 50px;
+	height: 50px;
+	border-radius:50%; 
+	float: left;
+}
+
+.dropdown-content-login .notidetail .user{
+	color: #393939;
+	float: left;
+	padding: 0;
+	margin-bottom: 3px;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+.dropdown-content-login .notidetail .time{
+	color: #939393;
+	text-align: right;
+	margin-bottom: 3px;
+	font-style: italic;
+}
+
+#createacc{
+	padding: 2px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	background: #029fc2;
+	color: white;
+}
+#createacc:hover{
+	background: #02C5F0;
+}
+.dropdown-content-login .colnotify{
+	padding: 5px;
+}
+
+
+.dropdown-content-login .notidetail .head{
+	color: #393939;
+	float: left;
+}
+
+.dropdown-content-login .notifymore{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	color: #FF0004;
+	text-decoration: none;
+}
+.dropdown-content-login .notifymore:hover{
+	color: #FF494C;
+}
+
