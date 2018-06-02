@@ -121,20 +121,23 @@
       </h4>
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" name="" value="" placeholder="họ tên">
+          <input id="ipname" type="text" class="form-control" name="" value="" placeholder="Họ tên">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+          <input id="ipemail" type="email" class="form-control" name="" value="" placeholder="E-mail">
         </div>
         <div class="form-group">
-          <input type="tel" class="form-control" name="" value="" placeholder="Số điện thoại">
+          <input id="ipphone" type="tel" class="form-control" name="" value="" placeholder="Số điện thoại">
         </div>
         <div class="form-group">
-          <textarea class="form-control" name="" rows="3" placeholder="Nội dung tin nhắn"></textarea>
+          <textarea id="tacontent" class="form-control" name="" rows="3" placeholder="Nội dung liên hệ"></textarea>
         </div>
-        <button class="btn btn-default" type="submit" name="button">
+        <button id="btnsend" class="btn btn-default" type="button" name="button">
           <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Gửi
         </button>
+        <div id="submit-result" class="">
+          
+        </div>
       </form>
     </div>
   </div>
@@ -221,6 +224,8 @@ $(document).ready(function () {
     });
 });
 </script>
+
+<script src="js/script.contactus.js"></script>
 
 <!--Progressive Web App(PWA): install, service worker-->
 <!-- <script src="./check_browser.js"></script> -->
