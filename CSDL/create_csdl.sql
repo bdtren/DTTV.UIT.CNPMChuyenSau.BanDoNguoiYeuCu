@@ -1,12 +1,18 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     5/30/2018 10:31:56 AM                        */
+/* Created on:     6/2/2018 5:29:43 PM                          */
 /*==============================================================*/
 
 /*
+drop table if exists CHITIEU;
+
 drop table if exists CHUCVU;
 
 drop table if exists DANHMUC;
+
+drop index DT_THUOC_LOAITIN_FK on DOANHTHU;
+
+drop index TD_CO_DT_FK on DOANHTHU;
 
 drop index NV_QUANLY_DT_FK on DOANHTHU;
 
@@ -88,6 +94,19 @@ drop table if exists XULYVIPHAM;
 */
 
 /*==============================================================*/
+/* Table: CHITIEU                                               */
+/*==============================================================*/
+create table CHITIEU
+(
+   MACT                           char(6)                        not null,
+   LYDO                           varchar(50)                    not null,
+   NGAYCHI                        date                           not null,
+   TIENCHI                        float(8,2)                     not null,
+   primary key (MACT)
+)
+;
+
+/*==============================================================*/
 /* Table: CHUCVU                                                */
 /*==============================================================*/
 create table CHUCVU
@@ -120,6 +139,9 @@ create table DOANHTHU
 (
    MADT                           char(6)                        not null,
    MANV                           char(6)                        not null,
+   LOAITIN                        varchar(50)                    not null,
+   MATD                           char(6)                        not null,
+   MATHECAO                       varchar(50)                    not null,
    DOANHTHU                       double                         not null,
    LYDO                           varchar(50)                    not null,
    NGAYTHU                        date                           not null,
@@ -133,6 +155,22 @@ create table DOANHTHU
 create index NV_QUANLY_DT_FK on DOANHTHU
 (
    MANV
+);
+
+/*==============================================================*/
+/* Index: TD_CO_DT_FK                                           */
+/*==============================================================*/
+create index TD_CO_DT_FK on DOANHTHU
+(
+   MATD
+);
+
+/*==============================================================*/
+/* Index: DT_THUOC_LOAITIN_FK                                   */
+/*==============================================================*/
+create index DT_THUOC_LOAITIN_FK on DOANHTHU
+(
+   LOAITIN
 );
 
 /*==============================================================*/
@@ -191,9 +229,9 @@ create index KH_CO_TK_FK on KHACHHANG
 /*==============================================================*/
 create table KH_THEODOI_KH
 (
+   KHA_MAKH                       char(6)                        not null,
    MAKH                           char(6)                        not null,
-   MAKHTD                         char(6)                        not null,
-   primary key (MAKH, MAKHTD)
+   primary key (KHA_MAKH, MAKH)
 )
 ;
 
@@ -202,7 +240,7 @@ create table KH_THEODOI_KH
 /*==============================================================*/
 create index KH_THEODOI_KH_FK on KH_THEODOI_KH
 (
-   MAKH
+   KHA_MAKH
 );
 
 /*==============================================================*/
@@ -210,7 +248,7 @@ create index KH_THEODOI_KH_FK on KH_THEODOI_KH
 /*==============================================================*/
 create index KH_THEODOI_KH2_FK on KH_THEODOI_KH
 (
-   MAKHTD
+   MAKH
 );
 
 /*==============================================================*/
@@ -391,8 +429,8 @@ create table THACMAC
    MANV                           char(6)                        not null,
    LOAIHOTRO                      varchar(20)                    not null,
    VANDEGIAIDAP                   varchar(50)                    not null,
-   CHITIET                        varchar(50)                    not null,
-   TRALOI                         varchar(50)                    not null,
+   CHITIET                        longtext	                     not null,
+   TRALOI                         longtext	                     not null,
    primary key (MATM)
 )
 ;
@@ -473,7 +511,7 @@ create table TINDANG
    NGAYDANG                       date                           not null,
    LOAITD                         varchar(50)                    not null,
    TIEUDE                         varchar(50)                    not null,
-   GIABAN                         double                         not null,
+   GIABAN                         varchar(50)                    not null,
    TINHTRANGMH                    varchar(50)                    not null,
    HINHANH                        longtext,
    TAMSU                          longtext,
@@ -536,8 +574,14 @@ create index XULYVIPHAM2_FK on XULYVIPHAM
    MANV
 );
 
+alter table DOANHTHU add constraint FK_DT_THUOC_LOAITIN foreign key (LOAITIN)
+      references LOAITIN (LOAITIN) on delete restrict on update restrict;
+
 alter table DOANHTHU add constraint FK_NV_QUANLY_DT foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
+
+alter table DOANHTHU add constraint FK_TD_CO_DT foreign key (MATD)
+      references TINDANG (MATD) on delete restrict on update restrict;
 
 alter table GHINHANPHANHOI add constraint FK_KH_GUI_PH foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
@@ -545,10 +589,10 @@ alter table GHINHANPHANHOI add constraint FK_KH_GUI_PH foreign key (MAKH)
 alter table KHACHHANG add constraint FK_KH_CO_TK foreign key (MATK)
       references TAIKHOAN (MATK) on delete restrict on update restrict;
 
-alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH foreign key (MAKH)
+alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH foreign key (KHA_MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
 
-alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH2 foreign key (MAKHTD)
+alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH2 foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
 
 alter table KH_THEODOI_TD add constraint FK_KH_THEODOI_TD foreign key (MAKH)

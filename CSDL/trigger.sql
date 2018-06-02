@@ -25,6 +25,9 @@ begin
 	delete from XULYVIPHAM where MAKH=old.MAKH;
 	delete from THACMAC where MAKH=old.MAKH;
 	delete from TINDANG where MAKH=old.MAKH;
+    delete from KH_THEODOI_KH where MAKH=old.MAKH;
+    delete from KH_THEODOI_KH where MAKHTD=old.MAKH;
+    delete from KH_THEODOI_TD where MAKH=old.MAKH;
 end;
 |
 delimiter 
@@ -49,7 +52,8 @@ delimiter |
 create trigger before_delete_danhmuc before delete on DANHMUC
 for each row
 begin
-	delete from TINDANG where MADM=old.MADM;
+	delete from TD_THUOC_DM where MADM=old.MADM;
+	/*delete from TINDANG where MADM=old.MADM;*/
 end;
 |
 delimiter
@@ -74,14 +78,22 @@ delimiter |
 create trigger before_delete_nhanvien before delete on NHANVIEN
 for each row
 begin
-	delete from THANHTOANLUONG where MANV=old.MANV;
-    delete from XULYVIPHAM where MANV=old.MANV;
-    delete from THACMAC where MANV=old.MANV;
-    delete from TINDANG where MANV=old.MANV;
-    delete from KIEMTRATB where MANV=old.MANV;
-    delete from PHANCONG where MANV=old.MANV;
-    delete from THIETBI where MANV=old.MANV;
-    delete from DOANHTHU where MANV=old.MANV;
+	/*delete from THANHTOANLUONG where MANV=old.MANV;*/
+    update THANHTOANLUONG set MANV='NV0000' where MANV=old.MANV;
+    /*delete from XULYVIPHAM where MANV=old.MANV;*/
+    update XULYVIPHAM set MANV='NV0000' where MANV=old.MANV;
+    /*delete from THACMAC where MANV=old.MANV;*/
+    update THACMAC set MANV='NV0000' where MANV=old.MANV;
+    /*delete from TINDANG where MANV=old.MANV;*/
+    update TINDANG set MANV='NV0000' where MANV=old.MANV;
+    /*delete from KIEMTRATB where MANV=old.MANV;*/
+    update KIEMTRATB set MANV='NV0000' where MANV=old.MANV;
+    /*delete from PHANCONG where MANV=old.MANV;*/
+    update PHANCONG set MANV='NV0000' where MANV=old.MANV;
+    /*delete from THIETBI where MANV=old.MANV;*/
+    update THIETBI set MANV='NV0000' where MANV=old.MANV;
+    /*delete from DOANHTHU where MANV=old.MANV;*/
+    update DOANHTHU set MANV='NV0000' where MANV=old.MANV;
 end;
 |
 delimiter;
