@@ -45,45 +45,28 @@
                           <option value="tin-dang" selected>Thống kê tin đăng</option>
                           <option value="nhan-vien">Thống kê nhân viên</option>
                           <option value="thiet-bi">Thống kê thiết bị</option>
-                          <option value="doanh-thu">Thống kê Doanh thu</option>
+                          <option value="doanh-thu">Thống kê doanh thu</option>
+                          <option value="thu-nhap">Thống kê thu nhập</option>                          
                         </select>
                       </div>
                       <!-- Các lựa chọn con -->
-                      <h5 id="gr-tindang">
+                      <h5 id="gr-luachon">
                         <label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>
-                        <input id="rbngay" type="radio" name="type" value="Daily">Ngày
-                        <input id="rbtuan" type="radio" name="type" value="Weekly">Tuần
-                        <input id="rbthang" type="radio" name="type" value="Monthly">Tháng
-                        <input id="rbnam" type="radio" name="type" value="Yearly">Năm </h5>
+                        <input id="rbngay" type="radio" name="rbtype" value="Daily" checked>Ngày
+                        <input id="rbtuan" type="radio" name="rbtype" value="Weekly">Tuần
+                        <input id="rbthang" type="radio" name="rbtype" value="Monthly">Tháng
+                        <input id="rbnam" type="radio" name="rbtype" value="Yearly">Năm </h5>
 
-                      <h5 id="gr-nhanvien">
-                        <label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>
-                        <input id="rbngay" type="radio" name="type" value="Daily">Ngày
-                        <input id="rbthang" type="radio" name="type" value="Monthly">Tháng
-                        <input id="rbquy" type="radio" name="type" value="Quarterly">Quý
-                        <input id="rbnam" type="radio" name="type" value="Yearly">Năm </h5>
-
-                      <h5 id="gr-thietbi">
-                        <label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>
-                        <input id="rbthang" type="radio" name="type" value="Monthly">Tháng
-                        <input id="rbnam" type="radio" name="type" value="Yearly">Năm </h5>
-
-                      <h5 id="gr-doanhthu">
-                        <label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>
-                        <input id="rbthang" type="radio" name="type" value="Monthly">Tháng
-                        <input id="rbquy" type="radio" name="type" value="Quarterly">Quý
-                        <input id="rbnam" type="radio" name="type" value="Yearly">Năm </h5>
-
-                      <div class="customer">
+                      <div class="datetime-picker">
                         <div class="input-group">
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
-                          <input type="date" class="form-control" placeholder="Date" />
+                          <input id="time-input" type="date" class="form-control" placeholder="Ngày" />
                         </div>
                       </div>
                       </br>
-                      <button type="button" class="btn btn-primary btn-lg btn3d">
+                      <button id="btnView" type="button" class="btn btn-primary btn-lg btn3d">
                         <span class="glyphicon glyphicon-search"></span> View</button>
                     </div>
                     <div class="panel-body">
@@ -132,578 +115,12 @@
                               <td class="text-center">ddddddddđ</span>
                               </td>
                             </tr>
-
-
-
-
-
-
-
-                            <tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr><tr>
-                              <td class="text-center" width="150px">1</td>
-                              <td class="text-center" width="150px">Bất động sản</td>
-                              <td class="text-center" width="150px">2</span>
-                              </td>
-                              <td class="text-center" width="150px">22/05/2018</span>
-                              </td>
-                              <td class="text-center" width="150px">abcxyz</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">2</td>
-                              <td class="text-center">Xe</td>
-                              <td class="text-center">18</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">sssssss</span>
-                              </td>
-                            </tr>
-                            <tr>
-
-                              <td class="text-center">3</td>
-                              <td class="text-center">Thư tay</td>
-                              <td class="text-center">1</span>
-                              </td>
-                              <td class="text-center">22/05/2018</span>
-                              </td>
-                              <td class="text-center">ddddddddđ</span>
-                              </td>
-                            </tr>
                           </tbody>
                         </table>
                       </div>
                       <div class="text-center">
-                        <h4>
-                          <label style="color:#E74C3C" for="Total">Tổng tin: </label> 21</h4>
+                        <h4 id="total-count">
+                          <label id="total-label" style="color:#E74C3C" for="Total">Tổng tin: </label> 21</h4>
                       </div>
                     </div>
                   </div>
@@ -729,12 +146,18 @@
 
 
   <!-- Chart và report -->
-  <script type="text/javascript" src="./js/loader.js"></script>
-  <script type="text/javascript" src="./js/script.report.js"></script>
+  <script type="text/javascript" src="./js/loader.js"></script> 
+  <!-- <script type="text/javascript"
+        src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['gauge']}]}">
+  </script> -->
+
   <script type="text/javascript">
+  var chart;
     // Load google charts
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawPieChart);
+      // google.load("visualization", "1", {packages:["corechart"], "callback": drawPieChart});
+      // google.setOnLoadCallback(drawPieChart);
 
     // Draw the chart and set the chart values
     function drawPieChart() {
@@ -749,12 +172,13 @@
       var options = { 'title': 'Số tin đăng trong ngày', 'width': 550, 'height': 400 };
 
       // Display the chart inside the <div> element with id="piechart"
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart = new google.visualization.PieChart(document.getElementById('piechart'));
       chart.draw(data, options);
     }
 
     //Nhận hàm vẽ biểu đồ đường
     google.charts.setOnLoadCallback(drawLineChart);
+    //google.setOnLoadCallback(drawLineChart);    
     //Vẽ biểu đồ đường
     function drawLineChart() {
       var data = new google.visualization.DataTable();
@@ -764,7 +188,7 @@
       data.addColumn('number', 'Thư tay');
 
       data.addRows([
-        ['2h sáng', 0, 0, 0], ['5h', 1, 4, 0], ['6h', 1, 5, 0], ['8h', 2, 10, 1], ['11h', 2, 14, 1], ['15h', 2, 15, 1], ['24h', 2, 18, 1]
+        ['2h sáng', 0, 0, 0], ['5h', 1, 4, 0], ['6h', 1, 5, 0], ['8h', 2, 10, 1], ['11h', 2, 14, 1], ['15h', 2, 15, 1], ['24h', 20000, 18000000, 1]
       ]);
 
       var options = {
@@ -774,13 +198,13 @@
         },
         vAxis: {
           title: 'Số tin',
-          //format: '# tin',
+          format: '#,### tin',
           logScale: false
         },
         colors: ['#a52714', '#097138', '#696969']
       };
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
 
@@ -810,8 +234,10 @@
   <script type="text/javascript" charset="utf8" src="./DataTables/datatables.js"></script>
 
   <script type="text/javascript">
+    var dataTable = null;
+
     $(document).ready( function () {
-      $('#report-table').DataTable(
+      dataTable = $('#report-table').DataTable(
         /*{
         ordering: true,
         searching: true,
@@ -827,6 +253,8 @@
     } );
   </script>
 
+  <script type="text/javascript" src="./DataTables/fnReloadAjax.js"></script>
+  <script type="text/javascript" src="./js/script.report.js"></script>
 
 </body>
 
