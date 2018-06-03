@@ -16,6 +16,8 @@
 </head>
 
 <body>
+	<?php include('../../xulyphp/xulyAdmin.php'); ?>
+
 	<?php include('modules/header.php'); ?>
 	
 	 <div class="container" style="margin-top: 20px;">
@@ -38,6 +40,30 @@
     <script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/count-up-time.js"></script>
 	<script src="../../js/get-time-work.js"></script>
+
+	<!-- Tạo datatable -->
+	<link rel="stylesheet" type="text/css" href="../../DataTables/datatables.css">
+  <script type="text/javascript" charset="utf8" src="../../DataTables/datatables.js"></script>
+
+  <script type="text/javascript">
+    var dataTable = null;
+
+    $(document).ready( function () {
+      dataTable = $('#content-table').DataTable(
+        /*{
+        ordering: true,
+        searching: true,
+        scrollY: 200,
+        paging: false,
+        select: true
+      }*/
+      {
+        paging: false,
+        select: true
+      }
+    );
+    } );
+  </script>
 	
 </body>
 </html>

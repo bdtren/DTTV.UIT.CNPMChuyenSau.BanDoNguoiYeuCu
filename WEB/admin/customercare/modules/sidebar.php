@@ -1,3 +1,24 @@
+ <!--Xử lý trên sidebar(đổi màu card đang được chọn) -->
+ <?php
+	$act = array("","");
+	if(isset($_GET['page'])){
+		$temp=$_GET['page'];
+	}
+	else{
+		$temp='';
+	}
+
+	if($temp=='feedback'){
+		$act[1] = "active";
+		$act[0] = "";
+	}
+	else{
+		$act[0] = "active";
+		$act[1] = "";
+	}
+
+?>
+ 
  <!-- Sidebar -->
 					<div class="card" style="margin-bottom: 10px; padding: 10px;">    
 							  
@@ -20,8 +41,8 @@
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="index.php?page=question" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Câu hỏi <span class="badge badge-danger" style="float: right;">20</span></a>
-								<a href="index.php?page=feedback" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Nhận phản hồi <span class="badge badge-danger" style="float: right;">20</span></a>
+								 <a href="index.php?page=question" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Câu hỏi <span class="badge badge-danger" style="float: right;"><?php echo laySoCauHoi();?></span></a>
+								<a href="index.php?page=feedback" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Nhận phản hồi <span class="badge badge-danger" style="float: right;"><?php echo laySoPhanHoi();?></span></a>
                                 
                         </div>
 
