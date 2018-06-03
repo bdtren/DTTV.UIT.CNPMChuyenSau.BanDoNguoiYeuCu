@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-							<div class="card" style="margin-bottom: 10px; padding: 10px;">    
+							<div class="card" style="margin-bottom:10px;">    
 							  
 								<img class="card-img-top" src="../../Images/user/avatar7.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 							  	  

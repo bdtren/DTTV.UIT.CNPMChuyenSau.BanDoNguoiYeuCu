@@ -21,7 +21,7 @@
                                 </a>
 								
 								 <a href="index.php?page=checkcard" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;">20</span></a>
-								<a href="index.php?page=report" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Thống kê doanh thu</a>
+								<a href="../../report.php" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Thống kê doanh thu</a>
 							
                                 
                         </div>
