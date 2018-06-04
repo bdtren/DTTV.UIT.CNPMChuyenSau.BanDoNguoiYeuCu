@@ -126,4 +126,4 @@
 </style>
 
 
-<script src="../../js/script.customercare.js"></script>
+<script src="../../js/script.admin.js"></script>

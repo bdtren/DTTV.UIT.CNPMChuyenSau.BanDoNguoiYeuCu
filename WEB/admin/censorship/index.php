@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <title>Kiểm duyệt tin đăng và xứ lí vi phạm </title>
+	<meta name="author" content="DTTV" />
+	<meta name="description" content="Website bán đồ người yêu cũ." />
+	<link rel="icon" href="../../Images/Home/favicon.png"/>
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">  
     <link rel="stylesheet" href="../../css/style-admin-censorship.css">
@@ -13,6 +16,12 @@
 </head>
 
   <body>
+  	<?php include('../../xulyphp/xulyAdmin.php'); ?>
+	<style>
+		.active{
+			background: blue !important;
+		}
+	</style>
 
 	 <?php
 	  		include('modules/header.php');
@@ -124,5 +133,29 @@
     <script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/count-up-time.js"></script>
 	<script src="../../js/get-time-work.js"></script>
+
+	<!-- Tạo datatable -->
+	<link rel="stylesheet" type="text/css" href="../../DataTables/datatables.css">
+  <script type="text/javascript" charset="utf8" src="../../DataTables/datatables.js"></script>
+
+  <script type="text/javascript">
+    var dataTable = null;
+
+    $(document).ready( function () {
+      dataTable = $('#content-table').DataTable(
+        /*{
+        ordering: true,
+        searching: true,
+        scrollY: 200,
+        paging: false,
+        select: true
+      }*/
+      {
+        paging: false,
+        select: true
+      }
+    );
+    } );
+  </script>
   </body>
 </html>

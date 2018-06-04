@@ -22,7 +22,7 @@
 													if($a[$i]['TRALOI']==""){
 														$b[$i]="";
 													} else{
-														$b[$i]='<br> (Đã trả lời)';
+														$b[$i]='(Đã trả lời)';
 													}
 				?>
 				<tr>
@@ -33,7 +33,8 @@
 					<td><?php echo $a[$i]['VANDEGIAIDAP']; ?> </td>
 					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td>
-						<a class="btn btn-success" data-toggle="modal" href="#" style="color:white;" data-target="#see" onclick="openModelCauHoi(<?php echo $i?>)">Trả lời <?php echo $b[$i]?></a>
+						<span id="tt-phanhoi" style="visibility: hidden;"><?php echo $b[$i]?></span>
+						<button class="btn btn-success" data-toggle="modal" href="#" style="color:white;" data-target="#see" onclick="openModelCauHoi(<?php echo $i?>)">Trả lời <br> <?php echo $b[$i]?></button>
 					</td>
 				</tr>
 				<!-- Kết thúc dòng dữ liệu -->
@@ -111,4 +112,4 @@
 	</div>
 </div>
 
-<script src="../../js/script.customercare.js"></script>
+<script src="../../js/script.admin.js"></script>
