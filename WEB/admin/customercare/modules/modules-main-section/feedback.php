@@ -18,14 +18,18 @@
 												$i=0;
 												$num=10; //Số dòng dữ liệu trừ 1 ($num=10 hiện 9 dòng)
 												while($i<count($a)){ 
-												?>
+				?>
         <tr>
           <th scope="row">
             <?php echo ($i+1); ?>
           </th>
           <td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
           <td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYPH'])); ?></td>
-          <td><?php 
+          <td>
+            <!-- Mức độ hải lòng theo text -->
+            <span id="rating"><?php echo $a[$i]['MUCDO']?></span>
+            <!-- Mức độ hải lòng theo số sao -->
+            <?php 
               $star = $a[$i]['MUCDO'];
                 for($r =0;$r<5;$r++){
                   $check = '';
@@ -37,17 +41,16 @@
                     $check = '';
                   }
                   echo '<span class="fa fa-star '.$check.'"></span>';                  
-                }
-
-          
-              ?></td>
+                }          
+              ?>
+            </td>
           <td>
             <a class="btn btn-success" data-toggle="modal" href="#" style="color:white;" data-target="#see" onclick="openModelPhanHoi(<?php echo $i/*$a[$i]['MAPH']*/?>)">Xem chi tiết</a>
           </td>
         </tr>
         <!-- Kết thúc dòng dữ liệu -->
         <?php
-												$i++;
+												  $i++;
 												} 
         ?>
         
@@ -116,6 +119,10 @@
 .checked {
     color: orange;
 }
+#rating {
+  visibility: hidden;
+}
+
 </style>
 
 

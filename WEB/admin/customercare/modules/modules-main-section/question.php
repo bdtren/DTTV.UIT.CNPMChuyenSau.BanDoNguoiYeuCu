@@ -38,7 +38,7 @@
 				</tr>
 				<!-- Kết thúc dòng dữ liệu -->
 				<?php
-												$i++;
+													$i++;
 												} 
 				?>
 
@@ -84,22 +84,23 @@
 
 						<div class="form-group">
 							<label>Vấn đề gặp phải: </label>
-							<textarea id="taIssue" class="form-control" rows="3" style="resize: none;" disabled></textarea>
+							<textarea id="taIssue" class="form-control" rows="1" style="resize: none;" disabled></textarea>
 						</div>
 
 						<div class="form-group">
 							<label>Thông tin chi tiết: </label>
-							<textarea id="taDetail" class="form-control" rows="4" style="resize: none;" disabled></textarea>
+							<textarea id="taDetail" class="form-control" rows="3" style="resize: none;" disabled></textarea>
 						</div>
 
 						<div class="form-group">
 							<label>Trả lời: </label>
-							<textarea id="taAnswer" class="form-control" rows="4" style="resize: none;" required></textarea>
+							<textarea id="taAnswer" class="form-control" rows="3" style="resize: none;" required></textarea>
 						</div>
 
 						<div class="modal-footer">
+							<span id="addition-result"></span>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-							<button type="button" class="btn btn-primary">Trả lời</button>
+							<button id="btnAnswer" type="button" class="btn btn-primary" onclick="addTraLoi()">Trả lời</button>
 						</div>
 
 					</form>
