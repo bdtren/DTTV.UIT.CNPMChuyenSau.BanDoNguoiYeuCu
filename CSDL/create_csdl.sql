@@ -1,9 +1,11 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     6/2/2018 5:29:43 PM                          */
+/* Created on:     6/5/2018 12:56:53 PM                         */
 /*==============================================================*/
 
 /*
+drop index NV_QUANLY_CT_FK on CHITIEU;
+
 drop table if exists CHITIEU;
 
 drop table if exists CHUCVU;
@@ -78,6 +80,10 @@ drop index NV_THEM_TB_FK on THIETBI;
 
 drop table if exists THIETBI;
 
+drop index NV_TAO_THONGBAO_FK on THONGBAO;
+
+drop table if exists THONGBAO;
+
 drop index TINDANG_THUOC_LOAITIN_FK on TINDANG;
 
 drop index KH_CO_TD_FK on TINDANG;
@@ -91,7 +97,6 @@ drop index XULYVIPHAM2_FK on XULYVIPHAM;
 drop index XULYVIPHAM_FK on XULYVIPHAM;
 
 drop table if exists XULYVIPHAM;
-*/
 
 /*==============================================================*/
 /* Table: CHITIEU                                               */
@@ -99,12 +104,21 @@ drop table if exists XULYVIPHAM;
 create table CHITIEU
 (
    MACT                           char(6)                        not null,
+   MANV                           char(6)                        not null,
    LYDO                           varchar(50)                    not null,
    NGAYCHI                        date                           not null,
    TIENCHI                        float(8,2)                     not null,
    primary key (MACT)
 )
 ;
+
+/*==============================================================*/
+/* Index: NV_QUANLY_CT_FK                                       */
+/*==============================================================*/
+create index NV_QUANLY_CT_FK on CHITIEU
+(
+   MANV
+);
 
 /*==============================================================*/
 /* Table: CHUCVU                                                */
@@ -429,8 +443,8 @@ create table THACMAC
    MANV                           char(6)                        not null,
    LOAIHOTRO                      varchar(20)                    not null,
    VANDEGIAIDAP                   varchar(50)                    not null,
-   CHITIET                        longtext	                     not null,
-   TRALOI                         longtext	                     not null,
+   CHITIET                        varchar(50)                    not null,
+   TRALOI                         varchar(50)                    not null,
    primary key (MATM)
 )
 ;
@@ -494,6 +508,27 @@ create table THIETBI
 /* Index: NV_THEM_TB_FK                                         */
 /*==============================================================*/
 create index NV_THEM_TB_FK on THIETBI
+(
+   MANV
+);
+
+/*==============================================================*/
+/* Table: THONGBAO                                              */
+/*==============================================================*/
+create table THONGBAO
+(
+   MATBAO                         char(6)                        not null,
+   MANV                           char(6)                        not null,
+   CHITIET                        varchar(50)                    not null,
+   NGAYTBAO                       date                           not null,
+   primary key (MATBAO)
+)
+;
+
+/*==============================================================*/
+/* Index: NV_TAO_THONGBAO_FK                                    */
+/*==============================================================*/
+create index NV_TAO_THONGBAO_FK on THONGBAO
 (
    MANV
 );
@@ -574,6 +609,9 @@ create index XULYVIPHAM2_FK on XULYVIPHAM
    MANV
 );
 
+alter table CHITIEU add constraint FK_NV_QUANLY_CT foreign key (MANV)
+      references NHANVIEN (MANV) on delete restrict on update restrict;
+
 alter table DOANHTHU add constraint FK_DT_THUOC_LOAITIN foreign key (LOAITIN)
       references LOAITIN (LOAITIN) on delete restrict on update restrict;
 
@@ -632,6 +670,9 @@ alter table THANHTOANLUONG add constraint FK_NV_THANHTOAN_LUONG foreign key (MAN
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
 alter table THIETBI add constraint FK_NV_THEM_TB foreign key (MANV)
+      references NHANVIEN (MANV) on delete restrict on update restrict;
+
+alter table THONGBAO add constraint FK_NV_TAO_THONGBAO foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
 alter table TINDANG add constraint FK_KH_CO_TD foreign key (MAKH)

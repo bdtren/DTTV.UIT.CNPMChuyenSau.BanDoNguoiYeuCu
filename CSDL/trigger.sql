@@ -8,6 +8,7 @@ for each row
 begin
 	delete from KH_THEODOI_TD where MATD=old.MATD;
     delete from TD_THUOC_DM where MATD=old.MATD;
+    delete from DOANHTHU where MATD=old.MATD;
 end;
 |
 delimiter
@@ -94,6 +95,7 @@ begin
     update THIETBI set MANV='NV0000' where MANV=old.MANV;
     /*delete from DOANHTHU where MANV=old.MANV;*/
     update DOANHTHU set MANV='NV0000' where MANV=old.MANV;
+    update THONGBAO set MANV='NV0000' where MANV=old.MANV;
 end;
 |
 delimiter;
