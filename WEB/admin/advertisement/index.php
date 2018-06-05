@@ -1,7 +1,19 @@
+<?php 
+	session_start();
+	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
+	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+?>
+<?php include "xulyphp/login.php"; ?>
+<?php include "xulyphp/xulytindang.php"; ?>
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
+<title>Quảng cáo và tạo tin đặc biệt</title>
+	<meta name="author" content="DTTV" />
+	<meta name="description" content="Website bán đồ người yêu cũ." />
+	<link rel="icon" href="../../Images/Home/favicon.png"/>
  <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">  
     <link rel="stylesheet" href="../../css/style-admin-advertisement.css">

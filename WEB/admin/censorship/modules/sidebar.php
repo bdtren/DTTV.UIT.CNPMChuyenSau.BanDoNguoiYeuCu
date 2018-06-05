@@ -1,3 +1,30 @@
+ <!--Xử lý trên sidebar(đổi màu card đang được chọn) -->
+ <?php
+	$act = array("","");
+	if(isset($_GET['page'])){
+		$temp=$_GET['page'];
+	}
+	else{
+		$temp='';
+	}
+
+	if($temp=='special-news'){
+		$act[0] = "active";		
+		$act[1] = "";
+		$act[2] = "";			
+	} else if ($temp=='breach'){
+		$act[0] = "";		
+		$act[1] = "";
+		$act[2] = "active";		
+	} else{
+		$act[0] = "";		
+		$act[1] = "active";
+		$act[2] = "";	
+
+	}
+
+?>
+
 <!-- Phần nội dung bên trái Sidebar -->
                	<div class="card" style="margin-bottom: 10px; padding: 10px;">    
 							  
@@ -13,15 +40,15 @@
                                
 					</div>
                         <div class="list-group">
-                                <a href="index.php" class="list-group-item list-group-item-action active main-color-bg">
+                                <a href="index.php" class="list-group-item list-group-item-action main-color-bg">
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="index.php?page=special-news" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Duyệt tin đặc biệt <span class="badge badge-danger" style="float: right;">20</span></a>
+								 <a href="index.php?page=special-news" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Duyệt tin đặc biệt <span class="badge badge-danger" style="float: right;"><?php echo laySoTinChoDuyetDacBiet()?></span></a>
 								
-								 <a href="index.php?page=articles-waiting" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Bài đăng chờ duyệt <span class="badge badge-danger" style="float: right;">20</span></a>
+								 <a href="index.php?page=articles-waiting" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Bài đăng chờ duyệt <span class="badge badge-danger" style="float: right;"><?php echo laySoTinChoDuyet()?></span></a>
 								
-								<a href="index.php?page=breach" class="list-group-item list-group-item-action"><i class="fa fa-pencil"></i>  Xử lí vi phạm <span class="badge badge-danger" style="float: right;">20</span></a>
+								<a href="index.php?page=breach" class="list-group-item list-group-item-action <?php echo $act[2];?>"><i class="fa fa-pencil"></i>  Xử lí vi phạm <span class="badge badge-danger" style="float: right;"><?php echo laySoTinBiBaoCao() ?></span></a>
 												
                                 
                         </div>

@@ -27,28 +27,34 @@ $(document).ready(function() {
     }
 
     if (error) {
-      document.getElementById("submit-result").className = "alert alert-danger";
+      document.getElementById("submit-result").className =
+        "alert alert-danger";
       document.getElementById("submit-result").innerHTML =
-        "<strong>Thất bại!</strong> vui lòng nhập thông tin <i>" +
+        '<a class="close" onclick="$(this).parent().hide()">&times;</a>\n<strong>Thất bại!</strong> vui lòng nhập thông tin <i>' +
         errorList.join(", ") +
         "</i>";
+
+        $("#submit-result").show();
       return;
     }
 
     $.ajax({
       url: "./xulyphp/nhapcsdl.php",
       data: {
-        inputFunction: 'contact-us',
-        info: info,
+        inputFunction: "contact-us",
+        info: info
       },
       type: "post",
       success: function(output) {
         alert(output);
         //Thông báo kết quả nhập dữ liệu thành công
-        document.getElementById("submit-result").className = "alert alert-success";
+        document.getElementById("submit-result").className =
+          "alert alert-success";
         document.getElementById("submit-result").innerHTML =
-          "<strong>Thành công!</strong> Yêu cầu của bạn đã được hệ thống ghi lại.";
+          '<a class="close" onclick="$(this).parent.hide()">&times;</a>\n<strong>Thành công!</strong> Yêu cầu của bạn đã được hệ thống ghi lại.';
       }
     });
+
+    $("#submit-result").show();
   });
 });

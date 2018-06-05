@@ -1,7 +1,18 @@
+<?php 
+	session_start();
+	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
+	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+?>
+
+
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
+<title>Kế toán và thống kê </title>
+	<meta name="author" content="DTTV" />
+	<meta name="description" content="Website bán đồ người yêu cũ." />
+	<link rel="icon" href="../../Images/Home/favicon.png"/>
  <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap.min.css">  
     <link rel="stylesheet" href="../../css/style-admin-finance.css">
