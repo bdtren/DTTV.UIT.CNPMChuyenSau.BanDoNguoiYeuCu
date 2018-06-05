@@ -63,7 +63,7 @@
                         <form>		
 								<div class="row">
 									<div class="col-6">
-										<img src="../../Images/user/avatar7.png" style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
+										<img src="<?php echo $nv[0]['AVATAR']?> style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
 									</div>
 									<div class="col-6">
 										<div class="form-group">
