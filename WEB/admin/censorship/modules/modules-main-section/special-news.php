@@ -29,9 +29,10 @@
 					<td><?php echo $a[$i]['TIEUDE']?></td>
 					<td>
 						<!-- <h6 style="visibility: hidden;"><?php echo $imgs[0]?></h6> -->
+						
 						<?php 
 							// for($j=0;$j<count($imgs);$j++){
-							echo '<img src="../../'.$imgs[0].'" style="width: 50px; height: 50px;">'
+							echo '<a href="../../'.$imgs[0].'" ><img src="../../'.$imgs[0].'" style="width: 50px; height: 50px;"></a>';
 							// }
 						?>
 					</td>

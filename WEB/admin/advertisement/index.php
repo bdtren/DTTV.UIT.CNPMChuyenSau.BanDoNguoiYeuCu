@@ -1,3 +1,11 @@
+<?php 
+	session_start();
+	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
+	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+?>
+<?php include "xulyphp/login.php"; ?>
+<?php include "xulyphp/xulytindang.php"; ?>
+
 <!doctype html>
 <html>
 <head>

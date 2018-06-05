@@ -9,9 +9,97 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
     switch ($action) {
         case 'themCauTraLoi':themCauTraLoi($data);
             break;
+        case 'themPhanCong':themPhanCong($data);
+            break;
         default:break;
     }
 }
+
+/**********XỬ LÝ THIỂN THỊ THÔNG TIN NHÂN VIÊN********/
+//Lấy thông tin của một nhân viên
+function layThongTinNhanVien($MaNV = "")
+{
+    $qNV = ($MaNV == "") ? "" : "and nv.MANV='" . $MaNV . "'";
+
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+            from nhanvien nv, chucvu cv, taikhoan tk, phancong pc
+            where nv.MACV=CV.MACV and nv.MATK=tk.MATK and nv.MANV = pc.MANV " . $qNV . ";";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy thông tin phân công của nhân viên
+function layThongTinPhanCong($MaNV = "", $date = "")
+{
+    $qNV = ($MaNV == "") ? "" : "and nv.MANV='" . $MaNV . "'";
+    $qDate = ($date == "") ? "" : "and pc.NGAYPC='" . $date . "'";
+
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+            from nhanvien nv, phancong pc
+            where nv.MANV = pc.MANV " . $qNV . $qDate . ";";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy số giờ đã làm của nhân viên
+function laySoGioLam($MaNV = "", $date = "")
+{
+    $qNV = ($MaNV == "") ? "" : "and MANV='" . $MaNV . "'";
+    $qDate = ($date == "") ? "" : "and pc.NGAYPC='" . $date . "'";
+
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT MANV, NGAYPC, sum(SOGIOHD) SoGio
+            from  phancong pc
+            where MAPC is not null " . $qNV . " " . $qDate . "
+            group by MANV;";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Thêm thông tin phân công sau khi nhân viên đăng xuất
+function themPhanCong($data = array())
+{
+    $a = layMaPhanCongCuoi();
+    $ma = TangMaSo($a[0]['MAPC']);
+    include '../xulyphp/connect.php';
+    if ($data == null) {
+        echo 'error loading input info';
+        return;
+    }
+
+    $sql = 'INSERT into phancong
+    VALUES ("' . $ma . '", "' . $data[0] . '","' . $data[1] . '", "' . $data[2] . '", "' . $data[3] . '", "' . $data[4] . '")';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "New phancong's record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+
+}
+
 /**********XỬ LÝ TRÊN TRANG NHÂN VIÊN KIỂM DUYỆT********/
 //Lấy ra số tin đặc biệt
 function laySoTinDacBiet($date = '')
@@ -91,6 +179,40 @@ function layTinDangChoDB($date = '')
     $sql = "SELECT *
                 from tindang td, khachhang kh
                 where td.MAKH = kh.MAKH  and TINHTRANGTIN in('duyet moi', 'duyet hot', 'duyet gg');";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy danh sách tin đăng đang chờ để được duyệt đăng
+function layTinDangChoDuyet($date = '')
+{
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+                from tindang td, khachhang kh
+                where td.MAKH = kh.MAKH  and TINHTRANGTIN = 'dang cho' /*or TTKIEMDUYET = 0;*/";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy danh sách tin đăng bị báo cáo
+function layDanhSachBaoCaoVP($date = '')
+{
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+    from thacmac tm, khachhang kh
+     where tm.VANDEGIAIDAP = kh.MAKH and LOAIHOTRO='vi pham';";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
@@ -201,3 +323,54 @@ function layPhanHoiChiTiet($maPH = "", $date = "")
     mysqli_close($conn);
     return $a;
 }
+
+/*******************************************************************/
+/****************CÁC HÀM XỬ LÝ PHỤ************/
+function layMaPhanCongCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MAPC
+    from phancong
+    order by MAPC desc
+    limit 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+
+function TangMaSo($Ma)
+    {
+        if(!empty($Ma))
+        {
+            $tukhoa = substr($Ma,0,2);
+            $m = substr($Ma,2);
+            $z = 1 + $m;
+            $MaMoi = '';
+            if($z<10)
+            {
+                $MaMoi = $tukhoa."000".$z;
+            } 
+            else if($z<100)
+            {
+                    $MaMoi = $tukhoa."00".$z;
+            }
+            else if($z<1000)
+            {
+                $MaMoi = $tukhoa."0".$z;
+            }
+            else
+            {
+                $MaMoi = $tukhoa.$z;
+            }
+            return $MaMoi;
+        }
+        return null;       
+    }

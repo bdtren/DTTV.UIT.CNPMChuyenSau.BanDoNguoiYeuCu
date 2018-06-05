@@ -1,3 +1,18 @@
+<?php 
+	session_start();
+	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
+	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+	
+?>
+<?php include "../xulyphp/login.php"; ?>
+<?php include "../../xulyphp/xulytindang.php";
+			include('../../xulyphp/xulyAdmin.php');
+			if($MaNV!=''){
+				$nv = layThongTinNhanVien($MaNV);		
+				$soGio = laySoGioLam($MaNV, date("Y/m/d"));
+			}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -16,13 +31,16 @@
 </head>
 
 <body>
-
-	<?php include('../../xulyphp/xulyAdmin.php'); ?>
 	<style>
 		.active{
 			background: green !important;
 		}
 	</style>
+
+	<script>
+		var nv = <?php echo json_encode($nv); ?>;
+		var soGio = <?php echo json_encode($soGio); ?>;
+	</script>
 
 	<?php include('modules/header.php'); ?>
 	

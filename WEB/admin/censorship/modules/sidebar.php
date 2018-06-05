@@ -8,18 +8,19 @@
 		$temp='';
 	}
 
-	if($temp=='articles-waiting'){
-		$act[0] = "";		
-		$act[1] = "active";
-		$act[2] = "";		
+	if($temp=='special-news'){
+		$act[0] = "active";		
+		$act[1] = "";
+		$act[2] = "";			
 	} else if ($temp=='breach'){
 		$act[0] = "";		
 		$act[1] = "";
 		$act[2] = "active";		
 	} else{
-		$act[0] = "active";		
-		$act[1] = "";
+		$act[0] = "";		
+		$act[1] = "active";
 		$act[2] = "";	
+
 	}
 
 ?>

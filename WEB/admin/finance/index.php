@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
+	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+?>
+
+
 <!doctype html>
 <html>
 <head>

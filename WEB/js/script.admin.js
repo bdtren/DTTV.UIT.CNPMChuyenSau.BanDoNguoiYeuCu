@@ -1,4 +1,9 @@
 var selected = -1;
+var work = localStorage.getItem('work');
+if (!work) {
+    work = 0;
+    localStorage.setItem('work', work);
+}
 
 /***************CÁC MODEL TRÊN TRANG KIỂM DUYỆT*/
 //Mở model duyệt tin đặc biệt
@@ -23,8 +28,23 @@ function openModelDuyetTinDB(position){
     document.getElementById("lbTitle").innerHTML = arrTable[position]['TIEUDE'];
     document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     document.getElementById("lbDate").innerHTML = formatDate(new Date(arrTable[position]["NGAYDANG"]));
+    
     document.getElementById("lbPayResult").innerHTML = title;
-    document.getElementById("lbPostType").innerHTML = arrTable[position]['LOAITIN'];
+
+    var postType;
+    switch(arrTable[position]['LOAITIN']){
+        case 'ribbon-new':
+            postType="Tin mới";
+        break;
+        case 'ribbon-hot':
+            postType="Tin hot";
+        break;
+        case 'ribbon-discount':
+            postType="Tin giảm giá";
+        break;
+        default: postType="Tin thường";break;
+    }
+    document.getElementById("lbPostType").innerHTML = postType;
     document.getElementById("lbGroup").innerHTML = title;
     var cost = numberWithCommas(parseInt(arrTable[position]['GIABAN']), "VND");
     document.getElementById("lbCost").innerHTML = cost;
@@ -33,12 +53,18 @@ function openModelDuyetTinDB(position){
     var imgs = arrTable[position]['HINHANH'].split(";");
     var imglink = "";
     for(var i = 0;i<imgs.length;i++){
-        imglink+='<img src="../../' + imgs[i] + '" alt="hinhanh" style="width: 100px; height: 100px; border: 1px solid #767575;">';
+        imglink+='<a href="../../'+ imgs[i] + '" ><img src="../../' + imgs[i] + '" alt="hinhanh" style="width: 100px; height: 100px; border: 1px solid #767575;"></a>';
     }
     document.getElementById("lbImage").innerHTML = imglink;
     document.getElementById("taDetail").innerHTML = arrTable[position]['TAMSU'];
     document.getElementById("lbDeal").innerHTML = arrTable[position]['PTGD'];
 }
+//Mở model duyệt tin đăng mới
+function openModelDuyetTinDang(position){
+
+}
+
+
 
 /***************CÁC MODEL TRÊN TRANG CHĂM SÓC KHÁCH HÀNG*/
 //Mở model câu hỏi
@@ -68,7 +94,7 @@ function openModelPhanHoi(position) {
 
 //Thêm câu trả lời
 function addTraLoi(){
-
+    work++;
     var dat = [];
     dat[0] = arrTable[selected]['MATM'];
     dat[1] = document.getElementById("taAnswer").value;
