@@ -82,6 +82,7 @@ function themPhanCong($data = array())
     $a = layMaPhanCongCuoi();
     $ma = TangMaSo($a[0]['MAPC']);
     include '../xulyphp/connect.php';
+    include("../admin/xulyphp/logout.php");
     if ($data == null) {
         echo 'error loading input info';
         return;
@@ -97,7 +98,6 @@ function themPhanCong($data = array())
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
-
 }
 
 /**********XỬ LÝ TRÊN TRANG NHÂN VIÊN KIỂM DUYỆT********/
@@ -210,9 +210,33 @@ function layDanhSachBaoCaoVP($date = '')
 {
     $a = array();
     include '../../xulyphp/connect.php';
+    $sql = "SELECT *, tm.MAKH as KHBC
+    from thacmac tm, tindang td, khachhang kh
+    where tm.VANDEGIAIDAP = td.MATD and td.MAKH = kh.MAKH and LOAIHOTRO='vi pham';";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy thông tin khách hàng
+function layThongTinKhachHang($dsKH = array()){
+    
+    $strMaKH ="";
+    $qKH="";
+    if($dsKH!=null){
+        $strMaKH = implode("','", $dsKH);
+        $qKH= "and MAKH in('".$strMaKH."')";
+    }
+
+    $a = array();
+    include '../../xulyphp/connect.php';
     $sql = "SELECT *
-    from thacmac tm, khachhang kh
-     where tm.VANDEGIAIDAP = kh.MAKH and LOAIHOTRO='vi pham';";
+            from khachhang 
+            where MAKH is not null ".$qKH.";";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;

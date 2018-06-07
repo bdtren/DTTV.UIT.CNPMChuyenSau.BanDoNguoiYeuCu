@@ -1,8 +1,8 @@
 .navbar {
-  background-color: #ff9800;
+  background-color: #ff9800 !important;
 }
 .navbar .navbar-brand {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {

@@ -107,12 +107,12 @@
 						<div class="form-group">
 							<span>
 								<label>Danh mục tin: </label>
-								<label id="lbGroup"></label>
+								<label id="lbCategory"></label>
 							</span>
 							&nbsp;&emsp;
 							<span>
 								<label>Giá: </label>
-								<label id="lbCost"></label>
+								<label id="lbPrice"></label>
 							</span>
 							
 						</div>

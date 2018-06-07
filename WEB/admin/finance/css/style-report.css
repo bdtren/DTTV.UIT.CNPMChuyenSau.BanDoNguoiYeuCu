@@ -1,0 +1,125 @@
+        body {
+            overflow: auto;
+            background-color: #1b1b1b;
+            padding-top: 10px;
+        }
+
+        /* .form-signin {
+            max-width: 280px;
+            padding: 15px;
+            margin: 200px;
+            margin-top: 80px;
+            margin-left: 130px;
+        }
+
+        .input-group-addon {
+            background-color: rgb(50, 118, 177);
+            border-color: rgb(40, 94, 142);
+            color: rgb(255, 255, 255);
+        }
+
+        .form-signup input[type="text"], .form-signup input[type="password"] {
+            border: 1px solid rgb(50, 118, 177);
+        }
+
+        .fullscreen_bg {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-image: url('http://i.imgur.com/aFs5QmP.jpg');
+            background-repeat: repeat;
+        } */
+
+        table {
+            width: 100%;
+            overflow: auto;
+        }
+
+        thead {
+            display: inline-table;
+            width: 100%;
+            height: 30px;
+        }
+
+        tbody {
+            height: 170px;
+            display: inline-block;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: visible;
+        }
+
+        .chart {
+            width: 100%;
+            min-height: 450px;
+        }
+
+        .row {
+            margin: 0 !important;
+        }
+
+        /* Reoport tablesorter */
+        
+         /* table thead tr th, table tfoot tr th {
+            background-color: #e6EEEE;
+            border: 1px solid #FFF;
+            padding: 4px;
+        }
+        table thead tr .header {
+            background-image: url(../Images/sort/bg.gif); 
+            cursor: pointer; 
+            font-weight: bold; 
+            background-repeat: no-repeat; 
+            background-position: center left; 
+            padding-left: 20px; 
+            border-right: 1px solid #dad9c7; 
+            margin-left: -1px; 
+        }
+        table tbody td {
+            color: #3D3D3D;
+            padding: 4px;
+            background-color: #FFF;
+            vertical-align: top;
+        }
+        table tbody tr.odd td {
+            background-color:#F0F0F6;
+        }
+        table thead tr .headerSortUp {
+            background-image: url(../Images/sort/asc.gif);
+        }
+        table thead tr .headerSortDown {
+            background-image: url(../Images/sort/desc.gif);
+        }
+        table thead tr .headerSortDown, table thead tr .headerSortUp {
+        background-color: #8dbdd8;
+        }  */
+
+        table thead tr th, table tfoot tr th {
+            background-color: #e6EEEE;
+            border: 1px solid #FFF;
+            padding: 4px;
+        }
+        table thead tr .header {
+            cursor: pointer; 
+            font-weight: bold; 
+            padding-left: 20px; 
+            border-right: 1px solid #dad9c7; 
+            margin-left: -5px; 
+        }
+        table tbody td {
+            color: #3D3D3D;
+            padding: 4px;
+            background-color: #FFF;
+            vertical-align: top;
+        }
+        table tbody tr.odd td {
+            background-color:#F0F0F6;
+
+        }
+        tr.selected td {
+            background-color: #B0BED9 !important; /* Add !important to make sure override datables base styles */
+         }

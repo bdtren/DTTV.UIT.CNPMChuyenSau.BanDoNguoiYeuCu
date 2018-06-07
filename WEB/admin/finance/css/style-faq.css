@@ -1,0 +1,24 @@
+.container-fluid{
+	margin-top: 4em;
+	font-family: 'Arsenal', sans-serif;
+	padding: 20px;
+	background: #7f4e9f;
+}
+
+.ques{
+	background: #F6F4F5;
+	font-size: 18px;
+	height:  30em;
+	overflow-y: auto;
+	border-radius: 15px;
+}
+
+.ans{
+	background: #E7E7E7;
+	color: black;
+	font-size: 22px;
+	padding: 25px;
+	border-radius: 15px;
+	height: 25em;
+	overflow-y: auto;
+}

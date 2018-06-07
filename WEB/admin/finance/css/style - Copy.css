@@ -1,0 +1,964 @@
+/* CSS Document */
+		/* Reset CSS
+		 * --------------------------------------- */
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+		form,fieldset,input,textarea,p,blockquote,th,td {
+		    padding: 0;
+		    margin: 0;
+		}
+		a{
+			text-decoration:none;
+		}
+		table {
+		    border-spacing: 0;
+		}
+		fieldset,img {
+		    border: 0;
+		}
+		address,caption,cite,code,dfn,em,strong,th,var {
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		strong{
+			font-weight: bold;
+		}
+		ol,ul {
+		    list-style: none;
+		    margin:0;
+		    padding:0;
+		}
+		caption,th {
+		    text-align: left;
+
+		}
+		h1,h2,h3,h4,h5,h6 {
+		    font-weight: normal;
+		    font-size: 100%;
+		    margin:0;
+		    padding:0;
+		    color:#444;
+		}
+		q:before,q:after {
+		    content:'';
+		}
+		abbr,acronym { border: 0;
+		}
+
+
+		/* Custom CSS
+		 * --------------------------------------- */
+		 *, :after, :before {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: arial,helvetica;
+			color: #F2F2F2;
+		}
+		h1{
+			font-size: 4em;
+		}
+
+		p{
+			font-size: 2em;
+		}
+		.content{
+			position: relative;
+			top: 0%;
+			transform: translateY(-50%);
+			text-align: center;
+		}
+
+/* Style header */
+header
+{
+	color: white;
+	padding-top: 10px;
+	min-height: 100px;
+	border-bottom:#FF0004 0px solid;
+}
+
+header a
+{
+	color: purple;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+header li
+{
+	float: left;
+	display: inline;
+	padding: 0px 20px 0px 20px;
+}
+
+header .logo
+{
+	font-weight: bold;
+}
+
+header #branding
+{
+	float: left;
+}
+
+header nav
+{
+	float: right;
+	margin-top: 20px;
+}
+
+header #branding h1
+{
+	margin: 0px;
+	background: url(../images/logo.png) no-repeat;
+	background-size: 200px auto;
+	color: white;
+	margin-left: 20px;
+	font-size: 50px;
+	min-width: 200px;
+	min-height: 60px;
+}
+
+header #branding h3
+{
+	margin-left: 20px;
+	color: white;
+	font-size: 20px;
+	font-family: "Consolas", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
+	font-style: italic;
+}
+
+header .heading h1{
+	font-size: 50%;
+	font-weight: bold;	
+}
+
+
+header .current a
+{
+	color: #FF0004;
+	font-weight: bold;	
+}
+
+header a:hover{
+	color: #cccccc;
+	font-weight: bold;
+}
+
+/*End style Header */
+
+
+
+		/* Section 1
+		 * --------------------------------------- */
+		#section0{
+			background-image:url(../Images/Home/background12.gif);
+			background-position: center;
+			background-size: cover;
+		}
+		#section0 h1{
+			color: #5197FF;
+			font-family: 'Gravitas One', cursive;
+		
+		}
+
+		#section0 p{
+			color: #A8D4FF;
+			font-family: 'Pacifico', cursive;
+			font-size: 2em;
+		}
+
+		.login-box{			
+			width: 100% ;
+			height: fit-content;
+			position: absolute;
+			top:102%;
+			left: 36%;
+			animation-delay: 0.1s;
+			opacity: 1;
+		}
+
+		.login-form{
+			background: rgba(253, 0, 160, 0.544);
+			width: 400px;
+			height: fit-content;
+			padding: 40px;
+		}
+		
+		.login-form h2{
+				font-size: 20px;
+				text-align: center;
+				padding: 10px;
+				font-weight: bolder;
+				color: #FAFBFB;
+				margin-bottom: 20px;
+		}
+
+		.login-image{
+			width: 50vh;
+			height: 20vh;
+			position: absolute;
+			overflow: hidden;
+			z-index: 3;
+		}
+		.cloud{
+			width: 50vh;
+			height: 15vh;
+		}
+		.cloud1{
+			background: url(../Images/Home/rain-cloud1.png) no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: -8%;		
+		}
+		.cloud2{
+			background: url(../Images/Home/rain-cloud2.png) no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: -8%;				
+		}
+		.thunder{
+			background: url(../Images/Home/lightning1.gif) no-repeat,
+						url(../Images/Home/lightning2.gif) no-repeat;
+			background-size: contain;
+			position: absolute;
+			top: 0%;
+			left: 21%;
+			transition-delay: 2s;	
+		}
+		.rain{
+			background: url(../Images/Home/rain1.gif) no-repeat;
+			background-size: contain;
+			top: 25%;
+			left: 12%;
+			position: absolute;
+			
+		}
+		.login-input{
+			border: #0693cd 1px solid;
+			font-family:'Roboto', sans-serif;
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border-radius: 25px;
+		}
+		.login-input:focus{
+			outline: none;
+			box-shadow: #5197FF 2px 2px;			
+		}
+
+		.login-button{
+			background-color: #19EF08;
+			background-size: contain;
+			width: 100%;
+			border-radius: 25px;
+			padding: 10px;
+			cursor: pointer;
+			color: #fff;
+			font-size:15px;
+			font-weight: bold;
+		}
+		.login-button:hover{
+			text-shadow: 0 0 2em rgba(255,255,255,1);
+			color:#FFFFFF;
+			border-color:#FFFFFF;
+		}
+		.login-button:active{
+			border: rgb(25, 208, 228) 2px inset;			
+			text-shadow: 0 0 2em rgb(25, 208, 228);
+			color:rgb(25, 208, 228);
+		}
+		.forgot-password{
+			color: #FFFCFC;	
+			font-family: 'Roboto', cursive;
+			font-style: italic;
+			font-weight: bold;
+		}
+		.forgot-password a{
+			color:blue;
+			font-family: 'Pacifico', cursive;
+		}
+		.forgot-password a:active{
+			color:red;
+		}
+		.forgot-password a:visited{
+			color:rebeccapurple;
+		}
+
+		.create-account{
+			background: #FF0004;
+			width: 100%;
+			border-radius: 25px;
+			padding: 10px;
+		}
+		.create-account a{
+			color: white;
+			font-weight: bolder;
+		}
+		/* Section 2
+		 * --------------------------------------- */
+		/*slide 1*/
+		#section1 #slide1{
+		background-image: url(../Images/Home/memories_hd1.jpg);
+		background-position: center;
+		background-size: cover;
+		position: relative;
+		}
+
+		#section1 #slide1 p{
+			font-family: 'Lora', serif;
+			text-align: left;
+			margin-left: 80px;
+			margin-top: 2%;
+			width: 50%;
+			font-weight: bolder;
+			font-style: italic;
+			position: relative;
+		}
+		.slide-wrap {
+			z-index: 2;
+			-webkit-transition: all ease 0.3s !important;
+			transition: all ease 0.3s !important;
+			margin-top: 0;
+			overflow: hidden;
+			margin-left: 13%;
+			position: absolute;
+		}
+		.slide-wrap div{
+			display: block;
+		}
+		.category {
+			height: 100%;
+		}
+		.container2:before {
+			content: " ";
+			display: table;
+		}
+		.container2 {
+			min-width: 320px;
+		}
+		
+		.category-list {
+			float: left;
+			width: 100%;
+		}
+		.category-list ul {
+			padding: 0;
+			padding: 6px 0;
+			float: left;
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		ol, ul {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+		user agent stylesheet
+		ul, menu, dir {
+			display: block;
+			list-style-type: disc;
+			-webkit-margin-before: 1em;
+			-webkit-margin-after: 1em;
+			-webkit-margin-start: 0px;
+			-webkit-margin-end: 0px;
+			-webkit-padding-start: 40px;
+		}
+		.category-list ul li {
+			float: left;
+			box-sizing: border-box;
+			border: 2px solid #f4f4f4;
+			overflow: hidden;
+			width: 25%;
+			height: -webkit-calc(33vh - 18px);
+			height: calc(33vh - 18px);
+			list-style: none;
+			position: relative;
+			cursor: pointer;
+		}
+		.category-list ul .size50 {
+			width: 50%;
+		}
+		.category-list ul li .category-item {
+			-webkit-transition: all ease-in-out 0.3s;
+			transition: all ease-in-out 0.3s;
+			position: relative;
+			height: 100%;
+			box-sizing: border-box;			
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+		}
+		.category-list ul li .category-text {
+			position: absolute;
+			z-index: 1;
+			box-sizing: border-box;			
+			background: rgba(0,0,0,0.5);
+			height: 55px;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding-left: 10px;
+			font-family: Verdana,Arial,sans-serif;
+    		font-size: 16px;
+    		line-height: 1.42857;
+			display: table;
+			cursor: pointer;
+		}
+		.category-list ul li .category-text span {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 16px;
+			color: #fff;
+		}
+		/*slide 2 */
+		#section1 #slide2{
+			background: url(../Images/Home/askjaskhfkjashfkj82793.jpg) no-repeat 0px -800px;
+			background-position: center;
+			background-size: cover;
+			
+		}
+
+		#section1 #slide2 p{
+			font-family: 'Lora', serif;
+			margin-top: 2%;
+			margin-right: 20px;
+			text-align: left;
+			color: #FFFCFC;
+			font-style: italic;
+			font-weight: bolder;
+		}
+		
+
+		/*slide 3 */
+		#section1 #slide3 
+		{
+			background: url(../Images/Home/Support.jpg);
+			background-position: center;
+			background-size: cover;
+		}
+
+		#section1 #slide3 p{
+			font-style: italic;
+			font-family: 'Lora', serif;
+			font-size: 2em;
+			margin-top: 11%;
+			font-weight: bolder;
+			text-align: right;
+			margin-right: 20px;
+		}
+
+
+		/* Section 3
+		 * --------------------------------------- */
+		#section2 {
+			background: url(../Images/Home/maxresdefault.jpg);
+			background-size: cover;
+			background-position: top;
+		}
+		/* Footer
+		 * --------------------------------------- */
+
+		 .generic-anchor {
+			color: #8DB9ED;
+		}
+		.generic-anchor:visited {
+			color: #8DB9ED;
+		}
+		.generic-anchor:hover {
+			color: #ccc;
+		}
+		.flex-rw {
+		  display: flex;
+		  flex-flow: row wrap;
+		}
+		main {
+		  flex: 1 1 auto; 
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  font: 10em "Oswald", sans-serif;
+		  color: rgb(155,155,155);
+		  line-height: 1
+		}
+		footer {
+		  background: rgb(55,55,55);
+		  margin-top: auto;
+		  width: 100%
+		}
+		.footer-list-top {
+		  width: 33.333%
+		}
+		.footer-list-top > li {
+		  text-align: center;
+		  padding-bottom: 10px
+		}
+		.footer-list-header {
+		  padding: 10px 0 5px 0;
+		  color: #fff;
+		  font: 2.3vw "Oswald", sans-serif
+		}
+		.footer-list-anchor {
+		  font: 1.3em "Open Sans", sans-serif
+		}
+		.footer-social-section {
+		  width: 100%;
+		  align-items: center;
+		  justify-content: space-around;
+		  position: relative;
+		  margin-top: 5px;
+		}
+		.footer-social-section::after {
+		  content: "";
+		  position: absolute;
+		  z-index: 1;
+		  top: 50%;
+		  left: 10px;
+		  border-top: 1px solid #ccc;
+		  width: calc(100% - 20px)
+		}
+		.footer-social-overlap {
+		  position: relative;
+		  z-index: 2;
+		  background: rgb(55,55,55);
+		  padding: 0 20px
+		}
+		.footer-social-connect {
+		  display: flex;
+		  align-items: center;
+		  font: 3.5em "Oswald", sans-serif;
+		  color: #fff
+		}
+		.footer-social-small {
+		  font-size: 0.6em;
+		  padding: 0px 20px
+		}
+		.footer-social-overlap > a {
+		  font-size: 3em
+		}
+		.footer-social-overlap > a:not(:first-child) {
+		  margin-left: 0.38em
+		}
+		.footer-bottom-section {
+		  width: 100%;
+		  padding: 10px;
+		  border-top: 1px solid #ccc;
+		  margin-top: 10px;
+		  text-align: right;		  
+		}
+		.footer-bottom-section > div:first-child {
+		  margin-right: auto
+		}
+		.footer-bottom-wrapper {
+		  font-size: 1.5em;
+		  color: #fff
+		}
+		.footer-address {
+		  display: inline;
+		  font-style: normal
+		}
+	
+/* Các thiết kế dành cho trang tạo tài khoản create_account.html */
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Lobster', cursive;
+	letter-spacing: 1px;
+	background: url(../Images/logon/do-you-love-me_personalityhacker.jpg);
+	background-size: cover;
+}
+
+
+.container1{
+	position: absolute;
+	top: 57%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 700px;
+	height: 400px;
+	background: rgba(25,245,0,0.90);
+}
+
+.container1 .form_contain1,
+.container1 .form_contain2{
+	position: relative;
+	width: 50%;
+	height: 380px;
+	float: left;
+	box-sizing: border-box;
+}
+
+.container1 .form_contain2 h1{
+	font-size: 30px;
+	color: yellow;
+}
+
+.container1 .form_contain2{
+	background: #FF1589;
+	height: 530px;
+	top: -50px;
+	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
+	padding: 30px;
+}
+
+.container1 .form_contain2 label{
+	color: white;
+}
+
+.textinput{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	margin-bottom: 10px;	
+	border-radius: 25px;
+	font-size: 15px;
+	box-shadow: 0 10px 10px rgba(0,0,0,.2);
+}
+
+.textinput:hover,
+.textinput:valid{
+	border: 1px solid #F8FF00;
+}
+
+.textTalk{
+	display: block;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #FF0000;
+	margin-bottom: 20px;	
+	border-radius: 25px;
+	font-size: 15px;
+	box-shadow: 0 10px 10px rgba(0,0,0,.2);
+	resize: none;
+}
+
+.textTalk:hover{
+	border: 1px solid #F8FF00;
+}
+
+.rd{
+	font-size: 30px;
+}
+
+.container1 .form_contain1{
+	padding: 40px 30px;
+	color: white;	
+}
+
+#dktk{
+	font-size: 1.6em;
+	color: white;
+	margin-bottom: 20px;
+}
+
+.container1 .form_contain2 input[type="submit"]
+{
+	background: #31A7FD;
+	color: white;
+	text-align: center;
+	border:none;
+	font-family: 'Lobster', cursive;
+	margin-top: 0;
+	width: 80%;
+	margin-left: 30px;	
+	padding: 10px;
+	border-radius: 25px;
+	font-size: 15px;
+}
+
+.container1 .form_contain2 input[type="submit"]:hover{
+	background: #63DAFF;
+	
+}
+
+/******************
+Kết thúc phần dành cho create_account.html
+******************/
+
+/******************************************
+Chỉnh web theo hướng RESPONSIVE
+******************************************/
+	/* ------------------------------------------------------------------- 
+	DESKTOP VÀ LAPTOP */
+@media all  and (min-width : 1200px) {
+	.container2 {
+			width: 960px;
+	}
+}
+@media (min-width:700px) and (max-width:1199px){
+	.container2 {
+		width: 640px;
+	}
+}
+@media (min-width:520px) and (max-width:699px){
+	.container2 {
+		width: 480px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.footer-list-header {
+	font-size: 2em
+	}
+	.footer-list-anchor {
+	font-size: 1.1em
+	}
+	.footer-social-connect {
+	font-size: 2.5em
+	}
+	.footer-social-overlap > a {
+	font-size: 2.24em
+	}
+	.footer-bottom-wrapper {
+	font-size: 1.3em
+	}
+}
+@media only screen and (max-width: 568px) {
+	main {
+	font-size: 5em
+	}
+	.footer-list-top {
+	width: 100%
+	}
+	.footer-list-header {
+	font-size: 3em;
+	}
+	.footer-list-anchor {
+	font-size: 1.5em
+	}
+	.footer-social-section {
+	justify-content: center
+	}
+	.footer-social-section::after {
+	top: 25%
+	}
+	.footer-social-connect {
+	margin-bottom: 10px;
+	padding: 0 10px
+	}
+	.footer-social-overlap {
+	display: flex;
+	justify-content: center;
+	}
+	.footer-social-icons-wrapper {
+	width: 100%;
+	padding: 0
+	}
+	.footer-social-overlap > a:not(:first-child) {
+	margin-left: 20px;
+	}
+	.footer-bottom-section {
+	padding: 0 5px 10px 5px
+	}
+	.footer-bottom-wrapper {
+	text-align: center;
+	width: 100%;
+	margin-top: 10px
+	}
+}
+@media only screen and (max-width: 480px) {
+	.footer-social-overlap > a {
+	margin: auto
+	}
+	.footer-social-overlap > a:not(:first-child) {
+	margin-left: 0;
+	}
+	.footer-bottom-rights {
+	display: block
+	}
+}
+@media only screen and (max-width: 320px) {
+	.footer-list-header {
+	font-size: 2.2em
+	}
+	.footer-list-anchor {
+	font-size: 1.2em
+	}
+	.footer-social-connect {
+	font-size: 2.4em
+	}
+	.footer-social-overlap > a {
+	font-size: 2.24em
+	}
+	.footer-bottom-wrapper {
+	font-size: 1.3em
+	}
+}
+/*
+	Device width 680px or lower
+*/
+
+@media screen and (max-width: 680px)
+{
+	section .container1{
+		height: 430px;
+		width: 80%;
+	}
+	.container1{
+		width: 80%;
+	}
+	.container1 .form_contain1{
+		width: 100%;
+	}	
+	.container1 .form_contain2{
+		width: 100%;
+		margin-top: 10px;
+	}
+}
+/*
+	Device width 500px or lower
+*/
+@media screen and (max-width: 500px)
+{
+	.container1 input{
+		font-size: 12px;
+	}
+	.container1{
+		width: 80%;	
+	}
+	.container1{
+		top: 60%;
+	}
+}
+/*
+	Device width 390px or lower
+*/
+@media screen and (max-width: 390px)
+{
+	body{		
+		font-size: 12px;
+	}
+	.container1{
+		width: 80%;
+		top: 60%;
+	}
+	.container1 input{
+		font-size: 12px;
+	}
+	.container1 .form_contain2 input[type="submit"]
+	{
+		font-size: 12px;
+		margin-left: 20px;
+	}
+	.container1 .form_contain2{
+		margin-top: 10px;
+		height: 500px;
+	}
+
+}
+
+/*------------------------------------------------------------------
+CÁC THIẾT BỊ KHÁC*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media all and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media all and (min-width: 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media all and (max-width: 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/**********
+    iPad 3
+    **********/
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media all and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media all and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 5 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6 ----------- */
+@media all and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6+ ----------- */
+@media all and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 414px) and (max-device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S3 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S4 ----------- */
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 320px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media all and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
+@media all and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+  /* Styles */
+}
+
