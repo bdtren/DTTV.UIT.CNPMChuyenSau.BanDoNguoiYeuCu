@@ -139,9 +139,9 @@
 						</div>
 
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
-							<button type="button" class="btn btn-danger" name="huytaotin">Hủy tạo tin</button>
-							<button type="button" class="btn btn-primary" name="chapnhantaotin">Chấp nhận tạo tin</button>
+							<button id="btnQuit" type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
+							<button id="btnFail" type="button" class="btn btn-danger" name="huytaotin">Hủy tạo tin</button>
+							<button id="btnSuccess" type="button" class="btn btn-primary" name="chapnhantaotin">Chấp nhận tạo tin</button>
 						</div>
 
 					</form>

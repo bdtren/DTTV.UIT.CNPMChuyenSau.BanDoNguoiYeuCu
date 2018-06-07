@@ -108,19 +108,19 @@
 										</div>
 
 										<div class="form-group">
-											<label>Người đăng:</label>
-											<label id="lbName"></label>
+											<span>
+												<label>Người đăng: </label>
+												<label id="lbName"></label>
+											</span>
+											&nbsp;&emsp;
+											<span>
+												<label>Ngày đăng: </label>
+												<label id="lbDate"></label>
+											</span>
 										</div>
-
-										<div class="form-group">
-											<label style="font-weight: bold;">Thanh toán phí tạo tin:</label>
-											<!-- Thanh toán phí tạo tin đặc biệt -->
-											<label id="lbPayOption"></label>
-										</div>
-
 										<div class="form-group">
 											<label>Loại tin: </label>
-											<label id="lbType"></label>
+											<label id="lbPostType"></label>
 										</div>
 
 										<div class="form-group">

@@ -124,9 +124,11 @@
                  					<button type="button" class="btn btn-primary">Tạo</button>
                 				</div>
 
+								<div id="addtion-Result" class="modal-footer"></div>
+
 						</form>
+						
                 </div>
-	
             	</form>
               </div>
             </div>
