@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     6/5/2018 12:56:53 PM                         */
+/* Created on:     6/8/2018 9:31:00 AM                          */
 /*==============================================================*/
 
 /*
@@ -12,9 +12,7 @@ drop table if exists CHUCVU;
 
 drop table if exists DANHMUC;
 
-drop index DT_THUOC_LOAITIN_FK on DOANHTHU;
-
-drop index TD_CO_DT_FK on DOANHTHU;
+drop index NAPTIEN_FK on DOANHTHU;
 
 drop index NV_QUANLY_DT_FK on DOANHTHU;
 
@@ -27,6 +25,10 @@ drop table if exists GHINHANPHANHOI;
 drop index KH_CO_TK_FK on KHACHHANG;
 
 drop table if exists KHACHHANG;
+
+drop index NV_TAO_THONGBAO_FK on KHUYENMAI;
+
+drop table if exists KHUYENMAI;
 
 drop index KH_THEODOI_KH2_FK on KH_THEODOI_KH;
 
@@ -80,9 +82,9 @@ drop index NV_THEM_TB_FK on THIETBI;
 
 drop table if exists THIETBI;
 
-drop index NV_TAO_THONGBAO_FK on THONGBAO;
+drop index TD_CO_THONGBAO_FK on THONGBAOTINDANG;
 
-drop table if exists THONGBAO;
+drop table if exists THONGBAOTINDANG;
 
 drop index TINDANG_THUOC_LOAITIN_FK on TINDANG;
 
@@ -105,12 +107,13 @@ create table CHITIEU
 (
    MACT                           char(6)                        not null,
    MANV                           char(6)                        not null,
-   LYDO                           varchar(50)                    not null,
-   NGAYCHI                        date                           not null,
-   TIENCHI                        float(8,2)                     not null,
+   NGAY                           date                           not null,
+   TIENCHI                        double                         not null,
+   LYDO                           text                           not null,
+   TIENTHU                        double                         not null,
+   TONG                           double                         not null,
    primary key (MACT)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_QUANLY_CT_FK                                       */
@@ -127,11 +130,10 @@ create table CHUCVU
 (
    MACV                           char(6)                        not null,
    TENCV                          varchar(20)                    not null,
-   HSLUONG                        int                            not null,
+   HSLUONG                        double                         not null,
    LUONGCB                        double                         not null,
    primary key (MACV)
-)
-;
+);
 
 /*==============================================================*/
 /* Table: DANHMUC                                               */
@@ -143,8 +145,7 @@ create table DANHMUC
    DDANH                          longtext,
    KTDM                           varchar(20),
    primary key (MADM)
-)
-;
+);
 
 /*==============================================================*/
 /* Table: DOANHTHU                                              */
@@ -152,16 +153,14 @@ create table DANHMUC
 create table DOANHTHU
 (
    MADT                           char(6)                        not null,
+   MAKH                           char(6)                        not null,
    MANV                           char(6)                        not null,
-   LOAITIN                        varchar(50)                    not null,
-   MATD                           char(6)                        not null,
    MATHECAO                       varchar(50)                    not null,
    DOANHTHU                       double                         not null,
-   LYDO                           varchar(50)                    not null,
+   LYDO                           text                           not null,
    NGAYTHU                        date                           not null,
    primary key (MADT)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_QUANLY_DT_FK                                       */
@@ -172,19 +171,11 @@ create index NV_QUANLY_DT_FK on DOANHTHU
 );
 
 /*==============================================================*/
-/* Index: TD_CO_DT_FK                                           */
+/* Index: NAPTIEN_FK                                            */
 /*==============================================================*/
-create index TD_CO_DT_FK on DOANHTHU
+create index NAPTIEN_FK on DOANHTHU
 (
-   MATD
-);
-
-/*==============================================================*/
-/* Index: DT_THUOC_LOAITIN_FK                                   */
-/*==============================================================*/
-create index DT_THUOC_LOAITIN_FK on DOANHTHU
-(
-   LOAITIN
+   MAKH
 );
 
 /*==============================================================*/
@@ -197,10 +188,9 @@ create table GHINHANPHANHOI
    NGAYPH                         date                           not null,
    MUCDO                          int                            not null,
    KNGT                           int                            not null,
-   PHANHOI                        varchar(50)                    not null,
+   PHANHOI                        text                           not null,
    primary key (MAPH)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: KH_GUI_PH_FK                                          */
@@ -225,10 +215,10 @@ create table KHACHHANG
    GIOITINH                       varchar(4)                     not null,
    EMAIL                          longtext                       not null,
    AVATAR                         longtext                       not null,
-   TAMSU                          longtext                       not null,
+   TAMSU                          text                           not null,
+   SODU                           double	                     not null,
    primary key (MAKH)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: KH_CO_TK_FK                                           */
@@ -239,22 +229,44 @@ create index KH_CO_TK_FK on KHACHHANG
 );
 
 /*==============================================================*/
+/* Table: KHUYENMAI                                             */
+/*==============================================================*/
+create table KHUYENMAI
+(
+   MAKM                           char(6)                        not null,
+   MANV                           char(6)                        not null,
+   TIEUDE                         text                           not null,
+   CHITIET                        text                           not null,
+   NGAYBD                         date                           not null,
+   NGAYKT                         date                           not null,
+   DDANH                          longtext                       not null,
+   primary key (MAKM)
+);
+
+/*==============================================================*/
+/* Index: NV_TAO_THONGBAO_FK                                    */
+/*==============================================================*/
+create index NV_TAO_THONGBAO_FK on KHUYENMAI
+(
+   MANV
+);
+
+/*==============================================================*/
 /* Table: KH_THEODOI_KH                                         */
 /*==============================================================*/
 create table KH_THEODOI_KH
 (
-   KHA_MAKH                       char(6)                        not null,
    MAKH                           char(6)                        not null,
-   primary key (KHA_MAKH, MAKH)
-)
-;
+   MAKHTD                         char(6)                        not null,
+   primary key (MAKH, MAKHTD)
+);
 
 /*==============================================================*/
 /* Index: KH_THEODOI_KH_FK                                      */
 /*==============================================================*/
 create index KH_THEODOI_KH_FK on KH_THEODOI_KH
 (
-   KHA_MAKH
+   MAKH
 );
 
 /*==============================================================*/
@@ -262,7 +274,7 @@ create index KH_THEODOI_KH_FK on KH_THEODOI_KH
 /*==============================================================*/
 create index KH_THEODOI_KH2_FK on KH_THEODOI_KH
 (
-   MAKH
+   MAKHTD
 );
 
 /*==============================================================*/
@@ -273,8 +285,7 @@ create table KH_THEODOI_TD
    MAKH                           char(6)                        not null,
    MATD                           char(6)                        not null,
    primary key (MAKH, MATD)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: KH_THEODOI_TD_FK                                      */
@@ -302,10 +313,9 @@ create table KIEMTRATB
    MATB                           char(6)                        not null,
    NGAYKT                         date                           not null,
    TINHTRANG                      varchar(20)                    not null,
-   GHICHU                         varchar(50)                    not null,
+   GHICHU                         text                           not null,
    primary key (MAKT)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: KIEMTRA_THIETBI_FK                                    */
@@ -330,10 +340,9 @@ create table LOAITIN
 (
    LOAITIN                        varchar(50)                    not null,
    TENLOAI                        varchar(50)                    not null,
-   GIA                            float(8,2)                     not null,
+   GIA                            double	                     not null,
    primary key (LOAITIN)
-)
-;
+);
 
 /*==============================================================*/
 /* Table: NHANVIEN                                              */
@@ -352,8 +361,7 @@ create table NHANVIEN
    AVATAR                         longtext                       not null,
    NGAYVL                         date                           not null,
    primary key (MANV)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_CO_CV_FK                                           */
@@ -380,11 +388,10 @@ create table PHANCONG
    MANV                           char(6)                        not null,
    NVQL                           char(6)                        not null,
    NGAYPC                         date                           not null,
-   CHITIET                        varchar(50)                    not null,
-   SOGIOHD                        int                            not null,
+   CHITIET                        text                           not null,
+   SOGIOHD                        double                         not null,
    primary key (MAPC)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_PHANCONG_FK                                        */
@@ -403,8 +410,7 @@ create table TAIKHOAN
    TENTK                          varchar(20)                    not null,
    MATKHAU                        varchar(20)                    not null,
    primary key (MATK)
-)
-;
+);
 
 /*==============================================================*/
 /* Table: TD_THUOC_DM                                           */
@@ -414,8 +420,7 @@ create table TD_THUOC_DM
    MATD                           char(6)                        not null,
    MADM                           char(6)                        not null,
    primary key (MATD, MADM)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: TD_THUOC_DM_FK                                        */
@@ -442,12 +447,11 @@ create table THACMAC
    MAKH                           char(6)                        not null,
    MANV                           char(6)                        not null,
    LOAIHOTRO                      varchar(20)                    not null,
-   VANDEGIAIDAP                   varchar(50)                    not null,
-   CHITIET                        varchar(50)                    not null,
-   TRALOI                         varchar(50)                    not null,
+   VANDEGIAIDAP                   text                           not null,
+   CHITIET                        text                           not null,
+   TRALOI                         text                           not null,
    primary key (MATM)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: KH_CO_TM_FK                                           */
@@ -475,8 +479,7 @@ create table THANHTOANLUONG
    TIENTHANHTOAN                  double                         not null,
    NGAYTT                         date,
    primary key (MATT)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_THANHTOAN_LUONG_FK                                 */
@@ -499,10 +502,9 @@ create table THIETBI
    NGAYSUDUNG                     date                           not null,
    GIATRI                         double                         not null,
    NGAYNHAP                       date                           not null,
-   GHICHU                         varchar(50)                    not null,
+   GHICHU                         text                           not null,
    primary key (MATB)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_THEM_TB_FK                                         */
@@ -513,24 +515,22 @@ create index NV_THEM_TB_FK on THIETBI
 );
 
 /*==============================================================*/
-/* Table: THONGBAO                                              */
+/* Table: THONGBAOTINDANG                                       */
 /*==============================================================*/
-create table THONGBAO
+create table THONGBAOTINDANG
 (
-   MATBAO                         char(6)                        not null,
-   MANV                           char(6)                        not null,
-   CHITIET                        varchar(50)                    not null,
-   NGAYTBAO                       date                           not null,
-   primary key (MATBAO)
-)
-;
+   MATBTD                         char(6)                        not null,
+   MATD                           char(6)                        not null,
+   NGAYBD                         date                           not null,
+   primary key (MATBTD)
+);
 
 /*==============================================================*/
-/* Index: NV_TAO_THONGBAO_FK                                    */
+/* Index: TD_CO_THONGBAO_FK                                     */
 /*==============================================================*/
-create index NV_TAO_THONGBAO_FK on THONGBAO
+create index TD_CO_THONGBAO_FK on THONGBAOTINDANG
 (
-   MANV
+   MATD
 );
 
 /*==============================================================*/
@@ -545,16 +545,16 @@ create table TINDANG
    TTKIEMDUYET                    int                            not null,
    NGAYDANG                       date                           not null,
    LOAITD                         varchar(50)                    not null,
-   TIEUDE                         varchar(50)                    not null,
+   TIEUDE                         text                           not null,
    GIABAN                         varchar(50)                    not null,
    TINHTRANGMH                    varchar(50)                    not null,
    HINHANH                        longtext,
-   TAMSU                          longtext,
+   TAMSU                          text,
    PTGD                           varchar(50)                    not null,
    TINHTRANGTIN                   varchar(50)                    not null,
+   SLOGAN                         text                           not null,
    primary key (MATD)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: NV_KIEMDUYET_TD_FK                                    */
@@ -590,8 +590,7 @@ create table XULYVIPHAM
    NGAYXULY                       date                           not null,
    NOIDUNGXULY                    varchar(50)                    not null,
    primary key (MAKH, MANV)
-)
-;
+);
 
 /*==============================================================*/
 /* Index: XULYVIPHAM_FK                                         */
@@ -612,14 +611,11 @@ create index XULYVIPHAM2_FK on XULYVIPHAM
 alter table CHITIEU add constraint FK_NV_QUANLY_CT foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
-alter table DOANHTHU add constraint FK_DT_THUOC_LOAITIN foreign key (LOAITIN)
-      references LOAITIN (LOAITIN) on delete restrict on update restrict;
+alter table DOANHTHU add constraint FK_NAPTIEN foreign key (MAKH)
+      references KHACHHANG (MAKH) on delete restrict on update restrict;
 
 alter table DOANHTHU add constraint FK_NV_QUANLY_DT foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
-
-alter table DOANHTHU add constraint FK_TD_CO_DT foreign key (MATD)
-      references TINDANG (MATD) on delete restrict on update restrict;
 
 alter table GHINHANPHANHOI add constraint FK_KH_GUI_PH foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
@@ -627,10 +623,13 @@ alter table GHINHANPHANHOI add constraint FK_KH_GUI_PH foreign key (MAKH)
 alter table KHACHHANG add constraint FK_KH_CO_TK foreign key (MATK)
       references TAIKHOAN (MATK) on delete restrict on update restrict;
 
-alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH foreign key (KHA_MAKH)
+alter table KHUYENMAI add constraint FK_NV_TAO_THONGBAO foreign key (MANV)
+      references NHANVIEN (MANV) on delete restrict on update restrict;
+
+alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
 
-alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH2 foreign key (MAKH)
+alter table KH_THEODOI_KH add constraint FK_KH_THEODOI_KH2 foreign key (MAKHTD)
       references KHACHHANG (MAKH) on delete restrict on update restrict;
 
 alter table KH_THEODOI_TD add constraint FK_KH_THEODOI_TD foreign key (MAKH)
@@ -672,8 +671,8 @@ alter table THANHTOANLUONG add constraint FK_NV_THANHTOAN_LUONG foreign key (MAN
 alter table THIETBI add constraint FK_NV_THEM_TB foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
-alter table THONGBAO add constraint FK_NV_TAO_THONGBAO foreign key (MANV)
-      references NHANVIEN (MANV) on delete restrict on update restrict;
+alter table THONGBAOTINDANG add constraint FK_TD_CO_THONGBAO foreign key (MATD)
+      references TINDANG (MATD) on delete restrict on update restrict;
 
 alter table TINDANG add constraint FK_KH_CO_TD foreign key (MAKH)
       references KHACHHANG (MAKH) on delete restrict on update restrict;

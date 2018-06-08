@@ -61,22 +61,21 @@ insert into TAIKHOAN values('TK1011','hoxuanthuong','baoanh');
 
 /*Báng khachhang */
 insert into KHACHHANG
-values('KH0000','TK1000','','','','','1900/1/1','','','./Images/user/avatar0.png','');
+values('KH0000','TK1000','','','','','1900/1/1','','','./Images/user/avatar0.png','','0');
 insert into KHACHHANG
-values('KH0001','TK1005','Nguyễn Văn Đức','Hồ Chí Minh','0123456789','abcd.facebook','1997/5/6','Nam','abc@gmail.com','./Images/user/avatar1.png','tam su abc...');
+values('KH0001','TK1005','Nguyễn Văn Đức','Hồ Chí Minh','0123456789','abcd.facebook','1997/5/6','Nam','abc@gmail.com','./Images/user/avatar1.png','tam su abc...','0');
 insert into KHACHHANG
-values('KH0002','TK1006','Tran Anh Việt','Bình Dương','01232456789','abcde.facebook','1996/2/14','Nam','abcd@gmail.com','./Images/user/avatar2.png','tam su def...');
+values('KH0002','TK1006','Tran Anh Việt','Bình Dương','01232456789','abcde.facebook','1996/2/14','Nam','abcd@gmail.com','./Images/user/avatar2.png','tam su def...','10');
 insert into KHACHHANG
-values('KH0003','TK1007','Hồ Xuân Hương','Đồng Nai','00123456789','abcdf.facebook','1997/8/27','Nu','abcdf@gmail.com','./Images/user/avatar3.png','tam su bcd...');
+values('KH0003','TK1007','Hồ Xuân Hương','Đồng Nai','00123456789','abcdf.facebook','1997/8/27','Nu','abcdf@gmail.com','./Images/user/avatar3.png','tam su bcd...','30');
 insert into KHACHHANG
-values('KH0004','TK1008','Nguyễn Thị Trang','Tiền Giang','1223456789','abcdfe.facebook','1998/3/13','Nu','abcdfef@gmail.com','./Images/user/avatar4.png','tam su abc...');
+values('KH0004','TK1008','Nguyễn Thị Trang','Tiền Giang','1223456789','abcdfe.facebook','1998/3/13','Nu','abcdfef@gmail.com','./Images/user/avatar4.png','tam su abc...','0');
 insert into KHACHHANG
-values('KH0005','TK1011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar5.png','tam su abc...');
+values('KH0005','TK1011','Hồ Xuân Thương','Hồ Chí Minh','12023456789','abcdfe.facebook','1996/7/13','Nam','abcdfef@gmail.com','./Images/user/avatar5.png','tam su abc...','0');
 insert into KHACHHANG
-values('KH0006','TK1009','Hoàng Tuấn Anh','Bình Phước','01234529749','tuananh.facebook','1990/3/19','Nam','tuananh@gmail.com','./Images/user/avatar6.png','tam su khach hang 6');
+values('KH0006','TK1009','Hoàng Tuấn Anh','Bình Phước','01234529749','tuananh.facebook','1990/3/19','Nam','tuananh@gmail.com','./Images/user/avatar6.png','tam su khach hang 6','20');
 insert into KHACHHANG
-values('KH0007','TK1009','Lê Hoàng Nam','Hồ Chí Minh','01234529749','hoangnam.facebook','1991/6/19','Nam','hoangnam@gmail.com','./Images/user/avatar7.png','tam su khach hang 7');
-
+values('KH0007','TK1010','Lê Hoàng Nam','Bình Phước','01234529749','hoangnam.facebook','1990/3/19','Nam','hoangnam@gmail.com','./Images/user/avatar6.png','tam su khach hang 6','20');
 
 /* Báng nhanvien */
 insert into NHANVIEN
@@ -100,57 +99,57 @@ insert into LOAITIN values('ribbon-normal','tin bình thường','0');
 
 /*Báng tindang */
 insert into TINDANG
-values ('TD0001','NV0003','KH0001','ribbon-new','1','2018/4/30','Bán','Bán nhà người yêu cũ','3000000000','mới','./Images/san-pham/tindang1.png;./Images/san-pham/tindang1_2.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0001','NV0003','KH0001','ribbon-new','1','2018/4/30','Bán','Bán nhà người yêu cũ','3000000000','mới','./Images/san-pham/tindang1.png;./Images/san-pham/tindang1_2.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0002','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán tủ lạnh','4000000','mới','./Images/san-pham/tindang2.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0002','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán tủ lạnh','4000000','mới','./Images/san-pham/tindang2.png','tâm sự abc','chuyển khoản','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0003','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua Tivi','3000000','mới','./Images/san-pham/tindang3.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0003','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua Tivi','3000000','mới','./Images/san-pham/tindang3.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0004','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang4.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0004','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang4.png','tâm sự abc','chuyển khoản','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0005','NV0003','KH0005','ribbon-new','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang5.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0005','NV0003','KH0005','ribbon-new','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang5.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0006','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp em bé','1000000','mới','./Images/san-pham/tindang6.png','tâm sự abc','tiền mặt','dang cho');
+values ('TD0006','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp em bé','1000000','mới','./Images/san-pham/tindang6.png','tâm sự abc','tiền mặt','dang cho','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0007','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua chó kiểng','4000000','mới','./Images/san-pham/tindang7.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0007','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua chó kiểng','4000000','mới','./Images/san-pham/tindang7.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0008','NV0003','KH0002','ribbon-normal','1','2018/4/30','Mua','Mua banh','200000','mới/cũ','./Images/san-pham/tindang8.png','tâm sự abc','tiền mặt/chuyển khoản','cho duyet dac biet');
+values ('TD0008','NV0003','KH0002','ribbon-normal','1','2018/4/30','Mua','Mua banh','200000','mới/cũ','./Images/san-pham/tindang8.png','tâm sự abc','tiền mặt/chuyển khoản','duyet gg','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0009','NV0003','KH0003','ribbon-normal','1','2018/4/30','Bán','Bán bàn làm việc','1000000','cũ','./Images/san-pham/tindang9.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0009','NV0003','KH0003','ribbon-normal','1','2018/4/30','Bán','Bán bàn làm việc','1000000','cũ','./Images/san-pham/tindang9.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0010','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua xe đạp','700000','mới','./Images/san-pham/tindang10.png;./Images/san-pham/tindang10_2.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0010','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua xe đạp','700000','mới','./Images/san-pham/tindang10.png;./Images/san-pham/tindang10_2.png','tâm sự abc','chuyển khoản','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0011','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an');
+values ('TD0011','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0012','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0012','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0013','NV0003','KH0006','ribbon-normal','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho');
+values ('TD0013','NV0003','KH0006','ribbon-normal','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0014','NV0003','KH0007','ribbon-normal','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','cho duyet dac biet');
+values ('TD0014','NV0003','KH0007','ribbon-normal','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','duyet moi','Chia tay lấy lại vốn');
 insert into TINDANG
-values ('TD0015','NV0003','KH0007','ribbon-normal','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang15.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0015','NV0003','KH0007','ribbon-normal','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang15.png','tâm sự abc','tiền mặt','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0016','NV0003','KH0007','ribbon-normal','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0016','NV0003','KH0007','ribbon-normal','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0017','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0017','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang', 'Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0018','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0018','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0019','NV0003','KH0001','ribbon-normal','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang');
+values ('TD0019','NV0003','KH0001','ribbon-normal','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0020','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0020','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0021','NV0003','KH0003','ribbon-normal','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0021','NV0003','KH0003','ribbon-normal','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0022','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an');
+values ('TD0022','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0023','NV0003','KH0005','ribbon-hot','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0023','NV0003','KH0005','ribbon-hot','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0024','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang');
+values ('TD0024','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0025','NV0003','KH0007','ribbon-normal','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang');
+values ('TD0025','NV0003','KH0007','ribbon-normal','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
-values ('TD0026','NV0003','KH0007','ribbon-discount','1','2018/4/30','Bán','Bán Nhẫn','2000000;4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0026','NV0003','KH0007','ribbon-discount','1','2018/4/30','Bán','Bán Nhẫn','2000000;4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','Đừng biến trái tim bạn thành một con đường, để ai cũng có thể đi qua. Mà hãy biến nó thành một bầu trời, nơi mà tất cả mọi người đều mơ ước tới.');
 insert into TINDANG
 values ('TD0027','NV0003','KH0003','ribbon-normal','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','Cô quyết định buông bỏ, buông bỏ cả quãng đời thanh xuân đẹp nhất cô đã từng dâng hiến cho anh, buông bỏ cả những gì thiêng liêng nhất trong tình yêu mà đến mãi sau này cô mới nhận ra chính những cùng cực trong đau khổ đó cô mới thấy tình yêu vẫn là mãi mãi và chính những đổ vỡ hôm nay đã dạy cho cô những mạnh mẽ sau này. 
 Cô vẫn nhớ như in ngày anh rời Hà Nội vào Sài Gòn. Ngày đó Hà Nội mưa nhiều lắm. Anh đã rời xa cô rồi chạy trốn cùng với một người con gái khác, tới một khung trời khác mà không có cô. Bao nhiêu dại khờ, bao nhiêu hứa hẹn, bao nhiêu tình yêu cũng theo anh mà tan biến trong phút chốc. Anh bảo với cô vì anh sợ làm ảnh hưởng đến tương lai của cô. Anh bảo với cô vì anh sợ không mang lại được hạnh phúc cho cô. Anh bảo... anh bảo... anh bảo anh phải đi. 
@@ -172,7 +171,7 @@ Vậy vì sao cô chấp nhận chờ đợi?
 Cô không hối hận vì quãng đời vừa qua, vì cô biết, trước kia cô đã từng như vậy vì tại thời điểm đó bản thân cô muốn như vậy. Dù đó có là điều ngốc ngếch gì đi nữa cô vẫn chưa từng hối hận.
 Dù người con gái hôm nay mặc váy cưới tinh khôi đó không phải là cô đi nữa, cô vẫn mỉm cười chỉ vì cô không muốn hận anh nữa. Cô thật lòng mong anh hạnh phúc. Chỉ là từ giờ trở đi, cô sẽ buông bỏ những gì không thuộc về cô và cho người đến sau một cơ hội, cũng chính là cho bản thân mình một cơ hội.
 Em buông tay rồi, anh hạnh phúc nghe anh.'
-,'Tặng','da dang');
+,'Tặng','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
 values ('TD0028','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','Rồi cũng đến những ngày, bọn anh cảm thấy cả hai trở nên xa lạ và thừa thải trong cuộc đời nhau. Nỗi đau của hai đứa anh không phải là cãi vã, cũng chẳng hẳn
 Rồi cũng đến những ngày, bọn anh cảm thấy cả hai trở nên xa lạ và thừa thải trong cuộc đời nhau.
@@ -192,7 +191,7 @@ Bọn anh ràng buộc nhau bởi quá nhiều lần thề hẹn sẽ sống tr�
 Cô ấy bảo anh đừng xin lỗi. Chẳng ai là người sai dù ngày mai chuyện này sẽ đi đến hồi kết. Bọn anh cũng mong cho dù đặt dấu chấm hết, cả hai cũng sẽ có riêng nhau những ngày tháng yên bình
 Nếu có một bình minh đẹp trời nào đấy, em hãy mặc váy hoa anh tặng, anh sẽ đưa em ra biển, mình bỏ lại ngày cũ ở phía sau.
 Em ngượng hỏi – “Còn thương nhau không?”, anh giả vờ hôn lên trán em rồi ngồi yên lặng đấy. Để thấu hiểu, để hạnh phúc, để ngọt ngào.
-Để mình bắt đầu lại cuộc đời khác, còn nhau …','tiền mặt','da dang');
+Để mình bắt đầu lại cuộc đời khác, còn nhau …','tiền mặt','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
 values ('TD0029','NV0003','KH0001','ribbon-normal','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','Thế giới chúng tôi đang sống, thực sự buồn. Càng buồn hơn trong những ngày lễ lạt. Giống như những kẻ cô độc bị bỏ quên, đứng bên rìa thành phố nhìn người người trao nhau những cái ôm nồng ấm, một nụ cười tươi. Không ai mang cho chúng tôi những điều như vậy cả.
 Trong lúc mơ màng giấc ngủ chiều nay, tôi mơ thấy trường cấp ba của mình. Một quá khứ xa xôi hiện về qua những khung hình nhảy cóc. Ba mùa giáng sinh cả lũ ở trọ lôi nhau đi bộ xuống nhà thờ. Rất nhiều nhà thờ to nhỏ, đặc biệt có cái nhà thờ nghe đồn to nhất cả Việt Nam. Chúng tôi thường dắt díu nhau đến đó, hòa vào dòng người đông đúc và tiếng nhạc ầm ĩ những bài thánh ca. Mười hai giờ đêm, khi những kẻ vô thần đã kéo nhau về ngủ, chỉ còn lại chúng tôi vẫn cố chấp ở lại nhà thờ cùng các con chiên. Chúng tôi cũng quỳ và cầu nguyện, và nghe dàn đồng ca hát lên bài hát về chúa giáng sinh.
@@ -205,163 +204,74 @@ Bao mùa trôi qua, tôi không biết cái lũ bạn ngày xưa có còn nhớ,
 Giá mà, ai cho tôi một nụ cười an ủi, một cái ôm nhắc nhở tôi đừng buồn. Có lẽ, chỉ vì tôi đang ốm, và tác dụng của thuốc khiến tôi thấy trống rỗng vô cùng. Ừ, có lẽ, chỉ là vậy thôi.
 Tôi hay nghĩ đến một người khi viết. Có nhiều lúc thứ tôi viết chẳng liên quan gì đến người. Tôi từng nghĩ, anh vui, tôi cũng sẽ vui. Nhưng giờ tôi mới hiểu, anh vui, tôi không vui, vì tôi không thể ở cùng anh chia sẻ niềm vui đó. Mọi thứ sẽ tệ hơn, khi tôi cảm thấy mình hoàn toàn bất lực.
 Đã qua một ngày. Chúc cho tất cả mọi người luôn bình an, luôn vui vẻ.
-Hôm nay trời đẹp, có lẽ ngoài kia ai đó đang cười…','tặng','da dang');
+Hôm nay trời đẹp, có lẽ ngoài kia ai đó đang cười…','tặng','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
 values ('TD0030','NV0003','KH0002','ribbon-normal','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','Tôi bước ra cổng trường… dảo mắt tìm cậu…bước lên bậc đứng đợi cậu…nhìn sang bên kia đường…thấy ? Tôi quay lưng…bỏ đi… trốn tránh?
 Buổi chiều, trong tiết học thể dục, lớp tôi bàn tán về cậu, về người cậu yêu.. tôi lắng nghe. Cô gái ấy đáng yêu như thế, dũng cảm như thế,..Tôi tự nhủ: ” Phải rồi, phải rồi”
 Chúng ta chả là gì của nhau cả, phải rồi… Chỉ là nắm tay vài lần, chỉ là đèo nhau vài lần, chỉ là xoa đầu vài lần, chỉ là hứa hẹn vài lần….
 Chúng ta đang chơi trò gì vậy? Tôi đã game over chưa? Tôi …không hiểu, tôi đáng ra phải có câu trả lời nghiêm túc chứ. Tôi ngỡ…mình đang bị chơi đùa vậy.
-Đến khi tôi đủ tự tin, đủ dũng cảm tôi sẽ nói rõ với cậu. Một là chúng ta là bạn. Hai là người xa lạ.','tặng','da dang');
+Đến khi tôi đủ tự tin, đủ dũng cảm tôi sẽ nói rõ với cậu. Một là chúng ta là bạn. Hai là người xa lạ.','tặng','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
 values ('TD0031','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','Gió. Cứ mơn man buồn trôi theo những cơn mê! Có khi tự hỏi tôi đang đi về đâu ? Lòng bất an và khó tả đến vô cùng. Em đang phải đương đầu với sóng dữ hay … đối mặt với những ngọt ngào của cám dỗ ? Đôi lúc trở nên bất lực hay có cảm giác bị phụ thuộc vào ai đó. Sự vô định đã hình thành từ bao giờ rồi ???
 Ngày hôm nay không còn cảm giác sợ yêu thương nào đó sẽ vụt mất. Không còn lo lắng rằng yêu thương đó có chân thành hay không? Và cũng không còn sợ yêu thương đó bao giờ tan biến nữa. Tôi chấp nhận cho sự nhỏ nhoi và cả những thứ khiến tôi ấm ức bực bội vì có thể những điều đó sẽ không tồn tại mãi mãi được. Tôi tin vào những điều hiển hiện trước mắt mình mặc dù đôi lần ghét cho cái thực tại xô bồ chen chúc đến khó thở…
 ”Đôi khi muốn mở lời để hỏi anh: Chúng ta đã yêu chưa? Sao cứ để con tim em bị dối lừa như thế này hả anh? Nếu đã yêu sao còn nhung nhớ ai kia để rồi xót xa cho cuộc tình không trọn. Yêu là để cho nhau đau khổ hả anh? Những lúc e cần anh nhất anh đâu có thấu được. Bao suy nghĩ trong em cứ dần trào dâng để rồi em nghĩ về những thứ phù phiếm và vô vọng. Em tin tưởng ai giờ đây khi niềm tin ở anh đã dần vơi cạn mất rồi? Em tin vào ai khi trong em mang đầy những mớ rối bời và hoang mang. Anh quan tâm ai để rồi anh không còn biết em là ai nữa. Anh nói gì khi em đã mất dần sự trông mong,có lẽ ta đã sai khi gặp nhau không đúng thời điểm anh à. Và có lẽ em cũng sai khi em nhận ra mối chân tình đó không thuộc về em.
-Những giằng xé về tâm hồn sẽ khiến e mòn mỏi nhiều đi vì em biết thanh xuâm của mỗi người có được bao nhiêu đâu chứ. Dặn lòng sẽ không xót xa bởi những thương tổn trước mắt nhưng mà em vẫn là em,vẫn là linh hồn chứ không phải một vật thể chỉ tồn tại. Dặn lòng dù có yêu anh đến thế nào đi nữa cũng không được phép tổn thương tâm hồn này , nhưng anh à em bất lực trước mọi thứ. Bởi những bộn bề đâu đó đã khiến em khó chịu đến đau lòng. Có lúc giống như địa ngục tăm tối, lúc thấy đầy hi vọng. Em là gì trong trái tim anh?Là người thay thế cho một khoảng trống còn ngăn hay là người anh chót thương hại? Lắm lúc lòng chật vật và lo nghĩ. Anh đâu có cần em ! Bởi nếu có thì đâu anh đối xử với em như thể chỉ cho có vậy chứ? Em không phải người con gái anh thầm mong. Và em cũng chắc rằng :anh không yêu em.','tiền mặt/chuyển khoản','da dang');
+Những giằng xé về tâm hồn sẽ khiến e mòn mỏi nhiều đi vì em biết thanh xuâm của mỗi người có được bao nhiêu đâu chứ. Dặn lòng sẽ không xót xa bởi những thương tổn trước mắt nhưng mà em vẫn là em,vẫn là linh hồn chứ không phải một vật thể chỉ tồn tại. Dặn lòng dù có yêu anh đến thế nào đi nữa cũng không được phép tổn thương tâm hồn này , nhưng anh à em bất lực trước mọi thứ. Bởi những bộn bề đâu đó đã khiến em khó chịu đến đau lòng. Có lúc giống như địa ngục tăm tối, lúc thấy đầy hi vọng. Em là gì trong trái tim anh?Là người thay thế cho một khoảng trống còn ngăn hay là người anh chót thương hại? Lắm lúc lòng chật vật và lo nghĩ. Anh đâu có cần em ! Bởi nếu có thì đâu anh đối xử với em như thể chỉ cho có vậy chứ? Em không phải người con gái anh thầm mong. Và em cũng chắc rằng :anh không yêu em.','tiền mặt/chuyển khoản','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
 values ('TD0032','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán máy lạnh','4000000','mới','./Images/san-pham/tindang32.png','“Yên đơn phương” thường được ví là tình yêu vĩ đại nhất; khi bạn cho đi mà không cần nhận lại. Bạn cứ yêu, cứ dõi theo bước chân người ta và đương nhiên người ta chẳng hề hay biết. Bạn có quyền vui khi người ta cười và buồn khi người ta khóc; nhưng bạn lại không có quyền được góp phần trong tiếng cười ấy, hay đơn giản là tạo cho người ta những giọt nước mắt li ti. Thật nực cười đúng không?
 Những ai đã và đang “yêu đơn phương” mới có thể thấu nỗi đau mà thứ tình cảm này mang lại; nó nhẹ nhàng khứa vào tim trong những ngày nắng ấm. Nhìn người ta vui vẻ bên người yêu mà tự nhủ: “ừm bạn ấy hạnh phúc thì mình cũng hạnh phúc” có thật sự thế không? Hay là lòng bạn đang chảy máu, một thứ máu không màu.Thật tàn nhẫn khi nói  “yêu đơn phương” là thứ tình yêu cao thượng; sẵn sàng cho đi mà không cần người kia biết. Nếu được chọn, tôi chẳng cần cái cao thượng đó.Mọi người vẫn thường nói khi yêu con người luôn ngu ngốc, luôn chẳng biết mình đang nghĩ gì và sẽ làm gì. Thế nhưng với “yêu đơn phương” tôi không nghĩ vậy; khi bạn “yêu đơn phương” bạn không được ngu ngốc bất cứ phút giây nào, bởi chỉ cần một giây ngu ngốc bạn sẽ không kiểm soát được hành động của mình và có thể làm mất đi cái “phao” duy nhất mà bạn bám trụ trong thứ tình cảm này, đó là sự thương hại hoặc chăng là sự lừa dối bản thân. Khi tôi nhận ra mình yêu anh và biết rằng thứ tình yêu đó ngày càng lớn lên chiếm trọn trái tim tôi, thì tôi đã thấy mình lỗ nặng rồi. Tôi sẽ không được người yêu chăm sóc như những bạn khác; sẽ không có những dòng tin nhắn lúc về đêm; không được nắm tay nhau bước trên đường dài hay đơn giản là một tiếng alo trên điện thoại. Thế mà tôi vẫn cứ yêu anh, yêu đến mức chấp nhận tất cả. Chấp nhận nhìn anh quan tâm người khác, nhìn anh cười, nhìn anh khóc mà chỉ có thể dõi theo trong im lặng. Anh tàn nhẫn lắm nhưng chính tôi mới là người tàn nhẫn nhất với bản thân mình. Đó không phải là sự ngu ngốc, đó là cách ngược đãi trái tim.
-Đừng bao giờ nghĩ “yêu đơn phương” là yếu đuối khi mà không dám thổ lộ tình yêu. Một người phải có đủ mạnh mẽ thì mới có thể giả dạng bình tâm nhìn người mình yêu-yêu người khác. “Yêu đơn phương” là thứ tình cảm vĩ đại, cao thượng nhất; những chính nó cũng là thứ tình cảm hèn mọn nhất.','tiền mặt','da dang');
+Đừng bao giờ nghĩ “yêu đơn phương” là yếu đuối khi mà không dám thổ lộ tình yêu. Một người phải có đủ mạnh mẽ thì mới có thể giả dạng bình tâm nhìn người mình yêu-yêu người khác. “Yêu đơn phương” là thứ tình cảm vĩ đại, cao thượng nhất; những chính nó cũng là thứ tình cảm hèn mọn nhất.','tiền mặt','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
-values ('TD0033','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an');
+values ('TD0033','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
-values ('TD0034','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0034','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
-values ('TD0035','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0035','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 insert into TINDANG
-values ('TD0036','NV0003','KH0002','ribbon-normal','0','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho');
+values ('TD0036','NV0003','KH0002','ribbon-normal','0','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','Thà rằng cô đơn vì không yêu ai cả…còn hơn yêu ai đó mà vẫn cô đơn');
 
 
 insert into TINDANG
-values ('TD0037','NV0003','KH0001','ribbon-new','1','2018/4/30','Bán','Đồng hồ thông minh','250000','mới','./Images/san-pham/tindang37.png;./Images/san-pham/tindang37_2.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0037','NV0003','KH0001','ribbon-new','1','2018/4/30','Bán','Đồng hồ thông minh','250000','mới','./Images/san-pham/tindang37.png;./Images/san-pham/tindang37_2.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0038','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Quần jogger BIGSIZE NAM NỮ','100000','mới','./Images/san-pham/tindang38.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0038','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Quần jogger BIGSIZE NAM NỮ','100000','mới','./Images/san-pham/tindang38.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0039','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua sáo trúc','200000','mới','./Images/san-pham/tindang39.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0039','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua sáo trúc','200000','mới','./Images/san-pham/tindang39.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0040','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán đàn piano cơ','50000000','mới','./Images/san-pham/tindang40.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0040','NV0003','KH0004','ribbon-normal','1','2018/4/30','Bán','Bán đàn piano cơ','50000000','mới','./Images/san-pham/tindang40.png','tâm sự abc','chuyển khoản','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0041','NV0003','KH0005','ribbon-hot','1','2018/4/30','Mua','Mua sóc','300000','mới','./Images/san-pham/tindang41.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0041','NV0003','KH0005','ribbon-hot','1','2018/4/30','Mua','Mua sóc','300000','mới','./Images/san-pham/tindang41.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0042','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán gà tre','500000','mới','./Images/san-pham/tindang42.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0042','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán gà tre','500000','mới','./Images/san-pham/tindang42.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0043','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua xe máy','20000000','mới','./Images/san-pham/tindang43.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0043','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua xe máy','20000000','mới','./Images/san-pham/tindang43.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0044','NV0003','KH0002','ribbon-normal','1','2018/4/30','Mua','Mua điện thoại','1000000','mới/cũ','./Images/san-pham/tindang44.png','tâm sự abc','tiền mặt/chuyển khoản','cho duyet dac biet');
+values ('TD0044','NV0003','KH0002','ribbon-normal','1','2018/4/30','Mua','Mua điện thoại','1000000','mới/cũ','./Images/san-pham/tindang44.png','tâm sự abc','tiền mặt/chuyển khoản','duyet hot','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0045','NV0003','KH0003','ribbon-new','1','2018/4/30','Bán','Bán bếp gas','300000','cũ','./Images/san-pham/tindang45.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0045','NV0003','KH0003','ribbon-new','1','2018/4/30','Bán','Bán bếp gas','300000','cũ','./Images/san-pham/tindang45.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0046','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang46.png;./Images/san-pham/tindang46_2.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0046','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang46.png;./Images/san-pham/tindang46_2.png','tâm sự abc','chuyển khoản','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0047','NV0003','KH0006','ribbon-normal','1','2018/4/30','Mua','Mua mèo','100000','mới','./Images/san-pham/tindang47.png','tâm sự abc','tiền mặt','cho duyet dac biet');
+values ('TD0047','NV0003','KH0006','ribbon-normal','1','2018/4/30','Mua','Mua mèo','100000','mới','./Images/san-pham/tindang47.png','tâm sự abc','tiền mặt','duyet hot','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0048','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang48.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0048','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang48.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0049','NV0003','KH0007','ribbon-hot','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang49.png','tâm sự abc','tiền mặt/chuyển khoản','da dang');
+values ('TD0049','NV0003','KH0007','ribbon-hot','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang49.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0050','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang50.png','tâm sự abc','tiền mặt','cho duyet dac biet');
+values ('TD0050','NV0003','KH0002','ribbon-normal','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang50.png','tâm sự abc','tiền mặt','duyet moi','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0051','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang51.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0051','NV0003','KH0003','ribbon-normal','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang51.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0052','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang52.png;./Images/san-pham/tindang52_2.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0052','NV0003','KH0004','ribbon-normal','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang52.png;./Images/san-pham/tindang52_2.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0053','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang53.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0053','NV0003','KH0001','ribbon-normal','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang53.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0054','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang54.png','tâm sự abc','tiền mặt','da dang');
+values ('TD0054','NV0003','KH0005','ribbon-normal','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang54.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0055','NV0003','KH0005','ribbon-normal','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang55.png','tâm sự abc','Tặng','da dang');
+values ('TD0055','NV0003','KH0005','ribbon-normal','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang55.png','tâm sự abc','Tặng','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0056','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang56.png','tâm sự abc','chuyển khoản','da dang');
+values ('TD0056','NV0003','KH0006','ribbon-normal','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang56.png','tâm sự abc','chuyển khoản','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 insert into TINDANG
-values ('TD0057','NV0003','KH0007','ribbon-normal','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang57.png','tâm sự abc','tiền mặt','da dang');
-
-/*
-insert into TINDANG
-values ('TD0058','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','');
-insert into TINDANG
-values ('TD0059','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','ribbon-hot');
-insert into TINDANG
-values ('TD0060','NV0003','DM0002','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0061','NV0003','DM0003','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
-insert into TINDANG
-values ('TD0062','NV0003','DM0004','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
-insert into TINDANG
-values ('TD0063','NV0003','DM0005','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
-insert into TINDANG
-values ('TD0064','NV0003','DM0006','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0065','NV0003','DM0007','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','da dang','');
-insert into TINDANG
-values ('TD0066','NV0003','DM0008','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','da dang','');
-insert into TINDANG
-values ('TD0067','NV0003','DM0009','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0068','NV0003','DM0010','KH0002','1','2018/4/30','Bán','Bán máy lạnh','4000000','mới','./Images/san-pham/tindang32.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0069','NV0003','DM0011','KH0003','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an','');
-insert into TINDANG
-values ('TD0070','NV0003','DM0012','KH0004','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0071','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0072','NV0003','DM1002','KH0002','1','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
-insert into TINDANG
-values ('TD0073','NV0003','DM1003','KH0003','1','2018/4/30','Bán','Bán bàn làm việc','1000000','cũ','./Images/san-pham/tindang9.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0074','NV0003','DM1004','KH0004','1','2018/4/30','Mua','Mua xe đạp','700000','mới','./Images/san-pham/tindang10.png;./Images/san-pham/tindang10_2.png','tâm sự abc','chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0075','NV0003','DM1005','KH0001','1','2018/4/30','Mua','Mua mắt kiếng','1000000','mới','./Images/san-pham/tindang11.png','tâm sự abc','tiền mặt','da an','');
-insert into TINDANG
-values ('TD0076','NV0003','DM1006','KH0005','1','2018/4/30','Bán','Bán khăn len','50000','mới','./Images/san-pham/tindang12.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0077','NV0003','DM1007','KH0001','1','2018/4/30','Mua','Mua nhà','3000000000','mới','./Images/san-pham/tindang13.png','tâm sự abc','tiền mặt/chuyển khoản','dang cho','');
-insert into TINDANG
-values ('TD0078','NV0003','DM1008','KH0002','1','2018/4/30','Bán','Bán máy giặt','6000000','cũ','./Images/san-pham/tindang14.png','tâm sự abc','tiền mặt','da huy','');
-insert into TINDANG
-values ('TD0079','NV0003','DM1009','KH0003','1','2018/4/30','Mua','Mua máy lạnh','3000000','mới','./Images/san-pham/tindang15.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0080','NV0003','DM1010','KH0004','1','2018/4/30','Mua','Mua tivi','6000000','mới','./Images/san-pham/tindang16.png;./Images/san-pham/tindang16_2.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0081','NV0003','DM1011','KH0001','1','2018/4/30','Mua','Mua đồng hồ','1000000','mới','./Images/san-pham/tindang17.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0082','NV0003','DM2001','KH0002','1','2018/4/30','Bán','Bán điện thoại','4000000','mới','./Images/san-pham/tindang18.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0083','NV0003','DM2002','KH0001','1','2018/4/30','Tặng','Tặng chó Nhật','0','mới','./Images/san-pham/tindang19.png','tâm sự abc','Tặng','da dang','');
-insert into TINDANG
-values ('TD0084','NV0003','DM2003','KH0002','1','2018/4/30','Bán','Bán nhẫn','1000000','cũ','./Images/san-pham/tindang20.png','tâm sự abc','chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0085','NV0003','DM2004','KH0003','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang21.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0086','NV0003','DM1003','KH0004','1','2018/4/30','Bán','Bán xe đạp','700000','mới','./Images/san-pham/tindang22.png','tâm sự abc','chuyển khoản','da an','');
-insert into TINDANG
-values ('TD0087','NV0003','DM0001','KH0001','1','2018/4/30','Mua','Mua áo sơ mi','200000','mới','./Images/san-pham/tindang23.png;./Images/san-pham/tindang23_2.png','tâm sự abc','tiền mặt','da dang','ribbon-hot');
-insert into TINDANG
-values ('TD0088','NV0003','DM0002','KH0002','1','2018/4/30','Bán','Bán xe hơi','1000000000','mới','./Images/san-pham/tindang24.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0089','NV0003','DM0003','KH0001','1','2018/4/30','Tặng','Thư kỷ niệm','0','cũ','./Images/san-pham/tindang25.png','tâm sự abc','Tặng','da dang','');
-insert into TINDANG
-values ('TD0090','NV0003','DM0004','KH0002','1','2018/4/30','Bán','Bán Nhẩn','4000000','mới','./Images/san-pham/tindang26.png','tâm sự abc','chuyển khoản','da dang','ribbon-discount;200000');
-insert into TINDANG
-values ('TD0091','NV0003','DM0005','KH0003','1','2018/4/30','Tặng','Thư tỏ tình','0','mới','./Images/san-pham/tindang27.png','tâm sự abc','Tặng','da dang','');
-insert into TINDANG
-values ('TD0092','NV0003','DM0006','KH0004','1','2018/4/30','Bán','Bán nhà tăm','50000','mới','./Images/san-pham/tindang28.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0093','NV0003','DM0007','KH0001','1','2018/4/30','Tặng','Tặng đĩa nhạc','0','cũ','./Images/san-pham/tindang29.png','tâm sự abc','tặng','da dang','');
-insert into TINDANG
-values ('TD0094','NV0003','DM0008','KH0002','1','2018/4/30','Tặng','Tặng truyện','0','mới','./Images/san-pham/tindang30.png','tâm sự abc','tặng','da dang','');
-insert into TINDANG
-values ('TD0095','NV0003','DM0009','KH0001','1','2018/4/30','Mua','Mua nhà','2000000000','mới','./Images/san-pham/tindang31.png','tâm sự abc','tiền mặt/chuyển khoản','da dang','');
-insert into TINDANG
-values ('TD0096','NV0003','DM0010','KH0002','1','2018/4/30','Bán','Bán máy lạnh','4000000','mới','./Images/san-pham/tindang32.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0097','NV0003','DM0011','KH0003','1','2018/4/30','Mua','Mua máy tính','3000000','cũ','./Images/san-pham/tindang33.png','tâm sự abc','tiền mặt','da an','');
-insert into TINDANG
-values ('TD0098','NV0003','DM0012','KH0004','1','2018/4/30','Bán','Bán xe máy','7000000','mới','./Images/san-pham/tindang34.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0099','NV0003','DM1001','KH0001','1','2018/4/30','Mua','Mua máy ảnh','1000000','cũ','./Images/san-pham/tindang35.png','tâm sự abc','tiền mặt','da dang','');
-insert into TINDANG
-values ('TD0100','NV0003','DM1002','KH0002','1','2018/4/30','Bán','Bán võng','1000000','mới','./Images/san-pham/tindang36.png','tâm sự abc','tiền mặt','dang cho','');
-*/
+values ('TD0057','NV0003','KH0007','ribbon-normal','1','2018/4/30','Bán','Bán dây chuyền','3000000','mới','./Images/san-pham/tindang57.png','tâm sự abc','tiền mặt','da dang','Từ bỏ chính là một bắt đầu mới từ một kết thúc buồn');
 
 
 insert into TD_THUOC_DM values ('TD0001','DM0001');
@@ -444,10 +354,12 @@ insert into THANHTOANLUONG values ('TT0003','NV0003','5000000','2018/5/2');
 insert into THANHTOANLUONG values ('TT0004','NV0004','6000000','2018/5/2');
 
 /* Báng thacmac */
-insert into THACMAC values ('TM0001','KH0002','NV0002','Giải đáp','Cách đăng tin','Chi tiết abc ','Tra loi abc ');
-insert into THACMAC values ('TM0002','KH0003','NV0002','Giải đáp','Cách hủy tin','Chi tiết abc ','Tra loi abc ');
-insert into THACMAC values ('TM0003','KH0002','NV0002','Giải đáp','Cách sửa tin','Chi tiết abc ','Tra loi abc ');
-insert into THACMAC values ('TM0004','KH0004','NV0002','Giải đáp','Cáchtạo tin hot','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0001','KH0002','NV0002','Giai dap','Cách đăng tin','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0002','KH0003','NV0002','Giai dap','Cách hủy tin','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0003','KH0002','NV0002','Giai dap','Cách sửa tin','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0004','KH0004','NV0002','Giai dap','Cáchtạo tin hot','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0005','KH0005','NV0002','Vi pham','TD0001','Chi tiết abc ','Tra loi abc ');
+insert into THACMAC values ('TM0006','KH0006','NV0002','Vi pham','TD0001','Chi tiết abc ','Tra loi abc ');
 
 /* Báng ghinhanphanhoi */
 insert into GHINHANPHANHOI values('PH0001','KH0001','2018/4/30','3','3','ab');
@@ -468,16 +380,16 @@ insert into KIEMTRATB values('KT0003','NV0002','TB0003','2018/5/1','Hu','Sua');
 insert into KIEMTRATB values('KT0004','NV0002','TB0004','2018/5/1','Hu','thay mới');
 
 /* Báng doanhthu */
-insert into DOANHTHU values('DT0001','NV0004','ribbon-new','TD0001','1234567890','1000','tao tin moi','2018/5/15');
-insert into DOANHTHU values('DT0002','NV0004','ribbon-new','TD0005','1234567890','1000','tao tin moi','2018/5/16');
-insert into DOANHTHU values('DT0003','NV0004','ribbon-hot','TD0023','1234567890','2000','tao tin hot','2018/5/17');
-insert into DOANHTHU values('DT0004','NV0004','ribbon-discount','TD0026','1234567890','1000','tao tin giam gia','2018/5/18');
+insert into DOANHTHU values('DT0001','KH0001','NV0004','1234567890','1000','tao tin moi','2018/5/15');
+insert into DOANHTHU values('DT0002','KH0002','NV0004','1234567890','1000','tao tin moi','2018/5/16');
+insert into DOANHTHU values('DT0003','KH0003','NV0004','1234567890','2000','tao tin hot','2018/5/17');
+insert into DOANHTHU values('DT0004','KH0004','NV0004','1234567890','1000','tao tin giam gia','2018/5/18');
 
 /* Báng phancong */
-insert into PHANCONG values('PC0001','NV0001','NV0005','2018/5/1','abc','5');
-insert into PHANCONG values('PC0002','NV0002','NV0005','2018/5/1','abcd','6');
-insert into PHANCONG values('PC0003','NV0003','NV0005','2018/5/1','abce','4');
-insert into PHANCONG values('PC0004','NV0004','NV0005','2018/5/1','abcf','5');
+insert into PHANCONG values('PC0001','NV0001','NV0005','2018/5/1','abc','5.3');
+insert into PHANCONG values('PC0002','NV0002','NV0005','2018/5/1','abcd','6.3');
+insert into PHANCONG values('PC0003','NV0003','NV0005','2018/5/1','abce','4.12');
+insert into PHANCONG values('PC0004','NV0004','NV0005','2018/5/1','abcf','5.555');
 
 /*Bang xuylyvipham*/
 insert into XULYVIPHAM values('KH0001','NV0003','2108/5/2','vi pham noi quy');
@@ -503,8 +415,11 @@ insert into KH_THEODOI_TD values('KH0004','TD0032');
 insert into KH_THEODOI_TD values('KH0005','TD0018');
 insert into KH_THEODOI_TD values('KH0005','TD0006');
 
-/*Bang chitieu */
-insert into CHITIEU values('CT0001','NV0004','Mua thiết bị','2108/5/30','3000000');
-insert into CHITIEU values('CT0002','NV0004','Trả lương','2018/6/2','50000000');
-insert into CHITIEU values('CT0003','NV0004','Sửa máy tính','2018/6/1','5000000');
-insert into CHITIEU values('CT0004','NV0004','Mua bàn','2018/5/25','1000000');
+
+insert into KHUYENMAI values('KM0001','NV0003','Khuyến mãi','Chi tiết khuyến mãi abc...........','2018/6/2','2018/6/5','./Images/khuyenmai/khuyenmai1.png');
+
+insert into THONGBAOTINDANG values('TB0001','TD0037','2018/6/1');
+insert into THONGBAOTINDANG values('TB0002','TD0023','2018/6/1');
+insert into THONGBAOTINDANG values('TB0003','TD0011','2018/6/1');
+
+insert into CHITIEU values('CT0001','NV0004','2018/5/30','3000000','thu chi','5000000','2000000');
