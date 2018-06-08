@@ -17,6 +17,7 @@
           break;
       case 'CV0005':header("Location: finance/index.php");
           break;
+        default: break;
   }
   }
 ?>

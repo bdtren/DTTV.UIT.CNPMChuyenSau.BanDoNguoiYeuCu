@@ -1,5 +1,5 @@
-<div class="card" style="height: 35em;">
-  <h5 class="card-header" id="checkcard">Kiểm tra thẻ cào</h5>
+<div class="card" style="height: 35em; margin: 0;" >
+  <h5 class="card-header" id="checkcard" style="font-weight: 20px;">Kiểm tra thẻ cào</h5>
   <div class="card-body" style="overflow-y: auto;">
     <link rel="stylesheet" href="./css/style-report.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -134,7 +134,7 @@
 
 
     <!-- Chart và report -->
-    <script type="text/javascript" src="./js/loader.js"></script>
+    <script type="text/javascript" src="../../js/loader.js"></script>
     <!-- <script type="text/javascript"
         src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['gauge']}]}">
   </script> -->

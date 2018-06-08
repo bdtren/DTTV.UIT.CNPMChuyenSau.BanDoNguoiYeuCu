@@ -26,7 +26,7 @@
 					<th scope="row">
 						<?php echo ($i+1); ?>
 					</th>
-					<td><?php echo $a[$i]['TIEUDE']?></td>
+					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
 					<td>
 						<!-- <h6 style="visibility: hidden;"><?php echo $imgs[0]?></h6> -->
 						

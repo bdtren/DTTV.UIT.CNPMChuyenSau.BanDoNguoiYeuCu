@@ -26,7 +26,7 @@
 ?>
 
  <!-- Sidebar -->
- <div class="card" style="margin-bottom: 10px; padding: 10px;">    
+ <div class="card" style="margin-bottom: 10px;">    
 							  
 							  <img class="card-img-top" src="../../<?php echo $nv[0]['AVATAR']?>" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 								  

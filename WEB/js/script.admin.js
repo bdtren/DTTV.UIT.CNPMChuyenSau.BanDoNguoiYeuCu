@@ -31,7 +31,6 @@ function openModelTheCao(position) {
 }
 
 //Xử ly nhấn các phím trong modal
-
 function moneyFail() {
   var price = document.getElementById("lbCardPrice").value;
   updateDoanhThu("that-bai", selected, price);
@@ -122,7 +121,16 @@ function openBasicModal(position) {
       break;
   }
   document.getElementById("lbPostType").innerHTML = postType;
-  document.getElementById("lbCategory").innerHTML = "";
+
+  var dat = arrTable[position]["MATD"];
+  $.ajax({
+    url: "../../xulyphp/xulyAdmin.php",
+    data: { callFunction: "layDanhMucTin", data: dat },
+    type: "post",
+    success: function(output) {
+      document.getElementById("lbCategory").innerHTML = "";
+    }
+  });
   var cost = numberWithCommas(parseInt(arrTable[position]["GIABAN"]), "VND");
   document.getElementById("lbPrice").innerHTML = cost;
 
@@ -204,6 +212,8 @@ function openModelDuyetTinViPham(position) {
   }
   openBasicModal(position);
 }
+
+//Chuyển tin đăng từ đang chờ sang đang đăng
 
 /*********************************************************************/
 /***************CÁC MODEL + XỬ LÝ TRÊN TRANG CHĂM SÓC KHÁCH HÀNG*****/

@@ -24,7 +24,7 @@
 					<th scope="row">
 						<?php echo ($i+1); ?>
 					</th>
-					<td><?php echo $a[$i]['TIEUDE']?></td>
+					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
 					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYDANG'])); ?></td>
 					<td>

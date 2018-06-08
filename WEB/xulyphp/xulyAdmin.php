@@ -11,7 +11,9 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
             break;
         case 'themPhanCong':themPhanCong($data);
             break;
-            case 'nhapThemTien':nhapThemTien($data);
+        case 'nhapThemTien':nhapThemTien($data);
+            break;
+        case 'layDanhMucTin':layDanhMucTin($data);
             break;
         default:break;
     }
@@ -137,6 +139,23 @@ function layThongTinTheCao($date = '')
     }
     mysqli_close($conn);
     return $a;
+}
+//Lấy ra danh mục tin của tin đăng
+function layDanhMucTin($MaTD = '')
+{
+    $qTD=($MaTD=="")? "":"and tddm.matd='".$MaTD."'";
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT tddm.matd, dm.madm,dm.tendm
+            FROM td_thuoc_dm tddm, danhmuc dm
+            WHERE tddm.madm=dm.madm ".$qTD.";";
+     if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return json_encode($a);
 }
 
 //Nhập sồ tiền vào Doanh thu, cập nhật số dư cho khách hàng
