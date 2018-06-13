@@ -9,14 +9,13 @@
 	}
 	//Kiểm tra người dùng đã đăng nhập chưa
 	$IsLogin="true"; //true hoặc false
-	$status="true";
-	// if(empty($UserName))
-	// {
-	// 	//Không cho phép CLick vào "tài khoản"
-	// 	$status="disabled";
-	// }else{
-	// 	$status="";
-	// }
+	$status="false";
+	if($IsLogin=="false"){
+		//Không cho phép CLick vào "tài khoản"
+		$status="disabled";
+	}else{
+		$status="";
+	}
 
 	//Kiểm tra trạng thái kích hoạt của header 
 	if(!isset($PageName)){
@@ -70,7 +69,7 @@
 					<div class="dropdown">
 						<a class="nav-link" href="#">Thông báo</a>
 						<!-- Chưa đăng nhập -->
-							<?php if(empty($UserName)){  ?>
+							<?php if($IsLogin=="false"){  ?>
 						<div class="dropdown-content-nonelogin">
 							<img src="Images/Home/cute_twitter5.png" alt="dangnhaplovemaket">
 							<div>Bạn cần đăng nhập để xem thông báo!</div>

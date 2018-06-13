@@ -1,11 +1,10 @@
 <?php 
 	session_start();
 	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
-	$MaKH 		= isset($_SESSION['makh']) ? $_SESSION['makh'] : "" ;
-	$PageName	="chitietsanpham"; 
-	include('xulyphp/xulytindang.php');
-	include('xulyphp/xulytheodoi.php');
+	$PageName="chitietsanpham"; 
 ?>
+
+<?php include('xulyphp/xulytindang.php'); ?>
 
 <!doctype html>
 <html>
@@ -36,13 +35,7 @@
 						<label id="status">Tình trạng: <span><?php  echo $a["TINHTRANGMH"]; ?></span></label>
 						</div>
 						<div class="col-md-8" style="margin-top: 30px; margin-bottom: 5px;">
-							<?php
-								if(KiemTraTheoDoi($MaKH,$a["MATD"])==1)
-									echo "<a class='btn  theodoi'>Bỏ Theo dõi</a>";
-								else
-									echo "<a class='btn  theodoi'>Theo dõi</a>";
-							?>
-							
+							<a class="btn  theodoi">Theo dõi</a>
 							<a class="btn  baocaobtn" data-toggle="modal" data-target="#exampleModal">Báo cáo</a>
 							<div class="userinfo" data-toggle="modal" data-target="#contact">
 								<img class="imguser" src="Images/user/avatar1.png">
@@ -64,7 +57,7 @@
 									echo "<div class='tab-pane active' id='pic-$s'><img class='zoom' src='$value'></div>";
 								else
 									echo "<div class='tab-pane' id='pic-$s'><img src='$value' class='zoom'></div>";
-								$s++;
+								 $s++;
 							}
 						?>
 						</div>
@@ -94,11 +87,9 @@
 						  <!-- Giá bán -->
 						<!-- chọn sản phẩm giảm giá -->
 						<?php
-							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!="ribbon-normal")
-							{
-								$giaban = Chuoi2Mang($a['GIABAN']);
+							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!=""){								$giagiam=substr($a["LOAITIN"] ,16, strlen($a["LOAITIN"])-16);
 							?>
-						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giaban[0]; ?>đ <span id="diproduct"><?php echo $giaban[1]; ?>đ</span></li>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
 						<?php } else { ?>	
 						<!-- chọn sản phẩm thông thường -->
 						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
@@ -109,12 +100,15 @@
 						<li class="list-group-item" id="method">Phương thức giao dịch: <span><?php  echo $a["PTGD"]; ?></span></li>
 					  </ul>
 					</div>
-				</div>
+						
+						
+						
+					</div>
 					
 					
 					<div class="details col-sm-12 col-md-8 col-lg-8 ">				
 					<div id="slogan">
-						<?php  echo $a["SLOGAN"]; ?>
+							" Như chưa hề có cuộc chia tay "
 					</div>
 						
 						<div class="tamsubg">

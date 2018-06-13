@@ -18,6 +18,8 @@
     {
         $Search = '';
 	}
+	
+    
     
     if(isset($_GET['DanhMuc']))
     {
@@ -27,6 +29,7 @@
     {
         $DanhMuc = 'DM0000';
 	}
+	//$DanhMuc = "DMooo";
 	//echo "<script language='javascript'> alert('$DanhMuc')</script>";
 	if(isset($_GET['Sort']))
     {

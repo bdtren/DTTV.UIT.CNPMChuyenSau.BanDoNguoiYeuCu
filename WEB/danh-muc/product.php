@@ -34,11 +34,10 @@
 			<h5 class="card-title"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?> </h5>
 			<ul class="list-group list-group-flush">
 				<!-- Giảm giá -->
-				<?php if($cardType=="ribbon-discount")
-				{	
-					$giaban = Chuoi2Mang($a[$i]['GIABAN']);
+				<?php if($cardType=="ribbon-discount"){
+					$giagiam=substr($a[$i]['LOAITIN'] ,16, strlen($a[$i]['LOAITIN'])-16);
 				?>
-				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo $giaban[0];?>đ </span> <span id="priceorginal"><?php echo $giaban[1] ?>đ</span>
+				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo $giagiam;?>đ </span> <span id="priceorginal"><?php echo $a[$i]['GIABAN'] ?>đ</span>
 				</li>
 				<?php
 				 		}
