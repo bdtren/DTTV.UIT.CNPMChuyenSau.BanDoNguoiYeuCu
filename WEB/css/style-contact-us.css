@@ -3,7 +3,9 @@
 	font-family: 'Arsenal', sans-serif;
 	height: 47em;
 	color: black;
-	background: #ab55a0;
+	background: url(../Images/logon/JShine.jpg);
+	background-size: cover;
+	background-position: center;
 	padding: 20px;
 	margin-bottom: 0;
 }
@@ -38,7 +40,13 @@
 	color: white;
 	font-weight: bolder;
 }
-
+#btnsend{
+	background: #007CFF;
+	color: white;
+}
+#btnsend:hover{
+	background: #3A9AFF;
+}
 #form-contact{
 	padding: 15px;
 	width: 100%;

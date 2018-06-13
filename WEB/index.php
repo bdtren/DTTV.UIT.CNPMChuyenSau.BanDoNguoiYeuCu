@@ -56,13 +56,15 @@
 
 <body>
 	<div id="fullpage">
-		<!-- section 1 -->
+	
+				<!-- section 1 -->
 		<div class="section " id="section0">
 		<?php include('header.php') ?>	
 	
-			<div class="content">
+			
 
 			<?php if(empty($UserName))  { ?>
+			<div class="content">
 				<div class="login-box  animated slideInDown">
 					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
@@ -82,11 +84,16 @@
 							Tạo tài khoản</a></h6>
 					</form>
 				</div>
-			
+			</div> 
+			<?php } else { ?>
+				<img src="Images/Home/HomeImage.jpg" style="width: 100%; height: 100vh;">
+		
+				
+				
 			<?php } ?>
-	
-			</div>
+				
 		</div>
+
 
 		<!-- section 2-->
 		<div class="section" id="section1">
@@ -98,7 +105,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php $i=1; $a= TaiDanhMuc(); while($i<14) { ?>
+								<?php $i=1; $a= TaiDanhMuc(); while($i<13) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -124,7 +131,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php while($i<25) { ?>
+								<?php while($i<24) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -149,7 +156,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php while($i<29) { ?>
+								<?php while($i<28) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>
@@ -163,13 +170,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			<!-- slide 4-->
-			<div class="slide" id="slide4">
-				<div class="slideContent">
-					<p>Tư vấn</p>
-					
 				</div>
 			</div>
 		</div>

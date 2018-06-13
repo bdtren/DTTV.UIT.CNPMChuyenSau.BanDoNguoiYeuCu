@@ -248,6 +248,7 @@
 				margin-bottom: 20px;
 		}
 
+
 		.login-image{
 			width: 50vh;
 			height: 20vh;
@@ -289,31 +290,29 @@
 			
 		}
 		.login-input{
-			border: #0693cd 1px solid;
-			box-shadow: #5197FF 2px;
 			font-family: 'Arima Madurai', cursive;
 			display: block;
 			width: 100%;
 			padding: 10px;
 			border-radius: 25px;
+			background: rgba(255,255,255,0.34);
+			color: white;
 		}
 
 		.login-button{
-			background-color:  #19EF08;
+			background-color:  rgba(32,239,0,0.85);
 			background-size: contain;
 			width: 100%;
+			color: white;
 			border-radius: 25px;
 			padding: 10px;
 			cursor: pointer;
-			color: #fff;
 			font-size:15px;
 			font-weight: bold;
 		}
 		.login-button:hover{
-			text-shadow: 0 0 2em rgba(255,255,255,1);
 			color:#FFFFFF;
-			border-color:#FFFFFF;
-			background: #5dff50;
+			background: rgba(32,239,0,0.94);
 		}
 
 
@@ -327,19 +326,18 @@
 	}
 
 		.create-account{
-			background: #ff8c05;
+			background: rgba(255,143,1,0.73);
 			width: 100%;
 			border-radius: 25px;
 			padding: 10px;
 		}
 
 		.create-account:hover{
-			background: #fba035;
+			background: rgba(255,143,1,0.91);
 		}
 
 		.create-account a{
 			color: white;
-			font-weight: bolder;
 		}
 
 
@@ -420,7 +418,7 @@
 		 * --------------------------------------- */
 		/*slide 1*/
 		#section1 #slide1{
-		background-image: url(../Images/Home/memories_hd1.jpg);
+		background-image: url(../Images/Home/background-2344222.png);
 		background-position: center;
 		background-size: cover;
 		}
@@ -588,7 +586,7 @@
 		}
 		/*slide 2 */
 		#section1 #slide2{
-			background: url(../Images/Home/ki-niem.jpg) no-repeat 0px -800px;
+			background: url(../Images/Home/background-2344222.png);
 			background-position: center;
 			background-size: cover;
 			
@@ -599,15 +597,17 @@
 			margin-top: 2%;
 			margin-right: 20px;
 			text-align: left;
-			color: rgb(36, 34, 34);
 			font-style: italic;
 			font-weight: bolder;
+			color: white;
+			margin-left: 20px;
 		}
-		
+
+
 		/*slide 3 */
 		#section1 #slide3 
 		{
-			background: url(../Images/Home/tinh-than.jpg);
+			background: url(../Images/Home/background-2344222.png);
 			background-position: center;
 			background-size: cover;
 		}
@@ -619,7 +619,7 @@
 			margin-top: 11%;
 			font-weight: bolder;
 			text-align: center;
-			color: #FFFCFC;
+			color: white;
 			margin-right: 20px;
 		}
 

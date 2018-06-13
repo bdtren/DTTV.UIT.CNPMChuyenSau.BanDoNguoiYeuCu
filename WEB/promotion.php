@@ -23,13 +23,13 @@
 		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 			  <div class="carousel-inner">
 				<div class="carousel-item active">
-				  <img class="d-block w-100" src="Images/Promotion/khuyen-mai.png" alt="First slide">
+				  <img class="d-block w-100" src="Images/Promotion/promotion-3.jpg" alt="First slide">
 				</div>
 				<div class="carousel-item">
-				  <img class="d-block w-100" src="Images/Promotion/khuyen-mai-nha-cai-ban-nen-biet.jpg" alt="Second slide">
+				  <img class="d-block w-100" src="Images/Promotion/promotion-1.jpg" alt="Second slide">
 				</div>
 				<div class="carousel-item">
-				  <img class="d-block w-100" src="Images/Promotion/slider_big_sale_50_19052017.jpg" alt="Third slide">
+				  <img class="d-block w-100" src="Images/Promotion/promotion-2.jpg" alt="Third slide">
 				</div>
 			  </div>
 			  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

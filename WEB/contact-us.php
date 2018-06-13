@@ -46,7 +46,7 @@
 		<div class="row main">
 			
 			<div class="col-md-5 ">
-				<div class="jumbotron jumbotron-fluid" style="width: 100%; margin-bottom: 10px; background: #cc4f9b">
+				<div class="jumbotron jumbotron-fluid" style="width: 100%; margin-bottom: 10px; background: #2CA3FF">
 				  <div class="container">
 					<h1 class="contactjum">Liên hệ với chúng tôi</h1>
 					<p class="lead1"><i class="fa fa-home"></i>  Trường Đại học Công nghệ Thông tin, Đại học Quốc gia TP Hồ Chí Minh</p>

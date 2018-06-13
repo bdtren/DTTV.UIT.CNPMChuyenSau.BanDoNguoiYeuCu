@@ -5,7 +5,7 @@ body{
 	padding: 0px;
 	font-family: 'Lobster', cursive;
 	letter-spacing: 1px;
-	background: url(../Images/logon/Love_Heart_on_Beach_HD_Photo_Background.jpg);
+	background: url(../Images/logon/Purpink.jpg);
 	background-size: cover;
 }
 
@@ -17,7 +17,7 @@ body{
 	transform: translate(-50%,-50%);
 	width: 700px;
 	height: 490px;
-	background: rgba(25,245,0,0.90);
+	background: rgba(93,145,247,0.70);
 }
 
 .container1 .form_contain1,
@@ -35,7 +35,7 @@ body{
 }
 
 .container1 .form_contain2{
-	background: #FF1589;
+	background: #5d91f7;
 	height: 610px;
 	top: -50px;
 	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
@@ -50,7 +50,7 @@ body{
 	display: block;
 	width: 100%;
 	padding: 5px;
-	border: 1px solid #FF0000;
+	border: 1px solid #30A8FF;
 	margin-bottom: 10px;	
 	border-radius: 25px;
 	font-size: 15px;
@@ -59,14 +59,15 @@ body{
 
 .textinput:hover,
 .textinput:valid{
-	border: 1px solid #F8FF00;
+	background: white;
+	border: 1px solid #FFBE00;
 }
 
 .textTalk{
 	display: block;
 	width: 100%;
 	padding: 5px;
-	border: 1px solid #FF0000;
+	border: 1px solid #0084FF;
 	margin-bottom: 20px;	
 	border-radius: 25px;
 	font-size: 15px;
@@ -74,9 +75,7 @@ body{
 	resize: none;
 }
 
-.textTalk:hover{
-	border: 1px solid #F8FF00;
-}
+
 
 .rd{
 	font-size: 30px;
@@ -95,7 +94,7 @@ body{
 
 .container1 .form_contain2 input[type="submit"]
 {
-	background: #31A7FD;
+	background: #8414FF;
 	color: white;
 	text-align: center;
 	border:none;
