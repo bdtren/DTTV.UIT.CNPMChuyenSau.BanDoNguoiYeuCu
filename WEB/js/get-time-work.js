@@ -2,7 +2,6 @@ function onLogout() {
   //Get storage
   var after = Date.now();
   var before = Date.parse(localStorage.getItem("startDate"));
-  var work = localStorage.getItem("work");
   var result = parseFloat((after - before) / 1000 / 60 / 60).toFixed(3); //Thời gian online tính bằng giờ
 
 
@@ -18,6 +17,7 @@ function onLogout() {
     data: { callFunction: "themPhanCong", data: dat },
     type: "post",
     success: function(output) {
+		alert(output);
       if (output == "successfully") {
         
       } else {
@@ -46,6 +46,6 @@ function getToday() {
     mm = "0" + mm;
   }
 
-  today = yyyy + "-" + mm + "-" + dd;
-  return today;
+  today = yyyy + "/" + mm + "/" + dd;
+  return;
 }

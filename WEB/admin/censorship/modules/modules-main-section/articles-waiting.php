@@ -22,9 +22,9 @@
 				?>
 				<tr>
 					<th scope="row">
-						<?php echo ($i+1); ?>
+						<?php echo $i; ?>
 					</th>
-					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
+					<td><?php echo $a[$i]['TIEUDE']?></td>
 					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYDANG'])); ?></td>
 					<td>
@@ -56,7 +56,7 @@
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">
-					<h5 class="modal-title" id="lbTitle">Tiêu đề tin</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle">Tiêu đề tin</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -66,51 +66,50 @@
 					<!-- Form  -->
 					<form>
 						<div class="form-group">
-							<label>Loại tin:</label>
-							<label for="" id="lbPostType"></label>
+							<label>Loại tin: Cần bán hoặc mua </label>
 						</div>
 
 						<div class="form-group">
-							<span>
-								<label>Người đăng: </label>
-								<label id="lbName"></label>
-							</span>
-							&nbsp;&emsp;
-							<span>
-								<label>Ngày đăng: </label>
-								<label id="lbDate"></label>
-							</span>
+							<label>Người đăng: </label>
+						</div>
+
+						<div class="form-group">
+							<label>Thời gian: </label>
 						</div>
 
 						<div class="form-group">
 							<label>Danh mục tin: </label>
-							<label id="lbCategory"></label>
 						</div>
 
 						<div class="form-group">
-							<label>Giá:</label>
-							<label id="lbPrice"></label>											
+							<label>Giá bán(mua):</label>
 						</div>
 
 						<div class="form-group">
 							<label>Tình trạng sản phẩm:</label>
-							<label id="lbState"></label>											
 						</div>
 
 						<div class="form-group">
-							<label>Hình ảnh sản phẩm:</label>
+							<label>Hình ảnh sản phẩm</label>
 							</br>
-							<div id="lbImage"></div>
+							<?php 
+									$i=0; $num=2; //Số ảnh 
+									while($i<$num){ 
+								?>
+							<img src="../../Images/san-pham/tindang7.png" alt="hinhanh" style="width: 100px; height: 100px; border: 1px solid #767575;">
+							<?php
+										$i++ ;
+									}
+								?>
 						</div>
 
 						<div class="form-group">
-							<label>Mô tả chi tiết:</label>
-							<textarea disabled id="taDetail" class="form-control" rows="4" style="resize: none;"></textarea>
+							<label>Mô tả chi tiết</label>
+							<textarea disabled class="form-control" rows="4" style="resize: none;"></textarea>
 						</div>
 
 						<div class="form-group">
-							<label>Phương thức giao dịch: </label>
-							<label id="lbDeal"></label>
+							<label>Phương thức giao dịch</label>
 						</div>
 
 						<div class="modal-footer">
