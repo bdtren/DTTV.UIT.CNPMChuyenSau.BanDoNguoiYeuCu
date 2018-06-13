@@ -41,15 +41,14 @@
     {
         // chuyển chuỗi tìm kiếm về chữ thường
         $st=strtolower($Search);
-        $sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
+        //$sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
         $a = null;
         include('xulyphp/connect.php');
         $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         TINHTRANGTIN = 'da dang'
-                AND         LOAITIN = ''
-                AND         TIEUDE LIKE '%$st%'
+                AND         LCASE(TIEUDE) LIKE '%$st%'
                 ORDER BY    $Sort $SortType
                 LIMIT       $index,9";
         if($result = mysqli_query($conn, $sql))
@@ -67,7 +66,7 @@
     {
         // chuyển chuỗi tìm kiếm về chữ thường
         $st=strtolower($Search);
-        $sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
+        //$sql="SELECT * FROM TINDANG WHERE LCASE(TIEUDE) LIKE '%$st%' ";
         $a = null;
         include('xulyphp/connect.php');
         $sql = "SELECT      *
@@ -91,11 +90,19 @@
         include('xulyphp/connect.php');
         if($DanhMuc == 'DM0000' )
         {
-           $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang'  AND  LOAITIN = '' ";
+            $sql =  "SELECT     * 
+                     FROM       TINDANG 
+                     WHERE      TINHTRANGTIN = 'da dang'  
+                     AND        LOAITIN = 'ribbon-normal'";
         }
         else
         {
-            $sql = "SELECT MATD FROM TINDANG WHERE TINHTRANGTIN = 'da dang' AND MADM = '$DanhMuc'  AND  LOAITIN = '' ";
+            $sql = "SELECT      * 
+                    FROM        TINDANG,TD_THUOC_DM 
+                    WHERE       TINHTRANGTIN = 'da dang'
+                    AND         TINDANG.MATD = TD_THUOC_DM.MATD 
+                    AND         MADM = '$DanhMuc'  
+                    AND         LOAITIN = 'ribbon-normal' ";
         }
         if($count = mysqli_num_rows(mysqli_query($conn, $sql)))
         {
@@ -119,17 +126,18 @@
                     FROM        TINDANG,KHACHHANG 
                     WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                     AND         TINHTRANGTIN = 'da dang'
-                    AND         ((LOAITIN LIKE 'ribbon-discount%') OR (LOAITIN LIKE 'ribbon-new') OR (LOAITIN LIKE 'ribbon-hot'))
+                    AND         LOAITIN IN ('ribbon-discount','ribbon-new','ribbon-hot')
                     ORDER BY    RAND()
                     LIMIT       3";
         }
         else
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
-                    FROM        TINDANG,KHACHHANG 
-                    WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
+                    FROM        TINDANG,KHACHHANG,TD_THUOC_DM
+                    WHERE       TINDANG.MAKH=KHACHHANG.MAKH
+                    AND         TD_THUOC_DM.MATD = TINDANG.MATD 
                     AND         TINHTRANGTIN = 'da dang'
-                    AND         ((LOAITIN LIKE 'ribbon-discount%') OR (LOAITIN LIKE 'ribbon-new') OR (LOAITIN LIKE 'ribbon-hot'))
+                    AND         ((LOAITIN LIKE 'ribbon-discount') OR (LOAITIN LIKE 'ribbon-new') OR (LOAITIN LIKE 'ribbon-hot'))
                     AND         MADM = '$DanhMuc'
                     ORDER BY    RAND()
                     LIMIT       3";   
@@ -148,26 +156,28 @@
     // hàm load 6 sản phẩm tin thường
     function TaiSanPhamThuong( $index, $DanhMuc , $Sort = 'MATD', $SortType = 'ASC' )
     {
+        $Sort = 'TINDANG.'.$Sort; 
         $a = null;
         include('xulyphp/connect.php');
         if($DanhMuc == 'DM0000')
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
-                    FROM        TINDANG,KHACHHANG 
-                    WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
+                    FROM        TINDANG,KHACHHANG
+                    WHERE       TINDANG.MAKH = KHACHHANG.MAKH 
                     AND         TINHTRANGTIN = 'da dang'
-                    AND         LOAITIN = ''
+                    AND         LOAITIN = 'ribbon-normal'
                     ORDER BY    $Sort $SortType
                     LIMIT       $index,6";
         }
         else
         {
             $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
-                    FROM        TINDANG,KHACHHANG 
-                    WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
+                    FROM        TINDANG,KHACHHANG,TD_THUOC_DM 
+                    WHERE       TINDANG.MAKH = KHACHHANG.MAKH 
+                    AND         TD_THUOC_DM.MATD = TINDANG.MATD
                     AND         TINHTRANGTIN = 'da dang'
                     AND         MADM = '$DanhMuc'
-                    AND         LOAITIN = ''
+                    AND         LOAITIN = 'ribbon-normal'
                     ORDER BY    $Sort $SortType
                     LIMIT       $index,6";     
         }
@@ -180,6 +190,7 @@
         }
         mysqli_close($conn);
         return $a;
+        print_r($a);
     }
 
     // load chi tiet san pham

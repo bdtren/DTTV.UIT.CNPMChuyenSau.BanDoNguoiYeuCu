@@ -127,7 +127,7 @@ $(document).ready(function() {
   $("#btnView").click(function() {
     //Kiểm tra thời gian đầu vào
     var timeVal = document.getElementById("time-input").value;
-    //alert(timeVal);
+    alert(timeVal);
     if (timeVal) {
       // Kiểm tra cấu trúc đầu vào quý
       if (document.getElementById("time-input").type == "text") {

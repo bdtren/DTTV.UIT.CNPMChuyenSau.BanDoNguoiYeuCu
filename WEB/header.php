@@ -9,13 +9,14 @@
 	}
 	//Kiểm tra người dùng đã đăng nhập chưa
 	$IsLogin="true"; //true hoặc false
-	$status="false";
-	if($IsLogin=="false"){
-		//Không cho phép CLick vào "tài khoản"
-		$status="disabled";
-	}else{
-		$status="";
-	}
+	$status="true";
+	// if(empty($UserName))
+	// {
+	// 	//Không cho phép CLick vào "tài khoản"
+	// 	$status="disabled";
+	// }else{
+	// 	$status="";
+	// }
 
 	//Kiểm tra trạng thái kích hoạt của header 
 	if(!isset($PageName)){
@@ -44,23 +45,8 @@
 		.tieude{
 			font-family: 'Taviraj', serif;
 		}
-		
-		#btn-search{
-			background: #960BFF;
-			color: white;
-		}
-		#btn-search:hover{
-			background: #8100E3;
-			color: white;
-		}
-		.tieude .navbar ul .nav-item:hover,.tieude .navbar ul li .nav-link:hover{
-			background: #9F16FB;
-		}
 	</style>
 	<link rel="stylesheet" href="css/style-notification.css">
-	
-		
-	
 	</head>
 
 	<body>
@@ -84,7 +70,7 @@
 					<div class="dropdown">
 						<a class="nav-link" href="#">Thông báo</a>
 						<!-- Chưa đăng nhập -->
-							<?php if($IsLogin=="false"){  ?>
+							<?php if(empty($UserName)){  ?>
 						<div class="dropdown-content-nonelogin">
 							<img src="Images/Home/cute_twitter5.png" alt="dangnhaplovemaket">
 							<div>Bạn cần đăng nhập để xem thông báo!</div>
@@ -190,7 +176,7 @@
 				</form> -->
 				<div class="form-inline mt-2 mt-md-0">
 					<input id='key' name='key' class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
-					<input type="button" id="btn-search" class="btn my-2 my-sm-0"  name="timkiem" id='sreach' onclick="Search()" value='Tìm kiếm'>
+					<input type="button" class="btn btn-outline-primary my-2 my-sm-0"  name="timkiem" id='sreach' onclick="Search()" value='Tìm kiếm'>
 				</div>
 					
 				<script language="javascript">

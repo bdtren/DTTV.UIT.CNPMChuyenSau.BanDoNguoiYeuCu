@@ -1,11 +1,9 @@
 /* CSS Document */
 .main{
 	font-family: 'Arsenal', sans-serif;
-	height: 47em;
+	height: 44em;
 	color: black;
-	background: url(../Images/logon/JShine.jpg);
-	background-size: cover;
-	background-position: center;
+	background: #ab55a0;
 	padding: 20px;
 	margin-bottom: 0;
 }
@@ -40,13 +38,7 @@
 	color: white;
 	font-weight: bolder;
 }
-#btnsend{
-	background: #007CFF;
-	color: white;
-}
-#btnsend:hover{
-	background: #3A9AFF;
-}
+
 #form-contact{
 	padding: 15px;
 	width: 100%;
