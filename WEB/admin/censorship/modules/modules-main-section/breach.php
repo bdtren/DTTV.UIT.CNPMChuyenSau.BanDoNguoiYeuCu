@@ -15,34 +15,29 @@
 				<!-- Dòng dữ liệu -->
 				<?php 
 												$a=layDanhSachBaoCaoVP();
-												$dsKH = array();
 												$i=0;
 												$num=10; //Số dòng dữ liệu trừ 1 ($num=10 hiện 9 dòng)
 												while($i<count($a)){ 
 				?>
 				<tr>
-					<th scope="row"><?php echo ($i+1) ?></th>
-					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
+					<th scope="row"><?echo ($i+1) ?></th>
+					<td><?php echo $a[$i]['TIEUDE']?></td>
 					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['VANDEGIAIDAP']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYDANG'])); ?></td>
 					<td>
-						<a class="btn btn-primary" data-toggle="modal" href="#" style="color:white;" data-target="#breach" onclick="openModelDuyetTinViPham(<?php echo $i; ?>)">Xử lí</a>
+						<a class="btn btn-primary" data-toggle="modal" href="#" style="color:white;" data-target="#breach">Xử lí</a>
 					</td>
 				</tr>
 				<!-- Kết thúc dòng dữ liệu -->
 				<!-- Kết thúc dòng dữ liệu -->
 				<?php
-													array_push($dsKH, $a[$i]['KHBC']);
 													$i++;
 												} 
-
-												$b=layThongTinKhachHang($dsKH);
 				?>
 
 				<!-- Xử lý lưu tất cả dữ liệu lấy được từ các bảng qua file php -->
 				<script type="text/javascript">
 					var arrTable = <?php echo json_encode($a); ?>;
-					var arrBC = <?php echo json_encode($b); ?>;
 				</script>
 			</tbody>
 		</table>
@@ -79,12 +74,11 @@
 									<form>
 										<div class="form-group">
 											<label>Người báo cáo: </label>
-											<label id="lbNgBC"></label>
 										</div>
 										<div class="form-group">
 											<label>Nội dung báo cáo: </label>
 										</div>
-										<textarea id="taReport"class="form-control" rows="4" disabled style="resize: none">Nội dung báo cáo</textarea>
+										<textarea class="form-control" rows="4" disabled style="resize: none">Nội dung báo cáo</textarea>
 									</form>
 								</div>
 							</div>
@@ -104,56 +98,54 @@
 									<form>
 										<div class="form-group">
 											<label>Tiêu đề tin:</label>
-											<label id="lbTitle"></label>
 										</div>
 
 										<div class="form-group">
-											<span>
-												<label>Người đăng: </label>
-												<label id="lbName"></label>
-											</span>
-											&nbsp;&emsp;
-											<span>
-												<label>Ngày đăng: </label>
-												<label id="lbDate"></label>
-											</span>
+											<label>Người đăng:</label>
 										</div>
+
 										<div class="form-group">
-											<label>Loại tin: </label>
-											<label id="lbPostType"></label>
+											<label style="font-weight: bold;">Thanh toán phí tạo tin:</label>
+											<!-- Thanh toán phí tạo tin đặc biệt -->
+										</div>
+
+										<div class="form-group">
+											<label>Loại tin: Cần bán hoặc mua </label>
 										</div>
 
 										<div class="form-group">
 											<label>Danh mục tin: </label>
-											<label id="lbCategory"></label>
 										</div>
 
 										<div class="form-group">
-											<label>Giá:</label>
-											<label id="lbPrice"></label>											
+											<label>Giá bán(mua):</label>
 										</div>
 
 										<div class="form-group">
 											<label>Tình trạng sản phẩm:</label>
-											<label id="lbState"></label>											
 										</div>
 
 										<div class="form-group">
 											<label>Hình ảnh sản phẩm</label>
-
 											</br>
-											<div id="lbImage"></div>											
-										
+											<?php 
+									$i=0; $num=2; //Số ảnh 
+									while($i<$num){ 
+								?>
+											<img src="../../Images/san-pham/tindang13.png" alt="hinhanh" style="width: 100px; height: 100px; border: 1px solid #767575;">
+											<?php
+										$i++ ;
+									}
+								?>
 										</div>
 
 										<div class="form-group">
 											<label>Mô tả chi tiết</label>
-											<textarea disabled id="taDetail" class="form-control" rows="4" style="resize: none;"></textarea>
+											<textarea disabled class="form-control" rows="4" style="resize: none;"></textarea>
 										</div>
 
 										<div class="form-group">
-											<label>Phương thức giao dịch: </label>
-											<label id="lbDeal"></label>
+											<label>Phương thức giao dịch</label>
 										</div>
 									</form>
 

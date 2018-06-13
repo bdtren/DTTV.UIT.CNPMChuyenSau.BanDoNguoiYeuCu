@@ -15,11 +15,11 @@
 
 
         <ul class="navbar-nav navbar-right">
-        <li class="nav-item">
-                <a class="nav-link" href="#">Chào mừng, <?php echo $nv[0]['TENTK'] ?></a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Chào mừng, ABC</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.php" onclick="onLogout()">Đăng xuất</a>
+              <a class="nav-link" href="../index.php" onclick="myFunction()">Đăng xuất</a>
             </li>
           </ul>
     
