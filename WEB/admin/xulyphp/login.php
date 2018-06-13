@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
     mysqli_close($conn);
 }
 
-function checkLogin($MaCV)
+function checkLogin($MaCV = '')
 {
     $thisUrl = $_SERVER['REQUEST_URI'];
     switch ($MaCV) {

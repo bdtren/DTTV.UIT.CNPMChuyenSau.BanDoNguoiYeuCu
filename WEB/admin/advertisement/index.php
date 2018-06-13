@@ -7,12 +7,11 @@
 <?php include "../xulyphp/login.php"; ?>
 <?php include "../../xulyphp/xulytindang.php";
 	  include('../../xulyphp/xulyAdmin.php');
-			if($MaNV!=''){ 
-				$nv = layThongTinNhanVien($MaNV);		
-				$soGio = laySoGioLam($MaNV, date("Y/m/d"));
-			}
-			
-			checkLogin($nv[0]['MACV']);
+	  if($MaNV!=''){ 
+		$nv = layThongTinNhanVien($MaNV);		
+		$soGio = laySoGioLam($MaNV, date("Y/m/d"));
+		checkLogin($nv[0]['MACV']);
+}
 
 
 ?>

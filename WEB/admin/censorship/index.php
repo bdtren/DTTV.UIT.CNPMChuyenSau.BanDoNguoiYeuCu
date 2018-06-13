@@ -10,9 +10,8 @@
 			if($MaNV!=''){ 
 				$nv = layThongTinNhanVien($MaNV);		
 				$soGio = laySoGioLam($MaNV, date("Y/m/d"));
+				checkLogin($nv[0]['MACV']);
       }
-      
-      checkLogin($nv[0]['MACV']);
 ?>
 
 <!doctype html>
