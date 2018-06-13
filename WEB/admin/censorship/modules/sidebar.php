@@ -25,20 +25,20 @@
 
 ?>
 
-<!-- Phần nội dung bên trái Sidebar -->
-               	<div class="card" style="margin-bottom: 10px; padding: 10px;">    
+ <!-- Sidebar -->
+ <div class="card" style="margin-bottom: 10px;">    
 							  
-								<img class="card-img-top" src="../../Images/user/avatar7.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%; width: 200px; height: 200px; display: block; margin: auto;">
-							  	  
-								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  NguyenVanA </a>
-							
-								<a class="list-group-item list-group-item-action"><i class="fa fa-clock-o"></i>  Hoạt động : <span id="demo"></span> </a>
-							
-								<button type="button" class="btn" data-toggle="modal" data-target="#see">
-							 	Xem chi tiết
-								</button>
-                               
-					</div>
+							  <img class="card-img-top" src="../../<?php echo $nv[0]['AVATAR']?>" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
+								  
+							   <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  <?php echo $nv[0]['HOTEN']?> </a>
+						  
+							  <a class="list-group-item list-group-item-action"><i class="fa fa-clock-o"></i>  Hoạt động : <span id="demo"></span> </a>
+						  
+							  <button type="button" class="btn" data-toggle="modal" data-target="#profilesee" onclick="getProfileInfo()">
+							   Xem chi tiết
+							  </button>
+							 
+				  </div>
                         <div class="list-group">
                                 <a href="index.php" class="list-group-item list-group-item-action main-color-bg">
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
@@ -56,7 +56,7 @@
 
 <!-- Modal -->
     <!-- Bài đăng cần duyệt -->
-    <div class="modal fade" id="see" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" >
+    <div class="modal fade" id="profilesee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" >
             <div class="modal-dialog" role="document" >
               <div class="modal-content" >
               <form >
@@ -72,27 +72,27 @@
                         <form>		
 								<div class="row">
 									<div class="col-6">
-										<img src="../../Images/user/avatar7.png" style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
+										<img src="../../<?php echo $nv[0]['AVATAR']?>" style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
 									</div>
 									<div class="col-6">
 										<div class="form-group">
-										 <label >Họ và tên: </label>
+										 <label >Họ và tên: <?php echo $nv[0]['HOTEN']?></label>
 										</div>
 
 										<div class="form-group">
-										 <label >Giới tính: </label>
+										 <label >Giới tính: <?php echo $nv[0]['GIOITINH']?></label>
 										</div>
 
 										<div class="form-group">
-										 <label >Ngày sinh: </label>
+										 <label >Ngày sinh: <?php echo date("d-m-Y", strtotime($nv[0]['NGAYSINH'])); ?></label>
 										</div>
 										
 										<div class="form-group">
-										 <label >Địa chỉ: </label>
+										 <label >Địa chỉ: <?php echo $nv[0]['DIACHI']?></label>
 										</div>
 										
 										<div class="form-group">
-										 <label >Chức vụ: </label>
+										 <label >Chức vụ: <?php echo $nv[0]['TENCV']?></label>
 										</div>
 									</div>
 								</div>
@@ -100,19 +100,19 @@
 								
                                 
 								<div class="form-group">
-								 <label >Số điện thoại:</label>
+								 <label >Số điện thoại: <?php echo $nv[0]['SDT']?></label>
                               	</div>
 							
 								<div class="form-group">
-									<label >Email:</label>
+									<label >Email: <?php echo $nv[0]['EMAIL']?></label>
                               	</div>
 								
 								<div class="form-group">
-									<label style="color: red;">Ngày vào làm:</label>
+									<label style="color: red;">Ngày vào làm: <?php echo date("d-m-Y", strtotime($nv[0]['NGAYVL']));?></label>
 								</div>
 								
     							<div class="form-group">
-									<label style="color: red;">Số giờ làm:</label>
+									<label style="color: red;">Số giờ đã làm trong ngày: <span id="worktime"><?php echo (!$soGio? 0: $soGio[0]['SoGio'])?></span></label>
 								</div>
 							
                     			<div class="modal-footer">

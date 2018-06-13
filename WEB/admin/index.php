@@ -4,7 +4,23 @@
 	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
 ?>
 <?php include "xulyphp/login.php"; ?>
-<?php include "xulyphp/xulyadmin.php"; ?>
+<?php include "xulyphp/xulyadmin.php"; 
+  $MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
+  
+  if($MaCV!=''){
+    switch ($MaCV) {
+      case 'CV0002':header("Location: advertisement/index.php");
+          break;
+      case 'CV0003':header("Location: customercare/index.php");
+          break;
+      case 'CV0004':header("Location: censorship/index.php");
+          break;
+      case 'CV0005':header("Location: finance/index.php");
+          break;
+        default: break;
+  }
+  }
+?>
 
 <!doctype html>
 <html>

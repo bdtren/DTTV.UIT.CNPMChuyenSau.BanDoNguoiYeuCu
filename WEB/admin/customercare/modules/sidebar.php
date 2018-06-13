@@ -19,9 +19,9 @@
 ?>
  
  <!-- Sidebar -->
-					<div class="card" style="margin-bottom: 10px; padding: 10px;">    
+					<div class="card" style="margin-bottom: 10px;">    
 							  
-								<img class="card-img-top" src="../../Images/user/avatar7.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
+								<img class="card-img-top" src="../../<?php echo $nv[0]['AVATAR']?>" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 							  	  
 								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  <?php echo $nv[0]['HOTEN']?> </a>
 							
@@ -63,7 +63,7 @@
                         <form>		
 								<div class="row">
 									<div class="col-6">
-										<img src="../../Images/user/avatar7.png" style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
+										<img src="../../<?php echo $nv[0]['AVATAR']?>" style=" width: 200px; 200px; border-radius: 50%; border: 1px solid #D9D9D9;">
 									</div>
 									<div class="col-6">
 										<div class="form-group">
