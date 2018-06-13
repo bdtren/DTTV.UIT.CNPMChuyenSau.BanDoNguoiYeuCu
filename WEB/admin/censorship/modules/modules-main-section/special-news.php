@@ -26,7 +26,7 @@
 					<th scope="row">
 						<?php echo ($i+1); ?>
 					</th>
-					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
+					<td><?php echo $a[$i]['TIEUDE']?></td>
 					<td>
 						<!-- <h6 style="visibility: hidden;"><?php echo $imgs[0]?></h6> -->
 						
@@ -107,12 +107,12 @@
 						<div class="form-group">
 							<span>
 								<label>Danh mục tin: </label>
-								<label id="lbCategory"></label>
+								<label id="lbGroup"></label>
 							</span>
 							&nbsp;&emsp;
 							<span>
 								<label>Giá: </label>
-								<label id="lbPrice"></label>
+								<label id="lbCost"></label>
 							</span>
 							
 						</div>
@@ -139,9 +139,9 @@
 						</div>
 
 						<div class="modal-footer">
-							<button id="btnQuit" type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
-							<button id="btnFail" type="button" class="btn btn-danger" name="huytaotin">Hủy tạo tin</button>
-							<button id="btnSuccess" type="button" class="btn btn-primary" name="chapnhantaotin">Chấp nhận tạo tin</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
+							<button type="button" class="btn btn-danger" name="huytaotin">Hủy tạo tin</button>
+							<button type="button" class="btn btn-primary" name="chapnhantaotin">Chấp nhận tạo tin</button>
 						</div>
 
 					</form>
