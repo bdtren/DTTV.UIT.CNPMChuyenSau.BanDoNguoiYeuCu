@@ -8,6 +8,10 @@ session_start();
     {
         unset($_SESSION['manv']);
     }
+    if (isset($_SESSION['macv']))
+    {
+        unset($_SESSION['macv']);
+    }
 
     header("Location: ../index.php");
 ?>

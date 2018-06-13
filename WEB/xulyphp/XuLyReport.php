@@ -186,7 +186,7 @@ function bangTinDang($sort=""){
         <th class="text-center" width="115px">Mã danh mục</th>
         <th class="text-center" width="115px">Tên danh mục</th>
         <th class="text-center" width="115px">Số tin đăng</th>
-    /tr>
+    </tr>
   </thead>
   <tbody>';
   $a=csdlTinDang($sort);
@@ -222,7 +222,7 @@ function bangNhanVien($sort=""){
         <th class="text-center" width="115px">Số giờ làm</th>
         <th class="text-center" width="115px">Hệ số</th>
         <th class="text-center" width="115px">Lương</th>
-    /tr>
+    </tr>
   </thead>
   <tbody>';
     $a=csdlNhanVien($sort);
@@ -263,7 +263,7 @@ function bangThietBi($sort =""){
         <th class="text-center" width="115px">Tình trạng</th>
         <th class="text-center" width="115px">Chi phí</th>
         <th class="text-center" width="115px">Ghi chú</th>
-    /tr>
+    </tr>
   </thead>
   <tbody>'; 
   $a=csdlThietBi($sort);
@@ -303,7 +303,7 @@ function bangDoanhThu($sort =""){
         <th class="text-center" width="115px">Lý do</th>
         <th class="text-center" width="115px">Ngày thu</th>
         <th class="text-center" width="115px">Doanh thu</th>
-    /tr>
+    </tr>
   </thead>
   <tbody>'; 
 
@@ -338,7 +338,7 @@ function bangThuNhap($sort ="not thing"){
                 <th class="text-center" width="115px">Số tiền kiếm được</th>
                 <th class="text-center" width="115px">Sổ tiền mất</th>
                 <th class="text-center" width="115px">Doanh thu</th>
-            /tr>
+            </tr>
           </thead>
           <tbody>
             <tr>

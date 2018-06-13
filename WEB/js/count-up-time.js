@@ -25,12 +25,14 @@ var x = setInterval(function() {
 }, 1000);
 
 var timeVal = document.getElementById("worktime").innerHTML;
+
+//Lấy thông tin cá nhân của nhân viên
 function getProfileInfo(){
     //Get storage
 	var after=Date.now();  
 	var before=Date.parse(localStorage.getItem('startDate'));
 	var result=parseFloat((after-before)/1000/60/60).toFixed(3); //Thời gian online tính bằng giờ
     
-    var sumTime = parseFloat(timeVal)+parseFloat(result);
+    var sumTime = parseFloat(parseFloat(timeVal).toFixed(3))+parseFloat(result);
     document.getElementById("worktime").innerHTML =  sumTime +" Giờ";
 }
