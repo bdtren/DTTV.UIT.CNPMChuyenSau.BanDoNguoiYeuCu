@@ -1,5 +1,29 @@
 body{
-    background: #f4f4f4;
+	background: url(../Images/logon/Instagram.jpg);
+}
+
+/* button */
+.btn-type-blue{
+	color: white;
+	background: #318FFF;
+}
+.btn-type-blue:hover{
+	background: #5BA5FF;
+}
+.btn-type-purple{
+	color: white;
+	background: #b72bff;
+}
+.btn-type-purple:hover{
+	background: #D178FF;
+}
+.btn-type-pink{
+	color: white;
+	background: #6505FF;
+}
+.btn-type-pink:hover{
+	color: white;
+	background: #863BFF;
 }
 
 .navbar{
@@ -17,7 +41,7 @@ body{
 
 /* NavBar custome color */
 .navbar {
-    background-color: #0062ff;
+    background-color: rgba(255,255,255,0.68);
   }
   .navbar .navbar-brand {
     color: #ecf0f1;
@@ -37,7 +61,8 @@ body{
     color: #ecdbff; 
   }
   .navbar .navbar-nav .nav-link {
-    color: #ecf0f1;
+    color: white;
+	font-weight: bold;
     border-radius: .25rem;
     margin: 0 0.25em;
   }
@@ -74,15 +99,29 @@ body{
   .navbar .navbar-link:hover {
     color: #ecdbff;
   }
+.card, .user-detail-section .table-striped,.profile a,.profile a:hover{
+	background: rgba(255,255,255,0.00);
+}	
+.card .user-detail-section, .profile{
+	background: rgba(255,255,255,0.50);
+	color: white;
+}
   
   .main-color-bg{
-    background-color: #0062ff !important;
+    background-color: rgba(46,121,255,0.57)!important;
     color: white;
   }
-
+/* màu nền của tiêu đề main-section */
+.main-color{
+	background: rgba(0,111,216,0.62);
+	color: white;
+}
+.card .main-color i{
+	color: white;
+}
   /* Custome Header */
   #header{
-      background: black;
+      background: rgba(255,255,255,0.51);
       color: #ffffff;
       padding-bottom: 10px;
       margin-bottom: 15px;
@@ -91,30 +130,70 @@ body{
   #header .create{
       margin-top: 10px;
   }
+.well h6{
+	color: white;
+}
 
+.card .card-body .row .col-md-3 i{
+	
+}
+.card .main-color-bg{
+	background: rgba(0,147,255,0.50);
+}
 
+#seeDetailProfile{
+	background: rgba(255,255,255,0.30);
+	color: white;
+}
+#seeDetailProfile:hover{
+	background: rgba(255,255,255,0.64);
+}
+	
+.card .user-detail-section .table-striped  tbody tr td a{
+	color: white;
+}
+.card .user-detail-section .table-striped  tbody tr td a:hover{
+	color: wheat;
+}
   /* Progress bar */
   .progress-bar{
-    background: #6aed00;
+    background: #0073ED;
     color: white;
   }
 
   .main-card-overview{
-    background: #d8dadf;
+    background: rgba(255,255,255,0.56);
     padding: 10px;
-    color: #6f6f70;
+    color: rgba(159,159,159,1.00);
     text-align: center;
   }
+.main-card-overview h2 i{
+	color: rgba(159,159,159,1.00);
+}
+.cardsection{
+	background: rgba(255,255,255,0.53);
+}
 
-
+.cardsection{
+	color: white;
+}
 
     /*pages */
     .color-font-btn{
       color: white;
     }
 
-
-
+.list-group a{
+	background: rgba(255,255,255,0.60);
+	color: white;
+}
+.list-group a i{
+	color: white;
+}
+.list-group a:hover{
+	background: rgba(255,255,255,0.74);
+	color: white;
+}
 
   @media (max-width: 575px) {
     .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {

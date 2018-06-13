@@ -1,19 +1,4 @@
-<style>
-	.card #seeDetailProfile{
-		color: white;
-		background: #01D812;
-	}
-	.card #seeDetailProfile:hover{
-		background: #08F91B;
-	}
-	.card i{
-		color: #0073FC;
-	}
-</style>
-
-
-
-<div class="card" style="margin-bottom: 10px; padding: 10px;">    
+<div class="card profile" style="margin-bottom: 10px; padding: 10px;">    
 							  
 								<img class="card-img-top" src="../Images/user/avatar8.png" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
 							  	  

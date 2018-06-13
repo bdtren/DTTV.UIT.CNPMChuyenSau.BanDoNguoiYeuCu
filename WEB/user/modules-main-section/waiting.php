@@ -1,6 +1,6 @@
 		<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg"><i class="fa fa-spinner" style="color: #00B2E0"></i>  Bài đăng chờ duyệt</h5>
-                            <div class="card-body" style="overflow-y: auto;">
+                            <h5 class="card-header main-color"><i class="fa fa-spinner"></i>  Bài đăng chờ duyệt</h5>
+                            <div class="card-body user-detail-section" style="overflow-y: auto;">
                                     <table class="table table-striped">
                                             <thead>
                                               <tr>
@@ -17,8 +17,8 @@
                                                 <th scope="row">1</th>
                                                 <td>Bán dép người yêu cũ</td>
                                                 <td>12/12/2017</td>
-                                                <td><a class="btn btn-danger" href="#" style="color:white;">Xóa</a></td>
-												<td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#editPost">
+                                                <td><a class="btn btn-type-purple" href="#" style="color:white;">Xóa</a></td>
+												<td><button type="button" class="btn btn-type-pink" data-toggle="modal" data-target="#editPost">
 												Chỉnh sửa
 												</button></td>
                                               </tr>

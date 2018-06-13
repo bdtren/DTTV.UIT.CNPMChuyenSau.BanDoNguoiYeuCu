@@ -1,10 +1,5 @@
-<!-- Website Overview-->
-<style>
-	.card .card-body .row .col-md-3 i{
-		color: #888888;
-	}
-</style>
-                    <div class="card">
+
+                    <div class="card cardsection">
                         <h5 class="card-header main-color-bg">Tổng quan</h5>
                         <div class="card-body">
                           
@@ -43,7 +38,7 @@
 
 
                       <!--Thông báo-->
-                      <div class="card " style="margin-top: 15px;">
+                      <div class="card cardsection" style="margin-top: 15px;">
                             <h5 class="card-header main-color-bg">Thông báo từ người theo dõi</h5>
                             <div class="card-body">
                               <table class="table table-striped">

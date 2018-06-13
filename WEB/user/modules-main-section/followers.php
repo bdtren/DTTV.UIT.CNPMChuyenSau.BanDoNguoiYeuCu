@@ -1,6 +1,6 @@
 	<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg"><i class="fa fa-users" style="color: #00B2E0"></i>  Người đang theo dõi bạn</h5>
-                            <div class="card-body">
+                            <h5 class="card-header main-color"><i class="fa fa-users"></i>  Người đang theo dõi bạn</h5>
+                            <div class="card-body user-detail-section">
                                     <table class="table table-striped" style="overflow-y: scroll;">
                                             <thead>
                                               <tr>

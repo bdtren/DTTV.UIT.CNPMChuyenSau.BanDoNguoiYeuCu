@@ -1,6 +1,6 @@
 	<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg"><i class="fa fa-users" style="color: #00B2E0"></i>  Người bạn đang theo dõi</h5>
-                            <div class="card-body">
+                            <h5 class="card-header main-color"><i class="fa fa-users"></i>  Người bạn đang theo dõi</h5>
+                            <div class="card-body user-detail-section">
                                     <table class="table table-striped" style="overflow-y: scroll;">
                                             <thead>
                                               <tr>
@@ -16,7 +16,7 @@
                                                 <th scope="row">1</th>
                                                 <td><a href="../all-post.php" style="text-decoration: none;">ABC</a></td>
                                                 <td>0123456789</td>
-                                                <td><a class="btn btn-danger" href="#" style="color:white;">Bỏ theo dõi</a></td>
+                                                <td><a class="btn btn-type-purple" href="#" style="color:white;">Bỏ theo dõi</a></td>
                                               </tr>
                                               	<!-- Kết thúc dòng dữ liệu -->
 										

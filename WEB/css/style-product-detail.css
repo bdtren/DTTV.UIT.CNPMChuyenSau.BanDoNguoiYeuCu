@@ -2,8 +2,8 @@
 
 
 /*****************globals*************/
-body{
-	background: white !important;
+.page{
+	background: url(../Images/logon/Timber.jpg)!important;
 }
 
 .mainsection{
@@ -54,7 +54,6 @@ img {
 	object-fit: fill;
 	width: 100%;
 	height: 450px;	
-	border: 1px solid #CCCCCC;
 }
 
 /* small images */
@@ -85,13 +84,13 @@ img {
 /* Wrapped */
 
 #tieude{
-	color: #0052F8;
+	color: white;
 	font-size: 28px;
 	font-weight: bolder;
 }
 
 #status{
-	color: black;
+	color: white;
 	float: right;
 	margin-right: 20px;
 }
@@ -102,7 +101,7 @@ img {
 
 
 .details {
-  background: #ffffff ;
+  background: rgba(255,255,255,0.00) ;
   height: 45em;
   overflow-y: auto;
   display: -webkit-box;
@@ -129,13 +128,20 @@ img {
 }
 
 .detaildes{
-	color: black;
+	color: white;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	background: rgba(255,255,255,0.00);
+	box-shadow: 
+		  inset 7px 7px 12px #000000, 
+		  inset -7px -7px 12px rgba(0,144,236,1.00);
+}
+.detaildes .list-group-item{
+	background: rgba(255,255,255,0.54);
 }
 .detaildes-header{
 	font-size: 20px;
-	background: #135fab;
+	background: rgba(10,189,255,0.61);
 	color: white;
 	text-align: center;
 }
@@ -144,7 +150,7 @@ img {
 }
 
 #price{
-	color: #f57224;
+	color: #FFFFFF;
 	font-weight: bolder;
 	font-size: 25px;
 }
@@ -159,11 +165,11 @@ img {
 
 #date{
 	font-size: 15px;
-	color: rgba(59,59,59,1.00);
+	color: white;
 }
 
 .theodoi{
-	background: #135fab;
+	background: #FF36D8;
 	color: white;
 	float: left;
 }
@@ -171,24 +177,24 @@ img {
 	color: white;
 	float: left;
 	margin-left: 10px;
-	background: #FF070B;
+	background: #3892FF;
 }
 .baocaobtn:hover{
-	background: #FF3E40;
+	background: #A901FF;
 }
 .theodoi:hover{
-	background: #1672CE;
+	background: #FF00CD;
 }
 .userinfo{
 	float: right;
 }
 .userinfo label{
-	color: rgba(138,0,183,1.00);
+	color: white;
 	font-weight: bold;
 	margin-right: 20px;
 }
 .imguser:hover,.userinfo label:hover{
-	color: rgba(208,91,247,1.00);
+	color: wheat;
 }
 .imguser{
 	width: 50px;
@@ -204,6 +210,9 @@ img {
 	width: 100%;
 	height: 40em;
 	background: url(../Images/Promotion/pexels-photo-412295.jpeg);
+		box-shadow: 
+		  inset 5px 5px 10px #000000, 
+		  inset -5px -5px 10px rgba(0,144,236,1.00);
 }
 
 .tamsu{
@@ -228,10 +237,13 @@ img {
 #slogan{
 	width: 100%;
 	height: 2em;
-	background: #b3b8ff;
+	background: rgba(210,9,255,0.52);
 	font-size: 30px;
 	color: white;
 	text-align: center;
+	box-shadow: 
+		  inset 2px 2px 5px #373737, 
+		  inset -5px -5px 10px rgba(90,0,236,0.45);
 }
 
 .popuppro, .baocao{

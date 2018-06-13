@@ -1,7 +1,7 @@
  <!-- Website Overview-->
 							<div class="card" style="height: 30em;">
-                            <h5 class="card-header main-color-bg"><i class="fa fa-check" style="color: #00B2E0"></i>  Bài bán đã duyệt</h5>
-                            <div class="card-body">
+                            <h5 class="card-header main-color"><i class="fa fa-check"></i>  Bài bán đã duyệt</h5>
+                            <div class="card-body user-detail-section">
                                     <table class="table table-striped" style="overflow-y: auto;">
                                             <thead>
                                               <tr>
@@ -19,11 +19,11 @@
                                                 <th scope="row">1</th>
                                                 <td>Bán dép người yêu cũ</td>
                                                 <td>12/12/2017</td>
-                                                <td><a class="btn btn-danger" href="#" style="color:white;">Ẩn</a></td>
-												<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createspecial">
+                                                <td><a class="btn btn-type-blue" href="#" style="color:white;">Ẩn</a></td>
+												<td><button type="button" class="btn btn-type-purple" data-toggle="modal" data-target="#createspecial">
 												Tin đặc biệt
 												</button></td>
-												<td><a class="btn btn-success" href="../product-detail.php" style="color:white;">Xem</a></td>
+												<td><a class="btn btn-type-pink" href="../product-detail.php" style="color:white;">Xem</a></td>
                                               </tr>
                                               	<!-- Kết thúc dòng dữ liệu -->
 										

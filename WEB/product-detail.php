@@ -25,7 +25,7 @@
 <body>
 	<?php include('header.php'); ?>
 		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
-		<div class="container-fluid" style="margin-top: 5.5em; border: none;">
+		<div class="container-fluid page" style="margin-top: 4.8em; border: none;">
 			<div class="container-fluid">
 				<div class="container-fluid">
 					<div class="row">
@@ -107,7 +107,7 @@
 					
 					
 					<div class="details col-sm-12 col-md-8 col-lg-8 ">				
-					<div id="slogan">
+					<div id="slogan" style="overflow-y: auto;">
 							" Như chưa hề có cuộc chia tay "
 					</div>
 						

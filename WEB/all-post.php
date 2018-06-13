@@ -24,7 +24,8 @@
 
 <body>
 	<?php include('header.php') ?>
-	<div class="container">
+	<div class="container-fluid" id="mainlarge">
+		<div class="container" >
 		<div class="row main">
 			<?php $a = TaiThongTinKhachHang($_GET['MAKH'])?>
 			<!-- Thông tin người dùng -->
@@ -46,10 +47,10 @@
 				  </ul>
 				  <div class="card-body">
 						<p>
-						  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+						  <button class="btn btn-type-purple" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 							Liên hệ
 						  </button>
-						 <a href="#" class="btn btn-warning" style="color: white;">Theo dõi</a>
+						 <a href="#" class="btn btn-type-pink" style="color: white;">Theo dõi</a>
 						</p>
 						<div class="collapse" id="collapseExample">
 						  <div class="card card-body">
@@ -70,8 +71,8 @@
 			
 			<!-- Danh sách các bài đăng đã duyệt -->
 			<div class="col-md-8 news">
-				 <div class="my-3 p-3 bg-white rounded box-shadow">
-					<h6 class="border-bottom border-gray pb-2 mb-0" style="color: #C500FB; font-weight: bold; font-size: 19px;">Các tin đã đăng</h6>
+				 <div class="my-3 p-3 rounded box-shadow">
+					<h6 class="border-bottom border-gray pb-2 mb-0" style=" font-weight: bold; font-size: 19px;">Các tin đã đăng</h6>
 					 
 					 <?php
 							 if(!empty(TaiDanhSachTin($_GET['MAKH'])))
@@ -98,6 +99,7 @@
 				  </div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<!-- footer -->

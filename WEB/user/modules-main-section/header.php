@@ -1,22 +1,3 @@
-  <style>
-	#thacmac{
-		color: white; 
-		background: #FF00F5; 
-	}
-	#thacmac:hover{
-		background: #E514DD;
-	}
-	  
-	#yeucau{
-		color: white; 
-		background: #BF00F3; 
-	}
-	#yeucau:hover{
-		background: #AB02D9;
-	}
-	
-</style>	
-
 
 <!-- Thanh tiêu đề -->
     <nav class="navbar navbar-expand-md navbar-default bg-default">
@@ -53,15 +34,15 @@
                         <!-- Example single danger button -->
                         <div class="btn-group create">
 							<!-- Button trigger modal -->
-							<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addPost" style="color: white;">
+							<button type="button" class="btn btn-type-blue" data-toggle="modal" data-target="#addPost" style="color: white;">
 							  Thêm bài đăng
 							</button>
 														
-							<button type="button" class="btn" id="thacmac" data-toggle="modal" data-target="#addReq">
+							<button type="button" class="btn btn-type-purple" id="thacmac" data-toggle="modal" data-target="#addReq">
 								Thắc mắc,yêu cầu
 							</button>
 							
-							<button type="button" class="btn" id="yeucau" data-toggle="modal" data-target="#addRes">
+							<button type="button" class="btn btn-type-pink" id="yeucau" data-toggle="modal" data-target="#addRes">
 								Phản hồi
 							</button>
                          </div>

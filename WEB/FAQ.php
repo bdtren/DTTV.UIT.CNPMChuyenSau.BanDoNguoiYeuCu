@@ -40,7 +40,7 @@
 <body>
 	<?php include('header.php') ?>
 	
-     <div class="container-fluid">
+     <div class="container-fluid fullpage">
       <div class="row">
 		<!-- Phần câu hỏi -->
 		<div class="col-md-4">

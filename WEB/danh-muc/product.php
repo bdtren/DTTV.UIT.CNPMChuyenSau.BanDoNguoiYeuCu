@@ -31,7 +31,7 @@
 		?>
 		<img class="card-img-top" src="<?php echo Chuoi2Mang($a[$i]['HINHANH'])[0] ?>" alt="Card image cap" style="width: 230px; height: 230px;  background-size:contain;">
 		<div class="card-body">
-			<h5 class="card-title"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?> </h5>
+			<h5 class="card-title" style="overflow-y: auto;"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?></h5>
 			<ul class="list-group list-group-flush">
 				<!-- Giảm giá -->
 				<?php if($cardType=="ribbon-discount"){
