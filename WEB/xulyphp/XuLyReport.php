@@ -89,7 +89,7 @@ if(isset($_POST['callTable']) && !empty($_POST['callTable'])) {
 function csdlTinDang($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
-    $sql='SELECT cttd.MADM, TENDM, count(MATD) SoTin 
+    $sql='select cttd.MADM, TENDM, count(MATD) SoTin 
     from danhmuc dm, (select MADM, td.MATD, TIEUDE, NGAYDANG 
                         from tindang td, td_thuoc_dm tddm
                         where td.MATD=tddm.MATD'.$sort.') cttd
@@ -113,7 +113,7 @@ function csdlTinDang($sort=""){
 function csdlNhanVien($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
-    $sql='SELECT nv.MANV, HOTEN, TENCV, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
+    $sql='select nv.MANV, HOTEN, TENCV, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
     from nhanvien nv, chucvu cv, phancong pc
     where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$sort.';';
 
@@ -132,7 +132,7 @@ function csdlNhanVien($sort=""){
 function csdlThietBi($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
-    $sql='SELECT tb.MATB, TENTB, GIATRI, NGAYNHAP, MAKT, NGAYKT, TINHTRANG, ChiPhi, kt.GHICHU
+    $sql='select tb.MATB, TENTB, GIATRI, NGAYNHAP, MAKT, NGAYKT, TINHTRANG, ChiPhi, kt.GHICHU
     from thietbi tb, kiemtratb kt, (select tb1.MATB, case
                                                 when TINHTRANG="Hu" 
                                                     then GIATRI
@@ -158,7 +158,7 @@ function csdlDoanhThu($sort=""){
     $a = null;
 
     include('../xulyphp/connect.php');
-    $sql='SELECT MADT, LYDO, NGAYTHU, DOANHTHU 
+    $sql='select MADT, LYDO, NGAYTHU, DOANHTHU 
     from doanhthu 
     where MADT is not NULL'.$sort.'
     group by LYDO, NGAYTHU;';

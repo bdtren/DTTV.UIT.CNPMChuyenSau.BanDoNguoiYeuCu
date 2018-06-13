@@ -1,6 +1,7 @@
 <?php 
 	session_start();
 	$UserName = (isset($_SESSION['user']))? $_SESSION['user'] : '' ;
+	$MaKH = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	$PageName="trangchu"; 
 ?>
 <?php include "xulyphp/login.php"; ?>
@@ -56,15 +57,13 @@
 
 <body>
 	<div id="fullpage">
-	
-				<!-- section 1 -->
+		<!-- section 1 -->
 		<div class="section " id="section0">
 		<?php include('header.php') ?>	
 	
-			
+			<div class="content">
 
 			<?php if(empty($UserName))  { ?>
-			<div class="content">
 				<div class="login-box  animated slideInDown">
 					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
@@ -84,16 +83,11 @@
 							Tạo tài khoản</a></h6>
 					</form>
 				</div>
-			</div> 
-			<?php } else { ?>
-				<img src="Images/Home/HomeImage.jpg" style="width: 100%; height: 100vh;">
-		
-				
-				
+			
 			<?php } ?>
-				
+	
+			</div>
 		</div>
-
 
 		<!-- section 2-->
 		<div class="section" id="section1">
@@ -170,6 +164,13 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<!-- slide 4-->
+			<div class="slide" id="slide4">
+				<div class="slideContent">
+					<p>Tư vấn</p>
+					
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@
 
 .main-contain{
 	margin-top: 4.5em;
-	background: url(../Images/gioi-thieu/Screen-Shot-2017-01-14-at-2.38.25-PM.png);
+	background: #009BFF;
 	color: white;
 	font-family: 'Playfair Display', serif;
 }
@@ -75,7 +75,7 @@
 	font-size: 40px;
 	font-weight: bolder;
 	text-align: center; 
-	color: white;
+	color: #FFED00;
 	margin-bottom: 2em;
 }
 

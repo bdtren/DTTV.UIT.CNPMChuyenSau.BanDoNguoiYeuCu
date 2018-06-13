@@ -17,7 +17,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Hỗ trợ khách hàng</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="contact-us.php"><i class="fa fa-angle-double-right"></i>Liên hệ</a></li>
+						<li><a href="contact.php"><i class="fa fa-angle-double-right"></i>Liên hệ</a></li>
 						<li><a href="FAQ.php"><i class="fa fa-angle-double-right"></i>Câu hỏi thường gặp</a></li>
 						<li><a href="terms-and-services.php"><i class="fa fa-angle-double-right"></i>Điều khoản và quy định</a></li>
 					</ul>

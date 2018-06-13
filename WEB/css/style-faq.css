@@ -2,7 +2,7 @@
 	margin-top: 4em;
 	font-family: 'Arsenal', sans-serif;
 	padding: 20px;
-	background: url(../Images/logon/JShine.jpg);
+	background: #7f4e9f;
 }
 
 .ques{
@@ -21,9 +21,4 @@
 	border-radius: 15px;
 	height: 25em;
 	overflow-y: auto;
-}
-
-.nav-link:hover{
-	background: #D800FF;
-	color: white;
 }
