@@ -1,6 +1,7 @@
 <?php 
   session_start(); 
   $UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+  $MaKH = isset($_SESSION['makh']) ? $_SESSION['makh'] : "" ;
   include("../xulyphp/account-detail.php");
 ?>
 <!doctype html>
@@ -28,7 +29,7 @@
 	  <!-- Nội dung chính -->
     <section id="main">
         <div class="container-fluid">
-            <div class="row">
+          <div class="row">
 				 <div class="col-md-3">
 					 <?php
 					 	include('modules-main-section/sidebar.php');

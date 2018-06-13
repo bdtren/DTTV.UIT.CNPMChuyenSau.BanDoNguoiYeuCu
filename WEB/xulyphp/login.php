@@ -15,8 +15,9 @@
         {
             //$password = md5($password);
             $sql = "SELECT      * 
-                    FROM        TAIKHOAN 
-                    WHERE       TENTK = '$username'
+                    FROM        TAIKHOAN,KHACHHANG
+                    WHERE       KHACHHANG.MATK=TAIKHOAN.MATK
+                    AND         TENTK = '$username'
                     AND         MATKHAU = '$password' ";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) == 0) 
@@ -25,8 +26,10 @@
             }
             else
             {
+                $row = mysqli_fetch_assoc($result);
                 //Lưu tên đăng nhập 
                 $_SESSION['user'] = $username;
+                $_SESSION['makh'] = $row['MAKH'];
             }   
         }   
         mysqli_close($conn);
