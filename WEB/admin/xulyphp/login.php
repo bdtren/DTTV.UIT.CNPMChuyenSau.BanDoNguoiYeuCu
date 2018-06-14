@@ -3,7 +3,7 @@ if (isset($_POST['login'])) {
     include '../xulyphp/connect.php';
     //Lấy dữ liệu từ form
     $username = addslashes($_POST['username']);
-    $password = addslashes($_POST['password']);
+    $password = md5(addslashes($_POST['password']));
 
     //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
     //$password = md5($password);

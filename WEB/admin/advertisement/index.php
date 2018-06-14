@@ -2,6 +2,7 @@
 	session_start();
 	$User = (isset($_SESSION['useradmin']))? $_SESSION['useradmin'] : '' ;
 	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
+	$MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
 	
 ?>
 <?php include "../xulyphp/login.php"; ?>
@@ -10,10 +11,9 @@
 	  if($MaNV!=''){ 
 		$nv = layThongTinNhanVien($MaNV);		
 		$soGio = laySoGioLam($MaNV, date("Y/m/d"));
-		checkLogin($nv[0]['MACV']);
-}
+	  }
 
-
+	  checkLogin($MaCV);
 ?>
 
 <!doctype html>

@@ -40,8 +40,8 @@
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="index.php?page=checkcard" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;"><?php echo laySoTheCaoTrong();?></span></a>
-								<a href="index.php?page=promotion" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Khuyến mãi <span class="badge badge-danger" style="float: right;">10</span></a>
+								 <a id="checkcard" href="index.php?page=checkcard" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;"><?php echo laySoTheCaoTrong();?></span></a>
+								<a id="promotion" href="index.php?page=promotion" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Khuyến mãi <span class="badge badge-danger" style="float: right;"><?php echo laySoKhuyenMai();?></span></a>
 							
                                 
                         </div>
@@ -122,3 +122,4 @@
 
 
 
+	

@@ -4,7 +4,7 @@
 	$MaNV = (isset($_SESSION['manv']))? $_SESSION['manv'] : '' ; 
 ?>
 <?php include "xulyphp/login.php"; ?>
-<?php include "xulyphp/xulyadmin.php"; 
+<?php 
   $MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
   
   if($MaCV!=''){
