@@ -141,7 +141,7 @@ create table CHUCVU
 create table DANHMUC
 (
    MADM                           char(6)                        not null,
-   TENDM                          char(50)                       not null,
+   TENDM                          varchar(50)                       not null,
    DDANH                          longtext,
    KTDM                           varchar(20),
    primary key (MADM)
@@ -408,7 +408,7 @@ create table TAIKHOAN
 (
    MATK                           char(6)                        not null,
    TENTK                          varchar(20)                    not null,
-   MATKHAU                        varchar(20)                    not null,
+   MATKHAU                        varchar(32)			         not null,
    primary key (MATK)
 );
 
