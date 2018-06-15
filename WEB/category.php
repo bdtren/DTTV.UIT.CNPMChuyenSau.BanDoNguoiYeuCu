@@ -1,59 +1,16 @@
 <?php 
 	session_start();
-	$PageName="danhmuc";
-	if(isset($_GET['numpage']))
-    {
-        $numpage = $_GET['numpage'];
-    }
-    else
-    {
-        $numpage = 1;
-	}
+	$UserName 	=	(isset($_SESSION['user']))? $_SESSION['user'] : '' ;
+	$Type 		=	(isset($_GET['Type']))? $_GET['Type'] : '' ;
+	$numpage	=	(isset($_GET['numpage']))? $_GET['numpage'] : 1 ;
+	$Search		=	(isset($_GET['Search']))? $_GET['Search'] : '' ;
+	$DanhMuc	=	(isset($_GET['DanhMuc']))? $_GET['DanhMuc'] : 'DM0000' ;
+	$Sort		=	(isset($_GET['Sort']))? $_GET['Sort'] : 'NGAYDANG' ;
+	$SortType	=	(isset($_GET['SortType']))? $_GET['SortType'] : 'ASC' ;
+	$PageName	=	"danhmuc";
 
-	if(isset($_GET['Search']))
-    {
-        $Search = $_GET['Search'];
-    }
-    else
-    {
-        $Search = '';
-	}
-	
-    
-    
-    if(isset($_GET['DanhMuc']))
-    {
-        $DanhMuc = $_GET['DanhMuc'];
-    }
-    else
-    {
-        $DanhMuc = 'DM0000';
-	}
-	//$DanhMuc = "DMooo";
-	//echo "<script language='javascript'> alert('$DanhMuc')</script>";
-	if(isset($_GET['Sort']))
-    {
-        $Sort = $_GET['Sort'];
-    }
-    else
-    {
-        $Sort = 'MATD';
-	}
-
-	if(isset($_GET['SortType']))
-    {
-        $SortType = $_GET['SortType'];
-    }
-    else
-    {
-        $SortType = 'ASC';
-	}
+	include('xulyphp/xulytindang.php');	
 ?>
- 
-</script>
-
-<?php include('xulyphp/xulytindang.php'); ?>
-
 <!doctype html>
 <html>
 <head>
@@ -81,7 +38,6 @@
 <body>
 	
 	<?php include('header.php'); ?>
-
 	
 	<div class="container-fluid">
 		<div class="row main-contain">
@@ -95,19 +51,27 @@
 					<div class="card-header card-main-header">
 						<div class="container-fluid">
 						<div class="row">
-							<div class="col-md-6 text-head">Danh sách sản phẩm</div>
+							<?php 
+								if(empty($Search))
+									echo "<div class='col-md-6 text-head'>Danh sách sản phẩm</div>";
+								else
+								{
+									echo "<div class='col-md-6 text-head'>";
+									echo 'Kết quả tìm : '.$Search;
+									echo "</div>";
+								}							
+							?>
 
 							<div class="col-md-2">
-									  <select class="custom-select mr-sm-2 text-chose">
-										<option> Mặc định</option>
-										<option> Mua</option>
-										<option> Bán</option>
+									  <select class="custom-select mr-sm-2 text-chose" id="TypeSelect" onchange="TypeChanged(this)">
+										<option value="" <?php if($Type == "") echo "selected";?> > Mua-Bán</option>
+										<option value="Mua" <?php if($Type == "Mua") echo "selected";?> > Mua</option>
+										<option value="Bán" <?php if($Type == "Bán") echo "selected";?> > Bán</option>
 									  </select>
 							</div>
 							
 							<div class="col-md-2 text-head">
 									<select class="custom-select mr-sm-2 text-chose" id="SortSelect" onchange="SortChanged(this)">
-										<option value="MATD" <?php if($Sort == "MATD") echo "selected";?> >Mặc định</option>
 										<option value="NGAYDANG" <?php if($Sort == "NGAYDANG") echo "selected";?>>Thời gian</option>
 										<option value="GIABAN" <?php if($Sort == "GIABAN") echo "selected";?>>Giá</option>
 										<option value="TIEUDE" <?php if($Sort == "TIEUDE") echo "selected";?>>Chữ cái</option>
@@ -123,21 +87,30 @@
 
 								<script language="javascript">
 
+									function TypeChanged(TypeSelect)
+									{
+										var q = '<?php echo $Search ?>';
+										if( q == '')
+											location.href = 'category.php?Type='+TypeSelect.value+'&DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;	
+										else
+											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Type='+TypeSelect.value+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+									}
+
 									function SortChanged(SortSelect)
 									{
 										var q = '<?php echo $Search ?>';
 										if( q == '')
-											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;	
+											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value+'&Type='+TypeSelect.value;	
 										else
-											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value+'&Type='+TypeSelect.value;
 									}
 									function SortTypeChanged(SortTypeSelect)
 									{
 										var p = '<?php echo $Search ?>';
 										if( p == '')
-											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+											location.href = 'category.php?DanhMuc='+'<?php  echo $DanhMuc; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value+'&Type='+TypeSelect.value;
 										else
-											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value;
+											location.href = 'category.php?Search='+'<?php  echo $Search; ?>'+'&Sort='+SortSelect.value+'&SortType='+SortTypeSelect.value+'&Type='+TypeSelect.value;
 									}
 
 								</script>						
@@ -157,7 +130,7 @@
 						<?php 
 							if(empty($Search))
 							{	
-								$a = TaiSanPhamHot($DanhMuc);
+								$a = TaiSanPhamHot($DanhMuc, $Type);
 								$i = 0;
 								$z = 0;
 								if(!empty($a))
@@ -178,7 +151,7 @@
 								
 								$cardType = "";
 								$i = 0;	
-								$a = TaiSanPhamThuong($numpage*6-6,$DanhMuc,$Sort,$SortType);
+								$a = TaiSanPhamThuong($numpage*6-6, $Type, $DanhMuc ,$Sort, $SortType);
 								while($i<6) 
 								{ 
 									if(!empty($a[$i]))
@@ -189,7 +162,7 @@
 							}
 							else
 							{
-								$a = TimKiemSanPham($numpage*9-9,$Search,$Sort,$SortType);
+								$a = TimKiemSanPham($numpage*9-9, $Type, $Search, $Sort, $SortType);
 								$i = 0;
 								$z = 0;
 								if(!empty($a))
@@ -222,8 +195,6 @@
 
 	<?php include('footer.php');?>
 
-	
-	
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    	<script src="js/jquery-3.3.1.min.js"></script>

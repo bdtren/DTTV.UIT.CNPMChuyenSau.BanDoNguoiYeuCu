@@ -27,7 +27,8 @@
 	{
 		include('modules-main-section/followers.php');
 	}
-	else{
+	else
+	{
 		include('modules-main-section/dashboard.php');	
 	}
 

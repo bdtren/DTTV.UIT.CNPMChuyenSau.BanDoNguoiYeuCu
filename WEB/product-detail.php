@@ -1,10 +1,12 @@
 <?php 
 	session_start();
 	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+	$MaKH = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	$PageName="chitietsanpham"; 
+	include('xulyphp/xulytindang.php');
+	include('xulyphp/xulytheodoibaocao.php');
 ?>
 
-<?php include('xulyphp/xulytindang.php'); ?>
 
 <!doctype html>
 <html>
@@ -35,10 +37,59 @@
 						<label id="status">Tình trạng: <span><?php  echo $a["TINHTRANGMH"]; ?></span></label>
 						</div>
 						<div class="col-md-8" style="margin-top: 30px; margin-bottom: 5px;">
-							<a class="btn  theodoi">Theo dõi</a>
+							<button class="btn  theodoi" onclick='TheoDoi()'><?php if(KiemTraTheoDoiTinDang($MaKH,$a["MATD"])==1) echo "Bỏ Theo Dõi"; else echo "Theo Dõi"; ?></button>
+							<script language="javascript">
+								function TheoDoi()
+								{
+									if('<?php echo $MaKH;?>' == '')
+										alert("Bạn phải đăng nhập để theo dõi");
+									else
+									{
+										var info =[];
+										info[0] = "<?php echo $MaKH;?>";
+										info[1] = "<?php echo $a["MATD"];?>";
+										if("<?php echo KiemTraTheoDoiTinDang($MaKH,$a['MATD']);?>" == "0" )
+										{
+											$.ajax(
+											{
+												url: "./xulyphp/xulyajax.php",
+												data: 
+												{
+													inputFunction: "theodoitindang",
+													info: 			info
+												},
+												type: "post",
+												success: function(output) 
+												{
+													alert(output);
+												}
+											});
+										}
+										else
+										{
+											$.ajax(
+											{
+												url: "./xulyphp/xulyajax.php",
+												data: 
+												{
+													inputFunction: "botheodoitindang",
+													info: 			info
+												},
+												type: "post",
+												success: function(output) 
+												{
+													alert(output);
+												}
+											});
+										}									
+										location.reload();
+									}
+										
+								}
+							</script>
 							<a class="btn  baocaobtn" data-toggle="modal" data-target="#exampleModal">Báo cáo</a>
 							<div class="userinfo" data-toggle="modal" data-target="#contact">
-								<img class="imguser" src="Images/user/avatar1.png">
+								<img class="imguser" src="<?php echo $a["AVATAR"];?>">
 								<label> <?php  echo $a["HOTEN"]; ?> </label>
 							</div>
 					</div>
@@ -70,9 +121,9 @@
 							{
 								$k = "#pic-".$s;
 								if($s==0)
-									echo "<li class='active'><a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
+									echo "<li class='active'><a data-target='$k' data-toggle='tab'><img src='$value' ></a></li>";
 								else
-									echo "<li <a data-target='$k' data-toggle='tab'><img src='$value' /></a></li>";
+									echo "<li> <a data-target='$k' data-toggle='tab'><img src='$value' ></a></li>";
 								$s++;
 							}
 						
@@ -86,10 +137,8 @@
 					  <ul class="list-group list-group-flush">
 						  <!-- Giá bán -->
 						<!-- chọn sản phẩm giảm giá -->
-						<?php
-							if($a["LOAITIN"]!="ribbon-new" && $a["LOAITIN"]!="ribbon-hot" && $a["LOAITIN"]!=""){								$giagiam=substr($a["LOAITIN"] ,16, strlen($a["LOAITIN"])-16);
-							?>
-						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $giagiam; ?>đ <span id="diproduct"><?php echo $a["GIABAN"]; ?>đ</span></li>
+						<?php if($a["LOAITIN"] == "ribbon-discount") { ?>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?>đ <span id="diproduct"><?php  echo $a['GIACU']; ?>đ</span></li>
 						<?php } else { ?>	
 						<!-- chọn sản phẩm thông thường -->
 						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
@@ -105,10 +154,9 @@
 						
 					</div>
 					
-					
 					<div class="details col-sm-12 col-md-8 col-lg-8 ">				
 					<div id="slogan" style="overflow-y: auto;">
-							" Như chưa hề có cuộc chia tay "
+						<?php  echo $a["SLOGAN"]; ?>
 					</div>
 						
 						<div class="tamsubg">
@@ -118,13 +166,8 @@
 							</textarea>
 							
 							</div>
-						</div>
-						
-						
-						
-					</div>
-					
-					
+						</div>										
+					</div>										
 				</div>
 				</div>
 			</div>
@@ -145,14 +188,14 @@
       <div class="modal-body">
 	  <div class="row">
 		  <div class="col-md-4">
-			  <img id="popupimage" src="Images/user/avatar1.png">
+			  <img id="popupimage" src="<?php  echo $a["AVATAR"]; ?>">
 		  </div>
 		  <div class="col-md-8">
 			  <label>Họ tên: <span><?php  echo $a["HOTEN"]; ?></span></label><br>
 			  <label>Địa chỉ: <span><?php  echo $a["DIACHI"]; ?></span></label>
 			  <label>Điện thoại: <span><?php  echo $a["SDT"]; ?></span></label>
-     		 <label>Email: <span><?php  echo $a["EMAIL"]; ?></span></label>
-	 		 <label>Facebook: <span><?php  echo $a["FACEBOOK"]; ?></span></label>
+     		<label>Email: <span><?php  echo $a["EMAIL"]; ?></span></label>
+	 		  <label>Facebook: <span><?php  echo $a["FACEBOOK"]; ?></span></label>
 		  </div>
 	  </div>
 	  <div class="modal-footer">
@@ -176,17 +219,78 @@
       </div>
       <div class="modal-body">
 	  <label style="color: #1470FF;">Nội dung vi phạm:</label>
-      <textarea class="form-control">
-	  </textarea>  
+      <textarea class="form-control" id='baocao'></textarea>  
 	  <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-        <button type="button" class="btn btn-primary">Báo cáo ngay</button>
+        <button type="button" class="btn btn-primary" onclick='BaoCao()'>Báo cáo ngay</button>
       </div>
       </div>
+
+		<script language="javascript">
+		function BaoCao()
+		{
+			if('<?php echo $MaKH;?>' == '')
+				alert("Bạn phải đăng nhập để Bao Cao");
+			else
+			{
+				var info =[];
+				
+				info[0] = "<?php echo $a["MAKH"];?>";
+				info[1] = "<?php echo $a["MATD"];?>"
+				info[2] = document.getElementById("baocao").value;
+				
+				$.ajax(
+				{
+					url: "./xulyphp/xulyajax.php",
+					data: 
+					{
+						inputFunction: "baocao",
+						info: 			info
+					},
+					type: "post",
+					success: function(output) 
+					{
+						alert(output);
+					}
+				});							
+				location.reload();
+			}						
+		}
+		</script>
+			<script language="javascript">
+				// function BaoCao()
+				// {
+				// 	//alert("Bạn phải đăng nhập để báo cáo");
+				// 	if('</?php echo $MaKH;?>' == '')
+				// 		alert("Bạn phải đăng nhập để báo cáo");
+				// 	else
+				// 	{
+				// 		alert("p để báo cáo");
+				// 		var info =[];
+				// 		info[0] = "</?php echo $a["MAKH"]?>;
+				// 		info[1] = document.getElementById("baocao").value;
+				// 		$.ajax(
+				// 		{
+				// 			url: "./xulyphp/xulyajax.php",
+				// 			data: 
+				// 			{
+				// 				inputFunction: "baocao",
+				// 				info: 			info
+				// 			},
+				// 			type: "post",
+				// 			success: function(output) 
+				// 			{
+				// 				alert(output);
+				// 			}
+				// 		});									
+				// 		location.reload();
+				// 	}		
+				// }
+			</script>
    
     </div>
   </div>
-	</div>	
+</div>	
 	
 	
 	

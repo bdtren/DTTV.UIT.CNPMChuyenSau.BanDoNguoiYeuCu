@@ -2,13 +2,14 @@
 	if(isset($_SESSION['user']))
 	{
 		$UserName = $_SESSION['user'] ;
+		$IsLogin="true";
 	}
 	else
 	{
 		$UserName = '';
+		$IsLogin="false";
 	}
-	//Kiểm tra người dùng đã đăng nhập chưa
-	$IsLogin="true"; //true hoặc false
+	//Kiểm tra người dùng đã đăng nhập chưa //true hoặc false
 	$status="false";
 	if($IsLogin=="false"){
 		//Không cho phép CLick vào "tài khoản"

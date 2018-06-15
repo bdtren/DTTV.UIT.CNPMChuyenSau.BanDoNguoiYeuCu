@@ -1,6 +1,7 @@
 <?php 
 	session_start();
 	$UserName = (isset($_SESSION['user']))? $_SESSION['user'] : '' ;
+	$MaKH	  = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	$PageName="trangchu"; 
 ?>
 <?php include "xulyphp/login.php"; ?>
@@ -68,10 +69,10 @@
 				<div class="login-box  animated slideInDown">
 					<form action="index.php" method="POST" class="login-form">
 						<h2>Đăng nhập</h2>
-						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập">
+						<input type="text" id="username" class="login-input username-box" name="username" placeholder="Tên đăng nhập" required>
 						<br>
 						<br>
-						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu">
+						<input type="password" id="password" class="login-input password-box" name="password" placeholder="Mật khẩu" required>
 						<br>
 						<div class="forgot-password">Quên mật khẩu?
 								<a href="forget-password.php">Nhấn vào đây</a>

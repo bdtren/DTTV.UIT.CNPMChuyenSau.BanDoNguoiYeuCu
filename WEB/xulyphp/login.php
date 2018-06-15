@@ -3,32 +3,26 @@
     {     
         include('xulyphp/connect.php');
         //Lấy dữ liệu từ form
-        $username = addslashes($_POST['username']);
-        $password = addslashes($_POST['password']);
+        $username = $_POST['username'];
+        $password = md5($_POST['password']);
         
-        //Kiểm tra đã nhập đủ tên đăng nhập với mật khẩu chưa
-        if (!$username || !$password) 
+        $sql = "SELECT      * 
+                FROM        TAIKHOAN,KHACHHANG 
+                WHERE       TAIKHOAN.MATK = KHACHHANG.MATK
+                AND         TENTK = '$username'
+                AND         MATKHAU = '$password' ";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) == 0) 
         {
-            echo '<script language="javascript"> alert("Vui lòng nhập đầy đủ thông tin đăng nhập!") </script>';             
+            echo '<script language="javascript"> alert("Tên đăng nhập hoặc mật khẩu không đúng") </script>';
         }
         else
         {
-            //$password = md5($password);
-            $sql = "SELECT      * 
-                    FROM        TAIKHOAN 
-                    WHERE       TENTK = '$username'
-                    AND         MATKHAU = '$password' ";
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) == 0) 
-            {
-                echo '<script language="javascript"> alert("Tên đăng nhập hoặc mật khẩu không đúng") </script>';
-            }
-            else
-            {
-                //Lưu tên đăng nhập 
-                $_SESSION['user'] = $username;
-            }   
-        }   
+            $row = mysqli_fetch_assoc($result);
+            //Lưu session
+            $_SESSION['user'] = $username;
+            $_SESSION['makh'] = $row['MAKH'];
+        }     
         mysqli_close($conn);
     }
 ?>

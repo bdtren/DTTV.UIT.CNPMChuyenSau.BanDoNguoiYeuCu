@@ -34,10 +34,8 @@
 			<h5 class="card-title" style="overflow-y: auto;"><i class="fa fa-diamond"></i>  <?php echo $a[$i]['TIEUDE'] ?></h5>
 			<ul class="list-group list-group-flush">
 				<!-- Giảm giá -->
-				<?php if($cardType=="ribbon-discount"){
-					$giagiam=substr($a[$i]['LOAITIN'] ,16, strlen($a[$i]['LOAITIN'])-16);
-				?>
-				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo $giagiam;?>đ </span> <span id="priceorginal"><?php echo $a[$i]['GIABAN'] ?>đ</span>
+				<?php if($cardType=="ribbon-discount"){?>
+				<li class="list-group-item price"><i class="fa fa-money"></i> <span id="pricediscount">  <?php echo $a[$i]['GIABAN'];?>đ </span> <span id="priceorginal"><?php echo $a[$i]['GIACU'];?>đ</span>
 				</li>
 				<?php
 				 		}

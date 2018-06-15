@@ -1,7 +1,12 @@
 <?php
+	session_start();
+	$UserName = (isset($_SESSION['user']))? $_SESSION['user'] : '' ;
+	$MaKH = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	$PageName="xemtrangnguoidung";
+
+	include('xulyphp/xulytindang.php');
+	include('xulyphp/xulytheodoibaocao.php');
 ?>
-<?php include('xulyphp/xulytindang.php');?>
 
 <!doctype html>
 <html>
@@ -37,38 +42,88 @@
 				  </div>
 				  <ul class="list-group list-group-flush">
 					<li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i>
-  Họ tên: <?php echo $a['HOTEN']; ?></li>
+  						Họ tên: <?php echo $a['HOTEN']; ?></li>
 					<li class="list-group-item"><i class="fa fa-transgender" aria-hidden="true"></i>
-  Giới tính:<?php echo $a['GIOITINH']; ?></li>
+  						Giới tính:<?php echo $a['GIOITINH']; ?></li>
 					<li class="list-group-item"><i class="fa fa-address-book" aria-hidden="true"></i>
-  Địa chỉ:<?php echo $a['DIACHI']; ?></li>
+  						Địa chỉ:<?php echo $a['DIACHI']; ?></li>
 					<li class="list-group-item"><i class="fa fa-pencil" aria-hidden="true"></i>
-  Đôi dòng tâm sự: <textarea class="form-control" rows="5" id="comment" style="resize: none;" disabled>Dòng tâm sự của tài khoản <?php echo $a['TAMSU']; ?></textarea></li>
+  						Đôi dòng tâm sự: <textarea class="form-control" rows="5" id="comment" style="resize: none;" disabled>Dòng tâm sự của tài khoản <?php echo $a['TAMSU']; ?></textarea></li>
 				  </ul>
 				  <div class="card-body">
 						<p>
 						  <button class="btn btn-type-purple" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 							Liên hệ
 						  </button>
-						 <a href="#" class="btn btn-type-pink" style="color: white;">Theo dõi</a>
+						  <button type='button' id='Theodoi' class="btn btn-type-pink" style="color: white;" onclick='TheoDoi()'>
+							  <?php if(KiemTraTheoDoiKhachHang($MaKH,$a["MAKH"])==1) echo "Bỏ Theo Dõi"; else echo "Theo Dõi"; ?>
+						  </button>
+						  	<script language="javascript">
+								function TheoDoi()
+								{
+									if('<?php echo $MaKH;?>' == '')
+										alert("Bạn phải đăng nhập để theo dõi");
+									else
+									{
+										var info =[];
+										info[0] = "<?php echo $MaKH;?>";
+										info[1] = "<?php echo $a["MAKH"];?>";
+										if("<?php echo KiemTraTheoDoiKhachHang($MaKH,$a['MAKH']);?>" == "0" )
+										{
+											$.ajax(
+											{
+												url: "./xulyphp/xulyajax.php",
+												data: 
+												{
+													inputFunction: "theodoikhachhang",
+													info: 			info
+												},
+												type: "post",
+												success: function(output) 
+												{
+													//alert(output);
+												}
+											});
+										}
+										else
+										{
+											$.ajax(
+											{
+												url: "./xulyphp/xulyajax.php",
+												data: 
+												{
+													inputFunction: "botheodoikhachhang",
+													info: 			info
+												},
+												type: "post",
+												success: function(output) 
+												{
+													//alert(output);
+												}
+											});
+										}									
+										location.reload();
+									}
+										
+								}
+							</script>
 						</p>
 						<div class="collapse" id="collapseExample">
 						  <div class="card card-body">
 							 <ul class="list-group list-group-flush">
 								<li class="list-group-item"><i class="fa fa-facebook-official" aria-hidden="true"></i>
-  Facebook : <?php echo $a['FACEBOOK']; ?></li>
+  									Facebook : <?php echo $a['FACEBOOK']; ?></li>
 								<li class="list-group-item"><i class="fa fa-mobile" aria-hidden="true"></i>
-  Điện thoại : <?php echo $a['SDT']; ?></li>
+  									Điện thoại : <?php echo $a['SDT']; ?></li>
 								<li class="list-group-item"><i class="fa fa-envelope-open" aria-hidden="true"></i>
-  Email : <?php echo $a['EMAIL']; ?></li>
+  									Email : <?php echo $a['EMAIL']; ?></li>
 							  </ul>
 						  </div>
 						</div>
 				  </div>
 				</div>
 			</div>
-		
-			
+				
 			<!-- Danh sách các bài đăng đã duyệt -->
 			<div class="col-md-8 news">
 				 <div class="my-3 p-3 rounded box-shadow">

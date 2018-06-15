@@ -29,13 +29,13 @@
 		<h1>Quên mật khẩu</h1>
 			<form id="form-forget-password" method="POST" action="forget-password.php" >
 			<label>Tên đăng nhập:</label><br>
-			<input type="text" name="username"><br>			
+			<input type="text" name="username" required><br>			
 			<label>Email:</label><br>
-			<input type="text" name="email"><br>
+			<input type="text" name="email" required><br>
 			<label>Mật khẩu mới:</label><br>
-			<input type="password" name="password"><br>
+			<input type="password" name="password" required><br>
 			<label>Xác nhận mật khẩu mới:</label><br>
-			<input type="password" name="confirm-password"><br>	
+			<input type="password" name="confirm-password" required><br>	
 			<input type="submit" name="accept" value="Đổi mật khẩu">
 			</form>
 	</section>

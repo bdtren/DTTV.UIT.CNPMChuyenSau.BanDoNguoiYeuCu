@@ -6,7 +6,7 @@
 		{
 			$z=1; 
 			$actNum = "";
-			$numOfPages=CEIL((float)DemSanPham($DanhMuc)/6);	
+			$numOfPages=CEIL((float)DemSanPham($DanhMuc, $Type)/6);	
 			while( $z <= $numOfPages)
 			{
 				if($numpage==$z)
@@ -17,7 +17,7 @@
 				{
 					$actNum = "";
 				}			
-				$string = "category.php?DanhMuc="."$DanhMuc"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";			
+				$string = "category.php?DanhMuc="."$DanhMuc"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";			
 				echo "<li class='page-item $actNum'><a class='page-link' href='$string'>$z</a></li>";
 				$z++;
 			}
@@ -26,7 +26,7 @@
 		{
 			$z=1; 
 			$actNum = "";
-			$numOfPages=CEIL((float)DemSanPhamTimKiem($Search)/9);	
+			$numOfPages=CEIL((float)DemSanPhamTimKiem($Search, $Type)/9);	
 			while( $z <= $numOfPages)
 			{
 				if($numpage==$z)
@@ -37,7 +37,7 @@
 				{
 					$actNum = "";
 				}			
-				$string = "category.php?Search="."$Search"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";			
+				$string = "category.php?Search="."$Search"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$z";			
 				echo "<li class='page-item $actNum'><a class='page-link' href='$string'>$z</a></li>";
 				$z++;
 			}
