@@ -341,6 +341,10 @@
 		}
 
 
+/*style carousel */
+.main-contain-carousel #carouselExampleFade .carousel-inner .carousel-item img{
+	height: 100vh;
+}
 
 
 /* Respondsive section 1 */

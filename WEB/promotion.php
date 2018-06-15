@@ -28,7 +28,7 @@
 	
 	<div class="container-fluid sectionmain">
 	<div class="container">
-		<p>Khuyến mãi của LoveMarket</p>
+		<p id="lovemarketkm">Khuyến mãi của LoveMarket</p>
 		<div class="row detail">
 			
 		<!-- Tin đăng -->
