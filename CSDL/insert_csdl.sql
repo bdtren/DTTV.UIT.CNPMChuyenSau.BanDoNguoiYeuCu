@@ -380,10 +380,10 @@ insert into KIEMTRATB values('KT0003','NV0002','TB0003','2018/5/1','Hu','Sua');
 insert into KIEMTRATB values('KT0004','NV0002','TB0004','2018/5/1','Hu','thay mới');
 
 /* Báng doanhthu */
-insert into DOANHTHU values('DT0001','KH0001','NV0004','1234567890','1000','tao tin moi','2018/5/15');
-insert into DOANHTHU values('DT0002','KH0002','NV0004','1234567890','1000','tao tin moi','2018/5/16');
-insert into DOANHTHU values('DT0003','KH0003','NV0004','1234567890','2000','tao tin hot','2018/5/17');
-insert into DOANHTHU values('DT0004','KH0004','NV0004','1234567890','1000','tao tin giam gia','2018/5/18');
+insert into DOANHTHU values('DT0001','KH0001','NV0004','1234567890','mobifone','12344556764434','1000','tao tin moi','2018/5/15');
+insert into DOANHTHU values('DT0002','KH0002','NV0004','1234567890','viettel','34567543212345','1000','tao tin moi','2018/5/16');
+insert into DOANHTHU values('DT0003','KH0003','NV0004','1234567890','vianphone','76543245654654','2000','tao tin hot','2018/5/17');
+insert into DOANHTHU values('DT0004','KH0004','NV0004','1234567890','vietnam','87654355433433','1000','tao tin giam gia','2018/5/18');
 
 /* Báng phancong */
 insert into PHANCONG values('PC0001','NV0001','NV0005','2018/5/1','abc','5.3');

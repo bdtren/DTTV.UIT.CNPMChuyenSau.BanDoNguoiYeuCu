@@ -156,6 +156,8 @@ create table DOANHTHU
    MAKH                           char(6)                        not null,
    MANV                           char(6)                        not null,
    MATHECAO                       varchar(50)                    not null,
+   NHAMANG						  varchar(50)					 not null,
+   SERIAL						  varchar(20)					 not null,
    DOANHTHU                       double                         not null,
    LYDO                           text                           not null,
    NGAYTHU                        date                           not null,
