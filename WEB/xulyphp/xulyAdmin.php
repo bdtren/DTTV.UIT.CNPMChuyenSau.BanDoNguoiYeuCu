@@ -7,6 +7,10 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
         $data = $_POST['data'];
     }
     switch ($action) {
+        case 'themKhuyenMai':themKhuyenMai($data);
+            break;
+        case 'xoaKhuyenMai':xoaKhuyenMai($data);
+            break;
         case 'themCauTraLoi':themCauTraLoi($data);
             break;
         case 'themPhanCong':themPhanCong($data);
@@ -88,7 +92,7 @@ function themPhanCong($data = array())
     $a = layMaPhanCongCuoi();
     $ma = TangMaSo($a[0]['MAPC']);
     include '../xulyphp/connect.php';
-    include("../admin/xulyphp/logout.php");
+    include "../admin/xulyphp/logout.php";
     if ($data == null) {
         echo 'error loading input info';
         return;
@@ -129,10 +133,10 @@ function layThongTinTheCao($date = '')
 {
     $a = array();
     include '../../xulyphp/connect.php';
-    $sql = "SELECT* 
+    $sql = "SELECT*
             from doanhthu dt, khachhang kh
             where dt.MAKH=kh.MAKH;";
-     if ($result = mysqli_query($conn, $sql)) {
+    if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
         }
@@ -143,13 +147,13 @@ function layThongTinTheCao($date = '')
 //Lấy ra danh mục tin của tin đăng
 function layDanhMucTin($MaTD = '')
 {
-    $qTD=($MaTD=="")? "":"and tddm.matd='".$MaTD."'";
+    $qTD = ($MaTD == "") ? "" : "and tddm.matd='" . $MaTD . "'";
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT tddm.matd, dm.madm,dm.tendm
             FROM td_thuoc_dm tddm, danhmuc dm
-            WHERE tddm.madm=dm.madm ".$qTD.";";
-     if ($result = mysqli_query($conn, $sql)) {
+            WHERE tddm.madm=dm.madm " . $qTD . ";";
+    if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
         }
@@ -159,17 +163,13 @@ function layDanhMucTin($MaTD = '')
 }
 
 //Nhập sồ tiền vào Doanh thu, cập nhật số dư cho khách hàng
-function nhapThemTien($data){
-    // $MaDT = $data[0];
-    // $MaKH = $data[1];
-    // $soTien = $data[2];
-
+function nhapThemTien($data)
+{
     include '../xulyphp/connect.php';
 
     $sql = 'UPDATE doanhthu
-            SET DOANHTHU = '.$data[2].'
-            WHERE MADT = "'.$data[0].'";';
-
+            SET DOANHTHU = ' . $data[2] . '
+            WHERE MADT = "' . $data[0] . '";';
 
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
@@ -179,13 +179,108 @@ function nhapThemTien($data){
     }
 
     $sql = 'UPDATE khachhang
-            SET SODU = SODU + '.$data[3].'
-            WHERE MAKH = "'.$data[1].'";';
+            SET SODU = SODU + ' . $data[3] . '
+            WHERE MAKH = "' . $data[1] . '";';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
         echo "2.successfully";
     } else {
         echo ".2 Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+
+//Lấy só khuyến mãi
+function laySoKhuyenMai($date = '')
+{
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT count(MAKM) SOTM
+            FROM khuyenmai";
+    if ($result = mysqli_query($conn, $sql)) {
+        $a = mysqli_fetch_assoc($result);
+
+    }
+    mysqli_close($conn);
+    return $a['SOTM'];
+}
+
+//Lấy ra danh sách khuyến mãi
+function layDanhSachKhuyenMai($date = '')
+{
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+            FROM khuyenmai km, nhanvien nv
+            WHERE km.MANV=nv.MANV;";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+//Lấy mã khuyến mãi cuối
+function layMaKhuyenMaiCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MAKM
+    from khuyenmai
+    order by MAKM desc
+    limit 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Thêm Khuyến mãi mới
+function themKhuyenMai($data = array())
+{
+    $a = layMaKhuyenMaiCuoi();
+    $ma = TangMaSo($a[0]['MAKM']);
+    include '../xulyphp/connect.php';
+    if ($data == null) {
+        echo 'error loading input info';
+        return;
+    }
+
+    $sql = 'INSERT into khuyenmai
+    VALUES ("' . $ma . '", "' . $data[0] . '","' . $data[1] . '", "' . $data[5] . '", "' . $data[2] . '", "' . $data[3] . '", "' . $data[4] . '")';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+
+//Xóa 1 khuyến mãi
+function xoaKhuyenMai($data = array())
+{
+    include '../xulyphp/connect.php';
+    if ($data == null) {
+        echo 'error loading input info';
+        return;
+    }
+
+    $sql = 'DELETE FROM khuyenmai
+    WHERE MAKM="' . $data[0] . '";';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
@@ -316,20 +411,21 @@ function layDanhSachBaoCaoVP($date = '')
 }
 
 //Lấy thông tin khách hàng
-function layThongTinKhachHang($dsKH = array()){
-    
-    $strMaKH ="";
-    $qKH="";
-    if($dsKH!=null){
+function layThongTinKhachHang($dsKH = array())
+{
+
+    $strMaKH = "";
+    $qKH = "";
+    if ($dsKH != null) {
         $strMaKH = implode("','", $dsKH);
-        $qKH= "and MAKH in('".$strMaKH."')";
+        $qKH = "and MAKH in('" . $strMaKH . "')";
     }
 
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            from khachhang 
-            where MAKH is not null ".$qKH.";";
+            from khachhang
+            where MAKH is not null " . $qKH . ";";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
@@ -468,32 +564,23 @@ function layMaPhanCongCuoi()
     return $a;
 }
 
-
 function TangMaSo($Ma)
-    {
-        if(!empty($Ma))
-        {
-            $tukhoa = substr($Ma,0,2);
-            $m = substr($Ma,2);
-            $z = 1 + $m;
-            $MaMoi = '';
-            if($z<10)
-            {
-                $MaMoi = $tukhoa."000".$z;
-            } 
-            else if($z<100)
-            {
-                    $MaMoi = $tukhoa."00".$z;
-            }
-            else if($z<1000)
-            {
-                $MaMoi = $tukhoa."0".$z;
-            }
-            else
-            {
-                $MaMoi = $tukhoa.$z;
-            }
-            return $MaMoi;
+{
+    if (!empty($Ma)) {
+        $tukhoa = substr($Ma, 0, 2);
+        $m = substr($Ma, 2);
+        $z = 1 + $m;
+        $MaMoi = '';
+        if ($z < 10) {
+            $MaMoi = $tukhoa . "000" . $z;
+        } else if ($z < 100) {
+            $MaMoi = $tukhoa . "00" . $z;
+        } else if ($z < 1000) {
+            $MaMoi = $tukhoa . "0" . $z;
+        } else {
+            $MaMoi = $tukhoa . $z;
         }
-        return null;       
+        return $MaMoi;
     }
+    return null;
+}

@@ -229,22 +229,31 @@ $(document).ready(function() {
   });
 });
 
-//xử lý hiện ngày tháng năm
-// $(document).ready(function() {
-//   $(".datetime-picker").toggle();
-// });
+//In báo cáo
+function printReport() {
+  var myReport = window.open("", "PRINT", "height=480,width=640");
 
-// $(document).ready(function() {
-//   $('input[type="radio"]').click(function() {
-//     if (document.getElementById("rbngay") == null) {
-//       $(".datetime-picker").hide();
-//       return;
-//     }
+  switch (reportname) {
+    case "thiet-bi":
+      myReport.document.write(
+        "<html><head><title>" + document.title + "</title>"
+      );
+      myReport.document.write("</head><body >");
+      myReport.document.write("<h1>" + document.title + "</h1>");
+      myReport.document.write(
+        document.getElementById("report-content").innerHTML
+      );
+      myReport.document.write("</body></html>");
+      break;
+    default:
+      break;
+  }
 
-//     if (document.getElementByName("rbtype").selected) {
-//       $(".datetime-picker").show();
-//     } else {
-//       $(".datetime-picker").hide();
-//     }
-//   });
-// });
+  myReport.document.close(); // necessary for IE >= 10
+  myReport.focus();
+
+  myReport.print();
+  myReport.close();
+
+  return true;
+}

@@ -2,10 +2,9 @@
 var reportname = "tin-dang";
 var sortType = "";
 var inputVal = "";
-var totalName = "";
-var unit = "";
-var chartName = "";
-
+var totalName = "tin đăng";
+var unit = "tin";
+var chartName = "Biểu đồ tin đăng";
 
 function dropdownChangeEvent(selectedValue) {
   $("#gr-luachon").hide();
@@ -23,29 +22,29 @@ function dropdownChangeEvent(selectedValue) {
     reportname = "nhan-vien";
     totalName = "Lương";
     unit = "VND";
-    chartName = "Biểu đồ Lương";    
+    chartName = "Biểu đồ Lương";
   } else if (selectedValue == "thiet-bi") {
     document.getElementById("gr-luachon").innerHTML =
       '<label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>\n<input id="rbthang" type="radio" name="rbtype" value="Monthly" checked>Tháng\n<input id="rbnam" type="radio" name="rbtype" value="Yearly">Năm </h5>\n';
     reportname = "thiet-bi";
     totalName = "chi phí";
     unit = "VND";
-    chartName = "Biểu đồ Chi phí cho thiết bị";    
+    chartName = "Biểu đồ Chi phí cho thiết bị";
   } else if (selectedValue == "doanh-thu") {
     document.getElementById("gr-luachon").innerHTML =
       '<label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>\n<input id="rbthang" type="radio" name="rbtype" value="Monthly" checked>Tháng\n<input id="rbquy" type="radio" name="rbtype" value="Quarterly">Quý\n<input id="rbnam" type="radio" name="rbtype" value="Yearly">Năm </h5>\n';
     //Gọi bảng doanh thu
     reportname = "doanh-thu";
     totalName = "Doanh thu";
-    unit = "VND";    
-    chartName = "Biểu đồ Doanh thu";        
+    unit = "VND";
+    chartName = "Biểu đồ Doanh thu";
   } else if (selectedValue == "thu-nhap") {
     document.getElementById("gr-luachon").innerHTML =
       '<label for="Choose Report" style="color:#E74C3C"> Thời gian:</label>\n<input id="rbthang" type="radio" name="rbtype" value="Monthly" checked>Tháng\n<input id="rbquy" type="radio" name="rbtype" value="Quarterly">Quý\n<input id="rbnam" type="radio" name="rbtype" value="Yearly">Năm </h5>\n';
     reportname = "thu-nhap";
     totalName = "Thu nhập";
-    unit = "VND";    
-    chartName = "Biểu đồ Thu nhập";        
+    unit = "VND";
+    chartName = "Biểu đồ Thu nhập";
   }
   $("#gr-luachon").show();
 }
@@ -157,6 +156,7 @@ $(document).ready(function() {
           var arr = output.split("//");
           //\/\/\/\/\Bảng dữ liệu/\/\/\/\/\\
           $("#report-table").html(arr[0]);
+          alert(arr[0]);
           // dataTable.clear().draw(output);
           //Tạo một datatable mới
           dataTable = $("#report-table").DataTable(
@@ -168,6 +168,7 @@ $(document).ready(function() {
           select: true
         }*/
             {
+              //destroy: true,
               paging: false,
               select: true
             }
@@ -192,7 +193,7 @@ $(document).ready(function() {
 
           var data = google.visualization.arrayToDataTable(combine, false);
           var formatter = new google.visualization.NumberFormat({
-            suffix: " "+unit
+            suffix: " " + unit
           });
 
           formatter.format(data, 1);
@@ -211,11 +212,11 @@ $(document).ready(function() {
           chart.draw(data, options);
 
           //\/\/\/\/\TÍnh tổng/\/\/\/\/\\
-          const numberWithCommas = (x) => {
+          const numberWithCommas = x => {
             var parts = x.toString().split(".");
             parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            return parts.join(".") +" "+ unit;
-          }
+            return parts.join(".") + " " + unit;
+          };
           var totalValue =
             '<label id="total-label" style="color:#E74C3C" for="Total">Tổng ' +
             totalName +
@@ -228,22 +229,31 @@ $(document).ready(function() {
   });
 });
 
-//xử lý hiện ngày tháng năm
-// $(document).ready(function() {
-//   $(".datetime-picker").toggle();
-// });
+//In báo cáo
+function printReport() {
+  var myReport = window.open("", "PRINT", "height=480,width=640");
 
-// $(document).ready(function() {
-//   $('input[type="radio"]').click(function() {
-//     if (document.getElementById("rbngay") == null) {
-//       $(".datetime-picker").hide();
-//       return;
-//     }
+  switch (reportname) {
+    case "thiet-bi":
+      myReport.document.write(
+        "<html><head><title>" + document.title + "</title>"
+      );
+      myReport.document.write("</head><body >");
+      myReport.document.write("<h1>" + document.title + "</h1>");
+      myReport.document.write(
+        document.getElementById("report-content").innerHTML
+      );
+      myReport.document.write("</body></html>");
+      break;
+    default:
+      break;
+  }
 
-//     if (document.getElementByName("rbtype").selected) {
-//       $(".datetime-picker").show();
-//     } else {
-//       $(".datetime-picker").hide();
-//     }
-//   });
-// });
+  myReport.document.close(); // necessary for IE >= 10
+  myReport.focus();
+
+  myReport.print();
+  myReport.close();
+
+  return true;
+}

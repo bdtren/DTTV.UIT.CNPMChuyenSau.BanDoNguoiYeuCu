@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
     if (mysqli_num_rows($result) == 0) {
         echo '<script language="javascript"> alert("Tên đăng nhập hoặc mật khẩu không đúng") </script>';
     } else {
-        echo '<script language="javascript"> alert("đúng") </script>';
+        //echo '<script language="javascript"> alert("đúng") </script>';
 
         $row = mysqli_fetch_assoc($result);
         //Lưu tên đăng nhập
@@ -49,7 +49,7 @@ function checkLogin($MaCV = '')
         case "CV0002":
             //Nếu là nhân viên quảng cáo thì chỉ cho phép truy cập trang quảng cáo
             if (stripos($thisUrl, "WEB/admin/advertisement/") === false) {
-                echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
+                //echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
                 http_response_code(403);
                 header("Location: ../advertisement/index.php");
             }
@@ -58,7 +58,7 @@ function checkLogin($MaCV = '')
         case "CV0003":
             //Nếu là nhân viên CSKH thì chỉ cho phép truy cập trang chăm sóc khách hàng
             if (stripos($thisUrl, "WEB/admin/customercare/") === false) {
-                echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
+                //echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
                 http_response_code(403);
                 header("Location: ../customercare/index.php");
             }
@@ -67,7 +67,7 @@ function checkLogin($MaCV = '')
         case "CV0004":
             //Nếu là nhân viên kiểm duyệt thì chỉ cho phép truy cập trang kiểm duyệt
             if (stripos($thisUrl, "WEB/admin/censorship/") === false) {
-                echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
+                //echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
                 http_response_code(403);
                 header("Location: ../censorship/index.php");
             }
@@ -76,7 +76,7 @@ function checkLogin($MaCV = '')
         case "CV0005":
             //Nếu là nhân viên kế toán thì chỉ cho phép truy cập trang tài chính kế toán
             if (stripos($thisUrl, "WEB/admin/finance/") === false) {
-                echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
+                //echo '<script>alert("Bạn không thể truy cập trang này!")</script>';
                 http_response_code(403);
                 header("Location: ../finance/index.php");
             }

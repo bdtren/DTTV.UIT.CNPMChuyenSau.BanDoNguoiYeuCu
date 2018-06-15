@@ -14,7 +14,8 @@
 					<th scope="col">Tiêu đề</th>
 					<th scope="col">Thời hạn</th>
 					<th scope="col">Nội dung</th>
-					<th colspan="2">Quản lí</th>
+					<th scope="col">Quản lí</th>
+					<th scope="col"></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -30,14 +31,14 @@
 						<?php echo ($i+1); ?>
 					</th>
 					<td>	<?php echo $a[$i]["TIEUDE"];?> </td>
-					<td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYBD']));?> đến <?php echo date("d-m-Y", strtotime($a[$i]['NGAYKT']));?></td>
+					<td><?php $cdate = new DateTime($a[$i]['NGAYBD']);echo $cdate->format('d/m/Y');?> đến <?php $cdate = new DateTime($a[$i]['NGAYKT']);echo $cdate->format('d/m/Y');?></td>
 					<td><?php echo (strlen($a[$i]["CHITIET"])<=30? $a[$i]["CHITIET"]: substr($a[$i]["CHITIET"],0,30)."...");?></td>
 					<td>
 						<a class="btn adverbtnsee" data-toggle="modal" href="#" data-target="#see" style="background-color: #C630FF;color: white;" onclick="openModelChiTietQC(<?php echo $i?>)">Xem</a>
 					</td>
 					<td>
 						<a class="btn" style="background-color: #B100F4;
-												color: white;">Xóa</a>
+												color: white;" onclick="deleteQuangCao(<?php echo $i?>)">Xóa</a>
 					</td>
 				</tr>
 				<!-- Kết thúc dòng dữ liệu -->
@@ -118,7 +119,7 @@
 
 				<div class="modal-body">
 					<!-- Form  -->
-					<form>
+					<form method="post" enctype="multipart/form-data" action="">
 						<div class="form-group">
 							<label>Tiêu đề: </label>
 							<input id ="ipTitle"type="text" class="form-control" placeholder="Nhập tiêu đề khuyến mãi...">
@@ -131,7 +132,9 @@
 						</div>
 						<div class="form-group">
 							<label>Ảnh minh họa: </label>
-							<input id="ipImage" type="file" name="hinh anh" accept="image/*" multiple> 
+							<input id="ipPromotionImage" type="file" name="anhQuangCao" accept="image/*" accept-charset="UTF-8" multiple onchange="themAnhQc(this)"> 
+							<br>
+							<span id="uploaded-image"></span>
 						</div>
 
 						<div class="form-group">

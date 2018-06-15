@@ -21,8 +21,12 @@
 
 
 
-  <h1>Báo cáo</h1>
-  <div class="row">
+  <div id="report-content" class="row">
+      <button id="InBaoCao" href="#" class="btn btn-info btn-lg" onclick="printReport()">
+        <span class="glyphicon glyphicon-print"></span> Print
+      </button>
+
+      <div class="clearfix"></div>
     <div class="col-md-8">
       <div id="fullscreen_bg" class="fullscreen_bg">
         <form class="form-signin">
