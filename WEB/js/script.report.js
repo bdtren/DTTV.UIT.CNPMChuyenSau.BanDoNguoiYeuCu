@@ -234,17 +234,63 @@ function printReport() {
   var myReport = window.open("", "PRINT", "height=480,width=640");
 
   switch (reportname) {
-    case "thiet-bi":
+    case "tin-dang": 
       myReport.document.write(
-        "<html><head><title>" + document.title + "</title>"
+        "<html> <head>"
       );
+      myReport.document.write("<h3 style='font-weight: 100;'> Trường Đại học công nghệ thông tin </h3>");
+      myReport.document.write("<h4> LoveMarket </h4>");
       myReport.document.write("</head><body >");
-      myReport.document.write("<h1>" + document.title + "</h1>");
+
+
+      myReport.document.write("<h2 style='text-align: center; '> Báo cáo thống kê tin đăng </h2>");
+      myReport.document.write("<h5 style='margin-bottom:5px; '> Họ tên:  </h5>");
+      myReport.document.write("<h5> Chức vụ:  </h5>");
+      
+      // myReport.document.write(
+      //   document.getElementById("barcode").outerHTML
+      // );
+      // document.getElementById("barcode").style.background="black";
+
       myReport.document.write(
-        document.getElementById("report-content").innerHTML
+        document.getElementById("before-table").innerHTML  
       );
+
+      myReport.document.write(
+        document.getElementById("report-table").outerHTML
+      );
+      
+      document.getElementById("report-table").style.display="block";
+      document.getElementById("report-table").style.margin="auto";
+
+
+      // myReport.document.write('<div>');
+      // myReport.document.write('<span>');
+      // myReport.document.write(
+      //   document.getElementById("piechart").outerHTML
+      // );
+      // myReport.document.write('</span>');
+
+      // myReport.document.write('<span>');
+
+      // myReport.document.write('</span>');
+
+      // myReport.document.write('</div>');
+
+
+      myReport.document.write("<h6 style='text-align: center; '> Người tạo </h6>");
+
       myReport.document.write("</body></html>");
+    break;
+    case "nhan-vien": 
+      
+    break;
+    case "thiet-bi":
+      
       break;
+    case "doanh-thu": break;
+    case "thu-nhap": break;
+
     default:
       break;
   }

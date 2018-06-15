@@ -113,9 +113,13 @@ function csdlTinDang($sort=""){
 function csdlNhanVien($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
-    $sql='SELECT nv.MANV, HOTEN, TENCV, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
-    from nhanvien nv, chucvu cv, phancong pc
-    where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$sort.';';
+    $sql='SELECT nv.MANV, HOTEN, TENCV,sum(SOGIOHD) SOGIOHD, HSLUONG, LUONGCB, (hsluong*luongcb*temp.sum) Luong
+        from nhanvien nv, chucvu cv, phancong pc, (SELECT nv2.MANV manv2, sum(SOGIOHD) sum
+                                                    from nhanvien nv2, chucvu cv2, phancong pc2
+                                                    where nv2.MANV = pc2.MANV and nv2.MACV=cv2.MACV'.$sort.'
+                                                    group by nv2.MANV) temp
+        where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$sort.' and nv.manv=temp.manv2
+        group by nv.MANV;';
 
     mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
@@ -198,9 +202,9 @@ function bangTinDang($sort=""){
 
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr>
-      <td class="text-center" width="150px">'.$a[$i]['MADM'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['TENDM'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['SoTin'].'</span></td>   
+      <td class="text-center" style="width:195px !important;">'.$a[$i]['MADM'].'</td>
+      <td class="text-center" style="width:195px !important;">'.$a[$i]['TENDM'].'</td>
+      <td class="text-center" style="width:175px !important;">'.$a[$i]['SoTin'].'</span></td>   
   </tr>';
   }
   $result.='</tbody>//Tên danh mục//số tin đăng';
@@ -221,7 +225,7 @@ function bangNhanVien($sort=""){
         <th class="text-center" width="115px">Chức vụ</th>
         <th class="text-center" width="115px">Số giờ làm</th>
         <th class="text-center" width="115px">Hệ số</th>
-        <th class="text-center" width="115px">Lương</th>
+        <th class="text-center" width="115px">Lương(VND)</th>
     </tr>
   </thead>
   <tbody>';
@@ -234,12 +238,12 @@ function bangNhanVien($sort=""){
 
     for( $i=0; $i<$lengthA; $i++){
         $result.='<tr>
-        <td class="text-center" width="150px">'.$a[$i]['MANV'].'</td>
-        <td class="text-center" width="150px">'.$a[$i]['HOTEN'].'</td>
-        <td class="text-center" width="150px">'.$a[$i]['TENCV'].'</span></td>
-        <td class="text-center" width="150px">'.$a[$i]['SOGIOHD'].'</span></td>
-        <td class="text-center" width="150px">'.$a[$i]['HSLUONG'].'</span></td>
-        <td class="text-center" width="150px">'.$a[$i]['Luong'].'</span></td>
+        <td class="text-center" style="width:84px !important;">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" style="width:84px !important;">'.$a[$i]['HOTEN'].'</td>
+        <td class="text-center" style="width:85px !important;">'.$a[$i]['TENCV'].'</span></td>
+        <td class="text-center" style="width:80px !important;">'.number_format($a[$i]['SOGIOHD'],3).'</span></td>
+        <td class="text-center" style="width:76px !important;">'.$a[$i]['HSLUONG'].'</span></td>
+        <td class="text-center" style="width:96px !important;">'.number_format($a[$i]['Luong']).'</span></td>
     </tr>';
     }
     $result.='</tbody>//Họ tên//Lương';
@@ -275,15 +279,15 @@ function bangThietBi($sort =""){
 
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr>
-      <td class="text-center" width="150px">'.$a[$i]['MATB'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['TENTB'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['GIATRI'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['NGAYNHAP'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['MAKT'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['NGAYKT'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['TINHTRANG'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['ChiPhi'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['GHICHU'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['MATB'].'</td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['TENTB'].'</td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['GIATRI'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['NGAYNHAP'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['MAKT'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['NGAYKT'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['TINHTRANG'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['ChiPhi'].'</span></td>
+      <td class="text-center" style="width:84px !important;">'.$a[$i]['GHICHU'].'</span></td>
       
   </tr>';
   }

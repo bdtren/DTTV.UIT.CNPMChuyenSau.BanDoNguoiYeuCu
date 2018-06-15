@@ -20,7 +20,7 @@ function openModelTheCao(position) {
     arrTable[position]["HOTEN"] +
     "</a>";
   document.getElementById("lbCompany").innerHTML =
-    arrTable[position]["COMPANY"];
+    arrTable[position]["NHAMANG"];
   document.getElementById("lbSerial").innerHTML = arrTable[position]["SERIAL"];
   document.getElementById("lbTime").innerHTML = formatDate(
     new Date(arrTable[position]["NGAYTHU"])
@@ -95,6 +95,7 @@ function openModelChiTietQC(position) {
   var imgs = arrTable[position]["DDANH"].split(";");
   var imglink = "";
   for (var i = 0; i < imgs.length; i++) {
+    if(imgs[i]=="") continue;
     imglink +=
       '<a href="../../' +
       imgs[i] +
@@ -220,7 +221,7 @@ function addKhuyenMai() {
           contentType: false,
           cache: false,
           success: function(output) {
-            imageNames += i == 0 ? "" : ";";
+            imageNames += (i == 0) ? "" : ";";
             imageNames += output;
             //showUploadedItem(output);
             //alert(imageNames);
@@ -230,7 +231,7 @@ function addKhuyenMai() {
     }
     $.when.apply(null, promises).done(function(){
       //alert(imageNames);
-      dat[4] = imageNames;
+      dat[4] = imageNames.substring(1,imageNames.length);
       $.ajax({
         url: "../../xulyphp/xulyAdmin.php",
         data: { callFunction: "themKhuyenMai", data: dat },

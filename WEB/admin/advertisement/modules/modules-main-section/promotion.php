@@ -31,7 +31,7 @@
 						<?php echo ($i+1); ?>
 					</th>
 					<td>	<?php echo $a[$i]["TIEUDE"];?> </td>
-					<td><?php $cdate = new DateTime($a[$i]['NGAYBD']);echo $cdate->format('d/m/Y');?> đến <?php $cdate = new DateTime($a[$i]['NGAYKT']);echo $cdate->format('d/m/Y');?></td>
+					<td>Từ:<?php $cdate = new DateTime($a[$i]['NGAYBD']);echo $cdate->format('d/m/Y');?> đến <?php $cdate = new DateTime($a[$i]['NGAYKT']);echo $cdate->format('d/m/Y');?></td>
 					<td><?php echo (strlen($a[$i]["CHITIET"])<=30? $a[$i]["CHITIET"]: substr($a[$i]["CHITIET"],0,30)."...");?></td>
 					<td>
 						<a class="btn adverbtnsee" data-toggle="modal" href="#" data-target="#see" style="background-color: #C630FF;color: white;" onclick="openModelChiTietQC(<?php echo $i?>)">Xem</a>

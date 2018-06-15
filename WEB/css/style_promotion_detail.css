@@ -1,0 +1,38 @@
+/* CSS Document */
+.main-contain #carouselExampleFade .carousel-inner .carousel-item img{
+	height: 500px;
+	margin-top: 4.9em;
+}
+
+
+.section{
+	height: 25em;
+	background: url(../Images/logon/Purpink.jpg);
+	font-family: 'Playfair Display', serif;
+	color: black;
+	padding: 15px;
+}
+
+.jumbotron h4 span{
+	font-weight: bold;
+}
+
+.jumbotron{
+	width: 50%;
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;	
+	background: rgba(255,255,255,0.65);
+}
+
+.tieudekm{
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.jumbotron img{
+	height: 14em;
+	width: 100%;
+	margin-bottom: 5px;
+}

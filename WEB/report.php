@@ -18,9 +18,6 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   
-
-
-
   <div id="report-content" class="row">
       <button id="InBaoCao" href="#" class="btn btn-info btn-lg" onclick="printReport()">
         <span class="glyphicon glyphicon-print"></span> Print
@@ -71,7 +68,7 @@
                       </div>
                       </br>
                       <button id="btnView" type="button" class="btn btn-primary btn-lg btn3d">
-                        <span class="glyphicon glyphicon-search"></span> View</button>
+                        <span class="glyphicon glyphicon-search"></span> Xem</button>
                     </div>
                     <div class="panel-body">
 
@@ -135,17 +132,36 @@
         </form>
       </div>
     </div>
-    <div class="col-md-4">
-      <div id="piechart" class="chart"></div>
+    <div class="clearfix"></div>
+
+    <div id="before-table">
+      <div style="float:left;">
+        <h6>Họ tên: </h6>
+          <h6>Chức vụ: </h6>
+      </div>
+
+       <div style="float:left;">
+        <svg id="barcode"></svg>
+      </div>
+
     </div>
 
-    <div class="clearfix"></div>
-    <div class="col-md-12">
-      <div id="chart_div" class="chart"></div>
+    <div class="col-md-6">
+          <div id="piechart" class="chart"></div>
     </div>
+    
+
+    <!-- <div class="col-md-12">
+      <div id="chart_div" class="chart"></div>
+    </div> -->
+   
   </div>
 
-
+  <!-- Mã code -->
+  <script src="./js/JsBarcode.all.min.js"></script>
+  <script>
+    JsBarcode("#barcode", "<?php echo rand(100000000,999999999)?>");
+  </script>
 
 
 

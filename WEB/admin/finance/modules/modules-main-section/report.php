@@ -21,7 +21,7 @@
             </div>
 
             <div class="button-holder">
-                <a class="button">Switch Theme</a>
+                <a class="button">Đổi màu nền</a>
             </div>
         </div>
     </div>
