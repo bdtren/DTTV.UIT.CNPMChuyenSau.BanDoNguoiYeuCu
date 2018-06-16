@@ -6,13 +6,15 @@
 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
+	$a = TaiThongTinKhachHang($_GET['MAKH'])
 ?>
 
 <!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Trang cá nhân</title>
+	<link rel="icon" href="./Images/Home/favicon.png"/>
+	<title>Trang cá nhân <?php echo $a["HOTEN"]?></title>
 		<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">	
 	<link rel="stylesheet" href="css/style.css">
@@ -32,7 +34,7 @@
 	<div class="container-fluid" id="mainlarge">
 		<div class="container" >
 		<div class="row main">
-			<?php $a = TaiThongTinKhachHang($_GET['MAKH'])?>
+			
 			<!-- Thông tin người dùng -->
 			<div class="col-md-4 profile">
 				<div class="card">

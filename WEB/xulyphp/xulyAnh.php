@@ -6,15 +6,20 @@
 //Thêm ảnh quảng cáo mới
 
 $location = "";
-$srcName = $_FILES["anhQuangCao"]["name"];
+$srcName = $_FILES["anhDauVao"]["name"];
 $data= json_decode($_POST["data"]);
 if ($srcName!="") {
     $test = explode(".", $srcName);
     $ext = end($test);
-    $name = $data[0] . '-' . $data[1] . '-' . $data[2] . '-' . $data[3] . '-' . rand(1, 999) . '.' . $ext;
-    $location = '../Images/Promotion/'.$name;
-    $pureLocation = './Images/Promotion/'.$name;
-    move_uploaded_file($_FILES["anhQuangCao"]["tmp_name"], $location);
+    $name = $data[0] . '-' . $data[1] . '-' . $data[2] .'-' . rand(1, 999) . '.' . $ext;
+    if($_POST["nguon"]=="km"){
+        $location = '../Images/Promotion/'.$name;
+        $pureLocation = './Images/Promotion/'.$name;
+    } else if($_POST["nguon"]=="td"){
+        $location = '../Images/san-pham/'.$name;
+        $pureLocation = './Images/san-pham/'.$name;
+    }
+    move_uploaded_file($_FILES["anhDauVao"]["tmp_name"], $location);
 }
 
 echo $pureLocation;

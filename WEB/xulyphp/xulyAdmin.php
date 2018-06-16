@@ -439,10 +439,10 @@ function duyetTinCho($data)
     $ma = TangMaSo($a[0]['MATBTD']);
 
     $sql = 'INSERT INTO thongbaotindang
-            VALUES ("' . $ma . '", "' . $data[1] . '","(SELECT CURDATE())");';
+            VALUES ("' . $ma . '", "' . $data[0] . '","(SELECT CURDATE())");';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
-        echo "successfully";
+        echo "2.successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

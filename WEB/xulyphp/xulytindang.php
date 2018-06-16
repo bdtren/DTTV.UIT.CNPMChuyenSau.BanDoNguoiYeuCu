@@ -306,7 +306,7 @@
     {
         $a = null;
         include('xulyphp/connect.php');
-        $sql = "SELECT      *
+        $sql = "SELECT      *, TINDANG.TAMSU as TSTD
                 FROM        TINDANG,KHACHHANG 
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         MATD = '$MATD'";

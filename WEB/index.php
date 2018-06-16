@@ -131,7 +131,7 @@
 						<div class="category container2">
 							<div class="category-list" id="boxListCate">
 								<ul>
-								<?php $i=1; $a= TaiDanhMuc(); while($i<13) { ?>
+								<?php $i=0; $a= TaiDanhMuc(); while($i<13) { ?>
 									<li class="<?php echo $a[$i]['KTDM']?>">
 									<a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" class="">
 										<div class="category-item" style="background: url(<?php echo $a[$i]['DDANH'] ?>) no-repeat center center; background-size: 100% 100%;"></div>

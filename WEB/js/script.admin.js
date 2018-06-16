@@ -486,8 +486,13 @@ function updateDacBiet(result, position, newSName, price) {
         arrTable[selected]["SODU"] = dat[3];
         document.getElementById("addition-result").className =
           "alert alert-success";
-        document.getElementById("addition-result").innerHTML =
+          if(result=="thanh-cong"){
+            document.getElementById("addition-result").innerHTML =
           "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
+          } else{
+            document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đã được HỦY khỏi tạo tin đặc biệt.";
+          }
       } else {
         document.getElementById("addition-result").className =
           "alert alert-danger";
@@ -506,7 +511,7 @@ function censorFail() {
 }
 
 function censorSuccess() {
-  updateKiemDuyet("thanh-cong", selectedy);
+  updateKiemDuyet("thanh-cong", selected);
 }
 
 //Thêm thay đổi tin đặc biệt vào bảng tindang và bảng khachhang
@@ -517,6 +522,8 @@ function updateKiemDuyet(result, position) {
   dat[0] = arrTable[position]["MATD"];
   dat[1] = arrTable[position]["MAKH"];
   dat[2] = result =="thanh-cong"?"da dang":"da huy";
+
+
   // if(false){
   //   document.getElementById("addition-result").className = "alert alert-danger";
   //   document.getElementById("addition-result").innerHTML =
@@ -527,7 +534,7 @@ function updateKiemDuyet(result, position) {
   //alert(JSON.stringify(dat));
   $.ajax({
     url: "../../xulyphp/xulyAdmin.php",
-    data: { callFunction: "ThemTinDB", data: dat },
+    data: { callFunction: "duyetTinCho", data: dat },
     type: "post",
     success: function(output) {
       if (output == "1.successfully2.successfully") {
@@ -536,8 +543,13 @@ function updateKiemDuyet(result, position) {
         arrTable[selected]["SODU"] = dat[3];
         document.getElementById("addition-result").className =
           "alert alert-success";
-        document.getElementById("addition-result").innerHTML =
-          "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
+          if(result=="thanh-cong"){
+            document.getElementById("addition-result").innerHTML =
+              "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
+          } else{
+            document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đã được HỦY.";
+          }
       } else {
         document.getElementById("addition-result").className =
           "alert alert-danger";

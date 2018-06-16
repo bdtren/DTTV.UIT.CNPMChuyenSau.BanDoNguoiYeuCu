@@ -5,6 +5,7 @@
 	$PageName="chitietsanpham"; 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
+	$a = TaiChiTietSanPham($_GET['MATD']) 
 ?>
 
 
@@ -13,7 +14,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="./Images/Home/favicon.png"/>
-<title></title>
+<title><?php echo $a["TIEUDE"]?></title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
@@ -26,7 +27,7 @@
 
 <body>
 	<?php include('header.php'); ?>
-		<?php $a = TaiChiTietSanPham($_GET['MATD']) ?>
+		
 		<div class="container-fluid page" style="margin-top: 4.8em; border: none;">
 			<div class="container-fluid">
 				<div class="container-fluid">
@@ -162,7 +163,7 @@
 						<div class="tamsubg">
 							<div class="tamsu">
 							<textarea class="form-control" disabled>
-								<?php  echo $a["TAMSU"]; ?>
+								<?php  echo $a["TSTD"]; ?>
 							</textarea>
 							
 							</div>

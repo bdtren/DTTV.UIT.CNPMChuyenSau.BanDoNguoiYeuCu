@@ -7,7 +7,9 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <title> Welcome | <?php echo $UserName?> </title>
+    <meta name="author" content="DTTV" />
+    <meta name="description" content="Website bán đồ người yêu cũ." />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="../Images/Home/favicon.png"/>
     <script src="../../js/script.user.js"></script>
@@ -46,6 +48,8 @@
   <script src="../js/popper.min.js"></script>
   <script src="../js/bootstrap.min.js"></script>
   <script src="../js/discount-price.js"></script> 
+  <!-- Xử lý tại trang người dùng -->
+
 
   <!--Progressive Web App(PWA): install, service worker-->
   <!-- <script src="../sw-register.js"></script> -->

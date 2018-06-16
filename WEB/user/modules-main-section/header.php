@@ -11,6 +11,9 @@
 </nav>
 <!-- Kết thúc thanh tiêu đề -->
 
+        <script>
+          var MAKH = "<?php echo $MaKH?>";
+        </script> 
 
 <!-- Thanh tiêu đề -->
 <header id="header">
@@ -51,12 +54,12 @@
         <!-- Form Đăng tin -->
         <div class="form-group">
           <label >Tiêu đề tin</label>
-          <input type="text" class="form-control" placeholder="Nhập tiêu đề..." requirer name='tieude'>
+          <input type="text" class="form-control" placeholder="Nhập tiêu đề..." requirer id='tieude' name='tieude'>
         </div>
   
         <div class="form-group">
-          <label >Loại tin</label>
-          <select class="form-control" name='loai'>
+          <label >Loại tin:</label>
+          <select class="form-control" name='loai' id="loai">
             <option value='Bán'>Cần bán</option>
             <option value='Mua'>Cần mua</option>
             <option value='Tặng'>Tặng</option>
@@ -64,21 +67,23 @@
         </div>
   
         <div class="form-group">
-          <label >Danh mục tin</label>
-          <select class="form-control" name='loai'>
-            <option value=''>Bất động sản</option>
-            <option value=''>Nội thất, đồ gia dụng</option>
-            <option value=''>Đồ điện tử</option>
+          <label >Danh mục tin:</label>
+          <select class="form-control" id='danhmuc1' name='danhmuc1' >
+            <option value='DM0001'>Bất động sản</option>
+            <option value='DM0002'>Nội thất, đồ gia dụng</option>
+            <option value='DM0003'>Đồ điện tử</option>
             <option value='DM0004'>Xe cộ</option>
-            <option value=''>Thời trang, đồ dùng cá nhân</option>
-            <option value=''>Mẹ và bé</option>
-            <option value=''>Thú cưng</option>
-            <option value=''>Giải trí thể thao sở thích</option>
+            <option value='DM0005'>Thời trang, đồ dùng cá nhân</option>
+            <option value='DM0006'>Mẹ và bé</option>
+            <option value='DM0007'>Thú cưng</option>
+            <option value='DM0008'>Giải trí thể thao sở thích</option>
             <option value='DM0009'>Đồ văn phòng ,công nông nghiệp</option>
-            <option value=''>Việc làm du lịch</option>
-            <option value=''>Các lại khác</option>
-            <option value=''>Cho Tặng miễn phí</option>
-            <option value=''>Món quà đầu tiên</option>
+            <option value='DM0010'>Việc làm du lịch</option>
+            <option value='DM0011'>Các lại khác</option>
+            <option value='DM0012'>Cho Tặng miễn phí</option>
+          </select>
+          <select class="form-control" id='danhmuc2' name='danhmuc2'>
+            <option value='DM1001'>Món quà đầu tiên</option>
             <option value='DM1002'>Quà Valentine 14-2</option>
             <option value='DM1003'>Ngày quốc tế phụ nữ 8/3</option>
             <option value='DM1004'>Ngày phụ nữ Việt Nam 20-10</option>
@@ -94,17 +99,16 @@
             <option value='DM2003'>Bài hát</option>
             <option value='DM2004'>Bài thơ</option>
           </select>
-          <input type="text" class="form-control" placeholder="Nhập danh mục tin..." requirer name='danhmuc'>
         </div>
-                    
+              
         <div class="form-group">
-          <label >Giá bán(mua)</label>
-          <input type="text" class="form-control" placeholder="Nhập giá bán..." requirer name='giaban'>
+          <label >Giá bán(mua):</label>
+          <input type="number" class="form-control" placeholder="Nhập giá bán(VND)" requirer id='giaban' name='giaban'>
         </div>
   
         <div class="form-group">
-          <label >Tình trạng sản phẩm</label>
-          <select class="form-control" name='trinhtrang'>
+          <label >Tình trạng sản phẩm:</label>
+          <select class="form-control" id='tinhtrang' name='tinhtrang'>
             <option value='Như mới'>Như mới</option>
             <option valie='Mới'>Mới</option>
             <option value='Cũ'>Cũ</option>
@@ -112,25 +116,32 @@
         </div>
     
         <div class="form-group">
-          <label >Hình ảnh sản phẩm</label>
-          <input type="file" class="form-control-file">
+          <label >Hình ảnh sản phẩm:</label>
+          <input id="ipPromotionImage" type="file" name="anhDangTin" accept="image/*" accept-charset="UTF-8" multiple onchange="themAnhDT(this)">
+          <br>
+					<span id="uploaded-image"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Slogan:</label>
+          <textarea class="form-control" rows="2" style="resize: none;" id='slogan' name='slogan'></textarea>
         </div>
   
         <div class="form-group">
-          <label>Mô tả chi tiết</label>
-          <textarea class="form-control" rows="4" style="resize: none;" requirer name='mota'></textarea>
+          <label>Tâm sự:</label>
+          <textarea class="form-control" rows="4" style="resize: none;" id='mota' name='mota'></textarea>
         </div>
   
         <div class="form-group">
-          <label>Phương thức giao dịch</label>
-          <input type="text" class="form-control" placeholder="Nhập phương thức giao dịch..." requirer name='ptgd'></textarea>
+          <label>Phương thức giao dịch:</label>
+          <input type="text" class="form-control" placeholder="Nhập phương thức giao dịch..." id='ptgd' name='ptgd'></textarea>
         </div>
   
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-          <button type="submit" class="btn btn-primary" name="DangTin">Đăng</button>
+          <button type="button" id='dangtin' class="btn btn-primary" name="DangTin" onclick="addTinDang()">Đăng</button>
         </div>
-
+        <div id="addition-result" class="modal-footer"></div>
       </div>
 
     </div>
@@ -196,7 +207,7 @@
 
         <div class="form-group">
           <label for="exampleFormControlSelect1">Mức độ hài lòng</label>
-          <select class="form-control" name='hailong'>
+          <select class="form-control" name='hailong' id="hai-long">
             <option value="1">Tệ</option>
             <option value="2">Không hài lòng</option>
             <option selected value="3" >Tạm được</option>
@@ -232,3 +243,5 @@
   </div>
 </div>
 </form>
+
+<script src="../js/script.user.js"></script>

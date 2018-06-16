@@ -19,6 +19,8 @@ if (isset($_POST['inputFunction']) && !empty($_POST['inputFunction'])) {
             break;
         case 'thu-nhap':bangThuNhap($query);
             break;
+        case 'themTinDang':themTinDang($info);
+            break;
         default:break;
     }
 }
@@ -85,3 +87,67 @@ function themThacMac($info = array())
     }
     mysqli_close($conn);
 }
+
+//Lấy tin đăng cuối cùng
+function layTinDangCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MATD
+    from tindang
+    order by MATD desc
+    limit 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+function themTinDang($info = array())
+{
+    $a = layTinDangCuoi();
+    $ma = tangMa($a[0]['MATD']);
+    include '../xulyphp/connect.php';
+    if($info ==null){
+        echo 'error loading input info';
+        return;
+    }
+
+    $sql = 'INSERT into tindang
+    values ("' . $ma . '","NV0000","' . $info[0] . '","ribbon-normal","0","(SELECT CURDATE())","' . $info[2] . '","' . $info[1] . '","' . $info[5] . '","","' . $info[6] . '","' . $info[7] . '","' . $info[9] . '","' . $info[10] . '","dang cho","' . $info[8] . '")';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "1.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $sql = 'INSERT into td_thuoc_dm
+    values ("' . $ma . '","' . $info[3] . '")';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "2.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $sql = 'INSERT into td_thuoc_dm
+    values ("' . $ma . '","' . $info[4] . '")';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "3.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    
+    mysqli_close($conn);
+}
+?>
