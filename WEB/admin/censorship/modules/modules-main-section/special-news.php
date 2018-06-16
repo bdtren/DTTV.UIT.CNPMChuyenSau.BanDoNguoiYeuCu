@@ -16,6 +16,7 @@
 				<!-- Dòng dữ liệu -->
 				<?php 
 												$a=layTinDangChoDB();
+												$b=layGiaTaoTinDB();
 												$i=0;
 												$num=10; //Số dòng dữ liệu trừ 1 ($num=10 hiện 9 dòng)
 												while($i<count($a)){ 
@@ -50,6 +51,7 @@
 				<!-- Xử lý lưu tất cả dữ liệu lấy được từ các bảng qua file php -->
 				<script type="text/javascript">
 					var arrTable = <?php echo json_encode($a); ?>;
+					var arrPrice = <?php echo json_encode($b); ?>;
 				</script>
 
 			</tbody>
@@ -140,10 +142,10 @@
 
 						<div class="modal-footer">
 							<button id="btnQuit" type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
-							<button id="btnFail" type="button" class="btn btn-danger" name="huytaotin">Hủy tạo tin</button>
-							<button id="btnSuccess" type="button" class="btn btn-primary" name="chapnhantaotin">Chấp nhận tạo tin</button>
+							<button id="btnFail" type="button" class="btn btn-danger" name="huytaotin" onclick="specialFail()">Hủy tạo tin</button>
+							<button id="btnSuccess" type="button" class="btn btn-primary" name="chapnhantaotin" onclick="specialSuccess()">Chấp nhận tạo tin</button>
 						</div>
-
+						<div id="addition-result" class="modal-footer"></div>
 					</form>
 				</div>
 

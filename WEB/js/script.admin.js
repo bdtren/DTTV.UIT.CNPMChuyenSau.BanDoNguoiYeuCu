@@ -348,46 +348,6 @@ function openBasicModal(position) {
   document.getElementById("taDetail").innerHTML = arrTable[position]["TAMSU"];
   document.getElementById("lbDeal").innerHTML = arrTable[position]["PTGD"];
 }
-//Mở model duyệt tin đặc biệt
-function openModelDuyetTinDB(position) {
-  //$("#addition-result").hide();
-
-  var title = "";
-  openBasicModal(position);
-  switch (arrTable[position]["TINHTRANGTIN"]) {
-    case "duyet moi":
-      title = "Tin mới";
-      break;
-    case "duyet hot":
-      title = "Tin hot";
-      break;
-    case "duyet gg":
-      title = "Tin giảm giá";
-      break;
-    default:
-      break;
-  }
-  document.getElementById("htitle").innerHTML = title;
-
-  document.getElementById("lbPayResult").innerHTML = title;
-
-  var postType;
-  switch (arrTable[position]["LOAITIN"]) {
-    case "ribbon-new":
-      postType = "Tin mới";
-      break;
-    case "ribbon-hot":
-      postType = "Tin hot";
-      break;
-    case "ribbon-discount":
-      postType = "Tin giảm giá";
-      break;
-    default:
-      postType = "Tin thường";
-      break;
-  }
-  document.getElementById("lbPostType").innerHTML = postType;
-}
 //Mở model duyệt tin đăng mới
 function openModelDuyetTinDang(position) {
   openBasicModal(position);
@@ -410,8 +370,186 @@ function openModelDuyetTinViPham(position) {
   }
   openBasicModal(position);
 }
+//Mở model duyệt tin đặc biệt
+var needMoney = 0;
+var newSpecialName="";
+function openModelDuyetTinDB(position) {
+  //$("#addition-result").hide();
+
+  var title = "";
+  openBasicModal(position);
+  switch (arrTable[position]["TINHTRANGTIN"]) {
+    case "duyet moi":
+      title = "Tin mới";
+      for(var i=0;i<arrPrice.length;i++){
+        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
+          needMoney = arrPrice[i]["GIA"]; break;
+        }
+      }
+      newSpecialName="ribbon-new";
+      break;
+    case "duyet hot":
+      title = "Tin hot";
+      title = "Tin mới";
+      for(var i=0;i<arrPrice.length;i++){
+        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
+          needMoney = arrPrice[i]["GIA"]; break;
+        }
+      }
+      newSpecialName="ribbon-hot";
+      break;
+    case "duyet gg":
+      title = "Tin giảm giá";
+      title = "Tin mới";
+      for(var i=0;i<arrPrice.length;i++){
+        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
+          needMoney = arrPrice[i]["GIA"]; break;
+        }
+      }
+      newSpecialName="ribbon-discount";
+      break;
+    default:
+      needMoney = 0;
+      break;
+  }
+  document.getElementById("htitle").innerHTML = title;
+  //alert(arrTable[position]["SODU"]+"|||"+needMoney);
+  if(parseFloat(arrTable[position]["SODU"])>=parseFloat(needMoney)){
+    document.getElementById("lbPayResult").style.color = "green";
+    document.getElementById("lbPayResult").innerHTML = "Đủ tiền thanh toán";
+    document.getElementById("btnSuccess").disabled = false;
+    
+  } else{
+    document.getElementById("lbPayResult").style.color = "red";
+    document.getElementById("lbPayResult").innerHTML = "Không thể thanh toán";
+    document.getElementById("btnSuccess").disabled = true;
+
+  }
+
+  var postType;
+  switch (arrTable[position]["LOAITIN"]) {
+    case "ribbon-new":
+      postType = "Tin mới";
+      break;
+    case "ribbon-hot":
+      postType = "Tin hot";
+      break;
+    case "ribbon-discount":
+      postType = "Tin giảm giá";
+      break;
+    default:
+      postType = "Tin thường";
+      break;
+  }
+  document.getElementById("lbPostType").innerHTML = postType;
+}
+//Xử ly nhấn các phím trong modal
+function specialFail() {
+  updateDacBiet("that-bai", selected, "ribbon-normal", 0);
+}
+
+function specialSuccess() {
+  updateDacBiet("thanh-cong", selected, newSpecialName, needMoney);
+}
+
+//Thêm thay đổi tin đặc biệt vào bảng tindang và bảng khachhang
+function updateDacBiet(result, position, newSName, price) {
+  selected = position;
+  if (newSName==""||needMoney<0) {
+    document.getElementById("addition-result").className = "alert alert-danger";
+    document.getElementById("addition-result").innerHTML =
+      "<strong>Nhập thất bại!</strong> Dữ liệu đầu vào trống rỗng";
+    return;
+  }
+
+  var dat = [];
+  dat[0] = arrTable[position]["MATD"];
+  dat[1] = newSName;
+  dat[2] = arrTable[position]["MAKH"];
+  dat[3] = arrTable[position]["SODU"]-price;
+  if(dat[3]<0){
+    document.getElementById("addition-result").className = "alert alert-danger";
+    document.getElementById("addition-result").innerHTML =
+      "<strong> Lỗi!</strong> không được phát sinh nợ cho khách hàng";
+    return;
+  }
+
+  //alert(JSON.stringify(dat));
+  $.ajax({
+    url: "../../xulyphp/xulyAdmin.php",
+    data: { callFunction: "ThemTinDB", data: dat },
+    type: "post",
+    success: function(output) {
+      if (output == "1.successfully2.successfully") {
+        arrTable[selected]["TINHTRANGTIN"] = "da dang";
+        arrTable[selected]["LOAITIN"] = dat[1];
+        arrTable[selected]["SODU"] = dat[3];
+        document.getElementById("addition-result").className =
+          "alert alert-success";
+        document.getElementById("addition-result").innerHTML =
+          "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
+      } else {
+        document.getElementById("addition-result").className =
+          "alert alert-danger";
+        document.getElementById("addition-result").innerHTML =
+          "<strong>Thất bại!</strong> Không thể lưu kết quả, mã lỗi:" + output;
+      }
+      $("#addition-result").show();
+    }
+  });
+}
 
 //Chuyển tin đăng từ đang chờ sang đang đăng
+//Xử ly nhấn các phím trong modal
+function censorFail() {
+  updateKiemDuyet("that-bai", selected);
+}
+
+function censorSuccess() {
+  updateKiemDuyet("thanh-cong", selectedy);
+}
+
+//Thêm thay đổi tin đặc biệt vào bảng tindang và bảng khachhang
+function updateKiemDuyet(result, position) {
+  selected = position;
+
+  var dat = [];
+  dat[0] = arrTable[position]["MATD"];
+  dat[1] = arrTable[position]["MAKH"];
+  dat[2] = result =="thanh-cong"?"da dang":"da huy";
+  // if(false){
+  //   document.getElementById("addition-result").className = "alert alert-danger";
+  //   document.getElementById("addition-result").innerHTML =
+  //     "<strong> Lỗi!</strong> không được phát sinh nợ cho khách hàng";
+  //   return;
+  // }
+
+  //alert(JSON.stringify(dat));
+  $.ajax({
+    url: "../../xulyphp/xulyAdmin.php",
+    data: { callFunction: "ThemTinDB", data: dat },
+    type: "post",
+    success: function(output) {
+      if (output == "1.successfully2.successfully") {
+        arrTable[selected]["TINHTRANGTIN"] = "da dang";
+        arrTable[selected]["LOAITIN"] = dat[1];
+        arrTable[selected]["SODU"] = dat[3];
+        document.getElementById("addition-result").className =
+          "alert alert-success";
+        document.getElementById("addition-result").innerHTML =
+          "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
+      } else {
+        document.getElementById("addition-result").className =
+          "alert alert-danger";
+        document.getElementById("addition-result").innerHTML =
+          "<strong>Thất bại!</strong> Không thể lưu kết quả, mã lỗi:" + output;
+      }
+      $("#addition-result").show();
+    }
+  });
+}
+
+
 
 /*********************************************************************/
 /***************CÁC MODEL + XỬ LÝ TRÊN TRANG CHĂM SÓC KHÁCH HÀNG*****/

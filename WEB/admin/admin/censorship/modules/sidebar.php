@@ -8,44 +8,51 @@
 		$temp='';
 	}
 
-	if($temp=='report'){
-		$act[1] = "active";
-		$act[0] = "";
-	}
-	else{
-		$act[0] = "active";
+	if($temp=='special-news'){
+		$act[0] = "active";		
 		$act[1] = "";
+		$act[2] = "";			
+	} else if ($temp=='breach'){
+		$act[0] = "";		
+		$act[1] = "";
+		$act[2] = "active";		
+	} else{
+		$act[0] = "";		
+		$act[1] = "active";
+		$act[2] = "";	
+
 	}
+
 ?>
- 
+
  <!-- Sidebar -->
-					<div class="card" style="margin-bottom: 10px;">    
+ <div class="card" style="margin-bottom: 10px;">    
 							  
-								<img class="card-img-top" src="../../<?php echo $nv[0]['AVATAR']?>" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
-							  	  
-								 <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  <?php echo $nv[0]['HOTEN']?> </a>
-							
-								<a class="list-group-item list-group-item-action"><i class="fa fa-clock-o"></i>  Hoạt động : <span id="demo"></span> </a>
-							
-								<button type="button" class="btn" data-toggle="modal" data-target="#profilesee" onclick="getProfileInfo()">
-							 	Xem chi tiết
-								</button>
-                               
-					</div>
-
-
-
-						    <div class="list-group">
-                                <a href="index.php" class="list-group-item list-group-item-action" id="sidebar">
+							  <img class="card-img-top" src="../../<?php echo $nv[0]['AVATAR']?>" alt="Card image cap" style="border: 1px solid #A2A2A2; border-radius: 50%;">
+								  
+							   <a class="list-group-item list-group-item-action"><i class="fa fa-user-circle"></i>  <?php echo $nv[0]['HOTEN']?> </a>
+						  
+							  <a class="list-group-item list-group-item-action"><i class="fa fa-clock-o"></i>  Hoạt động : <span id="demo"></span> </a>
+						  
+							  <button type="button" class="btn" data-toggle="modal" data-target="#profilesee" onclick="getProfileInfo()">
+							   Xem chi tiết
+							  </button>
+							 
+				  </div>
+                        <div class="list-group">
+                                <a href="index.php" class="list-group-item list-group-item-action main-color-bg">
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="index.php?page=checkcard" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;"><?php echo laySoTheCaoTrong();?></span></a>
-								<a href="index.php?page=report" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Thống kê</a>
-								<!-- "../../report.php"  -->
+								 <a href="index.php?page=special-news" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Duyệt tin đặc biệt <span class="badge badge-danger" style="float: right;"><?php echo laySoTinChoDuyetDacBiet()?></span></a>
+								
+								 <a href="index.php?page=articles-waiting" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Bài đăng chờ duyệt <span class="badge badge-danger" style="float: right;"><?php echo laySoTinChoDuyet()?></span></a>
+								
+								<a href="index.php?page=breach" class="list-group-item list-group-item-action <?php echo $act[2];?>"><i class="fa fa-pencil"></i>  Xử lí vi phạm <span class="badge badge-danger" style="float: right;"><?php echo laySoTinBiBaoCao() ?></span></a>
+												
                                 
                         </div>
-<!-- Kết thúc sidebar -->
+
 
 <!-- Modal -->
     <!-- Bài đăng cần duyệt -->
@@ -54,13 +61,13 @@
               <div class="modal-content" >
               <form >
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Thông tin nhân viên kế toán</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">Thông tin nhân viên kiểm duyệt</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
 				  
-				<div class="modal-body">	
+                <div class="modal-body">	
 					<!-- Form  -->
                         <form>		
 								<div class="row">
@@ -119,6 +126,8 @@
               </div>
             </div>
           </div>
+
+
 
 
 

@@ -114,9 +114,9 @@
 						</div>
 
 						<div class="modal-footer">
-							<button id="btnQuit" type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-							<button id="btnFail" type="button" class="btn btn-danger" onclick="censorFail()">Hủy đăng tin</button>
-							<button id="btnSuccess" type="button" class="btn btn-primary" onclick="censorSuccess()">Chấp nhận đăng tin</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+							<button type="button" class="btn btn-danger">Hủy đăng tin</button>
+							<button type="button" class="btn btn-primary">Chấp nhận đăng tin</button>
 						</div>
 
 					</form>

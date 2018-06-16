@@ -17,6 +17,10 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
             break;
         case 'nhapThemTien':nhapThemTien($data);
             break;
+        case 'duyetTinCho': duyetTinCho($data);
+            break;
+        case 'themTinDB': themTinDB($data);
+            break;
         case 'layDanhMucTin':layDanhMucTin($data);
             break;
         default:break;
@@ -221,25 +225,6 @@ function layDanhSachKhuyenMai($date = '')
     mysqli_close($conn);
     return $a;
 }
-//Lấy mã khuyến mãi cuối
-function layMaKhuyenMaiCuoi()
-{
-    $a = null;
-    include '../xulyphp/connect.php';
-    $sql = 'SELECT MAKM
-    from khuyenmai
-    order by MAKM desc
-    limit 1;';
-
-    mysqli_set_charset($conn, "utf8");
-    if ($result = mysqli_query($conn, $sql)) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            $a[] = $row;
-        }
-    }
-    mysqli_close($conn);
-    return $a;
-}
 
 //Thêm Khuyến mãi mới
 function themKhuyenMai($data = array())
@@ -375,6 +360,48 @@ function layTinDangChoDB($date = '')
     mysqli_close($conn);
     return $a;
 }
+//Lấy danh sách chi phí tạo tin đặc biệt
+function layGiaTaoTinDB(){
+    $a = array();
+    include '../../xulyphp/connect.php';
+    $sql = "SELECT *
+                from loaitin;";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+//Nhập tin đăng đã duyệt tạo tin đặc biệt
+function themTinDB($data)
+{
+    include '../xulyphp/connect.php';
+
+    $sql = 'UPDATE tindang
+            SET TINHTRANGTIN = "da dang", LOAITIN = "' . $data[1] . '"
+            WHERE MATD = "' . $data[0] . '";';
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "1.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $sql = 'UPDATE khachhang
+            SET SODU = "' . $data[4] . '"
+            WHERE MAKH = "' . $data[3] . '";';
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
+}
+
 
 //Lấy danh sách tin đăng đang chờ để được duyệt đăng
 function layTinDangChoDuyet($date = '')
@@ -391,6 +418,36 @@ function layTinDangChoDuyet($date = '')
     }
     mysqli_close($conn);
     return $a;
+}
+
+//Duyệt tin đăng đang chờ
+function duyetTinCho($data)
+{
+    include '../xulyphp/connect.php';
+
+    $sql = 'UPDATE tindang
+            SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '"
+            WHERE MATD = "' . $data[0] . '";';
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "1.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    $a = layMaThongBaoTDCuoi();
+    $ma = TangMaSo($a[0]['MATBTD']);
+
+    $sql = 'INSERT INTO thongbaotindang
+            VALUES ("' . $ma . '", "' . $data[1] . '","(SELECT CURDATE())");';
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    mysqli_close($conn);
 }
 
 //Lấy danh sách tin đăng bị báo cáo
@@ -544,6 +601,25 @@ function layPhanHoiChiTiet($maPH = "", $date = "")
 /**********************************************/
 /****************CÁC HÀM XỬ LÝ PHỤ************/
 /********************************************/
+//Lấy mã khuyến mãi cuối
+function layMaKhuyenMaiCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MAKM
+    from khuyenmai
+    order by MAKM desc
+    limit 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
 
 function layMaPhanCongCuoi()
 {
@@ -552,6 +628,26 @@ function layMaPhanCongCuoi()
     $sql = 'SELECT MAPC
     from phancong
     order by MAPC desc
+    limit 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+//Lấy mã thông báo tin đăng cuối
+function layMaThongBaoTDCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MATBTD
+    from thongbaotindang
+    order by MATBTD desc
     limit 1;';
 
     mysqli_set_charset($conn, "utf8");

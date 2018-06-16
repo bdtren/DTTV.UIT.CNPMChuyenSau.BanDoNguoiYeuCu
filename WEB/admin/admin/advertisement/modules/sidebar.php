@@ -8,7 +8,7 @@
 		$temp='';
 	}
 
-	if($temp=='report'){
+	if($temp=='promotion'){
 		$act[1] = "active";
 		$act[0] = "";
 	}
@@ -40,9 +40,9 @@
                                         <i class="fa fa-dashcube"></i> Bảng điều khiển
                                 </a>
 								
-								 <a href="index.php?page=checkcard" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;"><?php echo laySoTheCaoTrong();?></span></a>
-								<a href="index.php?page=report" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Thống kê</a>
-								<!-- "../../report.php"  -->
+								 <a id="checkcard" href="index.php?page=checkcard" class="list-group-item list-group-item-action <?php echo $act[0];?>"><i class="fa fa-pencil"></i>  Kiểm tra thẻ cào <span class="badge badge-danger" style="float: right;"><?php echo laySoTheCaoTrong();?></span></a>
+								<a id="promotion" href="index.php?page=promotion" class="list-group-item list-group-item-action <?php echo $act[1];?>"><i class="fa fa-pencil"></i>  Khuyến mãi <span class="badge badge-danger" style="float: right;"><?php echo laySoKhuyenMai();?></span></a>
+							
                                 
                         </div>
 <!-- Kết thúc sidebar -->
@@ -60,7 +60,7 @@
                   </button>
                 </div>
 				  
-				<div class="modal-body">	
+                <div class="modal-body">	
 					<!-- Form  -->
                         <form>		
 								<div class="row">
@@ -122,3 +122,4 @@
 
 
 
+	
