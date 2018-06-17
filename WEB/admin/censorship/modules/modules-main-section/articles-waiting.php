@@ -118,7 +118,7 @@
 							<button id="btnFail" type="button" class="btn btn-danger" onclick="censorFail()">Hủy đăng tin</button>
 							<button id="btnSuccess" type="button" class="btn btn-primary" onclick="censorSuccess()">Chấp nhận đăng tin</button>
 						</div>
-						<div id="addition-result" class="modal-footer"></div>
+
 					</form>
 				</div>
 

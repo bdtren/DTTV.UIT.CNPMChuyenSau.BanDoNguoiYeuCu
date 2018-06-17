@@ -5,8 +5,13 @@
 	$MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
 	
 ?>
-<?php include "../xulyphp/login.php"; ?>
-<?php include "../../xulyphp/xulytindang.php";
+<!-- <script>
+	var nv= <?php echo json_encode($nv);?>
+	alert(JSON.stringify(dat));
+</script> -->
+<?php //include "../xulyphp/login.php"; ?>
+<?php include "../xulyphp/kiemtraAdmin.php";
+	  include "../../xulyphp/xulytindang.php";
 	  include('../../xulyphp/xulyAdmin.php');
 	  if($MaNV!=''){ 
 		$nv = layThongTinNhanVien($MaNV);		
