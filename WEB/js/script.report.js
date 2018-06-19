@@ -174,6 +174,13 @@ $(document).ready(function() {
             //"bJQueryUI": true,
             select: true,
             paging: false,
+            "language": {
+                      "info": "Hiển thị trang _PAGE_ của _PAGES_",
+                      "sInfo": "Hiển thị trang _START_ đến _END_ trong _TOTAL_ dòng",
+                      "sSearch": "Tìm kiếm:",
+                      "sEmptyTable": "Không có thông tin bảng theo yêu cầu",
+                      "sInfoFiltered": "(Duyệt từ _MAX_ dòng của bảng)",
+            },
             fnInitComplete: function() {
               this.fnAdjustColumnSizing();
               $("div.dataTables_filter input").focus();
