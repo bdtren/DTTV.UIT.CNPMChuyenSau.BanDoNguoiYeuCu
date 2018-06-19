@@ -29,8 +29,8 @@ function getProfileInfo(){
     //Get storage
 	var after=Date.now();  
 	var before=Date.parse(localStorage.getItem('startDate'));
-	var result=parseFloat((after-before)/1000/60/60).toFixed(3); //Thời gian online tính bằng giờ
+	var result=parseFloat((after-before)/1000/60/60); //Thời gian online tính bằng giờ
     
-    var sumTime = parseFloat(timeVal)+parseFloat(result);
+    var sumTime = (parseFloat(timeVal)+parseFloat(result)).toFixed(3);
     document.getElementById("worktime").innerHTML =  sumTime +" Giờ";
 }

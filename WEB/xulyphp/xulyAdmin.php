@@ -39,7 +39,8 @@ function layThongTinNhanVien($MaNV = "")
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
             from nhanvien nv, chucvu cv, taikhoan tk, phancong pc
-            where nv.MACV=CV.MACV and nv.MATK=tk.MATK and nv.MANV = pc.MANV " . $qNV . ";";
+            where nv.MACV=cv.MACV and nv.MATK=tk.MATK and nv.MANV = pc.MANV " . $qNV . "
+            group by nv.MANV;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;

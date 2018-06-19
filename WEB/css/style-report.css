@@ -46,11 +46,19 @@
         }
 
         tbody {
-            height: 170px;
+            height: 300px;
             display: inline-block;
             width: 100%;
             overflow-y: auto;
             overflow-x: visible;
+        }
+
+        .bang-con {
+            height: auto;
+            display: inline-block;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
         }
 
         .chart {
@@ -128,3 +136,13 @@
             /* Add !important to make sure override datables base styles */
         }
 
+        /*----------Phím hiển thị table con----------*/
+
+        td.details-control {
+            background: url('../Images/sort/details_open.png') no-repeat center center;
+            cursor: pointer;
+        }
+
+        tr.shown td.details-control {
+            background: url('../Images/sort/details_close.png') no-repeat center center;
+        }

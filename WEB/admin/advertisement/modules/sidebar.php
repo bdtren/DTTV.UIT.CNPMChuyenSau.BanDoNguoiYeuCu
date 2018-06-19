@@ -105,6 +105,7 @@
 								</div>
 								
     							<div class="form-group">
+									<!-- (!$soGio? 0: round($soGio[0]['SoGio'],3)) -->
 									<label style="color: red;">Số giờ đã làm trong ngày: <span id="worktime"><?php echo (!$soGio? 0: $soGio[0]['SoGio'])?></span></label>
 								</div>
 							

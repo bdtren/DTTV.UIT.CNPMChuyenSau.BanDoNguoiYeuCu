@@ -5,10 +5,6 @@
 	$MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
 	
 ?>
-<!-- <script>
-	var nv= <?php echo json_encode($nv);?>
-	alert(JSON.stringify(dat));
-</script> -->
 <?php //include "../xulyphp/login.php"; ?>
 <?php include "../xulyphp/kiemtraAdmin.php";
 	  include "../../xulyphp/xulytindang.php";

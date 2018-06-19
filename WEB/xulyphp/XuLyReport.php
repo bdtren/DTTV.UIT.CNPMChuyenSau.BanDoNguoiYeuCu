@@ -4,6 +4,7 @@ $sortType = "";
 $inputValue = "";
 $query = "";
 $timeSelect = "NGAYDANG";
+$reason = "";
 
 //Thân hàm chính
 if(isset($_POST['callTable']) && !empty($_POST['callTable'])) {
@@ -71,21 +72,29 @@ if(isset($_POST['callTable']) && !empty($_POST['callTable'])) {
                     break;
             }
         }
+
+        if (isset($_POST['Reason']) && !empty($_POST['Reason'])){
+            $reason = $_POST['Reason'];
+        }
     }
     
     switch($action) {
         case 'tin-dang': bangTinDang($query); break;
         case 'nhan-vien': bangNhanVien($query); break;
         case 'thiet-bi': bangThietBi($query); break;
-        case 'doanh-thu' : bangDoanhThu($query); break;
+        case 'doanh-thu': bangDoanhThu($query); break;
         case 'thu-nhap': bangThuNhap($query); break;
+        case 'nv-tablecon': bangNhanVienCon($reason, $query); break;
+        case 'dt-tablecon': bangDoanhThuCon($reason, $query); break;
         default: break;
     }
 
     
 }
-
+/******************************************************* */
 ///\/\/\/\/\/\/\/CÁC HÀM XỬ LÝ GỌI CSDL\/\/\/\/\/\/\/\/\\\
+/******************************************************* */
+// Lấy danh sách dữ liệu từ csdl bảng tin đăng danh mục
 function csdlTinDang($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
@@ -109,7 +118,7 @@ function csdlTinDang($sort=""){
         return $a;
 }
 
-
+//lấy danh sách dữ liệu từ csdl bảng nhân viên
 function csdlNhanVien($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
@@ -133,6 +142,28 @@ function csdlNhanVien($sort=""){
         return $a;
 }
 
+function csdlNhanVienCon($reas, $sort=""){
+    $a = null;
+    $qReas=($reas!=null&&$reas!="")? ' and nv.MANV="'.$reas.'"':'';
+
+    include('../xulyphp/connect.php');
+    $sql='SELECT nv.MANV, NGAYPC, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
+    from nhanvien nv, chucvu cv, phancong pc
+    where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$qReas.$sort.';';
+
+    mysqli_set_charset($conn, "utf8");
+        if($result = mysqli_query($conn, $sql))
+        {
+            while($row = mysqli_fetch_assoc($result))
+            {
+                $a[] = $row;
+            }
+        }
+        mysqli_close($conn);
+        return $a;
+}
+
+//lấy danh sách dữ liệu từ csdl bảng thiết bị
 function csdlThietBi($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
@@ -158,14 +189,36 @@ function csdlThietBi($sort=""){
         return $a;
 }
 
+//lấy danh sách dữ liệu từ csdl bảng doanh thu
 function csdlDoanhThu($sort=""){
     $a = null;
 
     include('../xulyphp/connect.php');
-    $sql='SELECT MADT, LYDO, NGAYTHU, DOANHTHU 
+    $sql='SELECT LYDO, SUM(DOANHTHU) DOANHTHU
     from doanhthu 
     where MADT is not NULL'.$sort.'
-    group by LYDO, NGAYTHU;';
+    group by LYDO;';
+
+    mysqli_set_charset($conn, "utf8");
+        if($result = mysqli_query($conn, $sql))
+        {
+            while($row = mysqli_fetch_assoc($result))
+            {
+                $a[] = $row;
+            }
+        }
+        mysqli_close($conn);
+        return $a;
+}
+
+function csdlDoanhThuCon($reas, $sort=""){
+    $a = null;
+    $qReas=($reas!=null&&$reas!="")? ' and LYDO="'.$reas.'"':'';  
+
+    include('../xulyphp/connect.php');
+    $sql='SELECT MADT, NGAYTHU, DOANHTHU 
+    from doanhthu 
+    where MADT is not NULL'.$qReas.$sort.';';
 
     mysqli_set_charset($conn, "utf8");
         if($result = mysqli_query($conn, $sql))
@@ -180,10 +233,10 @@ function csdlDoanhThu($sort=""){
 }
 
 
-
-
 /********************************************************/
+/****************************************************************** */
 ///\/\/\/\/\/\/\/CÁC HÀM XỬ LÝ XUẤT KẾT QUẢ VÀO WEB\/\/\/\/\/\/\/\/\\\
+/****************************************************************** */
 function bangTinDang($sort=""){
     $result =  '<thead <!--'.$sort.'-->>
     <tr>
@@ -201,7 +254,7 @@ function bangTinDang($sort=""){
   $lengthA = count($a);
 
   for( $i=0; $i<$lengthA; $i++){
-      $result.='<tr>
+      $result.='<tr class="details">
       <td class="text-center" style="width:195px !important;">'.$a[$i]['MADM'].'</td>
       <td class="text-center" style="width:195px !important;">'.$a[$i]['TENDM'].'</td>
       <td class="text-center" style="width:175px !important;">'.$a[$i]['SoTin'].'</span></td>   
@@ -220,11 +273,13 @@ function bangNhanVien($sort=""){
     // <!--'.$sort.'-->
     $result = '<thead> 
     <tr>
+        <th class="text-center" width="20px"></th>
         <th class="text-center" width="115px">Mã nhân viên</th>
         <th class="text-center" width="115px">Tên nhân viên</th>
         <th class="text-center" width="115px">Chức vụ</th>
         <th class="text-center" width="115px">Số giờ làm</th>
         <th class="text-center" width="115px">Hệ số</th>
+        <th class="text-center" width="115px">Lương CB</th>
         <th class="text-center" width="115px">Lương(VND)</th>
     </tr>
   </thead>
@@ -237,13 +292,15 @@ function bangNhanVien($sort=""){
     $lengthA = count($a);
 
     for( $i=0; $i<$lengthA; $i++){
-        $result.='<tr>
-        <td class="text-center" style="width:84px !important;">'.$a[$i]['MANV'].'</td>
-        <td class="text-center" style="width:84px !important;">'.$a[$i]['HOTEN'].'</td>
-        <td class="text-center" style="width:85px !important;">'.$a[$i]['TENCV'].'</span></td>
-        <td class="text-center" style="width:80px !important;">'.number_format($a[$i]['SOGIOHD'],3).'</span></td>
-        <td class="text-center" style="width:76px !important;">'.$a[$i]['HSLUONG'].'</span></td>
-        <td class="text-center" style="width:96px !important;">'.number_format($a[$i]['Luong']).'</span></td>
+        $result.='<tr id="mo-table-con" rel="'.$a[$i]['MANV'].'">
+        <td><img id="img-mo-table-con" src="Images/sort/details_open.png" rel="'.$a[$i]['MANV'].'" alt="expand/collapse"></td>
+        <td class="text-center" style="width:135px !important;">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" style="width:145px !important;">'.$a[$i]['HOTEN'].'</td>
+        <td class="text-center" style="width:100px !important;">'.$a[$i]['TENCV'].'</span></td>
+        <td class="text-center" style="width:100px !important;">'.number_format($a[$i]['SOGIOHD'],3).'</span></td>
+        <td class="text-center" style="width:60px !important;">'.$a[$i]['HSLUONG'].'</span></td>
+        <td class="text-center" style="width:140px !important;">'.number_format($a[$i]['LUONGCB'], 0,'.', ',').' VND</span></td>
+        <td class="text-center" style="width:140px !important;">'.number_format($a[$i]['Luong'], 0,'.', ',').' VND</span></td>
     </tr>';
     }
     $result.='</tbody>//Họ tên//Lương';
@@ -255,18 +312,56 @@ function bangNhanVien($sort=""){
     echo $result;
 }
 
+
+function bangNhanVienCon($reas, $sort=""){
+    $result = '<thead> <!--'.$reas.'-->
+
+    <tr>
+        <th class="text-center" width="115px">Mã nhân viên</th>
+        <th class="text-center" width="115px">Ngày PC</th>
+        <th class="text-center" width="115px">Số giờ làm</th>
+        <th class="text-center" width="115px">Hệ số</th>
+        <th class="text-center" width="115px">Lương</th>
+    </tr>
+  </thead>
+  <tbody class="bang-con">';
+    $a=csdlNhanVienCon($reas, $sort);
+    $result.='<!--'.$a[1]["Luong"].'-->';
+    if(!$a){
+        echo $result;
+        return;
+    }
+    $lengthA = count($a);
+
+    for( $i=0; $i<$lengthA; $i++){
+        $result.='<tr >
+        <td class="text-center" width="167px">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" width="162px">'.date("d-m-Y", strtotime($a[$i]['NGAYPC'])).'</td>
+        <td class="text-center" width="162px">'.$a[$i]['SOGIOHD'].'</span></td>
+        <td class="text-center" width="162px">'.$a[$i]['HSLUONG'].'</span></td>
+        <td class="text-center" width="162px">'.number_format($a[$i]['Luong'], 0,'.', ',').' VND</span></td>
+    </tr>';
+    }
+    $result.='</tbody>';
+    
+    echo $result;
+}
+
+
+
+
 function bangThietBi($sort =""){
     echo '<thead>
     <tr>
-        <th class="text-center" width="115px">Mã thiết bị</th>
-        <th class="text-center" width="115px">Tên thiết bị</th>
-        <th class="text-center" width="115px">Giá trị</th>
-        <th class="text-center" width="115px">Ngày nhập</th>
-        <th class="text-center" width="115px">Mã kiểm tra</th>
-        <th class="text-center" width="115px">Ngày kiểm tra</th>
-        <th class="text-center" width="115px">Tình trạng</th>
-        <th class="text-center" width="115px">Chi phí</th>
-        <th class="text-center" width="115px">Ghi chú</th>
+        <th class="text-center" style="width:115px !important;">Mã thiết bị</th>
+        <th class="text-center" style="width:115px !important;">Tên thiết bị</th>
+        <th class="text-center" style="width:115px !important;">Giá trị</th>
+        <th class="text-center" style="width:115px !important;">Ngày nhập</th>
+        <th class="text-center" style="width:115px !important;">Mã kiểm tra</th>
+        <th class="text-center" style="width:127px !important;">Ngày kiểm tra</th>
+        <th class="text-center" style="width:115px !important;">Tình trạng</th>
+        <th class="text-center" style="width:115px !important;">Chi phí</th>
+        <th class="text-center" style="width:115px !important;">Ghi chú</th>
     </tr>
   </thead>
   <tbody>'; 
@@ -279,15 +374,15 @@ function bangThietBi($sort =""){
 
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['MATB'].'</td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['TENTB'].'</td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['GIATRI'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['NGAYNHAP'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['MAKT'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['NGAYKT'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['TINHTRANG'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['ChiPhi'].'</span></td>
-      <td class="text-center" style="width:84px !important;">'.$a[$i]['GHICHU'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['MATB'].'</td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['TENTB'].'</td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['GIATRI'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['NGAYNHAP'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['MAKT'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['NGAYKT'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['TINHTRANG'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['ChiPhi'].'</span></td>
+      <td class="text-center" style="width:115px !important;">'.$a[$i]['GHICHU'].'</span></td>
       
   </tr>';
   }
@@ -303,10 +398,9 @@ function bangThietBi($sort =""){
 function bangDoanhThu($sort =""){
     $result = '<thead <!--'.$sort.'-->>
     <tr>
-        <th class="text-center" width="115px">Mã Doanh thu</th>
-        <th class="text-center" width="115px">Lý do</th>
-        <th class="text-center" width="115px">Ngày thu</th>
-        <th class="text-center" width="115px">Doanh thu</th>
+        <th class="text-center" width="20px"></th>
+        <th class="text-center" width="500px">Lý do</th>
+        <th class="text-center" width="300px">Doanh thu</th>
     </tr>
   </thead>
   <tbody>'; 
@@ -319,21 +413,54 @@ function bangDoanhThu($sort =""){
   $lengthA = count($a);
 
   for( $i=0; $i<$lengthA; $i++){
-      $result.='<tr>
-      <td class="text-center" width="150px">'.$a[$i]['MADT'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['LYDO'].'</td>
-      <td class="text-center" width="150px">'.$a[$i]['NGAYTHU'].'</span></td>
-      <td class="text-center" width="150px">'.$a[$i]['DOANHTHU'].'</span></td>
+      $result.='<tr id="mo-table-con" class="" rel = "'.$a[$i]['LYDO'].'">
+      <td><img id="img-mo-table-con" src="Images/sort/details_open.png" rel="'.$a[$i]['LYDO'].'" alt="expand/collapse"></td>
+      <td id="doanhthu-lydo" class="text-center" width="500px">'.$a[$i]['LYDO'].'</td>
+      <td class="text-center" width="300px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
   </tr>';
   }
   $result.='</tbody>//Lý do//Doanh thu';
   
   for( $i=0; $i<$lengthA; $i++){
-      $result.='//'.date("d-m-Y", strtotime($a[$i]['NGAYTHU'])).' '.$a[$i]['LYDO'].'//'.$a[$i]['DOANHTHU'];
+    //$result.='//'.date("d-m-Y", strtotime($a[$i]['NGAYTHU'])).' '.$a[$i]['LYDO'].'//'.$a[$i]['DOANHTHU'];
+    $result.='//'.$a[$i]['LYDO'].'//'.$a[$i]['DOANHTHU'];
   }
 
   echo $result;
 }
+
+function bangDoanhThuCon($reas,$sort =""){
+    $result = '<thead <!--r:'.$reas.'-->>
+    <tr>
+        <th class="text-center" width="115px">Mã Doanh thu</th>
+        <th class="text-center" width="115px">Ngày thu</th>
+        <th class="text-center" width="115px">Doanh thu</th>
+    </tr>
+  </thead>
+  <tbody class="bang-con">'; 
+
+  $a=csdlDoanhThuCon($reas, $sort);
+  if(!$a){
+      echo $result;
+      return;
+  }
+  $lengthA = count($a);
+
+  for( $i=0; $i<$lengthA; $i++){
+      $result.='<tr>
+      <td class="text-center" width="197px">'.$a[$i]['MADT'].'</td>
+      <td class="text-center" width="183px">'.$a[$i]['NGAYTHU'].'</span></td>
+      <td class="text-center" width="185px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
+  </tr>';
+  }
+  $result.='</tbody>';
+  
+  echo $result;
+}
+
+
+
+
 
 function bangThuNhap($sort ="not thing"){
     echo '<thead>

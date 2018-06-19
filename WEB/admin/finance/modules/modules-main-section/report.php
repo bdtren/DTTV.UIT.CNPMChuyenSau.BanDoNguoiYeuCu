@@ -4,9 +4,14 @@
     <h5 class="card-header" id="checkcard">Báo cáo và Thống kê</h5>
     <div class="card-body" style="overflow-y: auto;">
         <div class="col-md-5">
-            <a id="vao-report" href="../../report.php" target="_blank" class="btn btn-success btn-lg" onclick="">
+        <form action="../../report.php" target="_blank" method="post" >
+            <input type="hidden" name="nv" value="<?php echo htmlentities(serialize($nv)); ?>"/>
+
+            <button id="vao-report" type="submit" class="btn btn-success btn-lg" onclick="">
                 <span class="glyphicon glyphicon-print"></span> Đến trang báo cáo
-            </a>
+            </button>
+        </form>
+            
         </div>
         <div class="clearfix"></div>
         <div class="col-md-8">

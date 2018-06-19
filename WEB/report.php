@@ -1,3 +1,7 @@
+<?php
+  $nv = (isset($_POST['nv']))? unserialize($_POST['nv']) : null;   
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -11,6 +15,28 @@
   <link rel="stylesheet" href="./css/style-report.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+  <style type="text/css" media="screen">
+			@import "./css/site.ccss";
+			th { white-space: nowrap; }
+			div.dataTables_filter input { padding: 5px; width: 250px; }
+			div.innerDetails { display: none; }
+			
+			div.innerDetails {
+				margin: 1em;
+			}
+			div.column_details { float: left; width: 45%; }
+			div.column_details table td { font-size: 13px; }
+			div.column_code { float: left; width: 54%; }
+			div.purpose { height: 46px; overflow: hidden }
+			div.purpose p:first-child { margin-top: 0 }
+			div.purpose p:last-child { margin-bottom: 0 }
+			tr.odd { background-color: #f6f6ff; cursor: pointer; *cursor: hand }
+			tr.even { background-color: white; cursor: pointer; *cursor: hand }
+			td.details { cursor: default !important }
+			td.dataTables_empty { text-align: center; }
+			table.display>tbody>tr { border-left: 1px solid #ccc; border-right: 1px solid #ccc }
+			table.display { border-bottom: 1px solid #ccc; }
+		</style>
 
 </head>
 
@@ -18,10 +44,28 @@
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   
+  
   <div id="report-content" class="row">
-      <button id="InBaoCao" href="#" class="btn btn-info btn-lg" onclick="printReport()">
-        <span class="glyphicon glyphicon-print"></span> Print
-      </button>
+    <button id="InBaoCao" href="#" class="btn btn-info btn-lg" onclick="printReport()">
+      <span class="glyphicon glyphicon-print"></span> In Báo Cáo
+    </button>
+
+      
+    <div id="before-table">
+      <div style="float:left;">
+        <h6 id="hname">Họ tên: <?php echo $nv[0]['HOTEN']?></h6> 
+        <h6 id="hcompetence">Chức vụ: <?php echo $nv[0]['TENCV']?></h6>
+      </div>
+      
+      <div style="float:left;">
+        <svg id="barcode"></svg>
+      </div>
+    </div>
+      <!-- Mã code -->
+    <script src="./js/JsBarcode.all.min.js"></script>
+    <script>
+      JsBarcode("#barcode", "<?php echo $nv[0]["MANV"].rand(100000000,999999999)?>");
+    </script>
 
       <div class="clearfix"></div>
     <div class="col-md-8">
@@ -33,7 +77,7 @@
                 <div class="panel panel-default">
                   <div class="panel panel-primary">
                     <div class="text-center">
-                      <h3 style="color:#2C3E50">Lượt bán hàng tháng này</h3>
+                      <h3 id="table-title" style="color:#2C3E50">Lượt bán hàng tháng này</h3>
                       <h4>
                         <label for="Choose Report" style="color:#E74C3C">Lựa chọn báo cáo</label>
                       </h4>
@@ -76,6 +120,7 @@
                         <table id="report-table" class="table table-striped table-condensed" border="1" cellpadding="0" cellspacing="1">
                           <thead>
                             <tr>
+                            <th class="text-center" width="18px"></th>
                               <th class="text-center" width="115px">STT</th>
                               <th class="text-center" width="115px">Tên danh mục</th>
                               <th class="text-center" width="115px">Số lượng tin</th>
@@ -85,7 +130,10 @@
                           </thead>
                           <tbody>
                             <tr>
-                              <td class="text-center" width="150px">1</td>
+                            <td><img id="mo-table-con" src="Images/sort/details_open.png" rel="0" alt="expand/collapse"></td>
+                              <td class="text-center" width="150px">1
+
+                              </td>
                               <td class="text-center" width="150px">Bất động sản</td>
                               <td class="text-center" width="150px">2</span>
                               </td>
@@ -93,9 +141,28 @@
                               </td>
                               <td class="text-center" width="150px">abcxyz</span>
                               </td>
+                              
                             </tr>
-                            <tr>
+                            <!-- </tbody>
+                            <tbody class="hide">
+            <tr>
+                <td>Australia</td>
+                <td>$7,685.00</td>
+                <td>$3,544.00</td>
+                <td>$5,834.00</td>
+                <td>$10,583.00</td>
+            </tr>
+            <tr>
+                <td>Central America</td>
+                <td>$7,685.00</td>
+                <td>$3,544.00</td>
+                <td>$5,834.00</td>
+                <td>$10,583.00</td>
+            </tr>
+        </tbody> -->
 
+                            <tr>
+                            <td><img id="mo-table-con" src="Images/sort/details_open.png" rel="0" alt="expand/collapse"></td>
                               <td class="text-center">2</td>
                               <td class="text-center">Xe</td>
                               <td class="text-center">18</span>
@@ -106,7 +173,7 @@
                               </td>
                             </tr>
                             <tr>
-
+                            <td><img id="mo-table-con" src="Images/sort/details_open.png" rel="0" alt="expand/collapse"></td>
                               <td class="text-center">3</td>
                               <td class="text-center">Thư tay</td>
                               <td class="text-center">1</span>
@@ -134,34 +201,20 @@
     </div>
     <div class="clearfix"></div>
 
-    <div id="before-table">
-      <div style="float:left;">
-        <h6>Họ tên: </h6>
-          <h6>Chức vụ: </h6>
-      </div>
-
-       <div style="float:left;">
-        <svg id="barcode"></svg>
-      </div>
-
-    </div>
 
     <div class="col-md-6">
-          <div id="piechart" class="chart"></div>
+          <div id="chart1" class="chart"></div>
+    </div>
+    <div class="col-md-6">
+          <div id="chart2" class="chart"></div>
     </div>
     
 
-    <!-- <div class="col-md-12">
+    <div class="col-md-12">
       <div id="chart_div" class="chart"></div>
-    </div> -->
+    </div> 
    
   </div>
-
-  <!-- Mã code -->
-  <script src="./js/JsBarcode.all.min.js"></script>
-  <script>
-    JsBarcode("#barcode", "<?php echo rand(100000000,999999999)?>");
-  </script>
 
 
 
@@ -191,8 +244,8 @@
       // Optional; add a title and set the width and height of the chart
       var options = { 'title': 'Số tin đăng trong ngày', 'width': 550, 'height': 400 };
 
-      // Display the chart inside the <div> element with id="piechart"
-      chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      // Display the chart inside the <div> element with id="chart1"
+      chart = new google.visualization.PieChart(document.getElementById('chart1'));
       chart.draw(data, options);
     }
 
@@ -208,7 +261,7 @@
       data.addColumn('number', 'Thư tay');
 
       data.addRows([
-        ['2h sáng', 0, 0, 0], ['5h', 1, 4, 0], ['6h', 1, 5, 0], ['8h', 2, 10, 1], ['11h', 2, 14, 1], ['15h', 2, 15, 1], ['24h', 20000, 18000000, 1]
+        ['2h sáng', 0, 0, 0], ['5h', 1, 4, 0], ['6h', 1, 5, 0], ['8h', 2, 10, 1], ['11h', 2, 14, 1], ['15h', 2, 15, 1], ['24h', 2, 18, 1]
       ]);
 
       var options = {
@@ -267,9 +320,41 @@
       }*/
       {
         paging: false,
-        select: true
+        select: false,
+        //// "ajax": "./g.json",
+        // "columns": [
+        //     {
+        //         "className":      'details-control',
+        //         "orderable":      true,
+        //         "data":           null,
+        //         "defaultContent": ''
+        //     },
+        //     { "data": "name" },
+        //     { "data": "position" },
+        //     { "data": "office" },
+        //     { "data": "salary" }
+        // ],
+        // "order": [[1, 'asc']]
       }
     );
+
+    // Add event listener for opening and closing details'
+    // $('#nutnay').click( function () {
+    //     alert("hello");
+    //     var tr = $(this).closest('tr');
+    //     var row = dataTable.row( tr );
+ 
+    //     if ( row.child.isShown() ) {
+    //         // This row is already open - close it
+    //         row.child.hide();
+    //         tr.removeClass('shown');
+    //     }
+    //     else {
+    //         // Open this row
+    //         //row.child( '<td>Full name:</td>' ).show();
+    //         tr.addClass('shown');
+    //     }
+    // } );
     } );
   </script>
 
