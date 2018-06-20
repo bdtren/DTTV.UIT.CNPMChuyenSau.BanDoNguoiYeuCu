@@ -93,8 +93,8 @@ values('NV0005','TK0005','CV0001','Hoàng Tuấn Anh','1996/4/3','Tiền Giang',
 
 /*Bang loaitin */
 insert into LOAITIN values('ribbon-new','tin mới','10000');
-insert into LOAITIN values('ribbon-hot','tin hot','20000');
-insert into LOAITIN values('ribbon-discount','tin giảm giá','1000');
+insert into LOAITIN values('ribbon-hot','tin hot','15000');
+insert into LOAITIN values('ribbon-discount','tin giảm giá','10000');
 insert into LOAITIN values('ribbon-normal','tin bình thường','0');
 
 /*Báng tindang */
@@ -392,8 +392,8 @@ insert into PHANCONG values('PC0003','NV0003','NV0005','2018/5/1','abce','4.12')
 insert into PHANCONG values('PC0004','NV0004','NV0005','2018/5/1','abcf','5.555');
 
 /*Bang xuylyvipham*/
-insert into XULYVIPHAM values('KH0001','NV0003','2108/5/2','vi pham noi quy');
-insert into XULYVIPHAM values('KH0002','NV0003','2108/5/2','vi pham noi quy');
+insert into XULYVIPHAM values('XL0001','NV0003','TD0003','2018/5/2','vi pham noi quy');
+insert into XULYVIPHAM values('XL0002','NV0003','TD0003','2018/4/2','vi pham noi quy');
 
 /*Bang kh_theodoi_kh*/
 insert into KH_THEODOI_KH values('KH0001','KH0002');
@@ -416,7 +416,7 @@ insert into KH_THEODOI_TD values('KH0005','TD0018');
 insert into KH_THEODOI_TD values('KH0005','TD0006');
 
 
-insert into KHUYENMAI values('KM0001','NV0003','Khuyến mãi','Chi tiết khuyến mãi abc...........','2018/6/2','2018/6/5','./Images/khuyenmai/khuyenmai1.png');
+insert into KHUYENMAI values('KM0001','NV0003','Khuyến mãi','Chi tiết khuyến mãi abc...........','2018/6/2','2018/6/5','./Images/Promotion/item-0.jpg');
 
 insert into THONGBAOTINDANG values('TB0001','TD0037','2018/6/1');
 insert into THONGBAOTINDANG values('TB0002','TD0023','2018/6/1');

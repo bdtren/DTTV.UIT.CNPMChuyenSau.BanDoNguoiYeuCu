@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     6/8/2018 9:31:00 AM                          */
+/* Created on:     6/20/2018 12:11:22 PM                        */
 /*==============================================================*/
 
 /*
@@ -94,9 +94,9 @@ drop index NV_KIEMDUYET_TD_FK on TINDANG;
 
 drop table if exists TINDANG;
 
-drop index XULYVIPHAM2_FK on XULYVIPHAM;
+drop index NV_XU_LY_VI_PHAM_FK on XULYVIPHAM;
 
-drop index XULYVIPHAM_FK on XULYVIPHAM;
+drop index TIN_DANG_BI_XU_LY_FK on XULYVIPHAM;
 
 drop table if exists XULYVIPHAM;
 
@@ -141,7 +141,7 @@ create table CHUCVU
 create table DANHMUC
 (
    MADM                           char(6)                        not null,
-   TENDM                          varchar(50)                       not null,
+   TENDM                          char(50)                       not null,
    DDANH                          longtext,
    KTDM                           varchar(20),
    primary key (MADM)
@@ -156,8 +156,8 @@ create table DOANHTHU
    MAKH                           char(6)                        not null,
    MANV                           char(6)                        not null,
    MATHECAO                       varchar(50)                    not null,
-   NHAMANG						  varchar(50)					 not null,
-   SERIAL						  varchar(20)					 not null,
+   NHAMANG                        varchar(50)                    not null,
+   SERIAL                         varchar(20)                    not null,
    DOANHTHU                       double                         not null,
    LYDO                           text                           not null,
    NGAYTHU                        date                           not null,
@@ -218,7 +218,7 @@ create table KHACHHANG
    EMAIL                          longtext                       not null,
    AVATAR                         longtext                       not null,
    TAMSU                          text                           not null,
-   SODU                           double	                     not null,
+   SODU                           float(8,2)                     not null,
    primary key (MAKH)
 );
 
@@ -342,7 +342,7 @@ create table LOAITIN
 (
    LOAITIN                        varchar(50)                    not null,
    TENLOAI                        varchar(50)                    not null,
-   GIA                            double	                     not null,
+   GIA                            float(8,2)                     not null,
    primary key (LOAITIN)
 );
 
@@ -410,7 +410,7 @@ create table TAIKHOAN
 (
    MATK                           char(6)                        not null,
    TENTK                          varchar(20)                    not null,
-   MATKHAU                        varchar(32)			         not null,
+   MATKHAU                        varchar(32)                    not null,
    primary key (MATK)
 );
 
@@ -548,8 +548,8 @@ create table TINDANG
    NGAYDANG                       date                           not null,
    LOAITD                         varchar(50)                    not null,
    TIEUDE                         text                           not null,
-   GIABAN                         double                    	 not null,
-   GIACU						  double,
+   GIABAN                         double	                     not null,
+   GIACU                          double,
    TINHTRANGMH                    varchar(50)                    not null,
    HINHANH                        longtext,
    TAMSU                          text,
@@ -588,25 +588,26 @@ create index TINDANG_THUOC_LOAITIN_FK on TINDANG
 /*==============================================================*/
 create table XULYVIPHAM
 (
-   MAKH                           char(6)                        not null,
+   MAXULY                         char(6)                        not null,
    MANV                           char(6)                        not null,
-   NGAYXULY                       date                           not null,
-   NOIDUNGXULY                    varchar(50)                    not null,
-   primary key (MAKH, MANV)
+   MATD                           char(6)                        not null,
+   TGXULY                         date                           not null,
+   NOIDUNG						  text							 not null,
+   primary key (MAXULY)
 );
 
 /*==============================================================*/
-/* Index: XULYVIPHAM_FK                                         */
+/* Index: TIN_DANG_BI_XU_LY_FK                                  */
 /*==============================================================*/
-create index XULYVIPHAM_FK on XULYVIPHAM
+create index TIN_DANG_BI_XU_LY_FK on XULYVIPHAM
 (
-   MAKH
+   MATD
 );
 
 /*==============================================================*/
-/* Index: XULYVIPHAM2_FK                                        */
+/* Index: NV_XU_LY_VI_PHAM_FK                                   */
 /*==============================================================*/
-create index XULYVIPHAM2_FK on XULYVIPHAM
+create index NV_XU_LY_VI_PHAM_FK on XULYVIPHAM
 (
    MANV
 );
@@ -686,9 +687,9 @@ alter table TINDANG add constraint FK_NV_KIEMDUYET_TD foreign key (MANV)
 alter table TINDANG add constraint FK_TINDANG_THUOC_LOAITIN foreign key (LOAITIN)
       references LOAITIN (LOAITIN) on delete restrict on update restrict;
 
-alter table XULYVIPHAM add constraint FK_XULYVIPHAM foreign key (MAKH)
-      references KHACHHANG (MAKH) on delete restrict on update restrict;
-
-alter table XULYVIPHAM add constraint FK_XULYVIPHAM2 foreign key (MANV)
+alter table XULYVIPHAM add constraint FK_NV_XU_LY_VI_PHAM foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
+
+alter table XULYVIPHAM add constraint FK_TIN_DANG_BI_XU_LY foreign key (MATD)
+      references TINDANG (MATD) on delete restrict on update restrict;
 

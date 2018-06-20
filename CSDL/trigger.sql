@@ -8,7 +8,8 @@ for each row
 begin
 	delete from KH_THEODOI_TD where MATD=old.MATD;
     delete from TD_THUOC_DM where MATD=old.MATD;
-    delete from DOANHTHU where MATD=old.MATD;
+    delete from THONGBAOTINDANG where MATD=old.MATD;
+	delete from XULYVIPHAM where MATD=old.MATD;
 end;
 |
 delimiter
@@ -23,12 +24,12 @@ create trigger before_delete_khachhang before delete on KHACHHANG
 for each row
 begin
 	delete from GHINHANPHANHOI where MAKH=old.MAKH;
-	delete from XULYVIPHAM where MAKH=old.MAKH;
 	delete from THACMAC where MAKH=old.MAKH;
 	delete from TINDANG where MAKH=old.MAKH;
     delete from KH_THEODOI_KH where MAKH=old.MAKH;
     delete from KH_THEODOI_KH where MAKHTD=old.MAKH;
     delete from KH_THEODOI_TD where MAKH=old.MAKH;
+    update DOANHTHU set MAKH='KH0000' where MAKH=old.MAKH;
 end;
 |
 delimiter 
@@ -54,7 +55,6 @@ create trigger before_delete_danhmuc before delete on DANHMUC
 for each row
 begin
 	delete from TD_THUOC_DM where MADM=old.MADM;
-	/*delete from TINDANG where MADM=old.MADM;*/
 end;
 |
 delimiter
@@ -95,7 +95,8 @@ begin
     update THIETBI set MANV='NV0000' where MANV=old.MANV;
     /*delete from DOANHTHU where MANV=old.MANV;*/
     update DOANHTHU set MANV='NV0000' where MANV=old.MANV;
-    update THONGBAO set MANV='NV0000' where MANV=old.MANV;
+    update CHITIEU set MANV='NV0000' where MANV=old.MANV;
+    update KHUYENMAI set MANV='NV0000' where MANV=old.MANV;
 end;
 |
 delimiter;
