@@ -299,6 +299,10 @@ $(document).ready(function() {
               );
               chart.draw(data, options);
 
+              //Xóa bảng thứ 2
+              var chart2 = document.getElementById("chart2");
+              chart2.innerHTML = "";
+
               //\/\/\/\/\Tính tổng/\/\/\/\/\\
               totalValue =
                 '<label id="total-label" style="color:#E74C3C" for="Total">Tổng ' +

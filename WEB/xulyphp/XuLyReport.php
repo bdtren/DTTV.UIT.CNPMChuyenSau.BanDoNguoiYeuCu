@@ -255,9 +255,9 @@ function bangTinDang($sort=""){
 
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr class="details">
-      <td class="text-center" style="width:195px !important;">'.$a[$i]['MADM'].'</td>
-      <td class="text-center" style="width:195px !important;">'.$a[$i]['TENDM'].'</td>
-      <td class="text-center" style="width:175px !important;">'.$a[$i]['SoTin'].'</span></td>   
+      <td class="text-center" style="width:400px !important;">'.$a[$i]['MADM'].'</td>
+      <td class="text-center" style="width:400px !important;">'.$a[$i]['TENDM'].'</td>
+      <td class="text-center" style="width:400px !important;">'.$a[$i]['SoTin'].'</span></td>   
   </tr>';
   }
   $result.='</tbody>//Tên danh mục//số tin đăng';
@@ -294,12 +294,12 @@ function bangNhanVien($sort=""){
     for( $i=0; $i<$lengthA; $i++){
         $result.='<tr id="mo-table-con" rel="'.$a[$i]['MANV'].'">
         <td><img id="img-mo-table-con" src="Images/sort/details_open.png" rel="'.$a[$i]['MANV'].'" alt="expand/collapse"></td>
-        <td class="text-center" style="width:135px !important;">'.$a[$i]['MANV'].'</td>
-        <td class="text-center" style="width:145px !important;">'.$a[$i]['HOTEN'].'</td>
-        <td class="text-center" style="width:100px !important;">'.$a[$i]['TENCV'].'</span></td>
-        <td class="text-center" style="width:100px !important;">'.number_format($a[$i]['SOGIOHD'],3).'</span></td>
-        <td class="text-center" style="width:60px !important;">'.$a[$i]['HSLUONG'].'</span></td>
-        <td class="text-center" style="width:140px !important;">'.number_format($a[$i]['LUONGCB'], 0,'.', ',').' VND</span></td>
+        <td class="text-center" style="width:165px !important;">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" style="width:153px !important;">'.$a[$i]['HOTEN'].'</td>
+        <td class="text-center" style="width:140px !important;">'.$a[$i]['TENCV'].'</span></td>
+        <td class="text-center" style="width:140px !important;">'.number_format($a[$i]['SOGIOHD'],3).'</span></td>
+        <td class="text-center" style="width:143px !important;">'.$a[$i]['HSLUONG'].'</span></td>
+        <td class="text-center" style="width:145px !important;">'.number_format($a[$i]['LUONGCB'], 0,'.', ',').' VND</span></td>
         <td class="text-center" style="width:140px !important;">'.number_format($a[$i]['Luong'], 0,'.', ',').' VND</span></td>
     </tr>';
     }
@@ -335,11 +335,11 @@ function bangNhanVienCon($reas, $sort=""){
 
     for( $i=0; $i<$lengthA; $i++){
         $result.='<tr >
-        <td class="text-center" width="167px">'.$a[$i]['MANV'].'</td>
-        <td class="text-center" width="162px">'.date("d-m-Y", strtotime($a[$i]['NGAYPC'])).'</td>
-        <td class="text-center" width="162px">'.$a[$i]['SOGIOHD'].'</span></td>
-        <td class="text-center" width="162px">'.$a[$i]['HSLUONG'].'</span></td>
-        <td class="text-center" width="162px">'.number_format($a[$i]['Luong'], 0,'.', ',').' VND</span></td>
+        <td class="text-center" width="222px">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" width="222px">'.date("d-m-Y", strtotime($a[$i]['NGAYPC'])).'</td>
+        <td class="text-center" width="222px">'.$a[$i]['SOGIOHD'].'</span></td>
+        <td class="text-center" width="222px">'.$a[$i]['HSLUONG'].'</span></td>
+        <td class="text-center" width="222px">'.number_format($a[$i]['Luong'], 0,'.', ',').' VND</span></td>
     </tr>';
     }
     $result.='</tbody>';
@@ -415,8 +415,8 @@ function bangDoanhThu($sort =""){
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr id="mo-table-con" class="" rel = "'.$a[$i]['LYDO'].'">
       <td><img id="img-mo-table-con" src="Images/sort/details_open.png" rel="'.$a[$i]['LYDO'].'" alt="expand/collapse"></td>
-      <td id="doanhthu-lydo" class="text-center" width="500px">'.$a[$i]['LYDO'].'</td>
-      <td class="text-center" width="300px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
+      <td id="doanhthu-lydo" class="text-center" width="725px">'.$a[$i]['LYDO'].'</td>
+      <td class="text-center" width="430px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
   </tr>';
   }
   $result.='</tbody>//Lý do//Doanh thu';
@@ -448,9 +448,9 @@ function bangDoanhThuCon($reas,$sort =""){
 
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr>
-      <td class="text-center" width="197px">'.$a[$i]['MADT'].'</td>
-      <td class="text-center" width="183px">'.$a[$i]['NGAYTHU'].'</span></td>
-      <td class="text-center" width="185px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
+      <td class="text-center" width="397px">'.$a[$i]['MADT'].'</td>
+      <td class="text-center" width="367px">'.$a[$i]['NGAYTHU'].'</span></td>
+      <td class="text-center" width="380px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
   </tr>';
   }
   $result.='</tbody>';
@@ -473,10 +473,10 @@ function bangThuNhap($sort ="not thing"){
           </thead>
           <tbody>
             <tr>
-                <td class="text-center" width="150px">1/1/1111</td>
-                <td class="text-center" width="150px">1 tỷ</td>
-                <td class="text-center" width="150px">500 triệu</span></td>
-                <td class="text-center" width="150px">500 triệu</span></td>
+                <td class="text-center" width="300px">1/1/1111</td>
+                <td class="text-center" width="330px">1 tỷ</td>
+                <td class="text-center" width="250px">500 triệu</span></td>
+                <td class="text-center" width="260px">500 triệu</span></td>
             </tr>
             <tr>
                 <td class="text-center" width="150px">2/2/2222</td>

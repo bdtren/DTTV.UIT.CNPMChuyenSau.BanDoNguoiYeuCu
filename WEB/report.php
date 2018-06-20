@@ -68,12 +68,13 @@
     </script>
 
       <div class="clearfix"></div>
-    <div class="col-md-8">
+      <div class="clearfix"></div>
+    <div class="col-md-12" style="max-width: 100vw;">
       <div id="fullscreen_bg" class="fullscreen_bg">
         <form class="form-signin">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
-              <div class="col-md-7 col-md-offset-2">
+              <div class="col-md-12 col-md-offset-2">
                 <div class="panel panel-default">
                   <div class="panel panel-primary">
                     <div class="text-center">
