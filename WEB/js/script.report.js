@@ -174,12 +174,12 @@ $(document).ready(function() {
             //"bJQueryUI": true,
             select: true,
             paging: false,
-            "language": {
-                      "info": "Hiển thị trang _PAGE_ của _PAGES_",
-                      "sInfo": "Hiển thị trang _START_ đến _END_ trong _TOTAL_ dòng",
-                      "sSearch": "Tìm kiếm:",
-                      "sEmptyTable": "Không có thông tin bảng theo yêu cầu",
-                      "sInfoFiltered": "(Duyệt từ _MAX_ dòng của bảng)",
+            language: {
+              info: "Hiển thị trang _PAGE_ của _PAGES_",
+              sInfo: "Hiển thị trang _START_ đến _END_ trong _TOTAL_ dòng",
+              sSearch: "Tìm kiếm:",
+              sEmptyTable: "Không có thông tin bảng theo yêu cầu",
+              sInfoFiltered: "(Duyệt từ _MAX_ dòng của bảng)"
             },
             fnInitComplete: function() {
               this.fnAdjustColumnSizing();
@@ -365,6 +365,8 @@ $(document).ready(function() {
         }
       });
       promises.push(request);
+      sortType ="";
+      inputVal="";
     }
   });
 
@@ -419,6 +421,29 @@ $(document).ready(function() {
           call = "";
           break;
       }
+      var optionSelected = document.getElementById("thong-ke");
+      var optionSelected_value =
+        optionSelected.options[optionSelected.selectedIndex].value;
+
+      reportname= optionSelected_value;
+      //dropdownChangeEvent(optionSelected_value);
+      //radiobtnChoice();
+      sortType= document.getElementById("time-input").type;
+      //////////Radio thời gian
+      //radiobtnChangeEvent();
+      var timeVal = document.getElementById("time-input").value;
+      // Kiểm tra cấu trúc đầu vào quý
+      if (document.getElementById("time-input").type == "text") {
+        const checkKey = /^[1-4]\/[0-9]{4}?$/;
+        if (!checkKey.test(timeVal)) {
+          alert(
+            "Lỗi nhập liệu: yêu cầu nhập đúng cấu trúc (quý)/(năm) với quý từ 1 đến 4"
+          );
+          document.getElementById("time-input").value = null;
+          return;
+        }
+      }
+      inputVal = timeVal.toString();
       request = $.post(
         "./xulyphp/XuLyReport.php",
         {
@@ -433,17 +458,18 @@ $(document).ready(function() {
         }
       );
       promises.push(request);
+      sortType ="";
+      inputVal="";
     }
   });
 });
 
-//Format số               
-function numberWithCommas (x) {
+//Format số
+function numberWithCommas(x) {
   var parts = x.toString().split(".");
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return parts.join(".") + " " + unit;
-};
-
+}
 
 //In báo cáo
 function printReport() {

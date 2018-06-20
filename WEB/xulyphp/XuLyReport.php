@@ -147,7 +147,7 @@ function csdlNhanVienCon($reas, $sort=""){
     $qReas=($reas!=null&&$reas!="")? ' and nv.MANV="'.$reas.'"':'';
 
     include('../xulyphp/connect.php');
-    $sql='SELECT nv.MANV, NGAYPC, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
+    $sql='SELECT nv.MANV, NGAYPC, CHITIET, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
     from nhanvien nv, chucvu cv, phancong pc
     where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$qReas.$sort.';';
 
@@ -317,7 +317,7 @@ function bangNhanVienCon($reas, $sort=""){
     $result = '<thead> <!--'.$reas.'-->
 
     <tr>
-        <th class="text-center" width="115px">Mã nhân viên</th>
+        <th class="text-center" width="115px">Công việc</th>
         <th class="text-center" width="115px">Ngày PC</th>
         <th class="text-center" width="115px">Số giờ làm</th>
         <th class="text-center" width="115px">Hệ số</th>
@@ -335,7 +335,7 @@ function bangNhanVienCon($reas, $sort=""){
 
     for( $i=0; $i<$lengthA; $i++){
         $result.='<tr >
-        <td class="text-center" width="222px">'.$a[$i]['MANV'].'</td>
+        <td class="text-center" width="222px">'.$a[$i]['CHITIET'].'</td>
         <td class="text-center" width="222px">'.date("d-m-Y", strtotime($a[$i]['NGAYPC'])).'</td>
         <td class="text-center" width="222px">'.$a[$i]['SOGIOHD'].'</span></td>
         <td class="text-center" width="222px">'.$a[$i]['HSLUONG'].'</span></td>
@@ -430,7 +430,7 @@ function bangDoanhThu($sort =""){
 }
 
 function bangDoanhThuCon($reas,$sort =""){
-    $result = '<thead <!--r:'.$reas.'-->>
+    $result = '<thead <!--r:'.$sort.'-->>
     <tr>
         <th class="text-center" width="115px">Mã Doanh thu</th>
         <th class="text-center" width="115px">Ngày thu</th>
