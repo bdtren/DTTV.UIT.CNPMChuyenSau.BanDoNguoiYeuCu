@@ -12,6 +12,7 @@ if ($srcName!="") {
     $test = explode(".", $srcName);
     $ext = end($test);
     $name = $data[0] . '-' . $data[1] . '-' . $data[2] .'-' . rand(1, 999) . '.' . $ext;
+    $name = str_replace(';', '', $name);
     if($_POST["nguon"]=="km"){
         $location = '../Images/Promotion/'.$name;
         $pureLocation = './Images/Promotion/'.$name;

@@ -210,9 +210,10 @@ function addKhuyenMai() {
         //alert(JSON.stringify(dat));
         
         var formDat = new FormData();
-        formDat.append("anhQuangCao", file);
+        formDat.append("anhDauVao", file);
         dat2 = JSON.stringify(dat2);
         formDat.append("data", dat2);
+        formDat.append("nguon", "km");
         var request = $.ajax({
           url: "../../xulyphp/xulyAnh.php",
           data: formDat,

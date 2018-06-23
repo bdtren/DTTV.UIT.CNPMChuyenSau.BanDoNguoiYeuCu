@@ -144,7 +144,7 @@
 					  <p class="media-body pb-3 mb-0 small lh-125 border-gray">
 						  <strong class="d-block text-gray-dark title-allpost"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span class="date-allpost" ><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
 						<i class="fa fa-shopping-bag"></i>  <?php echo $b['LOAITD'];?><br>
-						<i class="fa fa-money"></i>  <?php echo $b['GIABAN'];?>đ<br><?php echo $b['TSTD'];?><br>
+						<i class="fa fa-money"></i> <?php echo (strlen($b['TSTD'])<=250? $b['TSTD']: substr($b['TSTD'],0,250)."...");?><br>
 					  </p>
 					</div>
 				</a>

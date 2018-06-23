@@ -35,7 +35,7 @@
 		<?php include('header.php') ?>
 	
 	<section>
-		<form method="POST" action="create-account.php">
+		<form method="POST" action="create-account.php" enctype="multipart/form-data">
 		<div class="container1">
 			<div class="form_contain1">
 				<h1 id="dktk">Đăng ký tài khoản</h1>
@@ -61,10 +61,19 @@
 						<input type="radio" name="gender" value="male"> <font color="white">Nam</font> 
 						<input type="radio" name="gender" value="female" > <font color="white">Nữ</font> 
 						<input type="radio" name="gender" value="other" > <font color="white">Khác</font> 
+
+				<br>
+				<span> <label>Ảnh minh họa: </label> </span>
+				<span id="uploaded-image"></span>
+				<br>
+				<input id="ipAvatarImage" type="file" name="anhDaiDien" accept="image/*" accept-charset="UTF-8" onchange="themAvatar(this)"> 
+				<br>
+
 				<label >Địa chỉ:</label>
 				<input type="text" class="textinput" name="address" required="">
 				<label >Điện thoại:</label>
 				<input type="text" class="textinput" name="phone" required="">
+				
 				
 				<label>Đôi dòng tâm sự:</label>
 				<textarea name="text" class="textTalk" rows="4"></textarea>
@@ -83,7 +92,11 @@
     <script src="js/popper.min.js"></script>
    	<script src="js/bootstrap.min.js"></script>
 
+	   <!-- Script xử lý trên trang -->
+   	<script src="js/script.account.js"></script>
+
+
 	<!--Progressive Web App(PWA): install, service worker-->
-	<script src="./sw-register.js"></script>
+	<!-- <script src="./sw-register.js"></script> -->
 </body>
 </html>
