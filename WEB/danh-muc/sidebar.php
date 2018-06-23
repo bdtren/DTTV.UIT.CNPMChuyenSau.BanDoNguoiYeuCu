@@ -27,7 +27,7 @@
 												$actBar = "";
 											}
 											?>								
-										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></a></li>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -56,7 +56,7 @@
 												$actBar = "";
 											}
 										?>								
-										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></a></li>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -84,7 +84,7 @@
 												$actBar = "";
 											}	
 										?>								
-										<li class="list-group-item <?php echo $actBar?>"><a href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>"><i class="fa fa-gift" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></a></li>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-gift" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
