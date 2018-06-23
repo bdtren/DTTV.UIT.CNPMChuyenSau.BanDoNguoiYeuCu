@@ -81,3 +81,14 @@
 	height: 70px;
 	border: 1px solid #C9C3C3;
 }
+
+.title-allpost{
+	font-size: 16px;
+	color: #4D4C4C;
+}
+
+.date-allpost{
+	font-size: 13px;
+	float: right;
+}
+

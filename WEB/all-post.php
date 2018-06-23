@@ -141,8 +141,8 @@
 				<a href="<?php echo "product-detail.php?MATD=".$b['MATD'];?>">
 					<div class="media text-muted pt-3 border-bottom ">
 					  <img src="<?php echo Chuoi2Mang($b['HINHANH'])[0];?>" alt="" class="mr-2 rounded">
-					  <p class="media-body pb-3 mb-0 small lh-125 border-gray" style="color: black; font-size: 16px;">
-						  <strong class="d-block text-gray-dark"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span style="float: right"><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
+					  <p class="media-body pb-3 mb-0 small lh-125 border-gray">
+						  <strong class="d-block text-gray-dark title-allpost"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span class="date-allpost" ><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
 						<i class="fa fa-shopping-bag"></i>  <?php echo $b['LOAITD'];?><br>
 						<i class="fa fa-money"></i>  <?php echo $b['GIABAN'];?>đ<br><?php echo $b['TSTD'];?><br>
 					  </p>

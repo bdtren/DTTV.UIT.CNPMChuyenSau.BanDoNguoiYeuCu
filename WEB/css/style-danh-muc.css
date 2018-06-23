@@ -23,20 +23,24 @@ body{
 .accordion .card .card-header button{
 	color: white;
 	text-decoration: none;
-	
 }
 
 .accordion .card .collapse .list-group-item a{
 	text-decoration: none;
-	color: white;
 }
 
 .accordion .card .collapse .list-group-item{
-	background: #a239ca;
+	background: white;
+	color: black;
+}
+.accordion .card .collapse .active{
+	background: #AF56D1;
+	color: white;
 }
 
 .accordion .card .collapse .list-group-item:hover{
 	background: #AF56D1;
+	color: white;
 }
 
 
@@ -192,6 +196,12 @@ body{
 		margin-top: 20px;
 	}
 
+.itemdanhmuc{
+	color:  white;
+	background: white;
+	text-decoration: none;
+}
+
 /* respondsive */
 @media only screen and (max-width: 1333px){
 	.product .card-product{
@@ -247,12 +257,5 @@ body{
 	}
 }
 
-
-/*
-	body{
-		background: #7411EF;
-	}
-
-*/
 
 

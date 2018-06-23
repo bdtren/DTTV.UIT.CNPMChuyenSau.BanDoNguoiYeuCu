@@ -19,8 +19,9 @@
 
 <body>
 	<?php include('header.php'); ?>
-	<div class="container main" style="overflow-y: auto;">
-		<h2>Điều khoản và dịch vụ của LoveMarket</h2>
+	
+	<div class="container choose">
+	<h2>Điều khoản và dịch vụ của LoveMarket</h2>
 		<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 		  <li class="nav-item">
 			<a class="nav-link active"  data-toggle="pill" href="#pills-dk" role="tab" aria-controls="pills-dk" aria-selected="false">Điều khoản</a>
@@ -29,7 +30,9 @@
 			<a class="nav-link" data-toggle="pill" href="#pills-qd" role="tab" aria-controls="pills-qd" aria-selected="false">Dịch vụ</a>
 		  </li>
 		</ul>
-		
+	</div>
+	
+	<div class="container main" style="overflow-y: auto;">
 		<div class="tab-content" id="pills-tabContent">
 			<!-- Điều khoản -->
 		  <div class="tab-pane fade show active" id="pills-dk" role="tabpanel" aria-labelledby="pills-dk">
@@ -179,8 +182,8 @@
 			
 			
 			<!-- Quy định -->
-		  <div class="tab-pane fade" id="pills-qd" role="tabpanel" aria-labelledby="pills-qd">
-			  <h1 style="text-align: center"> GIỚI THIỆU VỀ TIN ĐẶC BIỆT</h1>
+		  <div class="tab-pane fade" id="pills-qd" role="tabpanel" aria-labelledby="pills-qd" style="overflow-y: auto;">
+			  <h1 style="text-align: center" > GIỚI THIỆU VỀ TIN ĐẶC BIỆT</h1>
             <h4>
               &emsp;Tin đặc biệt là gì?
             </h4>
@@ -208,11 +211,9 @@
             </ul>
 		  </div>
 			
-			
-		</div>
+			  </div>
 		</div>
 	
-	</div>
 	<?php include('footer.php'); ?>
 	
 	

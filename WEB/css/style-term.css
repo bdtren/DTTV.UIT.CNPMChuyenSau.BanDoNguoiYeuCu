@@ -1,9 +1,23 @@
 body{
 	background: url(../Images/logon/JShine.jpg);
 }
+
+.choose{
+	color: white;
+	margin-top: 4.2em;
+	font-size: 30px;
+}
+.choose h2{
+	text-align: center;
+	color: white;
+}
+.choose ul li a{
+	color: white;
+}
+
 .main{
-	margin-top: 5.5em;
-	height: 35em;
+	margin-top: 1em;
+	height: 25em;
 	background: #EBEBEB;
 	font-family: 'Arsenal', sans-serif;
 	margin-bottom: 20px;
