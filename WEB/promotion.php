@@ -1,4 +1,7 @@
 <?php 
+	session_start();
+	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
+	$MaKH = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	$PageName="promotion";
 ?>
 

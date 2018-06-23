@@ -117,9 +117,11 @@ function themTinDang($info = array())
         echo 'error loading input info';
         return;
     }
-
+    $info[8]=($info[8]==""|| $info[8]==null)? "Chia tay lấy lại vốn": $info[8];
+    $info[9]=($info[9]==""|| $info[9]==null)? "Chia tay lấy lại vốn": $info[9];
+    $day= date("Y/m/d");
     $sql = 'INSERT into tindang
-    values ("' . $ma . '","NV0000","' . $info[0] . '","ribbon-normal","0","(SELECT CURDATE())","' . $info[2] . '","' . $info[1] . '","' . $info[5] . '","","' . $info[6] . '","' . $info[7] . '","' . $info[9] . '","' . $info[10] . '","dang cho","' . $info[8] . '")';
+    values ("' . $ma . '","NV0000","' . $info[0] . '","ribbon-normal","0","'.$day.'","' . $info[2] . '","' . $info[1] . '","' . $info[5] . '","","' . $info[6] . '","' . $info[7] . '","' . $info[9] . '","' . $info[10] . '","dang cho","' . $info[8] . '")';
 
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {

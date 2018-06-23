@@ -426,8 +426,9 @@ function duyetTinCho($data)
 {
     include '../xulyphp/connect.php';
 
+    $day= date("Y/m/d");
     $sql = 'UPDATE tindang
-            SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '"
+            SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '", NGAYDANG="'.$day.'"
             WHERE MATD = "' . $data[0] . '";';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {

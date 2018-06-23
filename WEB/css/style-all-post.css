@@ -1,7 +1,6 @@
 /* CSS Document */
-
-#mainlarge{
-	background: url(../Images/logon/SublimeVivid.jpg);
+body{
+	background: #E9E9E9;
 	font-family: 'Arima Madurai', cursive;
 }
 .main{
@@ -10,70 +9,32 @@
 
 .main .profile{
 	margin-top: 1em;
-	background: rgba(255,255,255,0.00);
 }
 
 .main .profile img{
 	border-radius: 50%;
 	border: 1px solid #C9C9C9;
 }
-.btn-type-purple{
-	background: rgba(200,0,255,1.00);
-	color: white;
-}
-.btn-type-purple:hover{
-	background: rgba(218,85,255,1.00);
-}
-.btn-type-pink{
-	background: rgba(255,0,229,1.00);
-	color: white;
-}
-.btn-type-pink:hover{
-	background: rgba(255,85,237,1.00);
-}
+
 .profile .card{
 	padding: 0.5em;
-	background: rgba(255,255,255,0.45);
 }
 
 .profile .username{
-	color: white;
+	color: #FD00A5;
 	text-align: center;
-	font-weight: bolder;
 }
 
 .profile i{
-	color: white;
+	color: #197BFF;
 }
 
 .profile ul li{
-	color: rgba(119,119,119,1.00);
+	color: black;
 }
-.profile .card .list-group li{
-	background: rgba(255,255,255,0.46);
-	color: rgba(119,119,119,1.00);
-}
-.profile .card .list-group li textarea{
-	background: rgba(255,255,255,0.62);
-	color: rgba(136,136,136,1.00);
-}
-.news .rounded h6{
-	color: white;
-}
-.news,.news .rounded,.news .rounded .media ,.news .rounded .media{
-	background: rgba(255,255,255,0.00);
-}
-.news .rounded{
-	background: rgba(255,255,255,0.72);
-}
-.news .rounded .media p strong span{
-	color: rgba(136,136,136,1.00);
-}
+
 .news i{
-	color: white;
-}
-.news a{
-	text-decoration: none;
+	color: #FF00C6;
 }
 
 .media img{

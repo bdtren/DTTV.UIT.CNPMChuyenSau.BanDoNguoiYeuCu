@@ -71,8 +71,8 @@
 
 			  <div class="tab-pane fade" id="ques-2" role="tabpanel" aria-labelledby="v-ques-2">
 				 Để có thể đăng được tin lên <b>Love Market</b> bạn cần phải hoàn thành các bước sau:<br>
-									 <strong>Bước 1:</strong> Đăng kí tài khoản với đầy đủ thông tin tại đường dẫn: <a href="HTTPS://lovemarket.000webhostapp.com/create-account.php">này</a>. <br>
-									 <strong>Bước 2:</strong> Tại đường dẫn: <a href="HTTPS://lovemarket.000webhostapp.com/user/user-page.php">này</a> chọn thêm bài đăng và điền đầy đủ thông tin <br>
+									 <strong>Bước 1:</strong> Đăng kí tài khoản với đầy đủ thông tin tại đường dẫn: <a href="./create-account.php">này</a>. <br>
+									 <strong>Bước 2:</strong> Tại đường dẫn: <a href="./user/user-page.php">này</a> chọn thêm bài đăng và điền đầy đủ thông tin <br>
 									 <strong>Bước 3:</strong> Kiểm duyệt viên sẽ kiểm tra tính hợp lệ của tin đăng và gửi trả kết quả yêu cầu đăng tin cho bạn trong vòng 24h
 			 </div>
 				
@@ -126,14 +126,14 @@
 
                         &emsp;Cách 2: Sử dụng tính năng Quản lý tin đăng <br>
 
-                        &emsp;&emsp;– Nhấp vào đường dẫn <a href="HTTPS://lovemarket.000webhostapp.com/user/user-page.php">này</a>.  Vào tài khoản của mình bằng cách điền tài khoản và mật khẩu khi đăng tin. 
+                        &emsp;&emsp;– Nhấp vào đường dẫn <a href="./user/user-page.php">này</a>.  Vào tài khoản của mình bằng cách điền tài khoản và mật khẩu khi đăng tin. 
                         Tại trang này bạn sẽ biết được danh sách các tin đăng đang hiển thị, đã ẩn, chưa kiểm duyệt hoặc bị từ chối của mình.
 			 </div>
 				
 				
 			 <div class="tab-pane fade" id="ques-5" role="tabpanel" aria-labelledby="v-ques-5">
 				  Chi phí cho việc tạo một tin đặc biệt là <strong>10.000đ</strong> với các tin đẩy; <strong>20.000đ</strong> với các tin có nhãn mới, hot, giảm giá và được thanh toán bẳng thẻ điện thoại(Viettel, Mobifone, Vinaphone,S-fone, Vietnamobile). Bạn có thể tạo một tin đặc biệt qua các bước sau: <br>
-                            &emsp; <strong>Bước 1:</strong> Tại trang <a href="HTTPS://lovemarket.000webhostapp.com/user/user-page.php">Quản lý</a> chọn đến danh sách các tin đang đăng và nhấp chọn tạo tin đặc biệt. <br>
+                            &emsp; <strong>Bước 1:</strong> Tại trang <a href="./user/user-page.php">Quản lý</a> chọn đến danh sách các tin đang đăng và nhấp chọn tạo tin đặc biệt. <br>
                             &emsp; <strong>Bước 2:</strong> Một hộp thoại xuất hiện cho phép bạn lựa chọn loại tin đặc biệt, một số thông tin kèm theo và mã thẻ-serial để thanh toán. <br>
                             &emsp; <strong>Bước 3:</strong> Sau khi hoàn thành hộp thoại này, bạn nhấp gửi. Nhân viên của Love Market sẽ tiến hành kiểm tra thông tin và thực hiện tạo tin đặc biệt cho bạn.
 			 </div>	

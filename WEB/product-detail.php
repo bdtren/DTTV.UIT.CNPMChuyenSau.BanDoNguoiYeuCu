@@ -299,6 +299,6 @@
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 		<!--Progressive Web App(PWA): install, service worker-->
-	<script src="./sw-register.js"></script>
+	<!-- <script src="./sw-register.js"></script> -->
 </body>
 </html>
