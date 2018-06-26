@@ -19,6 +19,19 @@ if (isset($_POST['login'])) {
         //echo '<script language="javascript"> alert("đúng") </script>';
 
         $row = mysqli_fetch_assoc($result);
+
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $day= date("Y/m/d H:i:s");
+        $sql = "UPDATE TAIKHOAN
+                SET KTONLINE = 1, TGDANGNHAP = '$day'
+                WHERE TENTK='$username'";
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_query($conn, $sql)) {
+
+        } else {
+            echo ".1 Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        
         //Lưu tên đăng nhập
         $_SESSION['useradmin'] = $username;
         $_SESSION['manv'] = $row['MANV'];

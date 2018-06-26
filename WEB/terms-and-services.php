@@ -9,6 +9,7 @@
 	<meta charset="utf-8">
 	<title>Điều khoản và quy định</title>	
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./Images/Home/favicon.png">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style-term.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -188,9 +189,9 @@
               &emsp;Tin đặc biệt là gì?
             </h4>
             <ul>
-              <li>&emsp;&emsp;Tin đặc biệt là các tin được hiển thị ở 3 ô trống trong khung tin đặc biệt(trừ tin đẩy), các tin đăng này được
+              <li>&emsp;&emsp;Tin đặc biệt là các tin được hiển thị ở 3 ô trống trong khung tin đặc biệt, các tin đăng này được
                 nằm ở trang đầu tiên của danh sách tin đăng và được tách biệt với các tin đăng khác.</li>
-              <li>&emsp;&emsp;Tin đặc biệt bao gồm tin đẩy, tin mới, tin hot và tin giảm giá.</li>
+              <li>&emsp;&emsp;Tin đặc biệt bao gồm  tin mới, tin hot và tin giảm giá.</li>
             </ul>
 
             <h4>
@@ -199,7 +200,7 @@
             <ul>
               <li>&emsp;&emsp;Tin đặc biệt là các tin được hiển thị ở vị trí tách biệt với các tin đăng bình thường trên danh sách tin.</li>
               <li>&emsp;&emsp;Tin đặc biệt sẽ được thực hiện hiển thị trong 24h kể từ khi bắt đầu thực hiện dịch vụ.</li>
-              <li>&emsp;&emsp;Giá dịch vụ tin đặc biệt là  10.000đ với các tin đẩy; 20.000đ với các tin có nhãn mới, hot, giảm giá và được thanh toán bẳng thẻ điện thoại(Viettel, Mobifone, Vinaphone).</li>
+              <li>&emsp;&emsp;Giá dịch vụ tin đặc biệt là  15.000đ với các tin hot; 10.000đ với các tin có nhãn mới, giảm giá và được thanh toán bẳng thẻ điện thoại(Viettel, Mobifone, Vinaphone).</li>
             </ul>
 
             <h4>

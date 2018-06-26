@@ -119,6 +119,7 @@ function themTinDang($info = array())
     }
     $info[8]=($info[8]==""|| $info[8]==null)? "Chia tay lấy lại vốn": $info[8];
     $info[9]=($info[9]==""|| $info[9]==null)? "Chia tay lấy lại vốn": $info[9];
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $day= date("Y/m/d");
     $sql = 'INSERT into tindang
     values ("' . $ma . '","NV0000","' . $info[0] . '","ribbon-normal","0","'.$day.'","' . $info[2] . '","' . $info[1] . '","' . $info[5] . '","","' . $info[6] . '","' . $info[7] . '","' . $info[9] . '","' . $info[10] . '","dang cho","' . $info[8] . '")';

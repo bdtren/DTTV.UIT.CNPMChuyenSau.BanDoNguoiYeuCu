@@ -54,7 +54,7 @@
 				
 			  <a class="nav-link" data-toggle="pill" href="#ques-4" role="tab" aria-controls="v-ques-4" aria-selected="false"><i class="fa fa-question-circle"></i>  Làm sao để kiểm tra tình trạng của một tin?</a>
 				
-			  <a class="nav-link" data-toggle="pill" href="#ques-5" role="tab" aria-controls="v-ques-5" aria-selected="false"><i class="fa fa-question-circle"></i>  Chi phí cho việc tạo một tin đặc biệt(tin mới, tin hot, tin giảm giá, đẩy tin) trên Love Market là bao nhiêu?</a>
+			  <a class="nav-link" data-toggle="pill" href="#ques-5" role="tab" aria-controls="v-ques-5" aria-selected="false"><i class="fa fa-question-circle"></i>  Chi phí cho việc tạo một tin đặc biệt(tin mới, tin hot, tin giảm giá) trên Love Market là bao nhiêu?</a>
 				
 
    			 </div>
@@ -132,7 +132,7 @@
 				
 				
 			 <div class="tab-pane fade" id="ques-5" role="tabpanel" aria-labelledby="v-ques-5">
-				  Chi phí cho việc tạo một tin đặc biệt là <strong>10.000đ</strong> với các tin giảm giá; <strong>15.000đ</strong> với các tin có nhãn mới, hot và được thanh toán bẳng thẻ điện thoại(Viettel, Mobifone, Vinaphone,S-fone, Vietnamobile). Bạn có thể tạo một tin đặc biệt qua các bước sau: <br>
+				  Chi phí cho việc tạo một tin đặc biệt là <strong>10.000đ</strong> với các tin có nhãn tin mới, tin giảm giá; <strong>15.000đ</strong> với các tin có nhãn hot và được thanh toán bẳng thẻ điện thoại(Viettel, Mobifone, Vinaphone,S-fone, Vietnamobile). Bạn có thể tạo một tin đặc biệt qua các bước sau: <br>
                             &emsp; <strong>Bước 1:</strong> Tại trang <a href="./user/user-page.php">Quản lý</a> chọn đến danh sách các tin đang đăng và nhấp chọn tạo tin đặc biệt. <br>
                             &emsp; <strong>Bước 2:</strong> Một hộp thoại xuất hiện cho phép bạn lựa chọn loại tin đặc biệt, một số thông tin kèm theo và mã thẻ-serial để thanh toán. <br>
                             &emsp; <strong>Bước 3:</strong> Sau khi hoàn thành hộp thoại này, bạn nhấp gửi. Nhân viên của Love Market sẽ tiến hành kiểm tra thông tin và thực hiện tạo tin đặc biệt cho bạn.

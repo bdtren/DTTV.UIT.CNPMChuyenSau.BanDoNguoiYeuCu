@@ -15,14 +15,9 @@ function onLogout() {
 
   $.ajax({
     url: "../../xulyphp/xulyAdmin.php",
-    data: { callFunction: "themPhanCong", data: dat },
+    data: { callFunction: "xulyDangXuat", data: dat },
     type: "post",
     success: function(output) {
-      if (output == "successfully") {
-        
-      } else {
-        
-      }
       $("#addition-result").show();
       arrTable[selected]["TRALOI"] = document.getElementById("taAnswer").value;
     }

@@ -155,6 +155,7 @@ function PhanHoi($info)
             $MaPH = TangMa($row['MAPH']);
         }
     }
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $day = date("Y/m/d");
     //Lưu phan hoi
     $sql = "INSERT INTO  GHINHANPHANHOI (MAPH,MAKH,NGAYPH,MUCDO,KNGT,PHANHOI) VALUE ('$MaPH','$MaKH','$day','$hailong','$gioithieu','$phanhoikhac')";

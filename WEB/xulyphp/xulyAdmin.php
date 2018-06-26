@@ -13,7 +13,7 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
             break;
         case 'themCauTraLoi':themCauTraLoi($data);
             break;
-        case 'themPhanCong':themPhanCong($data);
+        case 'xulyDangXuat':xulyDangXuat($data);
             break;
         case 'nhapThemTien':nhapThemTien($data);
             break;
@@ -38,7 +38,7 @@ function layThongTinNhanVien($MaNV = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            from nhanvien nv, chucvu cv, taikhoan tk, phancong pc
+            from NHANVIEN nv, CHUCVU cv, TAIKHOAN tk, PHANCONG pc
             where nv.MACV=cv.MACV and nv.MATK=tk.MATK and nv.MANV = pc.MANV " . $qNV . "
             group by nv.MANV;";
     if ($result = mysqli_query($conn, $sql)) {
@@ -59,7 +59,7 @@ function layThongTinPhanCong($MaNV = "", $date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            from nhanvien nv, phancong pc
+            from NHANVIEN nv, PHANCONG pc
             where nv.MANV = pc.MANV " . $qNV . $qDate . ";";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -79,7 +79,7 @@ function laySoGioLam($MaNV = "", $date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT MANV, NGAYPC, sum(SOGIOHD) SoGio
-            from  phancong pc
+            from  PHANCONG pc
             where MAPC is not null " . $qNV . " " . $qDate . "
             group by MANV;";
     if ($result = mysqli_query($conn, $sql)) {
@@ -92,7 +92,7 @@ function laySoGioLam($MaNV = "", $date = "")
 }
 
 //Thêm thông tin phân công sau khi nhân viên đăng xuất
-function themPhanCong($data = array())
+function xulyDangXuat($data = array())
 {
     $a = layMaPhanCongCuoi();
     $ma = TangMaSo($a[0]['MAPC']);
@@ -103,12 +103,12 @@ function themPhanCong($data = array())
         return;
     }
 
-    $sql = 'INSERT into phancong
+    $sql = 'INSERT into PHANCONG
     VALUES ("' . $ma . '", "' . $data[0] . '","' . $data[1] . '", "' . $data[2] . '", "' . $data[3] . '", "' . $data[4] . '")';
 
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
-        echo "New phancong's record created successfully";
+        echo "New PHANCONG's record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -216,7 +216,7 @@ function layDanhSachKhuyenMai($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            FROM khuyenmai km, nhanvien nv
+            FROM khuyenmai km, NHANVIEN nv
             WHERE km.MANV=nv.MANV;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -426,6 +426,7 @@ function duyetTinCho($data)
 {
     include '../xulyphp/connect.php';
 
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $day= date("Y/m/d");
     $sql = 'UPDATE tindang
             SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '", NGAYDANG="'.$day.'"
@@ -628,7 +629,7 @@ function layMaPhanCongCuoi()
     $a = null;
     include '../xulyphp/connect.php';
     $sql = 'SELECT MAPC
-    from phancong
+    from PHANCONG
     order by MAPC desc
     limit 1;';
 
