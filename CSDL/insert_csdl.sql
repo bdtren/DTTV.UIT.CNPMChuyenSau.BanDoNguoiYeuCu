@@ -40,21 +40,21 @@ insert into DANHMUC values('DM2003','Bài hát','./Images/danh-muc/baihat3.jpg',
 insert into DANHMUC values('DM2004','Bài thơ','./Images/danh-muc/baitho2.jpg','');
 
 /*Báng taikhoan */
-insert into TAIKHOAN values('TK0000','TK_Rong1','');
-insert into TAIKHOAN values('TK0001','leminhtuan','0548285f0782698da567b4cc9a26a60e');
-insert into TAIKHOAN values('TK0002','nguyenanhtuan','15f8182445bac21b05802649a8a698e7');
-insert into TAIKHOAN values('TK0003','vosivai','d5e52f81475c5b7171475a26e75494e2');
-insert into TAIKHOAN values('TK0004','nguyenbaoduy','1749c475847d79ee64005d65418b6611');
-insert into TAIKHOAN values('TK0005','hoangtuananh','31982b46a268821854de5386aeeb55cb');
+insert into TAIKHOAN values('TK0000','TK_Rong1','','0','');
+insert into TAIKHOAN values('TK0001','leminhtuan','0548285f0782698da567b4cc9a26a60e','0','');
+insert into TAIKHOAN values('TK0002','nguyenanhtuan','15f8182445bac21b05802649a8a698e7','0','');
+insert into TAIKHOAN values('TK0003','vosivai','d5e52f81475c5b7171475a26e75494e2','0','');
+insert into TAIKHOAN values('TK0004','nguyenbaoduy','1749c475847d79ee64005d65418b6611','0','');
+insert into TAIKHOAN values('TK0005','hoangtuananh','31982b46a268821854de5386aeeb55cb','0','');
 
-insert into TAIKHOAN values('TK1000','TK_Rong2','');
-insert into TAIKHOAN values('TK1005','nguyenvanduc','efef06093ce1d35ae279a5076bd5cb5e');
-insert into TAIKHOAN values('TK1006','trananhviet','1589c2a3db6bca699926c48eb7e3f4e6');
-insert into TAIKHOAN values('TK1007','hoxuanhuong','ff9bb42488827b1a2c235983d5e49349');
-insert into TAIKHOAN values('TK1008','nguyenthitrang','d4d199758110ab079c2cb70cf58d93c2');
-insert into TAIKHOAN values('TK1009','hoangtuananh','31982b46a268821854de5386aeeb55cb');
-insert into TAIKHOAN values('TK1010','lehoangnam','465dd9264f5f5100e0eb6f0a0f7427bf');
-insert into TAIKHOAN values('TK1011','hoxuanthuong','8e86ee7c524d6b1dd3e9173ddef30d61');
+insert into TAIKHOAN values('TK1000','TK_Rong2','','0','');
+insert into TAIKHOAN values('TK1005','nguyenvanduc','efef06093ce1d35ae279a5076bd5cb5e','0','');
+insert into TAIKHOAN values('TK1006','trananhviet','1589c2a3db6bca699926c48eb7e3f4e6','0','');
+insert into TAIKHOAN values('TK1007','hoxuanhuong','ff9bb42488827b1a2c235983d5e49349','0','');
+insert into TAIKHOAN values('TK1008','nguyenthitrang','d4d199758110ab079c2cb70cf58d93c2','0','');
+insert into TAIKHOAN values('TK1009','hoangtuananh','31982b46a268821854de5386aeeb55cb','0','');
+insert into TAIKHOAN values('TK1010','lehoangnam','465dd9264f5f5100e0eb6f0a0f7427bf','0','');
+insert into TAIKHOAN values('TK1011','hoxuanthuong','8e86ee7c524d6b1dd3e9173ddef30d61','0','');
 
 
 

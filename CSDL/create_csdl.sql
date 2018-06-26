@@ -411,6 +411,8 @@ create table TAIKHOAN
    MATK                           char(6)                        not null,
    TENTK                          varchar(20)                    not null,
    MATKHAU                        varchar(32)                    not null,
+   KTONLINE						  int							 not null,
+   TGDANGNHAP					  TIMESTAMP						 not null,
    primary key (MATK)
 );
 
