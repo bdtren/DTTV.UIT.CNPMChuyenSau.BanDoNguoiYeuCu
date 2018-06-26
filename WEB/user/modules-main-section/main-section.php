@@ -27,6 +27,14 @@
 	{
 		include('modules-main-section/followers.php');
 	}
+	else if($temp=='news-follow')  //Danh tin theo dõi
+	{
+		include('modules-main-section/news-follow.php'); //trang
+	}
+	else if($temp=='num-break')  //Danh sách vi phạm
+	{
+		include('modules-main-section/num-break.php'); //trang
+	}
 	else
 	{
 		include('modules-main-section/dashboard.php');	

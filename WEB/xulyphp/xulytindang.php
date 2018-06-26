@@ -199,9 +199,10 @@
             if(empty($Type))
             {
                 $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
-                FROM        TINDANG,KHACHHANG 
+                FROM        TINDANG,KHACHHANG,TD_THUOC_DM  
                 WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                 AND         TINHTRANGTIN = 'da dang'
+                AND         TD_THUOC_DM.MATD = TINDANG.MATD
                 AND         LOAITIN IN ('ribbon-discount', 'ribbon-new', 'ribbon-hot')
                 AND         MADM = '$DanhMuc'
                 ORDER BY    RAND()
@@ -210,9 +211,10 @@
             else
             {
                 $sql = "SELECT      *, TINDANG.TAMSU AS TSTD
-                        FROM        TINDANG,KHACHHANG 
+                        FROM        TINDANG,KHACHHANG ,TD_THUOC_DM 
                         WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
                         AND         TINHTRANGTIN = 'da dang'
+                        AND         TD_THUOC_DM.MATD = TINDANG.MATD
                         AND         LOAITD = '$Type'
                         AND         LOAITIN IN ('ribbon-discount', 'ribbon-new', 'ribbon-hot')
                         AND         MADM = '$DanhMuc'

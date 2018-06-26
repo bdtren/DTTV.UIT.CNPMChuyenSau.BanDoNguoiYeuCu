@@ -1,4 +1,5 @@
 <?php
+	include('xulyphp/xulythongbao.php');
 	if(isset($_SESSION['user']))
 	{
 		$UserName = $_SESSION['user'] ;
@@ -97,26 +98,25 @@
 							<div id="loginheader">Thông báo từ LoveMarket</div>
 							<!-- Danh sách thông báo mới từ người đang theo dõi -->
 							<ul class="list-group list-group-flush">
-								<?php 
-										   $i=0; $num=2;
-										   while($i<$num){ ?>
+								<?php  $a = TaiKhuyenMai(); 
+								for($i = 0; $i < $a['dem']; $i++) {?>
 								<!-- vòng lặp thông báo -- Nên cho 2 thông báo -->
-								<a href="product-detail.php"> <!-- Link đến trang chi tiết sản phẩm -->
+								<a href="<?php echo 'promotion-detail.php?MAKM='.$a[$i]['MAKM']; ?>"> <!-- Link đến trang chi tiết sản phẩm -->
 								<li class="list-group-item colnotify">
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="Images/icons/icon-72x72.png" style="border-radius: 0;"> <!-- Mặc định -->
+												<img class="notiavatar" src="<?php echo $a[$i]['DDANH'] ?>" style="border-radius: 0;"> <!-- Mặc định -->
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">
 												<div class="col-7">
-													<label class="user">Tiêu đề</label>
+													<label class="user"><?php echo $a[$i]['TIEUDE'] ?></label>
 												</div>
 												</div>
 												<div class="row">
 												<div class="col-12">
-													<label class="head">Nội dung</label>
+													<label class="head"><?php echo $a[$i]['CHITIET'] ?></label>
 												</div>	
 												</div>					
 											</div>
@@ -124,7 +124,7 @@
 									</div>						
 								</li>
 								</a>
-								<?php $i++; } ?>
+								<?php } ?>
 									<!-- Kết thúc 1 thông báo mới -->
 							 </ul>
 							<a class="btn" href="promotion.php" id="createacc">Xem nhiều hơn</a> <!-- chuyển sang khuyến mãi -->
@@ -132,29 +132,28 @@
 							<!-- Danh sách thông báo mới từ LoveMarket -->
 							<div id="loginheader">Thông báo từ người đang theo dõi</div>
 							<ul class="list-group list-group-flush">
-								<?php 
-										   $i=0; $num=2;
-										   while($i<$num){ ?>
+							<?php  $a = TaiThongBao($MaKH); 
+								for($i = 0; $i < $a['dem']; $i++) {?>
 								<!-- vòng lặp thông báo -- Nên cho 3 thông báo -->
-								<a href="product-detail.php"> <!-- Link đến trang chi tiết sản phẩm -->
+								<a href="<?php echo' product-detail.php?MATD='.$a[$i]['MATD']?>"> <!-- Link đến trang chi tiết sản phẩm -->
 								<li class="list-group-item colnotify">
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="Images/user/avatar5.png">
+												<img class="notiavatar" src="<?php echo $a[$i]['AVATAR']?>">
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">
 												<div class="col-7">
-													<label class="user">Người đăng</label>
+													<label class="user"><?php echo $a[$i]['HOTEN']?></label>
 												</div>
 												<div class="col-5">
-													<label class="time">Thời gian</label>
+													<label class="time"><?php echo $a[$i]['NGAYDANG']?></label>
 												</div>	
 												</div>
 												<div class="row">
 												<div class="col-12">
-													<label class="head">Tiêu đề bài viết</label>
+													<label class="head"><?php echo $a[$i]['TIEUDE']?></label>
 												</div>	
 												</div>					
 											</div>

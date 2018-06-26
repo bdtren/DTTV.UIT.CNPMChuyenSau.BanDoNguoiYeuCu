@@ -20,7 +20,7 @@
           <td><?php echo $a[$i]['TIEUDE']?></td>
           <td><?php echo $a[$i]['NGAYDANG']?></td>
           <td>
-            <form action='user-page.php' method='post'>
+            <form action='user-page.php?page=article-buy' method='post'>
               <input type="hidden" name="MATD" value="<?php echo $a[$i]['MATD'];?>" />
               <button type='submit' name='AnHienTin' class="btn btn-type-blue" style="color:white;">
               <?php if(KiemTraAnHienTin($a[$i]["MATD"])==1) echo "Đã ẩn"; else echo "Đã hiện"; ?>

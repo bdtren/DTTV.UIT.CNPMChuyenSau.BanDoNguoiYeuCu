@@ -19,7 +19,7 @@
           <td><a href="<?php echo '../all-post.php?MAKH='.$a[$i]['MA']; ?>" style="text-decoration: none;"><?php echo $a[$i]['HOTEN']?></a></td>
           <td><?php echo $a[$i]['SDT']?></td>
           <td>
-            <form action='user-page.php' method='post'>
+            <form action='user-page.php?page=follow' method='post'>
               <input type="hidden" name="MAKH2" value="<?php echo $a[$i]['MA'];?>" />
               <input type="hidden" name="MAKH1" value="<?php echo $MaKH;?>" />
               <button type="submit" name='BoTheoDoi' class="btn btn-danger" style="color:white;">Bỏ theo dõi</button>

@@ -20,7 +20,7 @@
           <td><?php echo $a[$i]['TIEUDE']?></td>
           <td><?php echo $a[$i]['NGAYDANG']?></td>
           <td>
-            <form action='user-page.php' method='post'>
+            <form action='user-page.php?page=waiting' method='post'>
               <input type="hidden" name="MATD" value="<?php echo $a[$i]['MATD'];?>" /> 
               <button type='submit' name='XoaTin' class="btn btn-type-purple" style="color:white;">Xóa</button>
             </form>
@@ -35,7 +35,7 @@
 </div>
 
 <!-- Chỉnh sửa bài đăng-->
-<form action='user-page.php' method='post'>
+<form action='user-page.php?page=waiting' method='post'>
 <div class="modal fade" id="editPost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" >
     <div class="modal-content" >
