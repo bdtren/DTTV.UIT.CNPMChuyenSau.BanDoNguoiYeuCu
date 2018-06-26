@@ -326,7 +326,7 @@ function bangNhanVienCon($reas, $sort=""){
   </thead>
   <tbody class="bang-con">';
     $a=csdlNhanVienCon($reas, $sort);
-    $result.='<!--'.$a[1]["Luong"].'-->';
+    $result.='<!---->';
     if(!$a){
         echo $result;
         return;
