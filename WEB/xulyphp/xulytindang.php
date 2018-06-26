@@ -301,6 +301,24 @@
         return $a;
     }
 
+    //Hàm lấy tên danh mục theo mã danh mục
+    function layTenDanhMuc($DanhMuc)
+    {
+        $a = null;
+        include('xulyphp/connect.php');
+        $sql = "SELECT TENDM from danhmuc
+                where MADM='$DanhMuc'";
+        if ($result = mysqli_query($conn, $sql)) 
+        {
+            if($row = mysqli_fetch_assoc($result))
+            {
+                $a = $row;
+            } 
+        }
+        mysqli_close($conn);
+        return $a["TENDM"];
+    }
+
     // load chi tiet san pham
     function TaiChiTietSanPham($MATD)
     {

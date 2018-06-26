@@ -29,7 +29,8 @@
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
 	
-<title>Danh mục sản phẩm</title>
+<title><?php if($DanhMuc!="DM0000"&&$DanhMuc!=""&&$DanhMuc!=null) echo layTenDanhMuc($DanhMuc)." - ";
+	 else if($Search!='') echo "Kết quả tìm kiếm: ".$Search." - ";?> Danh mục sản phẩm</title>
 
 <link rel="manifest" href="./manifest.json"> 
 
@@ -57,7 +58,7 @@
 								else
 								{
 									echo "<div class='col-md-6 text-head'>";
-									echo 'Kết quả tìm : '.$Search;
+									echo 'Kết quả tìm kiếm: '.$Search;
 									echo "</div>";
 								}							
 							?>

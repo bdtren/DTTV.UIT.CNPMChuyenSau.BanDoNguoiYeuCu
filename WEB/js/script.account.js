@@ -5,8 +5,9 @@ function showUploadedItem(source) {
   
     var img = document.createElement("img");
     //img.style.width="100%";
-    img.setAttribute("width", "120px");
-    img.setAttribute("height", "auto");
+    // img.setAttribute("width", "120px");
+    // img.setAttribute("height", "120px");
+    img.setAttribute("style", "width: 120px; max-height: 120px;");
     img.src = source;
     list.appendChild(img);
   }
