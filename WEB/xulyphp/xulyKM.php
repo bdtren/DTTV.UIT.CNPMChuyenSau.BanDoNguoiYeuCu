@@ -3,7 +3,7 @@
 		$a = null;
 		include 'connect.php';
 		$sql = 'SELECT *
-		from khuyenmai;';
+		from KHUYENMAI;';
 
 		mysqli_set_charset($conn, "utf8");
 		if ($result = mysqli_query($conn, $sql)) {
@@ -19,7 +19,7 @@
 		$a = null;
 		include 'connect.php';
 		$sql = 'SELECT *
-		from khuyenmai 
+		from KHUYENMAI 
 		where MAKM="'.$MaKM.'";';
 
 		mysqli_set_charset($conn, "utf8");

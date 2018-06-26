@@ -166,16 +166,17 @@
 
 				<div class="form-group" style="padding: 15px;">
 					<label>Nội dung xử lí</label>
-					<textarea class="form-control" rows="4" style="resize: none;"></textarea>
+					<textarea id="taNDXuLy" class="form-control" rows="4" style="resize: none;"></textarea>
 				</div>
 
 
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal" name="thoat">Thoát</button>
-					<button type="button" class="btn btn-danger" name="huytaotin">Hủy xử lý</button>
-					<button type="button" class="btn btn-primary" name="chapnhantaotin">Xử lý tin đăng</button>
+					<button type="button" class="btn btn-danger" name="huytaotin" onclick="breachFail()">Hủy xử lý</button>
+					<button type="button" class="btn btn-primary" name="chapnhantaotin" onclick="breachSuccess()">Xử lý tin đăng</button>
 				</div>
+				<div id="addition-result" class="modal-footer"></div>
 			</form>
 		</div>
 	</div>

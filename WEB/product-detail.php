@@ -5,7 +5,7 @@
 	$PageName="chitietsanpham"; 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
-	$a = TaiChiTietSanPham($_GET['MATD']) 
+	$a = TaiChiTietSanPham($_GET['MATD']);
 ?>
 
 

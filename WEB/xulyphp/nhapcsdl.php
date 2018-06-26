@@ -32,7 +32,7 @@ function layThacMacCuoi()
     $a = null;
     include '../xulyphp/connect.php';
     $sql = 'SELECT MATM
-    from thacmac
+    from THACMAC
     order by MATM desc
     limit 1;';
 
@@ -76,12 +76,12 @@ function themThacMac($info = array())
     }
 
     $customerInfo = $info[0] . '_' . $info[1] . '_' . $info[2] . '\nNội dung: ' . $info[3];
-    $sql = 'INSERT into thacmac (MATM, MAKH, MANV, LOAIHOTRO, VANDEGIAIDAP, CHITIET)
+    $sql = 'INSERT into THACMAC (MATM, MAKH, MANV, LOAIHOTRO, VANDEGIAIDAP, CHITIET)
     VALUES ("' . $ma . '", "KH0000","NV0000", "Liên hệ", "Liên hệ chúng tôi", "' . $customerInfo . '")';
 
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
-        echo "New thacmac's record created successfully";
+        echo "New THACMAC's record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -94,7 +94,7 @@ function layTinDangCuoi()
     $a = null;
     include '../xulyphp/connect.php';
     $sql = 'SELECT MATD
-    from tindang
+    from TINDANG
     order by MATD desc
     limit 1;';
 
@@ -121,7 +121,7 @@ function themTinDang($info = array())
     $info[9]=($info[9]==""|| $info[9]==null)? "Chia tay lấy lại vốn": $info[9];
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $day= date("Y/m/d");
-    $sql = 'INSERT into tindang
+    $sql = 'INSERT into TINDANG
     values ("' . $ma . '","NV0000","' . $info[0] . '","ribbon-normal","0","'.$day.'","' . $info[2] . '","' . $info[1] . '","' . $info[5] . '","","' . $info[6] . '","' . $info[7] . '","' . $info[9] . '","' . $info[10] . '","dang cho","' . $info[8] . '")';
 
     mysqli_set_charset($conn, "utf8");

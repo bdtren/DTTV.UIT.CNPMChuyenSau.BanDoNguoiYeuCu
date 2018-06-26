@@ -478,7 +478,7 @@ function updateDacBiet(result, position, newSName, price) {
   //alert(JSON.stringify(dat));
   $.ajax({
     url: "../../xulyphp/xulyAdmin.php",
-    data: { callFunction: "ThemTinDB", data: dat },
+    data: { callFunction: "themTinDB", data: dat },
     type: "post",
     success: function(output) {
       if (output == "1.successfully2.successfully") {
@@ -562,7 +562,65 @@ function updateKiemDuyet(result, position) {
   });
 }
 
+//Xử lý vi phạm của tin đăng
 
+//Xử ly nhấn các phím trong modal
+function breachFail() {
+  updateViPham("khong-vi-pham", selected);
+}
+
+function breachSuccess() {
+  updateViPham("vi-pham", selected);
+}
+
+//Thêm thay đổi tin đặc biệt vào bảng tindang và bảng khachhang
+function updateViPham(result, position) {
+  selected = position;
+
+  var dat = [];
+  dat[0] = 
+  dat[1] = nv[0]["MANV"];
+  dat[2] = arrTable[position]["MATD"];
+  dat[3] = result;
+  dat[4] = document.getElementById("taNDXuLy").value;
+
+
+  // if(false){
+  //   document.getElementById("addition-result").className = "alert alert-danger";
+  //   document.getElementById("addition-result").innerHTML =
+  //     "<strong> Lỗi!</strong> không được phát sinh nợ cho khách hàng";
+  //   return;
+  // }
+
+  //alert(JSON.stringify(dat));
+  $.ajax({
+    url: "../../xulyphp/xulyAdmin.php",
+    data: { callFunction: "xulyViPham", data: dat },
+    type: "post",
+    success: function(output) {
+      if (output == "1.successfully2.successfully3.successfully") {
+        arrTable[selected]["TINHTRANGTIN"] = "da dang";
+        arrTable[selected]["LOAITIN"] = dat[1];
+        arrTable[selected]["SODU"] = dat[3];
+        document.getElementById("addition-result").className =
+          "alert alert-success";
+          if(result=="thanh-cong"){
+            document.getElementById("addition-result").innerHTML =
+              "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
+          } else{
+            document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đã được HỦY.";
+          }
+      } else {
+        document.getElementById("addition-result").className =
+          "alert alert-danger";
+        document.getElementById("addition-result").innerHTML =
+          "<strong>Thất bại!</strong> Không thể lưu kết quả, mã lỗi:" + output;
+      }
+      $("#addition-result").show();
+    }
+  });
+}
 
 /*********************************************************************/
 /***************CÁC MODEL + XỬ LÝ TRÊN TRANG CHĂM SÓC KHÁCH HÀNG*****/

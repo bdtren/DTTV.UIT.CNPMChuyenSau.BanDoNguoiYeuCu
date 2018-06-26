@@ -99,8 +99,8 @@ function csdlTinDang($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
     $sql='SELECT cttd.MADM, TENDM, count(MATD) SoTin 
-    from danhmuc dm, (select MADM, td.MATD, TIEUDE, NGAYDANG 
-                        from tindang td, td_thuoc_dm tddm
+    from DANHMUC dm, (select MADM, td.MATD, TIEUDE, NGAYDANG 
+                        from TINDANG td, TD_THUOC_DM tddm
                         where td.MATD=tddm.MATD'.$sort.') cttd
     where dm.MADM = cttd.MADM
     group by cttd.MADM
@@ -123,8 +123,8 @@ function csdlNhanVien($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
     $sql='SELECT nv.MANV, HOTEN, TENCV,sum(SOGIOHD) SOGIOHD, HSLUONG, LUONGCB, (hsluong*luongcb*temp.sum) Luong
-        from nhanvien nv, chucvu cv, phancong pc, (SELECT nv2.MANV manv2, sum(SOGIOHD) sum
-                                                    from nhanvien nv2, chucvu cv2, phancong pc2
+        from NHANVIEN nv, CHUCVU cv, PHANCONG pc, (SELECT nv2.MANV manv2, sum(SOGIOHD) sum
+                                                    from NHANVIEN nv2, CHUCVU cv2, PHANCONG pc2
                                                     where nv2.MANV = pc2.MANV and nv2.MACV=cv2.MACV'.$sort.'
                                                     group by nv2.MANV) temp
         where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$sort.' and nv.manv=temp.manv2
@@ -148,7 +148,7 @@ function csdlNhanVienCon($reas, $sort=""){
 
     include('../xulyphp/connect.php');
     $sql='SELECT nv.MANV, NGAYPC, CHITIET, SOGIOHD, HSLUONG, (cv.LUONGCB*cv.HSLUONG*pc.SOGIOHD) Luong 
-    from nhanvien nv, chucvu cv, phancong pc
+    from NHANVIEN nv, CHUCVU cv, PHANCONG pc
     where nv.MANV = pc.MANV and nv.MACV=cv.MACV'.$qReas.$sort.';';
 
     mysqli_set_charset($conn, "utf8");
@@ -168,12 +168,12 @@ function csdlThietBi($sort=""){
     $a = null;
     include('../xulyphp/connect.php');
     $sql='SELECT tb.MATB, TENTB, GIATRI, NGAYNHAP, MAKT, NGAYKT, TINHTRANG, ChiPhi, kt.GHICHU
-    from thietbi tb, kiemtratb kt, (select tb1.MATB, case
+    from THIETBI tb, KIEMTRATB kt, (select tb1.MATB, case
                                                 when TINHTRANG="Hu" 
                                                     then GIATRI
                                                 else 0
                                             end as ChiPhi
-                                    from thietbi tb1, kiemtratb kt1
+                                    from THIETBI tb1, KIEMTRATB kt1
                                     where tb1.MATB = kt1.MATB'.$sort.') sc
     where tb.MATB = kt.MATB and sc.MATB = kt.MATB'.$sort.';';
 
@@ -195,7 +195,7 @@ function csdlDoanhThu($sort=""){
 
     include('../xulyphp/connect.php');
     $sql='SELECT LYDO, SUM(DOANHTHU) DOANHTHU
-    from doanhthu 
+    from DOANHTHU 
     where MADT is not NULL'.$sort.'
     group by LYDO;';
 
@@ -217,7 +217,7 @@ function csdlDoanhThuCon($reas, $sort=""){
 
     include('../xulyphp/connect.php');
     $sql='SELECT MADT, NGAYTHU, DOANHTHU 
-    from doanhthu 
+    from DOANHTHU 
     where MADT is not NULL'.$qReas.$sort.';';
 
     mysqli_set_charset($conn, "utf8");
@@ -415,7 +415,7 @@ function bangDoanhThu($sort =""){
   for( $i=0; $i<$lengthA; $i++){
       $result.='<tr id="mo-table-con" class="" rel = "'.$a[$i]['LYDO'].'">
       <td><img id="img-mo-table-con" src="Images/sort/details_open.png" rel="'.$a[$i]['LYDO'].'" alt="expand/collapse"></td>
-      <td id="doanhthu-lydo" class="text-center" width="725px">'.$a[$i]['LYDO'].'</td>
+      <td id="DOANHTHU-lydo" class="text-center" width="725px">'.$a[$i]['LYDO'].'</td>
       <td class="text-center" width="430px">'.number_format($a[$i]['DOANHTHU'], 0,'.', ',').' VND</span></td>
   </tr>';
   }

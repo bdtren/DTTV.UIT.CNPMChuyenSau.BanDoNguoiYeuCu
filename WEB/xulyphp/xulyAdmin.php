@@ -17,11 +17,13 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
             break;
         case 'nhapThemTien':nhapThemTien($data);
             break;
-        case 'duyetTinCho': duyetTinCho($data);
+        case 'duyetTinCho':duyetTinCho($data);
             break;
-        case 'themTinDB': themTinDB($data);
+        case 'themTinDB':themTinDB($data);
             break;
         case 'layDanhMucTin':layDanhMucTin($data);
+            break;
+        case 'xulyViPham':xulyViPham($data);
             break;
         default:break;
     }
@@ -95,7 +97,7 @@ function laySoGioLam($MaNV = "", $date = "")
 function xulyDangXuat($data = array())
 {
     $a = layMaPhanCongCuoi();
-    $ma = TangMaSo($a[0]['MAPC']);
+    $ma = TangMaSo($a[0]['MAPC'], "PC");
     include '../xulyphp/connect.php';
     include "../admin/xulyphp/logout.php";
     if ($data == null) {
@@ -124,7 +126,7 @@ function laySoTheCaoTrong($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MADT) SOTM
-            FROM doanhthu
+            FROM DOANHTHU
             WHERE DOANHTHU < 10000;";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -139,7 +141,7 @@ function layThongTinTheCao($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT*
-            from doanhthu dt, khachhang kh
+            from DOANHTHU dt, KHACHHANG kh
             where dt.MAKH=kh.MAKH;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -156,7 +158,7 @@ function layDanhMucTin($MaTD = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT tddm.matd, dm.madm,dm.tendm
-            FROM td_thuoc_dm tddm, danhmuc dm
+            FROM TD_THUOC_DM tddm, DANHMUC dm
             WHERE tddm.madm=dm.madm " . $qTD . ";";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -172,7 +174,7 @@ function nhapThemTien($data)
 {
     include '../xulyphp/connect.php';
 
-    $sql = 'UPDATE doanhthu
+    $sql = 'UPDATE DOANHTHU
             SET DOANHTHU = ' . $data[2] . '
             WHERE MADT = "' . $data[0] . '";';
 
@@ -183,7 +185,7 @@ function nhapThemTien($data)
         echo ".1 Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    $sql = 'UPDATE khachhang
+    $sql = 'UPDATE KHACHHANG
             SET SODU = SODU + ' . $data[3] . '
             WHERE MAKH = "' . $data[1] . '";';
     mysqli_set_charset($conn, "utf8");
@@ -201,7 +203,7 @@ function laySoKhuyenMai($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MAKM) SOTM
-            FROM khuyenmai";
+            FROM KHUYENMAI";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
 
@@ -216,7 +218,7 @@ function layDanhSachKhuyenMai($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            FROM khuyenmai km, NHANVIEN nv
+            FROM KHUYENMAI km, NHANVIEN nv
             WHERE km.MANV=nv.MANV;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -231,14 +233,14 @@ function layDanhSachKhuyenMai($date = '')
 function themKhuyenMai($data = array())
 {
     $a = layMaKhuyenMaiCuoi();
-    $ma = TangMaSo($a[0]['MAKM']);
+    $ma = TangMaSo($a[0]['MAKM'], "KM");
     include '../xulyphp/connect.php';
     if ($data == null) {
         echo 'error loading input info';
         return;
     }
 
-    $sql = 'INSERT into khuyenmai
+    $sql = 'INSERT into KHUYENMAI
     VALUES ("' . $ma . '", "' . $data[0] . '","' . $data[1] . '", "' . $data[5] . '", "' . $data[2] . '", "' . $data[3] . '", "' . $data[4] . '")';
 
     mysqli_set_charset($conn, "utf8");
@@ -259,7 +261,7 @@ function xoaKhuyenMai($data = array())
         return;
     }
 
-    $sql = 'DELETE FROM khuyenmai
+    $sql = 'DELETE FROM KHUYENMAI
     WHERE MAKM="' . $data[0] . '";';
 
     mysqli_set_charset($conn, "utf8");
@@ -271,7 +273,6 @@ function xoaKhuyenMai($data = array())
     mysqli_close($conn);
 }
 
-
 /********************************************************/
 /**********XỬ LÝ TRÊN TRANG NHÂN VIÊN KIỂM DUYỆT********/
 /******************************************************/
@@ -281,7 +282,7 @@ function laySoTinDacBiet($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATD) SOTM
-            FROM tindang
+            FROM TINDANG
             WHERE LOAITIN !='ribbon-normal'";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -295,7 +296,7 @@ function laySoTinChoDuyetDacBiet($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATD) SOTM
-            FROM tindang
+            FROM TINDANG
             WHERE TINHTRANGTIN IN ('duyet moi','duyet hot','duyet gg');";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -309,7 +310,7 @@ function laySoTinChoDuyet($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATD) SOTM
-            FROM tindang
+            FROM TINDANG
             WHERE TTKIEMDUYET=0;";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -323,7 +324,7 @@ function laySoTinViPham($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATD) SOTM
-            FROM tindang
+            FROM TINDANG
             WHERE TINHTRANGTIN='da huy';";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -337,7 +338,7 @@ function laySoTinBiBaoCao($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(VANDEGIAIDAP) SOTM
-            FROM thacmac
+            FROM THACMAC
             WHERE LOAIHOTRO='Vi pham' AND TRALOI='';";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -351,7 +352,7 @@ function layTinDangChoDB($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-                from tindang td, khachhang kh
+                from TINDANG td, KHACHHANG kh
                 where td.MAKH = kh.MAKH  and TINHTRANGTIN in('duyet moi', 'duyet hot', 'duyet gg');";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -362,11 +363,12 @@ function layTinDangChoDB($date = '')
     return $a;
 }
 //Lấy danh sách chi phí tạo tin đặc biệt
-function layGiaTaoTinDB(){
+function layGiaTaoTinDB()
+{
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-                from loaitin;";
+                from LOAITIN;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
@@ -380,7 +382,7 @@ function themTinDB($data)
 {
     include '../xulyphp/connect.php';
 
-    $sql = 'UPDATE tindang
+    $sql = 'UPDATE TINDANG
             SET TINHTRANGTIN = "da dang", LOAITIN = "' . $data[1] . '"
             WHERE MATD = "' . $data[0] . '";';
     mysqli_set_charset($conn, "utf8");
@@ -390,12 +392,12 @@ function themTinDB($data)
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 
-    $sql = 'UPDATE khachhang
-            SET SODU = "' . $data[4] . '"
-            WHERE MAKH = "' . $data[3] . '";';
+    $sql = 'UPDATE KHACHHANG
+            SET SODU = "' . $data[3] . '"
+            WHERE MAKH = "' . $data[2] . '";';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
-        echo "successfully";
+        echo "2.successfully";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
@@ -403,14 +405,13 @@ function themTinDB($data)
     mysqli_close($conn);
 }
 
-
 //Lấy danh sách tin đăng đang chờ để được duyệt đăng
 function layTinDangChoDuyet($date = '')
 {
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-                from tindang td, khachhang kh
+                from TINDANG td, KHACHHANG kh
                 where td.MAKH = kh.MAKH  and TINHTRANGTIN = 'dang cho' /*or TTKIEMDUYET = 0;*/";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -427,9 +428,9 @@ function duyetTinCho($data)
     include '../xulyphp/connect.php';
 
     date_default_timezone_set('Asia/Ho_Chi_Minh');
-    $day= date("Y/m/d");
-    $sql = 'UPDATE tindang
-            SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '", NGAYDANG="'.$day.'"
+    $day = date("Y/m/d");
+    $sql = 'UPDATE TINDANG
+            SET TTKIEMDUYET = 1, TINHTRANGTIN = "' . $data[2] . '", NGAYDANG="' . $day . '"
             WHERE MATD = "' . $data[0] . '";';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
@@ -439,10 +440,10 @@ function duyetTinCho($data)
     }
 
     $a = layMaThongBaoTDCuoi();
-    $ma = TangMaSo($a[0]['MATBTD']);
+    $ma = TangMaSo($a[0]['MATBTD'], "TB");
 
-    $sql = 'INSERT INTO thongbaotindang
-            VALUES ("' . $ma . '", "' . $data[0] . '","(SELECT CURDATE())");';
+    $sql = 'INSERT INTO THONGBAOTINDANG
+            VALUES ("' . $ma . '", "' . $data[0] . '","' . $day . ';';
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
         echo "2.successfully";
@@ -459,8 +460,9 @@ function layDanhSachBaoCaoVP($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *, tm.MAKH as KHBC
-    from thacmac tm, tindang td, khachhang kh
-    where tm.VANDEGIAIDAP = td.MATD and td.MAKH = kh.MAKH and LOAIHOTRO='vi pham';";
+            from THACMAC tm, TINDANG td, KHACHHANG kh
+            where tm.VANDEGIAIDAP = td.MATD and td.MAKH = kh.MAKH and LOAIHOTRO='vi pham'
+            and tm.VANDEGIAIDAP not in(select MATD from XULYVIPHAM);";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
             $a[] = $row;
@@ -468,6 +470,61 @@ function layDanhSachBaoCaoVP($date = '')
     }
     mysqli_close($conn);
     return $a;
+}
+
+//Xử lý các tin đăng vi phạm
+function xulyViPham($data = array())
+{
+    include '../xulyphp/connect.php';
+
+    //Cập nhật kết quả giải đáp báo cáo vi phạm
+    $sql = 'UPDATE THACMAC
+            SET TRALOI = "' . $data[4] . '"
+            WHERE MATM = "' . $data[0] . '";';
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "1.successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+
+    //Cập nhật thông tin vi phạm
+    if ($data[3] == "vi-pham") {
+        $a = layViPhamCuoi();
+        $ma = TangMaSo($a[0]['MAXULY'], "XL");
+        include '../xulyphp/connect.php';
+        if ($data == null) {
+            echo 'error loading input data';
+            return;
+        }
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        $day = date("Y/m/d H:i:s");
+        $sql = "INSERT INTO XULYVIPHAM VALUE('$ma', '$data[1]','$data[2]','$day', '$data[4]');";
+
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_query($conn, $sql)) {
+            echo "2.successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+        $sql = 'UPDATE TINDANG
+                SET TINHTRANGTIN = "da huy"
+                WHERE MATD = "' . $data[2] . '";';
+
+        mysqli_set_charset($conn, "utf8");
+        if (mysqli_query($conn, $sql)) {
+            echo "3.successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+
+    } else {
+        echo "2.successfully3.successfully";
+    }
+
+    mysqli_close($conn);
 }
 
 //Lấy thông tin khách hàng
@@ -484,7 +541,7 @@ function layThongTinKhachHang($dsKH = array())
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-            from khachhang
+            from KHACHHANG
             where MAKH is not null " . $qKH . ";";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -504,7 +561,7 @@ function laySoCauHoi($date = '')
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATM) SOTM
-                FROM thacmac
+                FROM THACMAC
                 WHERE TRALOI='';";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
@@ -520,7 +577,7 @@ function layCauHoiChiTiet($maTM = "", $date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-                from thacmac tm, khachhang kh
+                from THACMAC tm, KHACHHANG kh
                 where tm.MAKH = kh.MAKH;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -536,7 +593,7 @@ function themCauTraLoi($data)
 {
     include '../xulyphp/connect.php';
 
-    $sql = 'UPDATE thacmac
+    $sql = 'UPDATE THACMAC
             SET TRALOI = "' . $data[1] . '"
             WHERE MaTM = "' . $data[0] . '";';
 
@@ -558,7 +615,7 @@ function laySoPhanHoi($date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MAPH) SOPH
-                FROM ghinhanphanhoi ph;";
+                FROM GHINHANPHANHOI ph;";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
 
@@ -574,7 +631,7 @@ function layPhanHoiChung($date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT MAPH, ph.MAKH, HOTEN, NGAYPH, MUCDO
-                FROM ghinhanphanhoi ph, khachhang kh
+                FROM GHINHANPHANHOI ph, KHACHHANG kh
                 WHERE ph.MAKH = kh.MAKH;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -590,7 +647,7 @@ function layPhanHoiChiTiet($maPH = "", $date = "")
     $a = array();
     include '../../xulyphp/connect.php';
     $sql = "SELECT *
-                from ghinhanphanhoi ph, khachhang kh
+                from GHINHANPHANHOI ph, KHACHHANG kh
                 where ph.MAKH = kh.MAKH;";
     if ($result = mysqli_query($conn, $sql)) {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -610,7 +667,7 @@ function layMaKhuyenMaiCuoi()
     $a = null;
     include '../xulyphp/connect.php';
     $sql = 'SELECT MAKM
-    from khuyenmai
+    from KHUYENMAI
     order by MAKM desc
     limit 1;';
 
@@ -649,7 +706,7 @@ function layMaThongBaoTDCuoi()
     $a = null;
     include '../xulyphp/connect.php';
     $sql = 'SELECT MATBTD
-    from thongbaotindang
+    from THONGBAOTINDANG
     order by MATBTD desc
     limit 1;';
 
@@ -663,7 +720,26 @@ function layMaThongBaoTDCuoi()
     return $a;
 }
 
-function TangMaSo($Ma)
+//Lấy vi phạm cuối cùng
+function layViPhamCuoi()
+{
+    $a = null;
+    include '../xulyphp/connect.php';
+    $sql = 'SELECT MAXULY FROM XULYVIPHAM
+            ORDER BY MAXULY DESC
+            LIMIT 1;';
+
+    mysqli_set_charset($conn, "utf8");
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    return $a;
+}
+
+function TangMaSo($Ma, $dau)
 {
     if (!empty($Ma)) {
         $tukhoa = substr($Ma, 0, 2);
@@ -681,5 +757,5 @@ function TangMaSo($Ma)
         }
         return $MaMoi;
     }
-    return null;
+    return $dau . "0001";
 }
