@@ -306,8 +306,8 @@
     {
         $a = null;
         include('xulyphp/connect.php');
-        $sql = "SELECT TENDM from danhmuc
-                where MADM='$DanhMuc'";
+        $sql = "SELECT TENDM FROM DANHMUC
+                WHERE MADM='$DanhMuc'";
         if ($result = mysqli_query($conn, $sql)) 
         {
             if($row = mysqli_fetch_assoc($result))
