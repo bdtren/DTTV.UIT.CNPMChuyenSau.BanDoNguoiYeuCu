@@ -6,7 +6,21 @@
 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
-	$a = TaiThongTinKhachHang($_GET['MAKH'])
+	$a = TaiThongTinKhachHang($_GET['MAKH']);
+
+	#Thêm style màu cho mỗi giới tính
+	if($a['GIOITINH']=="Nam"){
+		$icongioitinh = "fa fa-mars";
+		$sectionuser = "sectionman";
+		$sectioncontact = "sectioncontactman";
+	}
+	else{
+		$icongioitinh = "fa fa-venus";
+		$sectionuser = "sectionwoman";
+		$sectioncontact = "sectioncontactwoman";
+	}
+
+
 ?>
 
 <!doctype html>
@@ -43,20 +57,15 @@
 					<p class="card-text username"><?php echo $a['TENTK']; ?></p>
 				  </div>
 				  <ul class="list-group list-group-flush">
-					<li class="list-group-item"><i class="fa fa-user sectionuser" aria-hidden="true"></i>
+					<li class="list-group-item"><i class="fa fa-user <?php echo $sectionuser ?>" aria-hidden="true"></i>
   						Họ tên: <?php echo $a['HOTEN']; ?></li>
 					<li class="list-group-item">
-						<?php if($a['GIOITINH']=="Nam") { ?>
-						<i class="fa fa fa-mars sectionuser" aria-hidden="true"></i>
+						<i class="<?php echo $icongioitinh ?> <?php echo $sectionuser ?>" aria-hidden="true"></i>
   						Giới tính:<?php echo $a['GIOITINH']; ?> 
-					  	<?php } else { ?>
-					  	<i class="fa fa-venus sectionuser" aria-hidden="true"></i>
-  						Giới tính:<?php echo $a['GIOITINH']; ?> 
-					  	<?php } ?>
 					  </li>
-					<li class="list-group-item"><i class="fa fa-address-book sectionuser" aria-hidden="true"></i>
+					<li class="list-group-item"><i class="fa fa-address-book <?php echo $sectionuser ?>" aria-hidden="true"></i>
   						Địa chỉ:<?php echo $a['DIACHI']; ?></li>
-					<li class="list-group-item"><i class="fa fa-pencil sectionuser" aria-hidden="true"></i>
+					<li class="list-group-item"><i class="fa fa-pencil <?php echo $sectionuser ?>" aria-hidden="true"></i>
   						Đôi dòng tâm sự: <textarea class="form-control" rows="5" id="comment" style="resize: none;" disabled>Dòng tâm sự của tài khoản <?php echo $a['TAMSU']; ?></textarea></li>
 				  </ul>
 				  <div class="card-body">
@@ -120,11 +129,11 @@
 						<div class="collapse" id="collapseExample">
 						  <div class="card card-body">
 							 <ul class="list-group list-group-flush">
-								<li class="list-group-item"><i class="fa fa-facebook-official sectioncontact" aria-hidden="true"></i>
+								<li class="list-group-item"><i class="fa fa-facebook-official <?php echo $sectioncontact ?>" aria-hidden="true"></i>
   									Facebook : <?php echo $a['FACEBOOK']; ?></li>
-								<li class="list-group-item"><i class="fa fa-mobile sectioncontact" aria-hidden="true"></i>
+								<li class="list-group-item"><i class="fa fa-mobile  <?php echo $sectioncontact ?>" aria-hidden="true"></i>
   									Điện thoại : <?php echo $a['SDT']; ?></li>
-								<li class="list-group-item "><i class="fa fa-envelope-open sectioncontact" aria-hidden="true"></i>
+								<li class="list-group-item "><i class="fa fa-envelope-open  <?php echo $sectioncontact ?>" aria-hidden="true"></i>
   									Email : <?php echo $a['EMAIL']; ?></li>
 							  </ul>
 						  </div>

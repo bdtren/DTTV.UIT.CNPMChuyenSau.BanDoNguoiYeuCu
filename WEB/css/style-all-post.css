@@ -92,8 +92,11 @@
 	float: right;
 }	
 
-.profile .card .list-group .sectionuser{
+.profile .card .list-group .sectionman{
 	color: #0F5FFF;
+}
+.profile .card .list-group .sectionwoman{
+	color: #FF0EBA;
 }
 
 .news .media .media-body .d-block .calendaricon{
@@ -105,6 +108,9 @@
 .news .media .media-body .moneyicon{
 	color: #48BC00;
 }
-.card-body .collapse .card .list-group .list-group-item .sectioncontact{
+.card-body .collapse .card .list-group .list-group-item .sectioncontactman{
 	color: #169DFF;
+}
+.card-body .collapse .card .list-group .list-group-item .sectioncontactwoman{
+	color: #FF15F6;
 }
