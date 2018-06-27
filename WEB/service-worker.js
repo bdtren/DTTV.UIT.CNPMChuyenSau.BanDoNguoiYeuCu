@@ -113,7 +113,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(precacheController.install());
 }); */
 
-//Realtim fetching data and add to cache+indexedDB
+//Realtime fetching data and add to cache+indexedDB
 self.addEventListener('fetch', (event) => {
 
   const req = event.request;
