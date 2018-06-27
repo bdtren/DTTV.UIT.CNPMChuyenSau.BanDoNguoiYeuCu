@@ -43,13 +43,20 @@
 					<p class="card-text username"><?php echo $a['TENTK']; ?></p>
 				  </div>
 				  <ul class="list-group list-group-flush">
-					<li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i>
+					<li class="list-group-item"><i class="fa fa-user sectionuser" aria-hidden="true"></i>
   						Họ tên: <?php echo $a['HOTEN']; ?></li>
-					<li class="list-group-item"><i class="fa fa-transgender" aria-hidden="true"></i>
-  						Giới tính:<?php echo $a['GIOITINH']; ?></li>
-					<li class="list-group-item"><i class="fa fa-address-book" aria-hidden="true"></i>
+					<li class="list-group-item">
+						<?php if($a['GIOITINH']=="Nam") { ?>
+						<i class="fa fa fa-mars sectionuser" aria-hidden="true"></i>
+  						Giới tính:<?php echo $a['GIOITINH']; ?> 
+					  	<?php } else { ?>
+					  	<i class="fa fa-venus sectionuser" aria-hidden="true"></i>
+  						Giới tính:<?php echo $a['GIOITINH']; ?> 
+					  	<?php } ?>
+					  </li>
+					<li class="list-group-item"><i class="fa fa-address-book sectionuser" aria-hidden="true"></i>
   						Địa chỉ:<?php echo $a['DIACHI']; ?></li>
-					<li class="list-group-item"><i class="fa fa-pencil" aria-hidden="true"></i>
+					<li class="list-group-item"><i class="fa fa-pencil sectionuser" aria-hidden="true"></i>
   						Đôi dòng tâm sự: <textarea class="form-control" rows="5" id="comment" style="resize: none;" disabled>Dòng tâm sự của tài khoản <?php echo $a['TAMSU']; ?></textarea></li>
 				  </ul>
 				  <div class="card-body">
@@ -113,11 +120,11 @@
 						<div class="collapse" id="collapseExample">
 						  <div class="card card-body">
 							 <ul class="list-group list-group-flush">
-								<li class="list-group-item"><i class="fa fa-facebook-official" aria-hidden="true"></i>
+								<li class="list-group-item"><i class="fa fa-facebook-official sectioncontact" aria-hidden="true"></i>
   									Facebook : <?php echo $a['FACEBOOK']; ?></li>
-								<li class="list-group-item"><i class="fa fa-mobile" aria-hidden="true"></i>
+								<li class="list-group-item"><i class="fa fa-mobile sectioncontact" aria-hidden="true"></i>
   									Điện thoại : <?php echo $a['SDT']; ?></li>
-								<li class="list-group-item"><i class="fa fa-envelope-open" aria-hidden="true"></i>
+								<li class="list-group-item "><i class="fa fa-envelope-open sectioncontact" aria-hidden="true"></i>
   									Email : <?php echo $a['EMAIL']; ?></li>
 							  </ul>
 						  </div>
@@ -142,9 +149,9 @@
 					<div class="media text-muted pt-3 border-bottom ">
 					  <img src="<?php echo Chuoi2Mang($b['HINHANH'])[0];?>" alt="" class="mr-2 rounded">
 					  <p class="media-body pb-3 mb-0 small lh-125 border-gray">
-						  <strong class="d-block text-gray-dark title-allpost"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span class="date-allpost" ><i class="fa fa-calendar"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
-						<i class="fa fa-shopping-bag"></i>  <?php echo $b['LOAITD'];?><br>
-						<i class="fa fa-money"></i> <?php echo (strlen($b['TSTD'])<=250? $b['TSTD']: substr($b['TSTD'],0,250)."...");?><br>
+						  <strong class="d-block text-gray-dark title-allpost"><i class="fa fa-diamond"></i>  <?php echo $b['TIEUDE'];?> <span class="date-allpost" ><i class="fa fa-calendar calendaricon"></i>  <?php echo $b['NGAYDANG'];?> </span></strong>
+						<i class="fa fa-shopping-bag bagicon"></i>  <?php echo $b['LOAITD'];?><br>
+						<i class="fa fa-money moneyicon"></i> <?php echo (strlen($b['TSTD'])<=250? $b['TSTD']: substr($b['TSTD'],0,250)."...");?><br>
 					  </p>
 					</div>
 				</a>

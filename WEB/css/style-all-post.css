@@ -91,3 +91,20 @@
 	font-size: 13px;
 	float: right;
 }	
+
+.profile .card .list-group .sectionuser{
+	color: #0F5FFF;
+}
+
+.news .media .media-body .d-block .calendaricon{
+	color: #FD2024;
+}
+.news .media .media-body .bagicon{
+	color: #FFB600;
+}
+.news .media .media-body .moneyicon{
+	color: #48BC00;
+}
+.card-body .collapse .card .list-group .list-group-item .sectioncontact{
+	color: #169DFF;
+}
