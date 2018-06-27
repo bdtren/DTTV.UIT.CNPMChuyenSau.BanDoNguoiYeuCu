@@ -328,7 +328,7 @@
         include('xulyphp/connect.php');
         $sql = "SELECT      *, TINDANG.TAMSU as TSTD
                 FROM        TINDANG,KHACHHANG 
-                WHERE       TINDANG.MAKH=KHACHHANG.MAKH 
+                WHERE       TINDANG.MAKH = KHACHHANG.MAKH 
                 AND         MATD = '$MATD'";
         if ($result = mysqli_query($conn, $sql)) 
         {

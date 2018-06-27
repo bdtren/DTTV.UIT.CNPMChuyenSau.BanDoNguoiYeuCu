@@ -5,16 +5,16 @@
 	$PageName="chitietsanpham"; 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
-	$a = TaiChiTietSanPham($_GET['MATD']);
-?>
+	$c = TaiChiTietSanPham($_GET['MATD']);
 
+?>
 
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="./Images/Home/favicon.png"/>
-<title><?php echo $a["TIEUDE"]?></title>
+<title><?php echo $c["TIEUDE"]?></title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
@@ -27,18 +27,18 @@
 
 <body>
 	<?php include('header.php'); ?>
-		
+
 		<div class="container-fluid page" style="margin-top: 4.8em; border: none;">
 			<div class="container-fluid">
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-4">
-						<label id="tieude"><?php  echo $a["TIEUDE"]; ?></label><br>
-						<label id="date">Ngày đăng: <span><?php  echo $a["NGAYDANG"]; ?></span></label>	
-						<label id="status">Tình trạng: <span><?php  echo $a["TINHTRANGMH"]; ?></span></label>
+						<label id="tieude"><?php  echo $c["TIEUDE"]; ?></label><br>
+						<label id="date">Ngày đăng: <span><?php  echo $c["NGAYDANG"]; ?></span></label>	
+						<label id="status">Tình trạng: <span><?php  echo $c["TINHTRANGMH"]; ?></span></label>
 						</div>
 						<div class="col-md-8" style="margin-top: 30px; margin-bottom: 5px;">
-							<button class="btn  theodoi" onclick='TheoDoi()'><?php if(KiemTraTheoDoiTinDang($MaKH,$a["MATD"])==1) echo "Bỏ Theo Dõi"; else echo "Theo Dõi"; ?></button>
+							<button class="btn  theodoi" onclick='TheoDoi()'><?php if(KiemTraTheoDoiTinDang($MaKH,$c["MATD"])==1) echo "Bỏ Theo Dõi"; else echo "Theo Dõi"; ?></button>
 							<script language="javascript">
 								function TheoDoi()
 								{
@@ -48,8 +48,8 @@
 									{
 										var info =[];
 										info[0] = "<?php echo $MaKH;?>";
-										info[1] = "<?php echo $a["MATD"];?>";
-										if("<?php echo KiemTraTheoDoiTinDang($MaKH,$a['MATD']);?>" == "0" )
+										info[1] = "<?php echo $c["MATD"];?>";
+										if("<?php echo KiemTraTheoDoiTinDang($MaKH,$c['MATD']);?>" == "0" )
 										{
 											$.ajax(
 											{
@@ -90,8 +90,8 @@
 							</script>
 							<a class="btn  baocaobtn" data-toggle="modal" data-target="#exampleModal">Báo cáo</a>
 							<div class="userinfo" data-toggle="modal" data-target="#contact">
-								<img class="imguser" src="<?php echo $a["AVATAR"];?>">
-								<label> <?php  echo $a["HOTEN"]; ?> </label>
+								<img class="imguser" src="<?php echo $c["AVATAR"];?>">
+								<label> <?php  echo $c["HOTEN"]; ?> </label>
 							</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 						<!-- Hình ảnh -->
 					<div class="preview col-sm-12  col-md-4 col-lg-4">
 						<div class="preview-pic tab-content">
-						<?php  $b =  Chuoi2Mang($a["HINHANH"]); $s=0; 
+						<?php  $b =  Chuoi2Mang($c["HINHANH"]); $s=0; 
 						
 							foreach($b as $value)
 							{
@@ -138,16 +138,16 @@
 					  <ul class="list-group list-group-flush">
 						  <!-- Giá bán -->
 						<!-- chọn sản phẩm giảm giá -->
-						<?php if($a["LOAITIN"] == "ribbon-discount") { ?>
-						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?>đ <span id="diproduct"><?php  echo $a['GIACU']; ?>đ</span></li>
+						<?php if($c["LOAITIN"] == "ribbon-discount") { ?>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $c["GIABAN"]; ?>đ <span id="diproduct"><?php  echo $c['GIACU']; ?>đ</span></li>
 						<?php } else { ?>	
 						<!-- chọn sản phẩm thông thường -->
-						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $a["GIABAN"]; ?> đ</li>
+						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $c["GIABAN"]; ?> đ</li>
 							<?php } ?>
 
-						<li class="list-group-item"> Loại tin: <span><?php  echo $a["LOAITD"]; ?></span></li>
+						<li class="list-group-item"> Loại tin: <span><?php  echo $c["LOAITD"]; ?></span></li>
 						  
-						<li class="list-group-item" id="method">Phương thức giao dịch: <span><?php  echo $a["PTGD"]; ?></span></li>
+						<li class="list-group-item" id="method">Phương thức giao dịch: <span><?php  echo $c["PTGD"]; ?></span></li>
 					  </ul>
 					</div>
 						
@@ -157,13 +157,13 @@
 					
 					<div class="details col-sm-12 col-md-8 col-lg-8 ">				
 					<div id="slogan" style="overflow-y: auto;">
-						<?php  echo $a["SLOGAN"]; ?>
+						<?php  echo $c["SLOGAN"]; ?>
 					</div>
 						
 						<div class="tamsubg">
 							<div class="tamsu">
 							<textarea class="form-control" disabled>
-								<?php  echo $a["TSTD"]; ?>
+								<?php  echo $c["TSTD"]; ?>
 							</textarea>
 							
 							</div>
@@ -189,18 +189,18 @@
       <div class="modal-body">
 	  <div class="row">
 		  <div class="col-md-4">
-			  <img id="popupimage" src="<?php  echo $a["AVATAR"]; ?>">
+			  <img id="popupimage" src="<?php  echo $c["AVATAR"]; ?>">
 		  </div>
 		  <div class="col-md-8">
-			  <label>Họ tên: <span><?php  echo $a["HOTEN"]; ?></span></label><br>
-			  <label>Địa chỉ: <span><?php  echo $a["DIACHI"]; ?></span></label>
-			  <label>Điện thoại: <span><?php  echo $a["SDT"]; ?></span></label>
-     		<label>Email: <span><?php  echo $a["EMAIL"]; ?></span></label>
-	 		  <label>Facebook: <span><?php  echo $a["FACEBOOK"]; ?></span></label>
+			  <label>Họ tên: <span><?php  echo $c["HOTEN"]; ?></span></label><br>
+			  <label>Địa chỉ: <span><?php  echo $c["DIACHI"]; ?></span></label>
+			  <label>Điện thoại: <span><?php  echo $c["SDT"]; ?></span></label>
+     		<label>Email: <span><?php  echo $c["EMAIL"]; ?></span></label>
+	 		  <label>Facebook: <span><?php  echo $c["FACEBOOK"]; ?></span></label>
 		  </div>
 	  </div>
 	  <div class="modal-footer">
-        <a class="btn btn-primary btnxem" href="<?php echo "all-post.php?MAKH=".$a['MAKH'];?>">Xem trang cá nhân</a>
+        <a class="btn btn-primary btnxem" href="<?php echo "all-post.php?MAKH=".$c['MAKH'];?>">Xem trang cá nhân</a>
       </div>
       </div>
    
@@ -236,8 +236,8 @@
 			{
 				var info =[];
 				
-				info[0] = "<?php echo $a["MAKH"];?>";
-				info[1] = "<?php echo $a["MATD"];?>"
+				info[0] = "<?php echo $c["MAKH"];?>";
+				info[1] = "<?php echo $c["MATD"];?>"
 				info[2] = document.getElementById("baocao").value;
 				
 				$.ajax(
@@ -292,8 +292,6 @@
     </div>
   </div>
 </div>	
-	
-	
 	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
