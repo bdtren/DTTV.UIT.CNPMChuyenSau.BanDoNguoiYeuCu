@@ -17,8 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./Images/Home/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Câu hỏi thường gặp</title>
-
+    <title>LoveMarket – Bán đồ người yêu cũ – Câu hỏi thường gặp</title>
+	<meta name="description" content="LoveMarket – Danh mục sản phẩm của LoveMarket - bán đồ người yêu cũ. Tìm kiếm đồ người yêu cũ giá rẻ. Sản phẩm đa dạng và thích hợp dành cho người yêu.  Hãy mua ngay hôm nay trên LoveMarket . " />
     <!--**********************
 		Include  CSS library
         **********************-->

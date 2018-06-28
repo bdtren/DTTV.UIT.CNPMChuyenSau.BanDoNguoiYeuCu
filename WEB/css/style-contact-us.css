@@ -1,7 +1,7 @@
 /* CSS Document */
 .main{
 	font-family: 'Arsenal', sans-serif;
-	height: 47em;
+	height: auto;
 	color: black;
 	background: url(../Images/logon/JShine.jpg);
 	background-size: cover;

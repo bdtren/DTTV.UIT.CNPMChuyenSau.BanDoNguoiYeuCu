@@ -16,7 +16,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./Images/Home/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Liên hệ với chúng tôi</title>
+  <title>LoveMarket – Bán đồ người yêu cũ – Liên hệ với LoveMarket</title>
   <link rel="stylesheet" href="css/style-contact-us.css">
 
   <!--**********************
@@ -26,10 +26,8 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/animate.css">
-  <!-- <link rel="stylesheet" href="./css/style-contact.css"> -->
+  <link rel="stylesheet" href="./css/style-contact-us.css">
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Arsenal" rel="stylesheet"> 

@@ -11,7 +11,7 @@
 							<div class="card-header" id="headingOne">
 							  <h5 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								<i class="fa fa-shopping-bag" aria-hidden="true"></i></i>  Ngành hàng
+								Ngành hàng
 								</button>
 							  </h5>
 							</div>
@@ -27,7 +27,7 @@
 												$actBar = "";
 											}
 											?>								
-										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-shopping-bag" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></li></a>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-shopping-bag" aria-hidden="true"></i><?php echo str_repeat("&nbsp;", 4).$a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -40,7 +40,7 @@
 							<div class="card-header" id="headingTwo">
 							 <h5 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-controls="collapseTwo" style="text-align: center;">
-								<i class="fa fa-calendar-check-o"></i> Mốc kỉ niệm
+								Mốc kỉ niệm
 								</button>
 								  </h5>
 							</div>
@@ -56,7 +56,7 @@
 												$actBar = "";
 											}
 										?>								
-										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-calendar-check-o"></i><?php echo $a[$i]['TENDM'] ?></li></a>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-calendar-check-o"></i><?php echo str_repeat("&nbsp;", 4).$a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>
@@ -68,7 +68,7 @@
 							<div class="card-header" id="headingThree">
 							  <h5 class="mb-0">
 								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-								<i class="fa fa-gift" aria-hidden="true"></i>  Quà tinh thần
+								Quà tinh thần
 								</button>
 							  </h5>
 							</div>
@@ -84,7 +84,7 @@
 												$actBar = "";
 											}	
 										?>								
-										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-gift" aria-hidden="true"></i>  <?php echo $a[$i]['TENDM'] ?></li></a>
+										<a class="itemdanhmuc" href="category.php?DanhMuc=<?php echo $a[$i]['MADM'] ?>" style="text-decoration: none;"><li class="list-group-item <?php echo $actBar?>"><i class="fa fa-gift" aria-hidden="true"></i>  <?php echo str_repeat("&nbsp;", 4).$a[$i]['TENDM'] ?></li></a>
 										<?php $i++;	} ?>
 									  </ul>
 									</div>

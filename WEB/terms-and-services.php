@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Điều khoản và quy định</title>	
+	<title>LoveMarket – Bán đồ người yêu cũ – Sản phẩm của LoveMarket</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="./Images/Home/favicon.png">
 	<link rel="stylesheet" href="css/bootstrap.min.css">

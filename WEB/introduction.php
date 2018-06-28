@@ -10,7 +10,9 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="icon" href="./Images/Home/favicon.png"/>
-	<title>Giới thiệu</title>
+	<title>LoveMarket – Bán đồ người yêu cũ – Giới thiệu về LoveMarket </title>
+	<meta name="description" content="LoveMarket –Giới thiệu về LoveMarket - bán đồ người yêu cũ. Những người phát triển LoveMaket. " />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	 <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style-gioi-thieu.css">

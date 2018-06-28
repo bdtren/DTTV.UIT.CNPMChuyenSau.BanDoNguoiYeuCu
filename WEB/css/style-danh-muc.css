@@ -30,16 +30,16 @@ body{
 }
 
 .accordion .card .collapse .list-group-item{
-	background: white;
-	color: black;
+	background: #F4F4F4;
+	color: rgba(102,101,101,1.00);
 }
 .accordion .card .collapse .active{
-	background: #AF56D1;
+	background: #D3D3D3;
 	color: white;
 }
 
 .accordion .card .collapse .list-group-item:hover{
-	background: #AF56D1;
+	background: #D3D3D3;
 	color: white;
 }
 
@@ -47,7 +47,7 @@ body{
 /* Main section */
 
 .card .card-main-header{
-	background: #a239ca;
+	background: #723d97;
 }
 
 .card-main .card-main-header .container-fluid .row .text-head{
