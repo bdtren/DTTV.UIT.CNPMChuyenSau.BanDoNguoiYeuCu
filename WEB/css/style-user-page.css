@@ -3,22 +3,24 @@ body{
 }
 
 /* button */
-.btn-type-blue{
+.btn-type-blue, .btn-type-purple, .btn-type-pink{
+	float: right;
+	margin-top: 10px;
 	color: white;
+}
+.btn-type-blue{
 	background: #318FFF;
 }
 .btn-type-blue:hover{
 	background: #5BA5FF;
 }
 .btn-type-purple{
-	color: white;
 	background: #b72bff;
 }
 .btn-type-purple:hover{
 	background: #D178FF;
 }
 .btn-type-pink{
-	color: white;
 	background: #6505FF;
 }
 .btn-type-pink:hover{
