@@ -12,9 +12,9 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>LoveMarket – Bán đồ người yêu cũ – Chia tay lấy lại vốn </title>
-	<meta name="description" content=" LoveMarket – Nơi để rao bán đồ người yêu cũ và tìm kiếm những món đồ cho người yêu mới. Giúp bạn thu lại vốn sau khi chia tay. LoveMarket – nơi chia sẻ những câu chuyện tình yêu qua những món đồ. Trải nghiệm mua những món đồ mới lạ trên LoveMarket. " />
+	<title>Love Market | Welcome </title>
 	<meta name="author" content="DTTV" />
+	<meta name="description" content="Website bán đồ người yêu cũ." />
 	<link rel="icon" href="./Images/Home/favicon.png"/>
 	<meta name="viewport" content="width=device-width initial-scale=1.0"/>
 	<meta name="mobile-web-app-capable" content="yes"/>
@@ -113,8 +113,6 @@
 						  </a>
 						</div>
 				</div>
-		
-				
 				
 			<?php } ?>
 				
@@ -240,6 +238,39 @@
 	<!--Progressive Web App(PWA): install, service worker-->
 	<!-- <script src="./check_browser.js"></script> -->
 	<!-- <script src="./sw-register.js"></script> -->
+	<!-- Yêu cầu quyền xuất thông báo -->
+	<?php if(!empty($UserName)){?>
+	<script>
+					$(document).ready(function() {
+						// Nếu trình duyệt không hỗ trợ thông báo
+						// if(Notification.permission=="granted"||Notification.permission=="denied"){
+						// 		return;
+						// }
+						if (!window.Notification)
+						{
+							alert('Trình duyệt của bạn không hỗ trợ chức năng này.');
+						}
+						// Ngược lại trình duyệt có hỗ trợ thông báo
+						else if(Notification.permission == "default")
+						{
+							// Gửi lời mời cho phép thông báo
+							Notification.requestPermission().then(function (p) {
+								// Nếu không cho phép
+								if (p !== 'granted')
+								{
+									alert('Bạn đã không cho phép thông báo trên trình duyệt.');
+								}
+								// Ngược lại cho phép
+								else
+								{
+									//alert('Bạn đã cho phép thông báo trên trình duyệt, hãy bắt đầu thử Hiển thị thông báo.');
+								}
+							});
+						}
+
+					});
+				</script>
+	<?php }?>
 	
 
 </body>

@@ -16,8 +16,6 @@
 <head>
  <!-- Required meta tags -->
     <!-- <meta charset="utf-8"> -->
-	<title>LoveMarket – Bán đồ người yêu cũ – Danh mục sản phẩm </title>
-	<meta name="description" content="LoveMarket – Danh mục sản phẩm của LoveMarket - bán đồ người yêu cũ. Tìm kiếm đồ người yêu cũ giá rẻ. Sản phẩm đa dạng và thích hợp dành cho người yêu.  Hãy mua ngay hôm nay trên LoveMarket . " />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="./Images/Home/favicon.png"/>

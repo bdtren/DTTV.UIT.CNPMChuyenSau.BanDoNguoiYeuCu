@@ -4,9 +4,11 @@ $tenTK = (isset($_SESSION['useradmin'])) ? $_SESSION['useradmin'] : '';
 
 if (isset($_SESSION['useradmin'])) {
     //Cập nhật thông tin đăng xuất
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $day = date("Y/m/d H:i:s");
     $sql = "UPDATE TAIKHOAN
-            SET KTONLINE = 0
-            WHERE TENTK='$tenTK'";
+        SET KTONLINE = 0, TGDANGXUAT= '$day'
+        WHERE TENTK='$tenTK';";
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
 

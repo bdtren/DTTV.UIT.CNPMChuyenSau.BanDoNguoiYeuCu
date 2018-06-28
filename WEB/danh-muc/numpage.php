@@ -56,14 +56,14 @@
 					}
 	
 					//Xử lý trang cuối
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 					$string = "category.php?DanhMuc="."$DanhMuc"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$numOfPages";
 					echo "<li class='page-item'><a class='page-link' href='$string'>$numOfPages</a></li>";
 				} else if($numpage>=5&&$numpage<=($numOfPages-5)){
 					//xử lý trang đầu tiên
 					$string = "category.php?DanhMuc="."$DanhMuc"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."1";
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
 					$z = $numpage-2;				
 					while($z<=($numpage+2)){
@@ -86,14 +86,14 @@
 					}
 	
 					//Xử lý trang cuối
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 					$string = "category.php?DanhMuc="."$DanhMuc"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$numOfPages";
 					echo "<li class='page-item'><a class='page-link' href='$string'>$numOfPages</a></li>";
 				} else if($numpage>($numOfPages-5)){
 					//xử lý trang đầu tiên
 					$string = "category.php?DanhMuc="."$DanhMuc"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."1";
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
 					$z=$numOfPages-5;
 					while($z<=$numOfPages){
@@ -175,14 +175,14 @@
 					}
 	
 					//Xử lý trang cuối
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 					$string = "category.php?Search="."$Search"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$numOfPages";
 					echo "<li class='page-item'><a class='page-link' href='$string'>$numOfPages</a></li>";
 				} else if($numpage>=5&&$numpage<=($numOfPages-5)){
 					//xử lý trang đầu tiên
 					$string = "category.php?Search="."$Search"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."1";
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
 					$z = $numpage-2;				
 					while($z<=($numpage+2)){
@@ -205,14 +205,14 @@
 					}
 	
 					//Xử lý trang cuối
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 					$string = "category.php?Search="."$Search"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."$numOfPages";
 					echo "<li class='page-item'><a class='page-link' href='$string'>$numOfPages</a></li>";
 				} else if($numpage>($numOfPages-5)){
 					//xử lý trang đầu tiên
 					$string = "category.php?Search="."$Search"."&Type="."$Type"."&Sort="."$Sort"."&SortType="."$SortType"."&numpage="."1";
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
-					echo "<li class='page-item'>...</li>";
+					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
 					$z=$numOfPages-5;
 					while($z<=$numOfPages){

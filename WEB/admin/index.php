@@ -38,7 +38,7 @@
 	
 <body>
 	<form class="form-signin" action="index.php" method="post" >
-    <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" style="text-align: center;">
+    <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" style="text-align: center;"> -->
     <h1 class="h3 mb-3 font-weight-normal">Đăng nhập vào trang quản trị admin</h1>
     <label class="sr-only">Tên đăng nhập</label>
     <input name="username" type="text" class="form-control" placeholder="Tên đăng nhập" required autofocus>
