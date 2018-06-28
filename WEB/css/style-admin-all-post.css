@@ -1,0 +1,116 @@
+/* CSS Document */
+
+#mainlarge{
+	background: url(../Images/logon/SublimeVivid.jpg);
+	font-family: 'Arima Madurai', cursive;
+}
+.main{
+	margin-top: 4em;
+}
+
+.main .profile{
+	margin-top: 1em;
+	background: rgba(255,255,255,0.00);
+}
+
+.main .profile img{
+	border-radius: 50%;
+	border: 1px solid #C9C9C9;
+}
+.btn-type-purple{
+	background: rgba(200,0,255,1.00);
+	color: white;
+}
+.btn-type-purple:hover{
+	background: rgba(218,85,255,1.00);
+}
+.btn-type-pink{
+	background: rgba(255,0,229,1.00);
+	color: white;
+}
+.btn-type-pink:hover{
+	background: rgba(255,85,237,1.00);
+}
+.profile .card{
+	padding: 0.5em;
+	background: rgba(255,255,255,0.45);
+}
+
+.profile .username{
+	color: white;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.profile i{
+	color: white;
+}
+
+.profile ul li{
+	color: rgba(119,119,119,1.00);
+}
+.profile .card .list-group li{
+	background: rgba(255,255,255,0.46);
+	color: rgba(119,119,119,1.00);
+}
+.profile .card .list-group li textarea{
+	background: rgba(255,255,255,0.62);
+	color: rgba(136,136,136,1.00);
+}
+.news .rounded h6{
+	color: white;
+}
+.news,.news .rounded,.news .rounded .media ,.news .rounded .media{
+	background: rgba(255,255,255,0.00);
+}
+.news .rounded{
+	background: rgba(255,255,255,0.72);
+}
+.news .rounded .media p strong span{
+	color: rgba(136,136,136,1.00);
+}
+.news i{
+	color: white;
+}
+.news a{
+	text-decoration: none;
+}
+
+.media img{
+	width: 70px; 
+	height: 70px;
+	border: 1px solid #C9C3C3;
+}
+
+.title-allpost{
+	font-size: 16px;
+	color: #4D4C4C;
+}
+
+.date-allpost{
+	font-size: 13px;
+	float: right;
+}	
+
+.profile .card .list-group .sectionman{
+	color: #0F5FFF;
+}
+.profile .card .list-group .sectionwoman{
+	color: #FF0EBA;
+}
+
+.news .media .media-body .d-block .calendaricon{
+	color: #FD2024;
+}
+.news .media .media-body .bagicon{
+	color: #FFB600;
+}
+.news .media .media-body .moneyicon{
+	color: #48BC00;
+}
+.card-body .collapse .card .list-group .list-group-item .sectioncontactman{
+	color: #169DFF;
+}
+.card-body .collapse .card .list-group .list-group-item .sectioncontactwoman{
+	color: #FF15F6;
+}
