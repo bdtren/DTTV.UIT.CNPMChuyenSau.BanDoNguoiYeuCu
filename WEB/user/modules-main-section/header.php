@@ -1,13 +1,18 @@
 <!-- Thanh tiêu đề -->
 <nav class="navbar navbar-expand-md navbar-default bg-default">
-  <a class="navbar-brand" href="../index.php"><img src="../Images/logo-1.png" style="width:210px;"></a>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto"></ul>
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link">Chào mừng <?php echo $UserName; ?></a></li>
-      <li class="nav-item"><a class="nav-link" href="../xulyphp/logout.php">Đăng xuất</a></li>
-    </ul>
-  </div>
+	<div class="container-fluid">
+	<div class="row" style="width: 100%;">
+	  <div class="col-md-4">
+		    <a class="navbar-brand" href="../index.php"><img src="../Images/logo-1.png" style="width:210px;"></a>
+	  </div>
+	  <div class="col-md-8">
+		<ul class="navbar-nav navbar-right" style="float: right;">
+		  <a class="nav-link">Chào mừng <?php echo $UserName; ?></a>
+		  <a class="nav-link" href="../xulyphp/logout.php">Đăng xuất</a>
+		</ul>
+	  </div>
+	</div>
+	</div>
 </nav>
 <!-- Kết thúc thanh tiêu đề -->
 
