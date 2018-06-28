@@ -412,7 +412,8 @@ create table TAIKHOAN
    TENTK                          varchar(20)                    not null,
    MATKHAU                        varchar(32)                    not null,
    KTONLINE						  int							 not null,
-   TGDANGNHAP					  TIMESTAMP						 not null,
+   TGDANGNHAP					  datetime						 not null,
+   TGDANGXUAT					  datetime						 not null,
    primary key (MATK)
 );
 
@@ -525,7 +526,7 @@ create table THONGBAOTINDANG
 (
    MATBTD                         char(6)                        not null,
    MATD                           char(6)                        not null,
-   NGAYBD                         date                           not null,
+   NGAYBD                         datetime                       not null,
    primary key (MATBTD)
 );
 
