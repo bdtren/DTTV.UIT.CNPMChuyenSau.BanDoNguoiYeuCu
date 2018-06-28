@@ -31,7 +31,7 @@
 					</th>
 					<td><?php echo $a[$i]['CHITIET']; ?> </td>
 					<td><?php echo $a[$i]['VANDEGIAIDAP']; ?> </td>
-					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
+					<td><a target="_blank" href="../admin-all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td>
 						<span id="tt-phanhoi" style="visibility: hidden;"><?php echo $b[$i]?></span>
 						<button class="btn btn-success" data-toggle="modal" href="#" style="color:white;" data-target="#see" onclick="openModelCauHoi(<?php echo $i?>)">Trả lời <br> <?php echo $b[$i]?></button>

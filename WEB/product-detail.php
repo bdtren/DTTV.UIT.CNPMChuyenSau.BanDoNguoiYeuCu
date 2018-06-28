@@ -2,11 +2,19 @@
 	session_start();
 	$UserName = isset($_SESSION['user']) ? $_SESSION['user'] : "" ;
 	$MaKH = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
+	$MaCV = (isset($_SESSION['macv']))? $_SESSION['macv'] : '' ; 
 	$PageName="chitietsanpham"; 
 	include('xulyphp/xulytindang.php');
 	include('xulyphp/xulytheodoibaocao.php');
 	$c = TaiChiTietSanPham($_GET['MATD']);
-
+	$tt = $c['TINHTRANGTIN'];
+	$thtin="";
+	if($tt=="dang cho"||$tt=="da an"){
+		if(strcmp($MaKH, $c["MAKH"])!=0&&$MaCV==""){
+			header("Location: ./index.php");
+		}
+		$thtin = "(tin không hiển thị)";
+	}
 ?>
 
 <!doctype html>
@@ -36,7 +44,9 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-4">
-						<label id="tieude"><?php  echo $c["TIEUDE"]; ?></label><br>
+						<label id="tieude"><?php  echo $c["TIEUDE"];  ?></label>
+						<h6><?php echo $thtin; ?></h6>
+						<br>
 						<label id="date">Ngày đăng: <span><?php  echo $c["NGAYDANG"]; ?></span></label>	
 						<label id="status">Tình trạng: <span><?php  echo $c["TINHTRANGMH"]; ?></span></label>
 						</div>

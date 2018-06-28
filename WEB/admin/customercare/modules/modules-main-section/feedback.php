@@ -23,7 +23,7 @@
           <th scope="row">
             <?php echo ($i+1); ?>
           </th>
-          <td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
+          <td><a target="_blank" href="../admin-all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
           <td><?php echo date("d-m-Y", strtotime($a[$i]['NGAYPH'])); ?></td>
           <td>
             <!-- Mức độ hải lòng theo text -->

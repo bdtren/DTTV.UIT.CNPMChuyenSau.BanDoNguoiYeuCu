@@ -19,8 +19,6 @@
 		$sectionuser = "sectionwoman";
 		$sectioncontact = "sectioncontactwoman";
 	}
-
-
 ?>
 
 <!doctype html>

@@ -14,7 +14,7 @@ function openModelTheCao(position) {
   $("#addition-result").hide();
 
   document.getElementById("lbName").innerHTML =
-    '<a href="../../all-post.php?MAKH=' +
+    '<a target="_blank" href="../admin-all-post.php?MAKH=' +
     arrTable[position]["MAKH"] +
     '">' +
     arrTable[position]["HOTEN"] +
@@ -290,13 +290,13 @@ function openBasicModal(position) {
   selected = position;
 
   document.getElementById("lbTitle").innerHTML =
-    '<a href="../../product-detail.php?MATD=' +
+    '<a target="_blank" href="../../product-detail.php?MATD=' +
     arrTable[position]["MATD"] +
     '">' +
     arrTable[position]["TIEUDE"] +
     "</a>";
   document.getElementById("lbName").innerHTML =
-    '<a href="../../all-post.php?MAKH=' +
+    '<a target="_blank" href="../admin-all-post.php?MAKH=' +
     arrTable[position]["MAKH"] +
     '">' +
     arrTable[position]["HOTEN"] +
@@ -360,7 +360,7 @@ function openModelDuyetTinViPham(position) {
   for (i = 0; i < arrBC.length; i++) {
     if (arrBC[i]["MAKH"] == arrTable[position]["KHBC"]) {
       document.getElementById("lbNgBC").innerHTML =
-        '<a href="../../all-post.php?MAKH=' +
+        '<a target="_blank" href="../admin-all-post.php?MAKH=' +
         arrBC[i]["MAKH"] +
         '">' +
         arrBC[i]["HOTEN"] +
@@ -630,7 +630,7 @@ function openModelCauHoi(position) {
   $("#addition-result").hide();
   selected = position;
   document.getElementById("lbName").innerHTML =
-    '<a href="../../all-post.php?MAKH=' +
+    '<a target="_blank" href="../admin-all-post.php?MAKH=' +
     arrTable[position]["MAKH"] +
     '">' +
     arrTable[position]["HOTEN"] +
@@ -649,7 +649,7 @@ function openModelPhanHoi(position) {
   $("#addition-result").hide();
   selected = position;
   document.getElementById("lbName").innerHTML =
-    '<a href="../../all-post.php?MAKH=' +
+    '<a target="_blank" href="../admin-all-post.php?MAKH=' +
     arrTable[position]["MAKH"] +
     '">' +
     arrTable[position]["HOTEN"] +

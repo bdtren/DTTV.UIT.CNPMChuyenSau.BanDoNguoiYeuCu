@@ -27,7 +27,7 @@
 					<th scope="row">
 						<?php echo ($i+1); ?>
 					</th>
-					<td><?php echo '<a href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
+					<td><?php echo '<a target="_blank" href="../../product-detail.php?MATD='.$a[$i]["MATD"].'">'.$a[$i]["TIEUDE"]."</a>";?></td>
 					<td>
 						<!-- <h6 style="visibility: hidden;"><?php echo $imgs[0]?></h6> -->
 						
@@ -37,7 +37,7 @@
 							// }
 						?>
 					</td>
-					<td><a href="../../all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
+					<td><a target="_blank" href="../admin-all-post.php?MAKH=<?php echo $a[$i]['MAKH']; ?>"><?php echo $a[$i]['HOTEN']; ?></a></td>
 					<td>
 						<a class="btn btn-primary" data-toggle="modal" href="#" style="color:white;" data-target="#seespecial" onclick="openModelDuyetTinDB(<?php echo $i?>)">Duyệt tin</a>
 					</td>

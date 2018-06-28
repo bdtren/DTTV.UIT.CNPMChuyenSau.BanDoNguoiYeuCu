@@ -26,7 +26,7 @@ function openModelDuyetTinDB(position){
     }
     document.getElementById("htitle").innerHTML = title;
     document.getElementById("lbTitle").innerHTML = arrTable[position]['TIEUDE'];
-    document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
+    document.getElementById("lbName").innerHTML = '<a target="_blank" href="../admin-all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     document.getElementById("lbDate").innerHTML = formatDate(new Date(arrTable[position]["NGAYDANG"]));
     
     document.getElementById("lbPayResult").innerHTML = title;
@@ -71,7 +71,7 @@ function openModelDuyetTinDang(position){
 function openModelCauHoi(position) {
     $("#addition-result").hide();
     selected = position;
-    document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
+    document.getElementById("lbName").innerHTML = '<a target="_blank" href="../admin-all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     //Đối với bảng câu hỏi
     //document.getElementById("lbTime").innerHTML = formatDate(new Date(arrTable[position]["NGAYGUI"]));
     document.getElementById("lbType").innerHTML = arrTable[position]["LOAIHOTRO"];
@@ -84,7 +84,7 @@ function openModelCauHoi(position) {
 function openModelPhanHoi(position) {
     $("#addition-result").hide();
     selected = position;
-    document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
+    document.getElementById("lbName").innerHTML = '<a target="_blank" href="../admin-all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     //Đối với bảng phản hồi
     document.getElementById("lbTime").innerHTML = formatDate(new Date(arrTable[position]["NGAYPH"]));
     document.getElementById("lbSatisfy").innerHTML = addStar(arrTable[position]["MUCDO"]);

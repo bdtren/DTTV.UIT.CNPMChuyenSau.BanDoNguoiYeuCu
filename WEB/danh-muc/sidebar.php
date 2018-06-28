@@ -1,4 +1,24 @@
-<?php $actBar=""?>
+<?php $actBar="";
+	$show = array();
+	$show[0] = $show[1] = $show[2] = "";
+	$a= TaiDanhMuc();
+	$j=0;
+	while($j<count($a)){
+		if($DanhMuc==$a[$j]['MADM'])
+			break;
+		$j++;
+	}
+	if($j<13){
+		$show[0] ="show";
+		$show[1] = $show[2] = "";
+	} else if($j<24){
+		$show[0] = $show[2] = "";
+		$show[1]="show";
+	} else{
+		$show[0] = $show[1] = "";
+		$show[2]="show";
+	}
+?>
 <div class="card" style="width: 100%;">
 					  <div class="card-header">
 						Danh mục sản phẩm
@@ -17,10 +37,10 @@
 							</div>
 
 							  <!-- Danh mục con -->
-							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div id="collapseOne" class="collapse <?php echo $show[0]?>" aria-labelledby="headingOne" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
-										<?php $i=0; $a= TaiDanhMuc(); while($i<13) { 
+										<?php $i=0; while($i<13) { 
 											if($DanhMuc==$a[$i]['MADM']){
 												$actBar = "active";
 											} else{
@@ -46,7 +66,7 @@
 							</div>
 
 							  <!-- Danh mục con -->
-							<div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div id="collapseTwo" class="collapse <?php echo $show[1]?>" aria-labelledby="headingTwo" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
 										<?php while($i<24) { 
@@ -74,7 +94,7 @@
 							</div>
 
 							  <!-- Danh mục con -->
-							<div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div id="collapseThree" class="collapse <?php echo $show[2]?>" aria-labelledby="headingThree" data-parent="#accordionExample">
 								  <div class="card" style="width: 100%;">
 									  <ul class="list-group list-group-flush">
 										<?php while($i<28) { 

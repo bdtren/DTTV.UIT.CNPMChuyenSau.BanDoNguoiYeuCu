@@ -3,7 +3,7 @@ var selected = -1;
 function openModelCauHoi(position) {
     $("#addition-result").hide();
     selected = position;
-    document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
+    document.getElementById("lbName").innerHTML = '<a target="_blank" href="../admin-all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     //Đối với bảng câu hỏi
     //document.getElementById("lbTime").innerHTML = formatDate(new Date(arrTable[position]["NGAYGUI"]));
     document.getElementById("lbType").innerHTML = arrTable[position]["LOAIHOTRO"];
@@ -16,7 +16,7 @@ function openModelCauHoi(position) {
 function openModelPhanHoi(position) {
     $("#addition-result").hide();
     selected = position;
-    document.getElementById("lbName").innerHTML = '<a href="../../all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
+    document.getElementById("lbName").innerHTML = '<a target="_blank" href="../admin-all-post.php?MAKH='+arrTable[position]["MAKH"]+'">'+arrTable[position]["HOTEN"]+'</a>';
     //Đối với bảng phản hồi
     document.getElementById("lbTime").innerHTML = formatDate(new Date(arrTable[position]["NGAYPH"]));
     document.getElementById("lbSatisfy").innerHTML = addStar(arrTable[position]["MUCDO"]);

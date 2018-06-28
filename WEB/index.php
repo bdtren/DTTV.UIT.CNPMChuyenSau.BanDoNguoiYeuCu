@@ -243,22 +243,23 @@
 	<script>
 					$(document).ready(function() {
 						// Nếu trình duyệt không hỗ trợ thông báo
+						//if(Notification.permission=="default"
 						// if(Notification.permission=="granted"||Notification.permission=="denied"){
 						// 		return;
 						// }
 						if (!window.Notification)
 						{
-							alert('Trình duyệt của bạn không hỗ trợ chức năng này.');
+							alert('Trình duyệt của bạn không hỗ trợ Thông báo, bạn hãy lựa chọn các trình duyệt Chrome hoặc Firefox để có những trải nghiệm tốt nhất!');
 						}
 						// Ngược lại trình duyệt có hỗ trợ thông báo
-						else if(Notification.permission == "default")
+						else if(Notification.permission !== "granted")
 						{
 							// Gửi lời mời cho phép thông báo
 							Notification.requestPermission().then(function (p) {
 								// Nếu không cho phép
-								if (p !== 'granted')
+								if (p === 'denied')
 								{
-									alert('Bạn đã không cho phép thông báo trên trình duyệt.');
+									alert('Bạn đã không cho phép thông báo trên trình duyệt, xin hãy cho phép thông báo trên trình duyệt để nhận các thông báo mới nhất!');
 								}
 								// Ngược lại cho phép
 								else
