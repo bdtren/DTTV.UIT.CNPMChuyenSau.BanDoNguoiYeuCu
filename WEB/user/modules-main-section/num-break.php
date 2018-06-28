@@ -6,8 +6,8 @@
       <thead>
         <tr>
           <th scope="col">STT</th>
-          <th scope="col">Nội dung vi phạm</th>
           <th scope="col">Ngày xử lí</th>
+          <th scope="col">Nội dung vi phạm</th>
         </tr>
       </thead>
       <tbody>
@@ -16,8 +16,8 @@
       <?php for($i = 0; $i < $a['dem']; $i++) { ?>
         <tr>
           <th scope="row"><?php echo $i+1;?></th>
-          <td><?php echo $a[$i]['NOIDUNGXULY']?></td>
-          <td><?php echo $a[$i]['NGAYXULY']?></td>
+          <td><?php echo $a[$i]['TGXULY']?></td>
+          <td><?php echo $a[$i]['NOIDUNG']?></td>
         </tr>
       <?php } ?>
 

@@ -32,7 +32,14 @@
     //         default:break;
     //     }
     // }
-
+    function Chuoi2Mang($string)
+    {
+        if(!empty($string))
+        {
+            return explode(';', $string);
+        }
+        return null;
+    }
     // them tin dang
     if(isset($_POST['DangTin']))
     {
@@ -382,9 +389,14 @@
     {
         $a = null; 
         include('connect.php');
+        $date = date("Y-m-d");
         $sql = "SELECT      *
-                FROM        THONGBAO
-                WHERE       MAKH = '$MAKH'";
+                FROM        KH_THEODOI_KH,TINDANG,KHACHHANG
+                WHERE       KH_THEODOI_KH.MAKH = '$MAKH'
+                AND         KHACHHANG.MAKH = TINDANG.MAKH
+                AND         KH_THEODOI_KH.MAKHTD = TINDANG.MAKH
+                AND         TINHTRANGTIN = 'da dang'
+                ORDER BY    NGAYDANG";
         if($result = mysqli_query($conn, $sql)) 
         {
             while($row = mysqli_fetch_assoc($result))
@@ -526,10 +538,12 @@
     // tai vi pham
     function TaiViPham($MAKH)
     {
+        $a = null;
         include('connect.php');
         $sql = "SELECT      * 
-                FROM        XULYVIPHAM
-                WHERE       MAKH = '$MAKH'";
+                FROM        XULYVIPHAM,TINDANG
+                WHERE       XULYVIPHAM.MATD = TINDANG.MATD
+                AND         MAKH = '$MAKH'";
         if ($result = mysqli_query($conn, $sql)) 
         {
             while($row = mysqli_fetch_assoc($result))
@@ -571,8 +585,9 @@
         $Count=0;
         include('connect.php');
         $sql = "SELECT      * 
-                FROM        XULYVIPHAM
-                WHERE       MAKH = '$MAKH'";
+                FROM        XULYVIPHAM , TINDANG
+                WHERE       XULYVIPHAM.MATD = TINDANG.MATD
+                AND         MAKH = '$MAKH'";
         if ($result = mysqli_query($conn, $sql)) 
         {
             $Count=mysqli_num_rows($result);

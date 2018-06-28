@@ -5,8 +5,6 @@
 	$PageName="promotion-detail";
 	$makm=$_GET['MAKM'];
 	include("xulyphp/xulyKM.php");
-	$a=layMotKhuyenMai($makm);	
-	$b=explode(";",$a["DDANH"]);
 	
 ?>
 
@@ -34,7 +32,9 @@
 <body>
 	<?php include('header.php'); ?>
 		<!-- Slider -->
-	
+	<?php 	$a=layMotKhuyenMai($makm);	
+					$b=explode(";",$a["DDANH"]);
+	?>
 		<div class="main-contain">
 		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
 			  <div class="carousel-inner">

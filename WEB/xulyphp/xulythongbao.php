@@ -29,7 +29,8 @@ function TaiThongBao($MAKH)
             FROM        KH_THEODOI_KH,TINDANG,KHACHHANG
             WHERE       KH_THEODOI_KH.MAKH = '$MAKH'
             AND         KHACHHANG.MAKH = TINDANG.MAKH
-            AND         KH_THEODOI_KH.MAKHTD = TINDANG.MAKH";
+            AND         KH_THEODOI_KH.MAKHTD = TINDANG.MAKH
+            AND         TINHTRANGTIN = 'da dang'";
            // AND         NGAYDT < '$date' ";
     if($result = mysqli_query($conn, $sql)) 
     {

@@ -10,6 +10,7 @@
 		$UserName = '';
 		$IsLogin="false";
 	}
+	$MaKH	  = (isset($_SESSION['makh']))? $_SESSION['makh'] : '' ;
 	//Kiểm tra người dùng đã đăng nhập chưa //true hoặc false
 	$status="false";
 	if($IsLogin=="false"){
@@ -23,16 +24,16 @@
 	if(!isset($PageName)){
 		$PageName = "";
 	}
-	$arrActive= ["","","","",""];
+	$hdrrActive= ["","","","",""];
 	if($PageName=="trangchu"){
-		$arrActive[0]="active";//Trạng thái
+		$hdrrActive[0]="active";//Trạng thái
 	}
 	else if($PageName=="danhmuc"){
-		$arrActive[1]="active";
+		$hdrrActive[1]="active";
 	}else if($PageName=="thongbao"){
-		$arrActive[2]="active";
+		$hdrrActive[2]="active";
 	}else if($PageName=="gioithieu"){
-		$arrActive[4]="active";
+		$hdrrActive[4]="active";
 	}
 
 ?>	
@@ -75,10 +76,10 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item <?php echo $arrActive[0]; ?>">
+					<li class="nav-item <?php echo $hdrrActive[0]; ?>">
 					<a class="nav-link" href="index.php">Trang chủ</a>
 					</li>
-					<li class="nav-item <?php echo $arrActive[1]; ?>">
+					<li class="nav-item <?php echo $hdrrActive[1]; ?>">
 					<a class="nav-link" href="category.php">Danh mục sản phẩm</a>
 					</li>
 					<!-- Nút thông báo -->
@@ -98,25 +99,25 @@
 							<div id="loginheader">Thông báo từ LoveMarket</div>
 							<!-- Danh sách thông báo mới từ người đang theo dõi -->
 							<ul class="list-group list-group-flush">
-								<?php  $a = TaiKhuyenMai(); 
-								for($i = 0; $i < $a['dem']; $i++) {?>
+								<?php  $hd = TaiKhuyenMai(); 
+								for($i = 0; $i < $hd['dem']; $i++) {?>
 								<!-- vòng lặp thông báo -- Nên cho 2 thông báo -->
-								<a href="<?php echo 'promotion-detail.php?MAKM='.$a[$i]['MAKM']; ?>"> <!-- Link đến trang chi tiết sản phẩm -->
+								<a href="<?php echo 'promotion-detail.php?MAKM='.$hd[$i]['MAKM']; ?>"> <!-- Link đến trang chi tiết sản phẩm -->
 								<li class="list-group-item colnotify">
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="<?php echo $a[$i]['DDANH'] ?>" style="border-radius: 0;"> <!-- Mặc định -->
+												<img class="notiavatar" src="<?php echo $hd[$i]['DDANH'] ?>" style="border-radius: 0;"> <!-- Mặc định -->
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">
 												<div class="col-7">
-													<label class="user"><?php echo $a[$i]['TIEUDE'] ?></label>
+													<label class="user"><?php echo $hd[$i]['TIEUDE'] ?></label>
 												</div>
 												</div>
 												<div class="row">
 												<div class="col-12">
-													<label class="head"><?php echo $a[$i]['CHITIET'] ?></label>
+													<label class="head"><?php echo $hd[$i]['CHITIET'] ?></label>
 												</div>	
 												</div>					
 											</div>
@@ -132,28 +133,28 @@
 							<!-- Danh sách thông báo mới từ LoveMarket -->
 							<div id="loginheader">Thông báo từ người đang theo dõi</div>
 							<ul class="list-group list-group-flush">
-							<?php  $a = TaiThongBao($MaKH); 
-								for($i = 0; $i < $a['dem']; $i++) {?>
+							<?php  $hd = TaiThongBao($MaKH); 
+								for($i = 0; $i < $hd['dem']; $i++) {?>
 								<!-- vòng lặp thông báo -- Nên cho 3 thông báo -->
-								<a href="<?php echo' product-detail.php?MATD='.$a[$i]['MATD']?>"> <!-- Link đến trang chi tiết sản phẩm -->
+								<a href="<?php echo' product-detail.php?MATD='.$hd[$i]['MATD']?>"> <!-- Link đến trang chi tiết sản phẩm -->
 								<li class="list-group-item colnotify">
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="<?php echo $a[$i]['AVATAR']?>">
+												<img class="notiavatar" src="<?php echo Chuoi2Mang($hd[$i]['HINHANH'])[0];?>">
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">
 												<div class="col-7">
-													<label class="user"><?php echo $a[$i]['HOTEN']?></label>
+													<label class="user"><?php echo $hd[$i]['HOTEN']?></label>
 												</div>
 												<div class="col-5">
-													<label class="time"><?php echo $a[$i]['NGAYDANG']?></label>
+													<label class="time"><?php echo $hd[$i]['NGAYDANG']?></label>
 												</div>	
 												</div>
 												<div class="row">
 												<div class="col-12">
-													<label class="head"><?php echo $a[$i]['TIEUDE']?></label>
+													<label class="head"><?php echo $hd[$i]['TIEUDE']?></label>
 												</div>	
 												</div>					
 											</div>
@@ -176,10 +177,10 @@
 					<!-- Kết thúc nút thông báo -->
 					
 					
-					<li class="nav-item <?php echo $arrActive[3]; ?>">
+					<li class="nav-item <?php echo $hdrrActive[3]; ?>">
 					<a class="nav-link <?php echo $status; ?>" <?php if(isset($_SESSION['user'])) echo 'href="user/user-page.php"'; else echo 'href="index.php"'; ?> >Tài khoản <?php echo $UserName; ?></a>
 					</li>
-					<li class="nav-item <?php echo $arrActive[4]; ?>">
+					<li class="nav-item <?php echo $hdrrActive[4]; ?>">
 					<a class="nav-link" href="introduction.php">Giới thiệu</a>
 					</li>
 

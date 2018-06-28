@@ -43,13 +43,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Bán mũ của người yêu</td>
-                    <td></td>
-                    <td>12/1/2018</td>
-                    <td>Allan Nguyễn</td>
-                    <td><a class="btn btn-primary" href="#" style="color:white;">Xem</a></td>
-                </tr>       
+                <?php for($i = 0; $i < $a['dem']; $i++) { ?>
+                    <tr>
+                        <td><?php echo $a[$i]['TIEUDE']?></td>
+                        <td><img src="<?php echo '.'.Chuoi2Mang($a[$i]['HINHANH'])[0];?>" alt="loi anh" style="width:50px;height:50px;"></td>
+                        <td><?php echo $a[$i]['NGAYDANG']?></td>
+                        <td><?php echo $a[$i]['HOTEN']?></td>
+                        <td><a class="btn btn-primary" href="<?php echo '../product-detail.php?MATD='.$a[$i]['MATD']; ?>" style="text-decoration: none;">Xem</a></td>
+                    </tr>
+                <?php } ?>      
             </tbody>
         </table>
     </div>

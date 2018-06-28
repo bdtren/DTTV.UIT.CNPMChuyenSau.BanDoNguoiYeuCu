@@ -27,7 +27,7 @@
                 else $status="99"; ?>
         <p> <i>Vi phạm quá 3 lần sẽ bị khóa tài khoản</i></p>
          <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: <?php echo $status ?>%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">1</div>
+                <div class="progress-bar" role="progressbar" style="width: <?php echo $status ?>%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><?php echo $vp; ?></div>
         </div>
 </div>
 </a>
