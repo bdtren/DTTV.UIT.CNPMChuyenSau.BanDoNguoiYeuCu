@@ -10,8 +10,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>LoveMarket – Bán đồ người yêu cũ – Khuyến mãi của LoveMarket</title>
+	<meta name="description" content="LoveMarket – Khuyến mãi của LoveMarket - bán đồ người yêu cũ. Giảm giá cho tin đăng đặc biệt.Tìm kiếm đồ người yêu cũ giá rẻ. Hãy đăng tin ngay hôm nay. " />
 	<meta name="author" content="DTTV" />
-	<meta name="description" content="Website bán đồ người yêu cũ." />
 	<link rel="icon" href="./Images/Home/favicon.png"/>
 	<meta name="viewport" content="width=device-width initial-scale=1.0"/>
 	<meta name="mobile-web-app-capable" content="yes"/>
@@ -19,7 +20,6 @@
   	<meta name="msapplication-starturl" content="/"/>
 	<meta name="theme-color" content="#f48c5b"/>
 	<meta name="Resource-type" content="Document" />  
-	<title>Khuyến mãi</title>	
  	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style-promotion.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,7 +42,7 @@
 				while($i<count($a)){
 			?>
 			<div class="col-md-6">
-				<div class="card item">
+				<div class="card item" style="margin-top: 10px;">
 				  <img class="card-img-top" src="<?php echo explode(';',$a[$i]['DDANH'])[0]?>" alt="Card image cap">
 				  <div class="card-body">
 					  <!-- Tiêu đề -->
