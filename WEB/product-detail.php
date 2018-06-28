@@ -15,12 +15,9 @@
 <meta charset="utf-8">
 <link rel="icon" href="./Images/Home/favicon.png"/>
 <title><?php echo $c["TIEUDE"]?></title>
-<meta name="description" content="LoveMarket –Sản phẩm của LoveMarket - bán đồ người yêu cũ. Rao bán đồ của người yêu cũ giá tốt nhất. Luôn cập nhật sản phẩm. Ghé thăm LoveMarket để tìm những sản phẩm phù hợp cho người yêu. " />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/style-product-detail.css">
-	
 	<!-- Icon -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="manifest" href="./manifest.json"> 
