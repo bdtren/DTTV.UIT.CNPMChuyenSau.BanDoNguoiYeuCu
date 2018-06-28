@@ -17,30 +17,20 @@
 
 <!-- Thanh tiêu đề -->
 <header id="header">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
 
-      <div class="col-md-6"><h1><i class="fa fa-dashboard"></i> <small>Trang người dùng</small></h1></div>
-	
-	  <!--<div class="col-md-offset-2">
+      <div class="col-md-9"><h1><i class="fa fa-dashboard"></i> <small>Trang người dùng</small></h1></div>
 
-	  </div> 
-		
-  		<div class="col-md-offset-2">
-		 
-	  </div>
-	-->
-	 
-	   <div class="col-md-6">
-		  <button type="button" class="btn btn-type-purple" id="thacmac" data-toggle="modal" data-target="#addReq">Thắc mắc</button>
-		  <button type="button" class="btn btn-type-pink" id="yeucau" data-toggle="modal" data-target="#addRes">Phản hồi</button>
-		  <button type="button" class="btn btn-type-blue" data-toggle="modal" data-target="#addPost" >Đăng bài</button>
-		  
-	  </div>
-		
-
-
-
+      <div class="col-md-3">
+        <!-- Example single danger button -->
+        <div class="btn-group create">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-type-blue" data-toggle="modal" data-target="#addPost" style="color: white;">Thêm bài đăng</button>
+          <button type="button" class="btn btn-type-purple" id="thacmac" data-toggle="modal" data-target="#addReq">Thắc mắc,yêu cầu</button>
+          <button type="button" class="btn btn-type-pink" id="yeucau" data-toggle="modal" data-target="#addRes">Phản hồi</button>
+        </div>
+      </div>
 
     </div>
   </div>
