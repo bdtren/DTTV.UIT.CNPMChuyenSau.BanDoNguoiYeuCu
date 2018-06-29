@@ -43,4 +43,12 @@ function TaiThongBao($MAKH)
     mysqli_close($conn);
     return $a;
 }
+function ChuoiToMang($string)
+    {
+        if(!empty($string))
+        {
+            return explode(';', $string);
+        }
+        return null;
+    }
 ?>

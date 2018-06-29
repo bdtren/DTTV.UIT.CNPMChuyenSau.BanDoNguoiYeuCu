@@ -141,7 +141,7 @@
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="<?php echo Chuoi2Mang($hd[$i]['HINHANH'])[0];?>">
+												<img class="notiavatar" src="<?php echo ChuoiToMang($hd[$i]['HINHANH'])[0];?>">
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">
@@ -161,7 +161,7 @@
 										</div>	
 									</div>						
 								</li>
-								<?php $i++; } ?>
+								<?php } ?>
 									<!-- Kết thúc 1 thông báo mới -->
 							 </ul>
 							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> <

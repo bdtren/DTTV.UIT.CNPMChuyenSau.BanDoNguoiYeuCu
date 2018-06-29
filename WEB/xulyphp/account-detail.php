@@ -646,6 +646,27 @@
         mysqli_close($conn);
         return $Count;
     }
+
+    // Đếm tin đăng đang theo dõi
+    function DemDangTheoDoiTD($MAKH)
+    {
+        include('connect.php');
+        $sql = "SELECT      * 
+                FROM        KH_THEODOI_TD,TINDANG
+                WHERE       KH_THEODOI_TD.MATD = TINDANG.MATD
+                AND         KH_THEODOI_TD.MAKH = '$MAKH'";
+        if ($result = mysqli_query($conn, $sql)) 
+        {
+            while($row = mysqli_fetch_assoc($result))
+            {
+                $Count=mysqli_num_rows($result);
+            } 
+        }
+        mysqli_close($conn);
+        return $Count;
+    }
+
+
     // đếm người mình đang theo dõi
     function DemDangTheoDoi($MAKH)
     {
