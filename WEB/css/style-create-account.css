@@ -16,7 +16,7 @@ body{
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 700px;
-	height: 490px;
+	height: 600px;
 	background: rgba(93,145,247,0.70);
 }
 
@@ -24,7 +24,7 @@ body{
 .container1 .form_contain2{
 	position: relative;
 	width: 50%;
-	height: 380px;
+	height: 50px;
 	float: left;
 	box-sizing: border-box;
 }
@@ -35,9 +35,10 @@ body{
 }
 
 .container1 .form_contain2{
+	margin-top: 10px;
 	background: #5d91f7;
-	height: 610px;
-	top: -50px;
+	height: 670px;
+	top: -40px;
 	box-shadow: -20px 0px 15px rgba(0,0,0,.5);
 	padding: 30px;
 }
@@ -130,14 +131,16 @@ body{
 
 @media screen and (max-width: 680px)
 {
-	
+	section{
+		height: 25em;
+	}
 	section .container1{
 		width: 80%;
 	}
 	
 	.container1{
 		width: 80%;
-		height: 530px;
+		height: 570px;
 	}
 	
 	.container1 .form_contain1{
@@ -146,7 +149,7 @@ body{
 	
 	.container1 .form_contain2{
 		width: 100%;
-		margin-top: 10em;
+		margin-top: 33em;
 	}
 	
 	#footerpage{
@@ -175,7 +178,7 @@ body{
 		top: 60%;
 	}
 	#footerpage{
-		margin-top: 72em;
+		margin-top: 68em;
 	}
 }
 
@@ -210,7 +213,7 @@ body{
 	}
 	
 	.container1 .form_contain2{
-		margin-top: 10em;
+		margin-top: 8em;
 		height: 610px;
 	}
 	#footerpage{

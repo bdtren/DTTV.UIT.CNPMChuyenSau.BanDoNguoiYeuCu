@@ -92,10 +92,10 @@ function showUploadedItem(source) {
       for(var i = 0;i<imageLocal.length;i++){
         file = imageLocal[i];
         var dat2 = [];
-          dat2[0] = nv[0]["MANV"];
-          dat2[1] = document.getElementById("ipTitle").value;
-          dat2[2] = document.getElementById("ipStartday").value.replace(/\-/g, "");
-          dat2[3] = document.getElementById("ipEndday").value.replace(/\-/g, "");
+          dat2[0] = document.getElementById("ipUsername").value;
+          dat2[1] = document.getElementById("ipPhone").value;
+          dat2[2] = new Date().replace(/\-/g, "");
+          dat2[3] = "";
           dat2[4] = i+1;
           //alert(JSON.stringify(dat));
           

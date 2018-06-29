@@ -245,7 +245,7 @@ function themKhuyenMai($data = array())
 
     mysqli_set_charset($conn, "utf8");
     if (mysqli_query($conn, $sql)) {
-        echo "successfully";
+        echo "successfully".$ma;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

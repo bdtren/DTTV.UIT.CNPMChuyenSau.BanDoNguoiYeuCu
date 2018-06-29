@@ -40,7 +40,7 @@
 			<div class="form_contain1">
 				<h1 id="dktk">Đăng ký tài khoản</h1>
 				<label >Tên đăng nhập:</label>
-				<input type="text"  class="textinput" name="username" required="">
+				<input id="ipUsername"type="text"  class="textinput" name="username" required="">
 				<label >Mật khẩu</label>
 				<input type="password" class="textinput" name="password" required="">
 				<label >Xác nhận mật khẩu</label>
@@ -50,7 +50,7 @@
 				<label >Facebook:</label>
 				<input type="text" class="textinput" name="facebook">
 				<label >Điện thoại:</label>
-				<input type="text" class="textinput" name="phone" required="">
+				<input id="ipPhone"type="text" class="textinput" name="phone" required="">
 			</div>
 			
 			<div class="form_contain2">

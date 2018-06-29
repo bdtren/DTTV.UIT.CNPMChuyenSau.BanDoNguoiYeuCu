@@ -107,7 +107,7 @@
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-3">
-												<img class="notiavatar" src="<?php echo $hd[$i]['DDANH'] ?>" style="border-radius: 0;"> <!-- Mặc định -->
+												<img class="notiavatar" src="<?php echo ChuoiToMang($hd[$i]['DDANH'])[0];?>" style="border-radius: 0;"> <!-- Mặc định -->
 											</div>
 											<div class="col-9 notidetail" >
 												<div class="row">

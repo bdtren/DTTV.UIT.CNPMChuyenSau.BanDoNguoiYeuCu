@@ -239,11 +239,23 @@ function addKhuyenMai() {
         data: { callFunction: "themKhuyenMai", data: dat },
         type: "post",
         success: function(output) {
-          if (output == "successfully") {
+          if (output.substring(0,12) == "successfully") {
             document.getElementById("addition-result").className =
               "alert alert-success";
             document.getElementById("addition-result").innerHTML =
               "<strong>Thành công!</strong> Khuyến mãi đã được khởi tạo.";
+
+              const eventPromotion = new CustomEvent('eventPromotion', {
+                bubbles:true,
+                detail:{ 
+                  title: dat[1],
+                  body: dat[5],
+                  icon: "./Images/Home/favicon.png",
+                  tag: "./promotion-detail.php?MAKM="+output.substring(12, output.length),
+                }
+              });
+
+              window.dispatchEvent(eventPromotion);
           } else {
             document.getElementById("addition-result").className =
               "alert alert-danger";
