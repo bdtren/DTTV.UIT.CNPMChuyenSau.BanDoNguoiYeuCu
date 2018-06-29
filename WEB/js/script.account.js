@@ -96,6 +96,7 @@ function showUploadedItem(source) {
           dat2[1] = document.getElementById("ipTitle").value;
           dat2[2] = document.getElementById("ipStartday").value.replace(/\-/g, "");
           dat2[3] = document.getElementById("ipEndday").value.replace(/\-/g, "");
+          dat2[4] = i+1;
           //alert(JSON.stringify(dat));
           
           var formDat = new FormData();

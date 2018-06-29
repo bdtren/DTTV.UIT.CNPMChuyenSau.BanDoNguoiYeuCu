@@ -88,6 +88,8 @@ function showUploadedItem(source) {
           dat2[0] = MAKH;
           dat2[1] = document.getElementById("tieude").value;
           dat2[2] = selected;
+          dat2[3] = "";
+          dat2[4] = i+1;
 
           
           var formDat = new FormData();
