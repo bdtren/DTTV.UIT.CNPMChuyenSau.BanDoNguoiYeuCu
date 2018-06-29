@@ -49,7 +49,8 @@
 				<input type="text" class="textinput" name="email" required="">
 				<label >Facebook:</label>
 				<input type="text" class="textinput" name="facebook">
-
+				<label >Điện thoại:</label>
+				<input type="text" class="textinput" name="phone" required="">
 			</div>
 			
 			<div class="form_contain2">
@@ -70,10 +71,7 @@
 				<br>
 
 				<label >Địa chỉ:</label>
-				<input type="text" class="textinput" name="address" required="">
-				<label >Điện thoại:</label>
-				<input type="text" class="textinput" name="phone" required="">
-				
+				<input type="text" class="textinput" name="address" required="">			
 				
 				<label>Đôi dòng tâm sự:</label>
 				<textarea name="text" class="textTalk" rows="4"></textarea>
