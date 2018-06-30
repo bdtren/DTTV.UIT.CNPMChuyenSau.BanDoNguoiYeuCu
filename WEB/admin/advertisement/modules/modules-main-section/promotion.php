@@ -106,7 +106,7 @@
 
 <!-- Modal -->
 <!-- Tạo khuyến mãi -->
-<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade modal-change" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<form>
@@ -156,5 +156,6 @@
 		</div>
 	</div>
 </div>
+
 
 <script src="../../js/script.admin.js"></script>

@@ -66,6 +66,12 @@
 	<script src="../../js/bootstrap.min.js"></script>
 	<script src="../../js/count-up-time.js"></script>
 	<script src="../../js/get-time-work.js"></script>
+	<!-- Reload lại trang sau khi cập nhật dữ liệu -->
+	<script>
+	$('.modal-change').on('hidden.bs.modal', function () {
+	  location.reload();
+	});
+</script>
 
 	<!-- Tạo datatable -->
 	<link rel="stylesheet" type="text/css" href="../../DataTables/datatables.css">

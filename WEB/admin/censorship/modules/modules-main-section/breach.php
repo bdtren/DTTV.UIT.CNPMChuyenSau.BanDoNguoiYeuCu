@@ -51,7 +51,7 @@
 
 <!-- Modal -->
 <!-- Form xử lí vi phạm -->
-<div class="modal fade" id="breach" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade modal-change" id="breach" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<form>

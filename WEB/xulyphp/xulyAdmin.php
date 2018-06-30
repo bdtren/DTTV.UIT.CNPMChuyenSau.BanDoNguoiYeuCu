@@ -311,7 +311,7 @@ function laySoTinChoDuyet($date = '')
     include '../../xulyphp/connect.php';
     $sql = "SELECT count(MATD) SOTM
             FROM TINDANG
-            WHERE TTKIEMDUYET=0;";
+            WHERE TTKIEMDUYET=0 or TINHTRANGTIN='dang cho';";
     if ($result = mysqli_query($conn, $sql)) {
         $a = mysqli_fetch_assoc($result);
     }
