@@ -11,6 +11,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
+	width: 100%;
 }
 
 /* chưa đăng nhập */
@@ -53,12 +54,13 @@
 .dropdown-content-login {
     display: none;
     position: absolute;
-    background-color: #1200FF;
     min-width: 400px;
 	background: white;
 	padding: 12px 16px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+	height: 24em;
+	overflow-y: auto;
 }
 
 #loginheader{
@@ -82,7 +84,7 @@
 	padding: 0;
 	margin-bottom: 3px;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 15px;
 }
 
 .dropdown-content-login .notidetail .time{
@@ -90,6 +92,7 @@
 	text-align: right;
 	margin-bottom: 3px;
 	font-style: italic;
+	font-size: 15px;
 }
 
 #createacc{
@@ -122,6 +125,29 @@
 	color: #FF494C;
 }
 
+#navbarCollapse ul li .nav-link{
+	text-align: left !important;
+}
+
+.dropdown-content-login ul{
+	overflow-y: auto;
+}
+
+
+@media all and (max-width: 480px){
+	.dropdown-content-login{
+		min-width: 320px; 
+	}
+	.dropdown-content-login .notidetail .user{
+		font-size: 13px;
+	}
+	.dropdown-content-login .notidetail .time{
+		font-size: 12px;
+	}
+	.dropdown-content-login .notidetail .head{
+		font-size: 13px;
+	}
+}
 
 
 

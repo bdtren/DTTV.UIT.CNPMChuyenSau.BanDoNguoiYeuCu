@@ -1,6 +1,6 @@
 <div class="card" style="height: 30em;">
   <h5 class="card-header main-color"><i class="fa fa-users"></i>  Người đang theo dõi bạn</h5>
-  <div class="card-body user-detail-section">
+  <div class="card-body user-detail-section" style="overflow-y: auto; overflow-x: auto;">
 
   <?php $a = TaiNguoiTheoDoiMinh($MaKH);?>
 

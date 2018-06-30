@@ -2,7 +2,7 @@
 <?php $a = TaiBaiBanDaDuyet($MaKH);?>
 <div class="card" style="height: 30em;">
   <h5 class="card-header main-color"><i class="fa fa-check"></i>  Bài bán đã duyệt</h5>
-  <div class="card-body user-detail-section">
+  <div class="card-body user-detail-section" style="overflow-y: auto; overflow-x: auto;">
     <table class="table table-striped" style="overflow-y: auto;">
       <thead>
         <tr>

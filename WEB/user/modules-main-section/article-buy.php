@@ -2,14 +2,14 @@
 <?php $a = TaiBaiMuaDaDuyet($MaKH);?>
 <div class="card" style="height: 30em;">
   <h5 class="card-header main-color"><i class="fa fa-check"></i>  Bài mua đã duyệt</h5>
-  <div class="card-body user-detail-section">
-    <table class="table table-striped" style="overflow-y: auto;">
+  <div class="card-body user-detail-section" style="overflow-y: auto; overflow-x: auto;">
+    <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">STT</th>
           <th scope="col">Tiêu đề</th>
           <th scope="col">Ngày</th>
-          <th scope="col">Quản lí</th>
+          <th colspan="3">Quản lí</th>
         </tr>
       </thead>
       <tbody>

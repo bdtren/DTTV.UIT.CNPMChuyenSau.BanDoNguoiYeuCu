@@ -731,6 +731,12 @@ section .section-title {
 }
 
 
+@media all and (max-width: 480px){
+	.main-contain-carousel #carouselExampleFade .carousel-inner .carousel-item img{
+		background: url(../Images/Promotion/item-3-re.jpg);
+	}
+}
+
 
 
 
