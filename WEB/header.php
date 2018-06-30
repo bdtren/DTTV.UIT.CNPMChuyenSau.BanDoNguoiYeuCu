@@ -164,8 +164,9 @@
 								<?php } ?>
 									<!-- Kết thúc 1 thông báo mới -->
 							 </ul>
-							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> <
+							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> 
 								</a>	
+							<script src='./js/script.header.js'></script>
 							
 							
 							
@@ -208,7 +209,7 @@
 					}
 
 				</script>	
-				<script src='./js/script.header.js'></script>
+				
 
 				</div>
     		</nav>

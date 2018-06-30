@@ -95,7 +95,7 @@
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
 					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
-					$z=$numOfPages-5;
+					$z=$numOfPages-4;
 					while($z<=$numOfPages){
 						if($numpage==$z||($numpage==0&&$z==1)){
 							$actNum = "active";
@@ -214,7 +214,7 @@
 					echo "<li class='page-item'><a class='page-link' href='$string'>1</a></li>";
 					echo "<li class='page-item' style='font-size: 25px; font-weight: bolder; color: blue;'>&ensp;...&ensp;</li>";
 	
-					$z=$numOfPages-5;
+					$z=$numOfPages-4;
 					while($z<=$numOfPages){
 						if($numpage==$z||($numpage==0&&$z==1)){
 							$actNum = "active";

@@ -255,7 +255,7 @@ function addKhuyenMai() {
                 }
               });
 
-              window.dispatchEvent(eventPromotion);
+              document.dispatchEvent(eventPromotion);
           } else {
             document.getElementById("addition-result").className =
               "alert alert-danger";

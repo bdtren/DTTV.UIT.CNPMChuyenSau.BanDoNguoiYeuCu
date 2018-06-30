@@ -11,6 +11,15 @@ document.addEventListener("eventPromotion", function(e){
     );
 });
 
+// notify = new Notification(
+//     "Hít hà",
+//     {
+//         body: "e.detail.body", // Nội dung thông báo
+//         icon: "./Images/Home/favicon.png", // Hình ảnh
+//         tag: "./promotion-detail.php?MAKM="// Đường dẫn
+//     }
+// );
+
 notify.onclick = function () {
     window.location.href = this.tag; // Di chuyển đến trang cho url = tag
 }
