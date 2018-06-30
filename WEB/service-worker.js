@@ -113,6 +113,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(precacheController.install());
 }); */
 
+
+
 //Realtime fetching data and add to cache+indexedDB
 self.addEventListener('fetch', (event) => {
 
@@ -192,6 +194,59 @@ self.addEventListener("activate", () => {
   //   cache.add(staticAssets);
   // }
 });
+
+/***************************************** NOTIFICATION *****************************************/
+//kiểm tra, hành động nếu người dùng tắt notification
+self.addEventListener('notificationclose', function(e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+
+  console.log('Closed notification: ' + primaryKey);
+});
+//Kiểm tra, hành dộng khi người dùng nhấn chọn notification
+self.addEventListener('notificationclick', function(e) {
+  var notification = e.notification;
+  var primaryKey = notification.data.primaryKey;
+  var action = e.action;
+
+  if (action === 'close') {
+    notification.close();
+  } else {
+    clients.openWindow(notification.tag);
+    notification.close();
+  }
+});
+/***************************************** PUSH API *****************************************/
+//Nhận sự kiện push và xuất kết quả
+self.addEventListener('push', function(e) {
+  var options = {
+    body: 'Here is a notification body!',//Nội dung thông báo
+    icon: './Images/Home/favicon.png',//Hình ảnh kèm theo
+    tag: "./promotion-detail.php?MAKM="+"KM0001",//đường dẫn thông báo, dùng khi click vào
+    image: './Images/Promotion/item-0.jpg',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '2'
+    },
+    actions: [
+      {action: 'explore', title: 'Explore this new world',
+        icon: 'images/checkmark.png'},
+      {action: 'close', title: 'Close',
+        icon: 'images/xmark.png'},
+    ]
+  };
+  e.waitUntil(
+    self.registration.showNotification('Hello world!', options)
+  );
+});
+
+
+
+
+
+
+
 
 //Cap nhat Service Worker moi khi online
 /*var regist = false;

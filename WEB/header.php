@@ -62,11 +62,14 @@
 	</style>
 	<link rel="stylesheet" href="css/style-notification.css">
 	
-		
-	
 	</head>
 
 	<body>
+		<script>
+			var isEmptyUsername = <?php echo empty($UserName)?>;
+			var Username = <?php echo $UserName ?>;
+			var MaKH = <?php echo $MaKH?>;
+		</script>
 <!--Begin header -->
 		<div class="tieude">
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top ">
@@ -167,6 +170,7 @@
 							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> 
 								</a>	
 							<script src='./js/script.header.js'></script>
+							<script src='./sw-register.js'></script>
 							
 							
 							
