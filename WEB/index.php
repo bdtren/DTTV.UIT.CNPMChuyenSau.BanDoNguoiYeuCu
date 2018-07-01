@@ -273,6 +273,16 @@
 				</script>
 	<?php }?>
 	
+	<!-- SNOW -->
+	<script src="js/jquery.snow.min.1.0.js"></script>
+	<script>
+    $(document).ready( function(){
+        $.fn.snow();
+		
+    });
+		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 200, flakeColor: '#FFFFFF' });
+    </script>
+	<!-- SNOW -->
 
 </body>
 

@@ -34,9 +34,11 @@
 	<link rel="manifest" href="./manifest.json"> 
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet"> 
+	
 </head>
 
 <body>
+	
 	<?php include('header.php'); ?>
 
 		<div class="container-fluid page" style="margin-top: 4.8em; border: none;">
@@ -305,11 +307,22 @@
     </div>
   </div>
 </div>	
-	
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<!-- SNOW -->
+	<script src="js/jquery.snow.min.1.0.js"></script>
+	<script>
+    $(document).ready( function(){
+        $.fn.snow();
+		
+    });
+		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 200, flakeColor: '#FFFFFF' });
+    </script>
+	<!-- SNOW -->
 		<!--Progressive Web App(PWA): install, service worker-->
 	<!-- <script src="./sw-register.js"></script> -->
+
 </body>
 </html>
