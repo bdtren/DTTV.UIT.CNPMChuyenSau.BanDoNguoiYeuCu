@@ -61,6 +61,8 @@
 		}
 	</style>
 	<link rel="stylesheet" href="css/style-notification.css">
+	<link rel="manifest" href="./manifest.json">
+
 	
 	</head>
 
