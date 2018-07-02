@@ -1,3 +1,5 @@
+//importScripts('./app-controller.js')
+
 var selected = -1;
 var work = localStorage.getItem("work");
 if (!work) {
@@ -245,17 +247,21 @@ function addKhuyenMai() {
             document.getElementById("addition-result").innerHTML =
               "<strong>Thành công!</strong> Khuyến mãi đã được khởi tạo.";
 
-              const eventPromotion = new CustomEvent('eventPromotion', {
-                bubbles:true,
-                detail:{ 
-                  title: dat[1],
-                  body: dat[5],
-                  icon: "./Images/Home/favicon.png",
-                  tag: "./promotion-detail.php?MAKM="+output.substring(12, output.length),
-                }
-              });
+            
+            //Up dữ liệu cho notification
+            var dataNotify = '{ "title": "'+dat[1]+
+            '","body": "'+dat[5]+
+            '", "icon": "./Images/Home/favicon.png", "tag": "./promotion-detail.php?MAKM='+output.substring(12, output.length)+
+            '", "image":"'+dat[4].split(";")[0]+
+            '", "data": {"url": "./promotion-detail.php?MAKM='+output.substring(12, output.length)+
+                          '", "type": "Khuyến mãi", "source": "LoveMarket", "priority": "1" }}';
 
-              document.dispatchEvent(eventPromotion);
+          
+          if(AppController._currentSubscription){
+            AppController.sendPushMessage(AppController._currentSubscription,
+              dataNotify);
+          }
+
           } else {
             document.getElementById("addition-result").className =
               "alert alert-danger";

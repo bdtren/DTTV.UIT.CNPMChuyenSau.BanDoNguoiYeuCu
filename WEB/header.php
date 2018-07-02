@@ -68,9 +68,9 @@
 
 	<body>
 		<script>
-			var isEmptyUsername = <?php echo empty($UserName)?>;
-			var Username = <?php echo $UserName ?>;
-			var MaKH = <?php echo $MaKH?>;
+			var isEmptyUsername = "<?php echo empty($UserName)?>";
+			var Username = "<?php echo $UserName ?>";
+			var MaKH = "<?php echo $MaKH?>";
 		</script>
 <!--Begin header -->
 		<div class="tieude">
@@ -171,6 +171,20 @@
 							 </ul>
 							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> 
 								</a>	
+								<script src="./js/constants.js"></script>
+							<script src="./js/libs/idb-keyval.js"></script>
+							<script src="./js/libs/snippets.js"></script>
+
+							<script src="./js/encryption/hmac.js"></script>
+							<script src="./js/encryption/hkdf.js"></script>
+							<script src="./js/encryption/vapid-helper-1.js"></script>
+							<script src="./js/encryption/vapid-helper-2.js"></script>
+							<script src="./js/encryption/helpers.js"></script>
+
+							<script src="./js/encryption/encryption-aes-128-gcm.js"></script>
+							<script src="./js/encryption/encryption-aes-gcm.js"></script>
+							<script src="./js/encryption/encryption-factory.js"></script>
+
 							<script src='./js/script.header.js'></script>
 							<script src='./sw-register.js'></script>
 							

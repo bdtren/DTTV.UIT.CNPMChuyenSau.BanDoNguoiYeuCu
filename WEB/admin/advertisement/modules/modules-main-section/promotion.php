@@ -157,5 +157,20 @@
 	</div>
 </div>
 
+  <script src="../../js/constants.js"></script>
+  <script src="../../js/libs/idb-keyval.js"></script>
+  <script src="../../js/libs/snippets.js"></script>
 
+  <script src="../../js/encryption/hmac.js"></script>
+  <script src="../../js/encryption/hkdf.js"></script>
+  <script src="../../js/encryption/vapid-helper-1.js"></script>
+  <script src="../../js/encryption/vapid-helper-2.js"></script>
+  <script src="../../js/encryption/helpers.js"></script>
+
+  <script src="../../js/encryption/encryption-aes-128-gcm.js"></script>
+  <script src="../../js/encryption/encryption-aes-gcm.js"></script>
+  <script src="../../js/encryption/encryption-factory.js"></script>
+
+<script src="../../js/push-client.js"></script>
+<script src="../../js/app-controller.js"></script>
 <script src="../../js/script.admin.js"></script>
