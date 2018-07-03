@@ -465,6 +465,7 @@
 		@media (min-width:700px) and (max-width:1199px){
 			.container2 {
 				width: 640px;
+				height: 800px ;
 			}
 		}
 		@media (min-width:520px) and (max-width:699px){
@@ -472,6 +473,14 @@
 				width: 480px;
 			}
 		}
+		@media (min-width:320px) and (max-width:519px){
+			.container2 {
+				width: 300px;
+				height: 300px;
+
+			}
+		}
+
 
 		/* @media (min-width: 1200px){ 
 			.container2 {

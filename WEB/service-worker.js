@@ -113,6 +113,8 @@ self.addEventListener('install', (event) => {
   event.waitUntil(precacheController.install());
 }); */
 
+
+
 //Realtime fetching data and add to cache+indexedDB
 self.addEventListener('fetch', (event) => {
 
@@ -161,12 +163,15 @@ self.addEventListener('fetch', (event) => {
   if(req.url.match(/[^/]+(.jpg|.jpeg|.svg|.png|.gif)$/)!=null){
     event.respondWith(cacheImage.handle({event}));
   }else if (url.origin == location.origin) {
-      //event.respondWith(cacheFirst(req));
-    event.respondWith(cacheCacheFirst.handle({event}));
-  } else {
+  //     //event.respondWith(cacheFirst(req));
+  //   event.respondWith(cacheCacheFirst.handle({event}));
+  // } else {
       //event.respondWith(networkFirst(req));
       event.respondWith(cacheNetworkFirst.handle({event})); 
-  }     
+  } else{
+    //event.respondWith(cacheFirst(req));
+    event.respondWith(cacheCacheFirst.handle({event}));
+  }
 });  
   
 
@@ -192,6 +197,85 @@ self.addEventListener("activate", () => {
   //   cache.add(staticAssets);
   // }
 });
+
+/***************************************** PUSH API *****************************************/
+'use strict';
+
+/* eslint-env browser, serviceworker */
+importScripts('./js/libs/idb-keyval.js');
+importScripts('./js/analytics-sw.js');
+
+self.analytics.trackingId = 'UA-77119321-2';
+//Nhận sự kiện push và xuất kết quả
+self.addEventListener('push', function(e) {
+  let notificationTitle = 'Đây là title tạm';
+  const notificationOptions = {
+    body: 'Notification body!',//Nội dung thông báo
+    icon: './Images/Home/favicon.png',//Hình ảnh kèm theo
+    tag: "./promotion-detail.php?MAKM="+"KM0001",//đường dẫn thông báo, dùng khi click vào
+    image: './Images/Promotion/item-0.jpg',
+    vibrate: [100, 50, 100],
+    data: {
+      url:'https://google.com/',
+      dateOfArrival: Date.now(),
+      primaryKey: '2'
+    },
+    // actions: [
+    //   {action: 'explore', title: 'Đây là nội dung tạm',
+    //     icon: 'images/checkmark.png'},
+    //   {action: 'close', title: 'Close',
+    //     icon: 'images/xmark.png'},
+    // ]
+  };
+  if (event.data) {
+    const dataText = event.data.json();
+    notificationTitle = dataText.title;
+    notificationOptions.body = dataText.body;
+    notificationOptions.tag = dataText.tag;
+    notificationOptions.icon = dataText.icon;
+    notificationOptions.image = dataText.image;
+    notificationOptions.data.url = dataText.data.url;
+  }
+
+  event.waitUntil(
+    Promise.all([
+      self.registration.showNotification(
+        notificationTitle, notificationOptions),
+      self.analytics.trackEvent('push-received'),
+    ])
+  );
+});
+/***************************************** NOTIFICATION *****************************************/
+//kiểm tra, hành động nếu người dùng tắt notification
+self.addEventListener('notificationclose', function(event) {
+  event.waitUntil(
+    Promise.all([
+      self.analytics.trackEvent('notification-close'),
+    ])
+  );
+  console.log('Closed notification: '+"ohh");
+});
+
+//Kiểm tra, hành dộng khi người dùng nhấn chọn notification
+self.addEventListener('notificationclick', function(event) {
+  event.notification.close();
+
+  let clickResponsePromise = Promise.resolve();
+  if (event.notification.data && event.notification.data.url) {
+    clickResponsePromise = clients.openWindow(event.notification.data.url);
+  }
+
+  event.waitUntil(
+    Promise.all([
+      clickResponsePromise,
+      self.analytics.trackEvent('notification-click'),
+    ])
+  );
+});
+
+
+
+
 
 //Cap nhat Service Worker moi khi online
 /*var regist = false;

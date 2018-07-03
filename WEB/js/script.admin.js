@@ -1,12 +1,15 @@
+//importScripts('./app-controller.js')
+
 var selected = -1;
 var work = localStorage.getItem("work");
 if (!work) {
   work = 0;
   localStorage.setItem("work", work);
 }
+var subscriptionObject;
 
 /***********************************************************/
-/***************CÁC MODEL + XỬ LÝ TRÊN TRANG QUẢNG CÁO*****/
+/********* CÁC MODEL + XỬ LÝ TRÊN TRANG QUẢNG CÁO *********/
 /*********************************************************/
 //Mở model chi tiết thẻ cào
 function openModelTheCao(position) {
@@ -95,7 +98,7 @@ function openModelChiTietQC(position) {
   var imgs = arrTable[position]["DDANH"].split(";");
   var imglink = "";
   for (var i = 0; i < imgs.length; i++) {
-    if(imgs[i]=="") continue;
+    if (imgs[i] == "") continue;
     imglink +=
       '<a href="../../' +
       imgs[i] +
@@ -123,30 +126,31 @@ function showUploadedItem(source) {
 }
 //Bắt sự kiện khi thêm ảnh mới
 var imageLocal = [];
-function themAnhQc(th){
-    var i, img, reader, file;
-    var localLen = th.files.length;
-    if(localLen>5){
-      alert("Bạn đã tải lên quá nhiều ảnh!\nHệ thống chỉ ghi nhận TỐI ĐA 5 ảnh đầu tiên!");
-      localLen = 5;
+function themAnhQc(th) {
+  var i, img, reader, file;
+  var localLen = th.files.length;
+  if (localLen > 5) {
+    alert(
+      "Bạn đã tải lên quá nhiều ảnh!\nHệ thống chỉ ghi nhận TỐI ĐA 5 ảnh đầu tiên!"
+    );
+    localLen = 5;
+  }
+  //document.getElementById("uploaded-image").innerHTML = "...";
+  for (i = 0; i < localLen; i++) {
+    file = th.files[i];
+    if (!file.type.match(/image.*/)) {
+      alert(
+        "Sai định dạng, định đạng hình ảnh cho phép: jpg, jpeg, png, bmp, gif, svg"
+      );
+      continue;
     }
-    //document.getElementById("uploaded-image").innerHTML = "...";
-    for (i = 0; i < localLen; i++) {
-      file = th.files[i];
-      if (!file.type.match(/image.*/)) {
-        alert(
-          "Sai định dạng, định đạng hình ảnh cho phép: jpg, jpeg, png, bmp, gif, svg"
-        );
-        continue;
-      }
-      reader = new FileReader();
-      reader.onloadend = function(e) {
-        showUploadedItem(e.target.result);
-      };
-      reader.readAsDataURL(file);
-      imageLocal.push(file);
-
-    }
+    reader = new FileReader();
+    reader.onloadend = function(e) {
+      showUploadedItem(e.target.result);
+    };
+    reader.readAsDataURL(file);
+    imageLocal.push(file);
+  }
 }
 //Thêm khuyến mãi mới
 function addKhuyenMai() {
@@ -177,7 +181,7 @@ function addKhuyenMai() {
       errorList.push("Ngày kết thúc");
     }
   }
-  if (imageLocal.length==0) {
+  if (imageLocal.length == 0) {
     error = true;
     errorList.push("Ảnh minh họa");
   }
@@ -196,80 +200,148 @@ function addKhuyenMai() {
     return;
   }
 
-    //Up load hình ảnh
-    var imageNames = "";
-    var promises=[];
+  //Up load hình ảnh
+  var imageNames = "";
+  var promises = [];
 
-    for(var i = 0;i<imageLocal.length;i++){
-      file = imageLocal[i];
-      var dat2 = [];
-        dat2[0] = nv[0]["MANV"];
-        dat2[1] = document.getElementById("ipTitle").value;
-        dat2[2] = document.getElementById("ipStartday").value.replace(/\-/g, "");
-        dat2[3] = document.getElementById("ipEndday").value.replace(/\-/g, "");
-        dat2[4] = i+1;
-        //alert(JSON.stringify(dat));
-        
-        var formDat = new FormData();
-        formDat.append("anhDauVao", file);
-        dat2 = JSON.stringify(dat2);
-        formDat.append("data", dat2);
-        formDat.append("nguon", "km");
-        var request = $.ajax({
-          url: "../../xulyphp/xulyAnh.php",
-          data: formDat,
-          type: "post",
-          processData: false,
-          contentType: false,
-          cache: false,
-          success: function(output) {
-            imageNames += (i == 0) ? "" : ";";
-            imageNames += output;
-            //showUploadedItem(output);
-            //alert(imageNames);
+  for (var i = 0; i < imageLocal.length; i++) {
+    file = imageLocal[i];
+    var dat2 = [];
+    dat2[0] = nv[0]["MANV"];
+    dat2[1] = document.getElementById("ipTitle").value;
+    dat2[2] = document.getElementById("ipStartday").value.replace(/\-/g, "");
+    dat2[3] = document.getElementById("ipEndday").value.replace(/\-/g, "");
+    dat2[4] = i + 1;
+    //alert(JSON.stringify(dat));
+
+    var formDat = new FormData();
+    formDat.append("anhDauVao", file);
+    dat2 = JSON.stringify(dat2);
+    formDat.append("data", dat2);
+    formDat.append("nguon", "km");
+    var request = $.ajax({
+      url: "../../xulyphp/xulyAnh.php",
+      data: formDat,
+      type: "post",
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function(output) {
+        imageNames += i == 0 ? "" : ";";
+        imageNames += output;
+        //showUploadedItem(output);
+        //alert(imageNames);
+      }
+    });
+    promises.push(request);
+  }
+  $.when.apply(null, promises).done(function() {
+    //alert(imageNames);
+    dat[4] = imageNames.substring(1, imageNames.length);
+    $.ajax({
+      url: "../../xulyphp/xulyAdmin.php",
+      data: { callFunction: "themKhuyenMai", data: dat },
+      type: "post",
+      success: function(output) {
+        if (output.substring(0, 12) == "successfully") {
+          document.getElementById("addition-result").className =
+            "alert alert-success";
+          document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> Khuyến mãi đã được khởi tạo.";
+
+          //Up dữ liệu cho notification
+          var dataNotify =
+            '{ "title": "' +
+            dat[1] +
+            '","body": "' +
+            dat[5] +
+            '", "icon": "./Images/Home/favicon.png", "tag": "./promotion-detail.php?MAKM=' +
+            output.substring(12, output.length) +
+            '", "image":"' +
+            dat[4].split(";")[0] +
+            '", "data": {"url": "./promotion-detail.php?MAKM=' +
+            output.substring(12, output.length) +
+            '", "type": "Khuyến mãi", "source": "LoveMarket", "priority": "1" }}';
+
+          //Gửi dữ liệu lên server
+          // appControl = new AppController();
+          // appControl._payloadTextField = dataNotify;
+          // const toggleSwitch =
+          //   document.querySelector(".js-push-toggle-switch");
+          // appControl._uiInitialised(toggleSwitch.MaterialSwitch);
+
+          // appControl._pushClient.subscribeDevice();
+          // alert( appControl._currentSubscription);
+
+          // appControl.updatePushInfo();
+          // if(appControl._currentSubscription){
+          //   appControl.sendPushMessage(appControl._currentSubscription,
+          //     dataNotify);
+          // }
+          //Kiểm tra nếu không có service worker, push notification thì báo lỗi còn nếu có thì đăng kí
+          if (!("serviceWorker" in navigator)) {
+            alert(
+              "Trình duyệt không hỗ trợ web app, bạn hãy lựa chọn Chrome hoặc Firefox để thực hiện công việc này!"
+            );
+            return;
           }
-        });
-        promises.push(request);
-    }
-    $.when.apply(null, promises).done(function(){
-      //alert(imageNames);
-      dat[4] = imageNames.substring(1,imageNames.length);
-      $.ajax({
-        url: "../../xulyphp/xulyAdmin.php",
-        data: { callFunction: "themKhuyenMai", data: dat },
-        type: "post",
-        success: function(output) {
-          if (output.substring(0,12) == "successfully") {
-            document.getElementById("addition-result").className =
-              "alert alert-success";
-            document.getElementById("addition-result").innerHTML =
-              "<strong>Thành công!</strong> Khuyến mãi đã được khởi tạo.";
 
-              const eventPromotion = new CustomEvent('eventPromotion', {
-                bubbles:true,
-                detail:{ 
-                  title: dat[1],
-                  body: dat[5],
-                  icon: "./Images/Home/favicon.png",
-                  tag: "./promotion-detail.php?MAKM="+output.substring(12, output.length),
-                }
-              });
+          if (!("PushManager" in window)) {
+            // Push isn't supported on this browser, disable or hide UI.
+            alert(
+              "Trình duyệt không hỗ trợ phát thông báo, bạn hãy lựa chọn Chrome hoặc Firefox để thực hiện công việc này!"
+            );
 
-              window.dispatchEvent(eventPromotion);
-          } else {
-            document.getElementById("addition-result").className =
-              "alert alert-danger";
-            document.getElementById("addition-result").innerHTML =
-              "<strong>Thất bại!</strong> Không thể lưu kết quả, mã lỗi:" + output;
+            return;
           }
-          $("#addition-result").show();
+          if (!window.Notification) {
+            alert(
+              "Trình duyệt của bạn không hỗ trợ Thông báo, bạn hãy lựa chọn các trình duyệt Chrome hoặc Firefox để có những trải nghiệm tốt nhất!"
+            );
+            return;
+          }
+          // Ngược lại trình duyệt có hỗ trợ thông báo
+          if (Notification.permission !== "granted") {
+            // Gửi lời mời cho phép thông báo
+            Notification.requestPermission().then(function(p) {
+              // Nếu không cho phép
+              if (p === "denied") {
+                alert(
+                  "Bạn đã không cho phép thông báo trên trình duyệt, xin hãy cho phép thông báo trên trình duyệt để nhận các thông báo mới nhất!"
+                );
+              }
+              // Ngược lại cho phép
+              else {
+                //alert('Bạn đã cho phép thông báo trên trình duyệt, hãy bắt đầu thử Hiển thị thông báo.');
+              }
+            });
+          }
+          // var wait = [];
+          // var req = registerServiceWorker();
+          // wait.push(req);
+          // $.when.apply(null, wait).done(function(){
+          //   alert(subscriptionObject);
+          // });
+          new Promise(function(resolve, reject) {
+            registerServiceWorker();
+            resolve(subscriptionObject);
+          }).then(function(val){
+            alert(val);
+          });
+
+        } else {
+          document.getElementById("addition-result").className =
+            "alert alert-danger";
+          document.getElementById("addition-result").innerHTML =
+            "<strong>Thất bại!</strong> Không thể lưu kết quả, mã lỗi:" +
+            output;
         }
-      });
-   })
-    
-  
+        $("#addition-result").show();
+      }
+    });
+  });
+
   //alert(JSON.stringify(dat));
-  
 }
 
 //Xóa quảng cáo
@@ -386,7 +458,7 @@ function openModelDuyetTinViPham(position) {
 }
 //Mở model duyệt tin đặc biệt
 var needMoney = 0;
-var newSpecialName="";
+var newSpecialName = "";
 function openModelDuyetTinDB(position) {
   //$("#addition-result").hide();
 
@@ -395,32 +467,35 @@ function openModelDuyetTinDB(position) {
   switch (arrTable[position]["TINHTRANGTIN"]) {
     case "duyet moi":
       title = "Tin mới";
-      for(var i=0;i<arrPrice.length;i++){
-        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
-          needMoney = arrPrice[i]["GIA"]; break;
+      for (var i = 0; i < arrPrice.length; i++) {
+        if (arrPrice[i]["LOAITIN"] == "ribbon-new") {
+          needMoney = arrPrice[i]["GIA"];
+          break;
         }
       }
-      newSpecialName="ribbon-new";
+      newSpecialName = "ribbon-new";
       break;
     case "duyet hot":
       title = "Tin hot";
       title = "Tin mới";
-      for(var i=0;i<arrPrice.length;i++){
-        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
-          needMoney = arrPrice[i]["GIA"]; break;
+      for (var i = 0; i < arrPrice.length; i++) {
+        if (arrPrice[i]["LOAITIN"] == "ribbon-new") {
+          needMoney = arrPrice[i]["GIA"];
+          break;
         }
       }
-      newSpecialName="ribbon-hot";
+      newSpecialName = "ribbon-hot";
       break;
     case "duyet gg":
       title = "Tin giảm giá";
       title = "Tin mới";
-      for(var i=0;i<arrPrice.length;i++){
-        if(arrPrice[i]["LOAITIN"]=="ribbon-new"){
-          needMoney = arrPrice[i]["GIA"]; break;
+      for (var i = 0; i < arrPrice.length; i++) {
+        if (arrPrice[i]["LOAITIN"] == "ribbon-new") {
+          needMoney = arrPrice[i]["GIA"];
+          break;
         }
       }
-      newSpecialName="ribbon-discount";
+      newSpecialName = "ribbon-discount";
       break;
     default:
       needMoney = 0;
@@ -428,16 +503,14 @@ function openModelDuyetTinDB(position) {
   }
   document.getElementById("htitle").innerHTML = title;
   //alert(arrTable[position]["SODU"]+"|||"+needMoney);
-  if(parseFloat(arrTable[position]["SODU"])>=parseFloat(needMoney)){
+  if (parseFloat(arrTable[position]["SODU"]) >= parseFloat(needMoney)) {
     document.getElementById("lbPayResult").style.color = "green";
     document.getElementById("lbPayResult").innerHTML = "Đủ tiền thanh toán";
     document.getElementById("btnSuccess").disabled = false;
-    
-  } else{
+  } else {
     document.getElementById("lbPayResult").style.color = "red";
     document.getElementById("lbPayResult").innerHTML = "Không thể thanh toán";
     document.getElementById("btnSuccess").disabled = true;
-
   }
 
   var postType;
@@ -469,7 +542,7 @@ function specialSuccess() {
 //Thêm thay đổi tin đặc biệt vào bảng tindang và bảng khachhang
 function updateDacBiet(result, position, newSName, price) {
   selected = position;
-  if (newSName==""||needMoney<0) {
+  if (newSName == "" || needMoney < 0) {
     document.getElementById("addition-result").className = "alert alert-danger";
     document.getElementById("addition-result").innerHTML =
       "<strong>Nhập thất bại!</strong> Dữ liệu đầu vào trống rỗng";
@@ -480,8 +553,8 @@ function updateDacBiet(result, position, newSName, price) {
   dat[0] = arrTable[position]["MATD"];
   dat[1] = newSName;
   dat[2] = arrTable[position]["MAKH"];
-  dat[3] = arrTable[position]["SODU"]-price;
-  if(dat[3]<0){
+  dat[3] = arrTable[position]["SODU"] - price;
+  if (dat[3] < 0) {
     document.getElementById("addition-result").className = "alert alert-danger";
     document.getElementById("addition-result").innerHTML =
       "<strong> Lỗi!</strong> không được phát sinh nợ cho khách hàng";
@@ -500,13 +573,13 @@ function updateDacBiet(result, position, newSName, price) {
         arrTable[selected]["SODU"] = dat[3];
         document.getElementById("addition-result").className =
           "alert alert-success";
-          if(result=="thanh-cong"){
-            document.getElementById("addition-result").innerHTML =
-          "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
-          } else{
-            document.getElementById("addition-result").innerHTML =
+        if (result == "thanh-cong") {
+          document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đặc biệt đã được tạo.";
+        } else {
+          document.getElementById("addition-result").innerHTML =
             "<strong>Thành công!</strong> tin đăng đã được HỦY khỏi tạo tin đặc biệt.";
-          }
+        }
       } else {
         document.getElementById("addition-result").className =
           "alert alert-danger";
@@ -535,8 +608,7 @@ function updateKiemDuyet(result, position) {
   var dat = [];
   dat[0] = arrTable[position]["MATD"];
   dat[1] = arrTable[position]["MAKH"];
-  dat[2] = result =="thanh-cong"?"da dang":"da huy";
-
+  dat[2] = result == "thanh-cong" ? "da dang" : "da huy";
 
   // if(false){
   //   document.getElementById("addition-result").className = "alert alert-danger";
@@ -557,13 +629,13 @@ function updateKiemDuyet(result, position) {
         arrTable[selected]["SODU"] = dat[3];
         document.getElementById("addition-result").className =
           "alert alert-success";
-          if(result=="thanh-cong"){
-            document.getElementById("addition-result").innerHTML =
-              "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
-          } else{
-            document.getElementById("addition-result").innerHTML =
+        if (result == "thanh-cong") {
+          document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
+        } else {
+          document.getElementById("addition-result").innerHTML =
             "<strong>Thành công!</strong> tin đăng đã được HỦY.";
-          }
+        }
       } else {
         document.getElementById("addition-result").className =
           "alert alert-danger";
@@ -591,12 +663,10 @@ function updateViPham(result, position) {
   selected = position;
 
   var dat = [];
-  dat[0] = 
-  dat[1] = nv[0]["MANV"];
+  dat[0] = dat[1] = nv[0]["MANV"];
   dat[2] = arrTable[position]["MATD"];
   dat[3] = result;
   dat[4] = document.getElementById("taNDXuLy").value;
-
 
   // if(false){
   //   document.getElementById("addition-result").className = "alert alert-danger";
@@ -617,13 +687,13 @@ function updateViPham(result, position) {
         arrTable[selected]["SODU"] = dat[3];
         document.getElementById("addition-result").className =
           "alert alert-success";
-          if(result=="thanh-cong"){
-            document.getElementById("addition-result").innerHTML =
-              "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
-          } else{
-            document.getElementById("addition-result").innerHTML =
+        if (result == "thanh-cong") {
+          document.getElementById("addition-result").innerHTML =
+            "<strong>Thành công!</strong> tin đăng đã được đưa lên chợ.";
+        } else {
+          document.getElementById("addition-result").innerHTML =
             "<strong>Thành công!</strong> tin đăng đã được HỦY.";
-          }
+        }
       } else {
         document.getElementById("addition-result").className =
           "alert alert-danger";
@@ -744,3 +814,160 @@ function numberWithCommas(x, unit) {
   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return parts.join(".") + " " + unit;
 }
+
+/****************** Xử lý cho service worker - push notification ******************/
+//Khai báo service worker, lấy thông tin endpoint...
+function registerServiceWorker() {
+  navigator.serviceWorker
+    .register("../../service-worker.js")
+    .then(registration => {
+      console.log("SW registered");
+      const subscribeOptions = {
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(
+          window.gauntface.CONSTANTS.APPLICATION_KEYS.publicKey
+        )
+      };
+
+      return registration.pushManager.subscribe(subscribeOptions);
+    })
+    .then(function(pushSubscription) {
+      console.log(
+        "Received PushSubscription: ",
+        JSON.stringify(pushSubscription)
+      );
+      // const subscriptionObject = {
+      //   endpoint: pushSubscription.endpoint,
+      //   keys: {
+      //     p256dh: pushSubscription.getKeys('p256dh'),
+      //     auth: pushSubscription.getKeys('auth')
+      //   }
+      // };
+      //alert(JSON.stringify(pushSubscription));
+      subscriptionObject = JSON.stringify(pushSubscription);
+      sendSubscriptionToBackEnd(pushSubscription);
+      return pushSubscription;
+    })
+    .catch(err => {
+      console.log("SW error", err);
+    });
+}
+
+//Lưu trữ kết quả nhận được
+function sendSubscriptionToBackEnd(subscription) {
+  return fetch('/api/save-subscription/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(subscription)
+  })
+  .then(function(response) {
+    if (!response.ok) {
+      throw new Error('Bad status code from server.');
+    }
+
+    return response.json();
+  })
+  .then(function(responseData) {
+    if (!(responseData.data && responseData.data.success)) {
+      throw new Error('Bad response from server.');
+    }
+    alert("senttttttttttt");
+  });
+}
+
+// app.post('/api/save-subscription/', function (req, res) {
+//   if (!isValidSaveRequest(req, res)) {
+//     return;
+//   }
+
+//   return saveSubscriptionToDatabase(req.body)
+//   .then(function(subscriptionId) {
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify({ data: { success: true } }));
+
+//   })
+//   .catch(function(err) {
+//     res.status(500);
+//     res.setHeader('Content-Type', 'application/json');
+//     res.send(JSON.stringify({
+//       error: {
+//         id: 'unable-to-save-subscription',
+//         message: 'The subscription was received but we were unable to save it to our database.'
+//       }
+//     }));
+//   });
+// });
+
+const isValidSaveRequest = (req, res) => {
+  // Check the request body has at least an endpoint.
+  if (!req.body || !req.body.endpoint) {
+    // Not a valid subscription.
+    res.status(400);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({
+      error: {
+        id: 'no-endpoint',
+        message: 'Subscription must have an endpoint.'
+      }
+    }));
+    return false;
+  }
+  return true;
+};
+
+function saveSubscriptionToDatabase(subscription) {
+  return new Promise(function(resolve, reject) {
+    db.insert(subscription, function(err, newDoc) {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve(newDoc._id);
+    });
+  });
+};
+
+
+//Tạo một câu lệnh POST đẩy tin
+// app.post('/api/trigger-push-msg/', function (req, res) {
+//   return getSubscriptionsFromDatabase()
+//   .then(function(subscriptions) {
+//     let promiseChain = Promise.resolve();
+
+//     for (let i = 0; i < subscriptions.length; i++) {
+//       const subscription = subscriptions[i];
+//       promiseChain = promiseChain.then(() => {
+//         return triggerPushMsg(subscription, dataToSend);
+//       });
+//     }
+
+//     return promiseChain;
+//   })
+// });
+
+const triggerPushMsg = function(subscription, dataToSend) {
+  return webpush.sendNotification(subscription, dataToSend)
+  .catch((err) => {
+    if (err.statusCode === 410) {
+      return deleteSubscriptionFromDatabase(subscription._id);
+    } else {
+      console.log('Subscription is no longer valid: ', err);
+    }
+  });
+};
+
+
+//Ép kiểu base64 thành Uint8 để gửi lên server 
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, "+")
+    .replace(/_/g, "/");
+  const rawData = window.atob(base64);
+  return Uint8Array.from([...rawData].map(char => char.charCodeAt(0)));
+}
+
+/**********************************************************************************/

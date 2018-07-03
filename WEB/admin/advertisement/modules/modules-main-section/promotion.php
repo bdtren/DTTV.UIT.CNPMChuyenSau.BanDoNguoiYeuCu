@@ -1,3 +1,25 @@
+<!-- <div class="push-switch-container js-push-switch-container">
+    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect js-push-toggle-switch" for="switch-2">
+      <input type="checkbox" id="switch-2" class="mdl-switch__input" disabled>
+      <span class="mdl-switch__label">Enable Push Notifications</span>
+    </label>
+</div>
+<style>
+	.push-switch-container {
+		text-align: center;
+	}
+	.mdl-switch {
+		width: auto;
+
+		span {
+			position: initial;
+			left: 0;
+
+			margin-left: 24px;
+		}
+	}
+
+</style> -->
 <div class="card" style="height: 35em;">
 	<h5 class="card-header" id="checkcard">Khuyến mãi
 		<span style="float: right;">
@@ -122,13 +144,13 @@
 					<form method="post" enctype="multipart/form-data" action="">
 						<div class="form-group">
 							<label>Tiêu đề: </label>
-							<input id ="ipTitle"type="text" class="form-control" placeholder="Nhập tiêu đề khuyến mãi...">
+							<input id ="ipTitle"type="text" class="form-control" placeholder="Nhập tiêu đề khuyến mãi..." value="Khuyến mãi">
 						</div>
 
 						<div class="form-group">
 							<label>Thời gian: </label>
-							<input id="ipStartday" type="date" name="bday"> -
-							<input id="ipEndday" type="date" name="bday">
+							<input id="ipStartday" type="date" name="bday" value="2018-01-01"> -
+							<input id="ipEndday" type="date" name="bday" value="2018-01-01">
 						</div>
 						<div class="form-group">
 							<label>Ảnh minh họa: </label>
@@ -139,7 +161,7 @@
 
 						<div class="form-group">
 							<label>Nội dung: </label>
-							<textarea id="ipContent" class="form-control" rows="4" style="resize: none;"></textarea>
+							<textarea id="ipContent" class="form-control" rows="4" style="resize: none;">khú mãi</textarea>
 						</div>
 
 
@@ -157,5 +179,37 @@
 	</div>
 </div>
 
+  <script src="../../js/constants.js"></script>
+  <script src="../../js/libs/idb-keyval.js"></script>
+  <script src="../../js/libs/snippets.js"></script>
 
+  <script src="../../js/encryption/hmac.js"></script>
+  <script src="../../js/encryption/hkdf.js"></script>
+  <script src="../../js/encryption/vapid-helper-1.js"></script>
+  <script src="../../js/encryption/vapid-helper-2.js"></script>
+  <script src="../../js/encryption/helpers.js"></script>
+
+  <script src="../../js/encryption/encryption-aes-128-gcm.js"></script>
+  <script src="../../js/encryption/encryption-aes-gcm.js"></script>
+  <script src="../../js/encryption/encryption-factory.js"></script>
+
+<script src="../../js/push-client.js"></script>
+<script src="../../js/app-controller.js"></script>
 <script src="../../js/script.admin.js"></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-77119321-2', 'auto');
+  ga('send', 'pageview');
+  ga(function(tracker) {
+    var clientId = tracker.get('clientId');
+    idbKeyval.set('google-analytics-client-id', clientId)
+    .catch(function(err) {
+      console.error('Unable to track Google Analytics with Client ID.');
+      console.error(err);
+    });
+  });
+  </script>
