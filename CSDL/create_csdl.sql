@@ -617,9 +617,9 @@ create index NV_XU_LY_VI_PHAM_FK on XULYVIPHAM
 
 create table NOTIFICATION
 (
+   MATK                           char(6)                         not null,
    SUBSCRIPTION                   longtext                        not null,
-   MAKH                           char(6)                         not null,
-   primary key (SUBSCRIPTION)
+   primary key (MATK)
 );
 
 alter table CHITIEU add constraint FK_NV_QUANLY_CT foreign key (MANV)
