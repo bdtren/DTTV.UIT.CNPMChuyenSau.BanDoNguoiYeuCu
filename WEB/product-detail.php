@@ -147,7 +147,7 @@
 						</ul>
 						
 				<div class="card detaildes" style="width: 100%;">
-					  <div class="card-header detaildes-header">
+					  <div class="card-header detaildes-header" id="tieudett">
 						Thông tin
 					  </div>
 					  <ul class="list-group list-group-flush">
@@ -160,7 +160,7 @@
 						<li class="list-group-item" id="price"><i class="far fa-money-bill-alt"></i>  Giá : <?php  echo $c["GIABAN"]; ?> đ</li>
 							<?php } ?>
 
-						<li class="list-group-item"> Loại tin: <span><?php  echo $c["LOAITD"]; ?></span></li>
+						<li class="list-group-item" id="typenews"> Loại tin: <span><?php  echo $c["LOAITD"]; ?></span></li>
 						  
 						<li class="list-group-item" id="method">Phương thức giao dịch: <span><?php  echo $c["PTGD"]; ?></span></li>
 					  </ul>

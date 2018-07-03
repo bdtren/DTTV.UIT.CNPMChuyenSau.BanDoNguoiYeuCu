@@ -93,10 +93,12 @@ img {
 	color: white;
 	float: right;
 	margin-right: 20px;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 #date span, #status span{
 	font-weight: bold;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 
@@ -147,36 +149,49 @@ img {
 .detaildes ul li span{
 	font-weight: bold;
 }
-
+#tieudett{
+	font-family: 'IBM Plex Serif', serif;
+}
 #price{
 	color: #FFFFFF;
 	font-weight: bolder;
 	font-size: 20px;
+	font-family: 'IBM Plex Serif', serif;
 }
-
+#typenews{
+	font-family: 'IBM Plex Serif', serif;
+}
+#method{
+	font-family: 'IBM Plex Serif', serif;
+}
 #diproduct{
 	text-decoration: line-through;
 	font-size: 20px;
 	margin-left: 10px;
 	color: #4D4D4D;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 
 #date{
 	font-size: 15px;
 	color: white;
+	font-family: 'IBM Plex Serif', serif;
 }
 
 .theodoi{
 	background: #FF36D8;
 	color: white;
 	float: left;
+	font-family: 'IBM Plex Serif', serif;
+	
 }
 .baocaobtn{
 	color: white;
 	float: left;
 	margin-left: 10px;
 	background: #3892FF;
+	font-family: 'IBM Plex Serif', serif;
 }
 .baocaobtn:hover{
 	background: #A901FF;
@@ -289,7 +304,9 @@ img {
 	
 	.detaildes{
 		width: 100vh;
-		
+	}
+	 .detaildes .detaildes-header{
+		font-family: 'IBM Plex Serif', serif;
 	}
 	
 	#slogan{

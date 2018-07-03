@@ -10,9 +10,11 @@ body{
 .choose h2{
 	text-align: center;
 	color: white;
+	font-family: 'Arsenal', sans-serif;
 }
 .choose ul li a{
 	color: white;
+	font-family: 'Arsenal', sans-serif;
 }
 
 .main{
