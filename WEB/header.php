@@ -186,7 +186,6 @@
 							<script src="./js/encryption/encryption-factory.js"></script>
 
 							<script src='./js/script.header.js'></script>
-							<script src='./sw-register.js'></script>
 							
 							
 							
@@ -214,7 +213,7 @@
 					<input id='key' name='key' class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
 					<input type="button" id="btn-search" class="btn my-2 my-sm-0"  name="timkiem" id='sreach' onclick="Search()" value='Tìm kiếm'>
 				</div>
-					
+				<script src='./sw-register.js'></script>				
 				<script language="javascript">
 
 					function Search(sreach)
