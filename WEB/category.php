@@ -31,8 +31,7 @@
 	
 <title><?php if($DanhMuc!="DM0000"&&$DanhMuc!=""&&$DanhMuc!=null) echo layTenDanhMuc($DanhMuc)." - ";
 	 else if($Search!='') echo "Kết quả tìm kiếm: ".$Search." - ";?> Danh mục sản phẩm</title>
-
-<link rel="manifest" href="./manifest.json"> 
+<meta name="description" content="LoveMarket – Danh mục sản phẩm của LoveMarket - bán đồ người yêu cũ. Tìm kiếm đồ người yêu cũ giá rẻ. Sản phẩm đa dạng và thích hợp dành cho người yêu.  Hãy mua ngay hôm nay trên LoveMarket . " />
 
 </head>
 	
