@@ -25,6 +25,8 @@ if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
             break;
         case 'xulyViPham':xulyViPham($data);
             break;
+        case 'layDSSubscription':layDSSubscription();
+            break;
         default:break;
     }
 }
@@ -271,6 +273,20 @@ function xoaKhuyenMai($data = array())
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
+}
+//Lấy danh sách khách hàng truy cập hệ thống thông báo
+function layDSSubscription(){
+    $a = array();
+    include '../xulyphp/connect.php';
+    $sql = "SELECT *
+            FROM NOTIFICATION;";
+    if ($result = mysqli_query($conn, $sql)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $a[] = $row;
+        }
+    }
+    mysqli_close($conn);
+    echo json_encode($a);
 }
 
 /********************************************************/

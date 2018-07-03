@@ -1,4 +1,46 @@
 <?php
+$action = "";
+$id="";
+$data = "";
+if (isset($_POST['callFunction']) && !empty($_POST['callFunction'])) {
+    $action = $_POST['callFunction'];
+    if (isset($_POST['id']) && !empty($_POST['id'])) {
+        $id = $_POST['id'];
+    }
+    if (isset($_POST['data']) && !empty($_POST['data'])) {
+        $data = $_POST['data'];
+    }
+    switch ($action) {
+        case 'nhapJsonSubscription':nhapJsonSubscription($id, $data);
+            break;
+        default:break;
+    }
+}
+/**********************************Xử lý từ ajax ***************************************/
+function nhapJsonSubscription($id, $data){
+    include('connect.php');
+    if ($data == null) {
+        echo 'error loading input info';
+        return;
+    }
+
+    $sql = "INSERT INTO NOTIFICATION (MATK,SUBSCRIPTION)
+    VALUES ('".$id."','".$data."')
+    ON DUPLICATE KEY UPDATE 
+      SUBSCRIPTION='".$data."';" ;
+
+    mysqli_set_charset($conn, "utf8");
+    if (mysqli_query($conn, $sql)) {
+        echo "successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+
+/***************************************************************************************/
+
+
 
 // tai thong bao
 function TaiKhuyenMai()

@@ -170,20 +170,7 @@
 									<!-- Kết thúc 1 thông báo mới -->
 							 </ul>
 							<a class="btn" href="user/user-page.php" id="createacc">Xem nhiều hơn</a> 
-								</a>	
-								<script src="./js/constants.js"></script>
-							<script src="./js/libs/idb-keyval.js"></script>
-							<script src="./js/libs/snippets.js"></script>
-
-							<script src="./js/encryption/hmac.js"></script>
-							<script src="./js/encryption/hkdf.js"></script>
-							<script src="./js/encryption/vapid-helper-1.js"></script>
-							<script src="./js/encryption/vapid-helper-2.js"></script>
-							<script src="./js/encryption/helpers.js"></script>
-
-							<script src="./js/encryption/encryption-aes-128-gcm.js"></script>
-							<script src="./js/encryption/encryption-aes-gcm.js"></script>
-							<script src="./js/encryption/encryption-factory.js"></script>
+								</a>
 
 							<script src='./js/script.header.js'></script>
 							
@@ -213,6 +200,9 @@
 					<input id='key' name='key' class="form-control mr-sm-2" type="text" placeholder="Tìm sản phẩm..." >
 					<input type="button" id="btn-search" class="btn my-2 my-sm-0"  name="timkiem" id='sreach' onclick="Search()" value='Tìm kiếm'>
 				</div>
+
+				<script src="js/jquery-3.3.1.min.js"></script>				
+				<script src='./js/constants.js'></script>				
 				<script src='./sw-register.js'></script>				
 				<script language="javascript">
 

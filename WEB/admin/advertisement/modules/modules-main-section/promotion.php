@@ -193,8 +193,6 @@
   <script src="../../js/encryption/encryption-aes-gcm.js"></script>
   <script src="../../js/encryption/encryption-factory.js"></script>
 
-<script src="../../js/push-client.js"></script>
-<script src="../../js/app-controller.js"></script>
 <script src="../../js/script.admin.js"></script>
 
   <script>

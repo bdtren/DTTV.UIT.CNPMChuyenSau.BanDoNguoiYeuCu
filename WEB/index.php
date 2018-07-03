@@ -12,7 +12,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>LoveMarket – Bán đồ người yêu cũ – Chia tay lấy lại vốn </title>
+	<title>LoveMarket | Bán đồ người yêu cũ – Chia tay lấy lại vốn </title>
 	<meta name="description" content=" LoveMarket – Nơi để rao bán đồ người yêu cũ và tìm kiếm những món đồ cho người yêu mới. Giúp bạn thu lại vốn sau khi chia tay. LoveMarket – nơi chia sẻ những câu chuyện tình yêu qua những món đồ. Trải nghiệm mua những món đồ mới lạ trên LoveMarket. " />
 
 	<meta name="author" content="DTTV" />
@@ -282,7 +282,7 @@
         $.fn.snow();
 		
     });
-		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 200, flakeColor: '#FFFFFF' });
+		$.fn.snow({ minSize: 5, maxSize: 50, newOn: 370, flakeColor: '#FFFFFF' });
     </script>
 	<!-- SNOW -->
 

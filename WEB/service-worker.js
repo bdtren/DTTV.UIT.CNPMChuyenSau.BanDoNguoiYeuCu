@@ -1,4 +1,4 @@
-importScripts('./node_modules/workbox-v3.2.0/workbox-sw.js')
+importScripts("./node_modules/workbox-v3.2.0/workbox-sw.js");
 
 const VERSION = "v1.0.0";
 const staticAssets = [
@@ -16,9 +16,9 @@ const staticAssets = [
 /*******Service worker phuong phap don gian */
 function log(messages, ...data) {
   if (data.length > 0) {
-     console.log(VERSION, messages, data);
+    console.log(VERSION, messages, data);
   } else {
-     console.log(VERSION, messages);
+    console.log(VERSION, messages);
   }
 }
 // self.addEventListener("install", async function(event) {
@@ -103,7 +103,6 @@ self.addEventListener("online", async function(e) {
   }
 });*/
 
-
 ///\/\/\/\/\//\/\/\/Sử dụng workbox\/\/\/\/\/\/\/\/\/\/\/\\\
 //install and static caching(cache du lieu tinh)
 /* const precacheController = new workbox.precaching.PrecacheController();
@@ -113,67 +112,63 @@ self.addEventListener('install', (event) => {
   event.waitUntil(precacheController.install());
 }); */
 
-
-
 //Realtime fetching data and add to cache+indexedDB
-self.addEventListener('fetch', (event) => {
-
+self.addEventListener("fetch", event => {
   const req = event.request;
   const url = new URL(req.url);
   const cacheCacheFirst = new workbox.strategies.CacheFirst({
-    cacheName: 'dynamic-cache',
+    cacheName: "dynamic-cache",
     plugins: [
       new workbox.expiration.Plugin({
         // Cache only 200 file
         maxEntries: 500,
         // Cache for a maximum of a week
-        maxAgeSeconds: 7 * 24 * 60 * 60,
+        maxAgeSeconds: 7 * 24 * 60 * 60
       })
-    ],
+    ]
   });
   const cacheNetworkFirst = new workbox.strategies.NetworkFirst({
-    cacheName: 'dynamic-cache',
+    cacheName: "dynamic-cache",
     plugins: [
       new workbox.expiration.Plugin({
         // Cache only 200 file
         maxEntries: 500,
         // Cache for a maximum of a week
-        maxAgeSeconds: 7 * 24 * 60 * 60,
+        maxAgeSeconds: 7 * 24 * 60 * 60
       })
-    ],
+    ]
   });
   const cacheImage = new workbox.strategies.StaleWhileRevalidate({
     // Use a custom cache name
-    cacheName: 'image-dynamic-cache',
+    cacheName: "image-dynamic-cache",
     plugins: [
       new workbox.expiration.Plugin({
         // Cache only 200 images
         maxEntries: 200,
         // Cache for a maximum of a week
-        maxAgeSeconds: 7 * 24 * 60 * 60,
+        maxAgeSeconds: 7 * 24 * 60 * 60
       })
-    ],
-  })
+    ]
+  });
 
   // Fetching resource
-  if(req.url.indexOf("chrome-extension:")>=0){
+  if (req.url.indexOf("chrome-extension:") >= 0) {
     log("Fetching fail!!!!!", req);
-  } else
-    //log("Fetching", req);  
-  if(req.url.match(/[^/]+(.jpg|.jpeg|.svg|.png|.gif)$/)!=null){
-    event.respondWith(cacheImage.handle({event}));
-  }else if (url.origin == location.origin) {
-  //     //event.respondWith(cacheFirst(req));
-  //   event.respondWith(cacheCacheFirst.handle({event}));
-  // } else {
-      //event.respondWith(networkFirst(req));
-      event.respondWith(cacheNetworkFirst.handle({event})); 
-  } else{
-    //event.respondWith(cacheFirst(req));
-    event.respondWith(cacheCacheFirst.handle({event}));
   }
-});  
-  
+  //log("Fetching", req);
+  else if (req.url.match(/[^/]+(.jpg|.jpeg|.svg|.png|.gif)$/) != null) {
+    event.respondWith(cacheImage.handle({ event }));
+  } else if (url.origin == location.origin) {
+    //     //event.respondWith(cacheFirst(req));
+    //   event.respondWith(cacheCacheFirst.handle({event}));
+    // } else {
+    //event.respondWith(networkFirst(req));
+    event.respondWith(cacheNetworkFirst.handle({ event }));
+  } else {
+    //event.respondWith(cacheFirst(req));
+    event.respondWith(cacheCacheFirst.handle({ event }));
+  }
+});
 
 async function cacheFirst(req) {
   const cachedResponse = await caches.match(req);
@@ -199,27 +194,27 @@ self.addEventListener("activate", () => {
 });
 
 /***************************************** PUSH API *****************************************/
-'use strict';
+("use strict");
 
 /* eslint-env browser, serviceworker */
-importScripts('./js/libs/idb-keyval.js');
-importScripts('./js/analytics-sw.js');
+importScripts("./js/libs/idb-keyval.js");
+importScripts("./js/analytics-sw.js");
 
-self.analytics.trackingId = 'UA-77119321-2';
+self.analytics.trackingId = "UA-77119321-2";
 //Nhận sự kiện push và xuất kết quả
-self.addEventListener('push', function(e) {
-  let notificationTitle = 'Đây là title tạm';
+self.addEventListener("push", function(e) {
+  let notificationTitle = "Đây là title tạm";
   const notificationOptions = {
-    body: 'Notification body!',//Nội dung thông báo
-    icon: './Images/Home/favicon.png',//Hình ảnh kèm theo
-    tag: "./promotion-detail.php?MAKM="+"KM0001",//đường dẫn thông báo, dùng khi click vào
-    image: './Images/Promotion/item-0.jpg',
+    body: "Notification body!", //Nội dung thông báo
+    icon: "./Images/Home/favicon.png", //Hình ảnh kèm theo
+    tag: "./promotion-detail.php?MAKM=" + "KM0001", //đường dẫn thông báo, dùng khi click vào
+    image: "./Images/Promotion/item-0.jpg",
     vibrate: [100, 50, 100],
     data: {
-      url:'https://google.com/',
+      url: "https://google.com/",
       dateOfArrival: Date.now(),
-      primaryKey: '2'
-    },
+      primaryKey: "2"
+    }
     // actions: [
     //   {action: 'explore', title: 'Đây là nội dung tạm',
     //     icon: 'images/checkmark.png'},
@@ -227,37 +222,68 @@ self.addEventListener('push', function(e) {
     //     icon: 'images/xmark.png'},
     // ]
   };
-  if (event.data) {
-    const dataText = event.data.json();
-    notificationTitle = dataText.title;
-    notificationOptions.body = dataText.body;
-    notificationOptions.tag = dataText.tag;
-    notificationOptions.icon = dataText.icon;
-    notificationOptions.image = dataText.image;
-    notificationOptions.data.url = dataText.data.url;
-  }
+  var apiPath = "/browser_pn?endpoint=";
 
   event.waitUntil(
-    Promise.all([
-      self.registration.showNotification(
-        notificationTitle, notificationOptions),
-      self.analytics.trackEvent('push-received'),
-    ])
+    registration.pushManager
+      .getSubscription()
+      .then(function(subscription) {
+        if (!subscription || !subscription.endpoint) {
+          throw new Error();
+        }
+
+        apiPath = apiPath + encodeURI(subscription.endpoint);
+
+        return fetch(apiPath);
+      })
+      .then(function(response) {
+        if (response.status !== 200) {
+          console.log("Problem Occurred:" + response.status);
+          throw new Error();
+        }
+
+        return response.json();
+      })
+      .then(function(datajson) {
+        if (datajson.status == 0) {
+          console.error("The API returned an error.", data.error.message);
+          throw new Error();
+        }
+
+        const dataText = datajson;
+        notificationTitle = dataText.title;
+        notificationOptions.body = dataText.body;
+        notificationOptions.tag = dataText.tag;
+        notificationOptions.icon = dataText.icon;
+        notificationOptions.image = dataText.image;
+        notificationOptions.data.url = dataText.data.url;
+        self.analytics.trackEvent("push-received");
+
+        return self.registration.showNotification(
+          notificationTitle,
+          notificationOptions
+        );
+      }).catch(function(error){
+        //console.error("The notification getter returned an error.", error.message);
+        console.error("The notification getter returned an error.");
+        return self.registration.showNotification(
+          notificationTitle,
+          notificationOptions
+        );
+      })
   );
 });
 /***************************************** NOTIFICATION *****************************************/
 //kiểm tra, hành động nếu người dùng tắt notification
-self.addEventListener('notificationclose', function(event) {
+self.addEventListener("notificationclose", function(event) {
   event.waitUntil(
-    Promise.all([
-      self.analytics.trackEvent('notification-close'),
-    ])
+    Promise.all([self.analytics.trackEvent("notification-close")])
   );
-  console.log('Closed notification: '+"ohh");
+  console.log("Closed notification: " + "ohh");
 });
 
 //Kiểm tra, hành dộng khi người dùng nhấn chọn notification
-self.addEventListener('notificationclick', function(event) {
+self.addEventListener("notificationclick", function(event) {
   event.notification.close();
 
   let clickResponsePromise = Promise.resolve();
@@ -268,14 +294,10 @@ self.addEventListener('notificationclick', function(event) {
   event.waitUntil(
     Promise.all([
       clickResponsePromise,
-      self.analytics.trackEvent('notification-click'),
+      self.analytics.trackEvent("notification-click")
     ])
   );
 });
-
-
-
-
 
 //Cap nhat Service Worker moi khi online
 /*var regist = false;
@@ -292,7 +314,6 @@ self.addEventListener("online", async function(e) {
     regist = true;
   }
 });*/
-
 
 ///\/\/\/\/\//\/\/\/Sử dụng workbox\/\/\/\/\/\/\/\/\/\/\/\\\
 //install and static caching(cache du lieu tinh)

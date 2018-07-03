@@ -7,6 +7,7 @@ if (!work) {
   localStorage.setItem("work", work);
 }
 var subscriptionObject;
+var encryptionHelper = window.gauntface.EncryptionHelperFactory.generateHelper();
 
 /***********************************************************/
 /********* CÁC MODEL + XỬ LÝ TRÊN TRANG QUẢNG CÁO *********/
@@ -294,28 +295,7 @@ function addKhuyenMai() {
 
             return;
           }
-          if (!window.Notification) {
-            alert(
-              "Trình duyệt của bạn không hỗ trợ Thông báo, bạn hãy lựa chọn các trình duyệt Chrome hoặc Firefox để có những trải nghiệm tốt nhất!"
-            );
-            return;
-          }
-          // Ngược lại trình duyệt có hỗ trợ thông báo
-          if (Notification.permission !== "granted") {
-            // Gửi lời mời cho phép thông báo
-            Notification.requestPermission().then(function(p) {
-              // Nếu không cho phép
-              if (p === "denied") {
-                alert(
-                  "Bạn đã không cho phép thông báo trên trình duyệt, xin hãy cho phép thông báo trên trình duyệt để nhận các thông báo mới nhất!"
-                );
-              }
-              // Ngược lại cho phép
-              else {
-                //alert('Bạn đã cho phép thông báo trên trình duyệt, hãy bắt đầu thử Hiển thị thông báo.');
-              }
-            });
-          }
+          
           // var wait = [];
           // var req = registerServiceWorker();
           // wait.push(req);
@@ -326,8 +306,23 @@ function addKhuyenMai() {
             registerServiceWorker();
             resolve(subscriptionObject);
           }).then(function(val){
-            alert(val);
+            //alert(val);
           });
+
+          $.ajax({
+            url: "../../xulyphp/xulyAdmin.php",
+            data: { callFunction: "layDSSubscription", data: "" },
+            type: "post",
+            success: function(output) {
+              var sl = JSON.parse(output);
+              //alert(JSON.parse(sl[0]['SUBSCRIPTION'])["endpoint"]);
+              for(var i =0;i<sl.length;i++){
+                sendPushMessage(sl[0]['SUBSCRIPTION'], dataNotify);
+              }
+            }
+          });
+
+          
 
         } else {
           document.getElementById("addition-result").className =
@@ -822,6 +817,30 @@ function registerServiceWorker() {
     .register("../../service-worker.js")
     .then(registration => {
       console.log("SW registered");
+      //Xin thông báo
+      if (!window.Notification) {
+        alert(
+          "Trình duyệt của bạn không hỗ trợ Thông báo, bạn hãy lựa chọn các trình duyệt Chrome hoặc Firefox để có những trải nghiệm tốt nhất!"
+        );
+        return;
+      }
+      // Ngược lại trình duyệt có hỗ trợ thông báo
+      if (Notification.permission !== "granted") {
+        // Gửi lời mời cho phép thông báo
+        Notification.requestPermission().then(function(p) {
+          // Nếu không cho phép
+          if (p === "denied") {
+            alert(
+              "Bạn đã không cho phép thông báo trên trình duyệt, xin hãy cho phép thông báo trên trình duyệt để nhận các thông báo mới nhất!"
+            );
+          }
+          // Ngược lại cho phép
+          else {
+            //alert('Bạn đã cho phép thông báo trên trình duyệt, hãy bắt đầu thử Hiển thị thông báo.');
+          }
+        });
+      }
+      //lấy endpoint
       const subscribeOptions = {
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(
@@ -844,6 +863,7 @@ function registerServiceWorker() {
       //   }
       // };
       //alert(JSON.stringify(pushSubscription));
+      //alert(pushSubscription.endpoint);
       subscriptionObject = JSON.stringify(pushSubscription);
       sendSubscriptionToBackEnd(pushSubscription);
       return pushSubscription;
@@ -873,7 +893,6 @@ function sendSubscriptionToBackEnd(subscription) {
     if (!(responseData.data && responseData.data.success)) {
       throw new Error('Bad response from server.');
     }
-    alert("senttttttttttt");
   });
 }
 
@@ -931,22 +950,66 @@ function saveSubscriptionToDatabase(subscription) {
 };
 
 
-//Tạo một câu lệnh POST đẩy tin
-// app.post('/api/trigger-push-msg/', function (req, res) {
-//   return getSubscriptionsFromDatabase()
-//   .then(function(subscriptions) {
-//     let promiseChain = Promise.resolve();
+///////////////////////////////////// Đẩy tin ////////////////////////////////////////
+function sendPushMessage(subscription, payloadText) {
+  alert(subscription+"VVVVVVVVVVV"+payloadText);
+  return encryptionHelper.getRequestDetails(
+    subscription, payloadText)
+  .then((requestDetails) => {
+    // Some push services don't allow CORS so have to forward
+    // it to a different server to make the request which does support
+    // CORs
+    return this.sendRequestToProxyServer(requestDetails);
+  });
+}
+const BACKEND_ORIGIN = `https://simple-push-demo.appspot.com`;
+function sendRequestToProxyServer(requestInfo) {
+  console.log('Sending XHR Proxy Server', requestInfo);
 
-//     for (let i = 0; i < subscriptions.length; i++) {
-//       const subscription = subscriptions[i];
-//       promiseChain = promiseChain.then(() => {
-//         return triggerPushMsg(subscription, dataToSend);
-//       });
-//     }
+  const fetchOptions = {
+    method: 'post',
+  };
 
-//     return promiseChain;
-//   })
-// });
+  // Can't send a stream like is needed for web push protocol,
+  // so needs to convert it to base 64 here and the server will
+  // convert back and pass as a stream
+  if (requestInfo.body && requestInfo.body instanceof ArrayBuffer) {
+    requestInfo.body = this.toBase64(requestInfo.body);
+    fetchOptions.body = requestInfo;
+  }
+
+  fetchOptions.body = JSON.stringify(requestInfo);
+
+  fetch(`${BACKEND_ORIGIN}/api/v2/sendpush`, fetchOptions)
+  .then(function(response) {
+    if (response.status >= 400 && response.status < 500) {
+      return response.text()
+      .then((responseText) => {
+        console.log('Failed web push response: ', response, response.status);
+      throw new Error(`Failed to send push message via web push protocol: ` +
+        `<pre>${encodeURI(responseText)}</pre>`);
+      });
+    }
+  })
+  .catch((err) => {
+    console.log(err);
+    this.showErrorMessage(
+      'Ooops Unable to Send a Push',
+      err
+    );
+  });
+}
+
+function toBase64(arrayBuffer, start, end) {
+  start = start || 0;
+  end = end || arrayBuffer.byteLength;
+
+  const partialBuffer = new Uint8Array(arrayBuffer.slice(start, end));
+  return btoa(String.fromCharCode.apply(null, partialBuffer));
+}
+
+
+////////////////////////////////////////////////////////////////////////
 
 const triggerPushMsg = function(subscription, dataToSend) {
   return webpush.sendNotification(subscription, dataToSend)
