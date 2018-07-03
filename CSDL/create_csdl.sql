@@ -615,6 +615,13 @@ create index NV_XU_LY_VI_PHAM_FK on XULYVIPHAM
    MANV
 );
 
+create table NOTIFICATION
+(
+   SUBSCRIPTION                   longtext                        not null,
+   MAKH                           char(6)                         not null,
+   primary key (SUBSCRIPTION)
+);
+
 alter table CHITIEU add constraint FK_NV_QUANLY_CT foreign key (MANV)
       references NHANVIEN (MANV) on delete restrict on update restrict;
 
