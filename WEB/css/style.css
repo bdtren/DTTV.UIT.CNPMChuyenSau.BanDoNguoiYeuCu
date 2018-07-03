@@ -450,6 +450,16 @@
 		.category {
 			height: 100%;
 		}
+
+		/* Bao ngoài listItem */
+		#boxListCate{
+			height: 800px;
+		}
+		/* Item */
+		#boxListCate ul li{
+			height: 200px;
+		}
+
 		.container2:before {
 			content: " ";
 			display: table;
@@ -462,22 +472,72 @@
 				width: 960px;
 			}
 		}
+
 		@media (min-width:700px) and (max-width:1199px){
 			.container2 {
 				width: 640px;
-				height: 800px ;
 			}
+				#boxListCate{
+					height: 700px;
+				}
+
+				#boxListCate ul li{
+					height: 150px;
+				}
+			
 		}
 		@media (min-width:520px) and (max-width:699px){
 			.container2 {
 				width: 480px;
 			}
-		}
-		@media (min-width:320px) and (max-width:519px){
-			.container2 {
-				width: 300px;
-				height: 300px;
+			
+				#boxListCate{
+					height: 600px;
+				}
 
+				#boxListCate ul li{
+					height: 150px;
+				}
+		}
+
+		@media (min-width:480px) and (max-width:600px){
+			.container2 {
+				width: 400px;
+			}
+				#boxListCate{
+					height: 550px;
+				}
+
+				#boxListCate ul li{
+					height: 130px;
+				}
+			
+			#boxListCate ul li .category-text span{
+				font-size: 15px;
+			}
+			#quatinhthan{
+				margin-top: 8em;
+			}
+		}
+
+		@media (min-width:300px) and (max-width:530px){
+			.container2 {
+				width: 230px;
+			}
+			
+				#boxListCate{
+					height: 550px;
+				}
+
+				#boxListCate ul li{
+					height: 100px;
+				}
+			
+			#boxListCate ul li .category-text span{
+				font-size: 11px;
+			}
+			#quatinhthan{
+				margin-top: 12em;
 			}
 		}
 

@@ -174,7 +174,7 @@
 
 			<!-- slide 3-->
 			<div class="slide" id="slide3">
-				<div class="slideContent">
+				<div class="slideContent" id="quatinhthan">
 					<p>Quà tinh thần</p>
 					<div class="slide-wrap">
 						<div class="category container2">
