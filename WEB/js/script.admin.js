@@ -950,9 +950,9 @@ function saveSubscriptionToDatabase(subscription) {
 };
 
 
-///////////////////////////////////// Đẩy tin ////////////////////////////////////////
+///////////////////////////////////// Đẩy tin ///////////////////////////////////////////
 function sendPushMessage(subscription, payloadText) {
-  alert(subscription+"VVVVVVVVVVV"+payloadText);
+  //alert(subscription+"VVVVVVVVVVV"+payloadText);
   return encryptionHelper.getRequestDetails(
     subscription, payloadText)
   .then((requestDetails) => {
